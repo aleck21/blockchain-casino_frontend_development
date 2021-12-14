@@ -1,5 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react';
 import cx from 'classnames';
+import { Header } from 'components';
 import styles from './styles.module.scss';
 
 type MainLayoutProps = {
@@ -20,6 +21,7 @@ const MainLayout = ({
     )}
     style={style}
   >
+    <Header />
     <>
       {children}
     </>
