@@ -1,3 +1,4 @@
+@import '~@project/libs/assets/styles/mixins';
 @import '~@project/libs/assets/styles/variables';
 @import '~@project/libs/assets/styles/palette';
 
@@ -10,8 +11,23 @@
   align-items: center;
 
   color: $white;
+
+  @include tablet{
+   height: 74px;
+  }
 }
 
 .button {
   margin-right: 20px;
+  
+  @include tablet{
+    height: 27.41px;
+  }
+}
+
+.buttonSignIn {
+
+  @include tablet{
+    margin-right: 8px;
+  }
 }

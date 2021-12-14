@@ -7,7 +7,6 @@ import { useTranslation } from 'i18n';
 import styles from './styles.module.scss';
 
 export const Header: FC = () => {
-  console.log('heh');
   const { t } = useTranslation('main');
   const { isUser } = useUser();
 
@@ -19,7 +18,7 @@ export const Header: FC = () => {
       <>
         <Button
           onClick={onSignInClick}
-          className={styles.button}
+          className={cx(styles.button, styles.buttonSignIn)}
         >
           {t('Sign-in')}
         </Button>
