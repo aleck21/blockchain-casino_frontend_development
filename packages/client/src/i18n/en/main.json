@@ -2,5 +2,12 @@
   "Hello": "Hello",
   "Supports theming": "Supports theming",
   "And i81n translations": "And i81n translations",
-  "there are many ready-made components in the storybook": "there are many ready-made components in the storybook"
+  "there are many ready-made components in the storybook": "there are many ready-made components in the storybook",
+  "Sign-in": "Sign in",
+  "Register": "Register",
+  "Home": "Home",
+  "Wallet": "Wallet",
+  "Profile": "Profile",
+  "Notifications": "Notifications",
+  "Blockchain-Casino": "Blockchain Casino"
 }
