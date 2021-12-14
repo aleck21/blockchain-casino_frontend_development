@@ -1,0 +1,24 @@
+$nuromBold: Nurom Bold;
+$sansationRegular: Sansation Regular;
+$eTmodules: ETmodules;
+
+@font-face{
+  font-family:'Nurom Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('~@project/libs/assets/fonts/Nurom-Bold.woff') format('woff')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('~@project/libs/assets/fonts/Open-Sans-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sansation Regular';
+  src: url('~@project/libs/assets/fonts/Sansation-Regular.ttf');
+}
