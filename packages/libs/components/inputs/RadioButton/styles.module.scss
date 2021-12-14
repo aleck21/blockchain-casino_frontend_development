@@ -11,12 +11,10 @@
 
   width: 24px;
   height: 24px;
-  background: $color-radio-background;
   transition: all $transition-time;
   border-radius: 50%;
 
   &.error {
-    background: $color-radio-error;
   }
 
   .checked.disabled &:hover {
@@ -31,11 +29,9 @@
   border-radius: 50%;
   width: 16px;
   height: 16px;
-  background: $color-radio-active;
 }
 
 .close {
-  color: $color-radio-bullet;
   opacity: 0.5;
 }
 

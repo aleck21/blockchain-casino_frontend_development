@@ -1,33 +1,35 @@
 @import '../../../assets/styles/mixins';
 @import '../../../assets/styles/variables';
+@import '../../../assets/styles/palette';
+@import '../../../assets/styles/fonts';
 
 .button {
   @include flexbox(center, center);
 
-  height: 45px;
-  padding: 12.5px 26.5px;
+  height: 35px;
+  padding: 0px 26.5px;
   border-radius: 10px;
+  box-sizing: border-box;
 
   font-family: $montserrat;
   font-weight: 600;
   font-size: 14px;
   line-height: 17.07px;
-  letter-spacing: -0.01em;
+  letter-spacing: -1%;
   color: $white;
 
   transition: all $transition-time;
   white-space: nowrap;
-  box-shadow: 1px 2px 160px 11px $color-button-shadow;
 
   &:focus {
     outline: none;
   }
 
   &.primary {
-    background-color: $blue;   
+    background: linear-gradient(180deg, $blue 0%, $blue1 100%);
 
     &:hover, &:focus {
-      background-color: $blue;
+      // background-color: $blue;
     }
 
     &:disabled {
@@ -38,8 +40,7 @@
   &.outline {
     background-color: $dark;
     border: 0.5px solid $white;
-
-
+  
     &:hover, &:focus {
       background-color: $dark;
     }

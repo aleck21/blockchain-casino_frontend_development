@@ -11,8 +11,6 @@
 .float {
   @include max_dropdown_height;
 
-  background-color: $color-dropdown-background;
-  border: 1px solid $color-dropdown-border;
   overflow: auto;
   border-radius: 4px;
 
@@ -27,7 +25,6 @@
   flex-direction: column;
 
   button {
-    color: $color-input-text;
   }
 }
 
