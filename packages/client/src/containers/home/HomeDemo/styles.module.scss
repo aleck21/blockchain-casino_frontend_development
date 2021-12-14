@@ -2,10 +2,7 @@
 
 .container {
   @include flexbox(center, center);
-  flex-direction: column;
-  height: 400vh;
-  background-color: black;
-  width: 100vw;
+  flex-direction: column;  
 }
 
 .block{

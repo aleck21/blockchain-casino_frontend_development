@@ -4,13 +4,17 @@
 .button {
   @include flexbox(center, center);
 
-  height: 44px;
-  padding: .3em 1em;
-  border-radius: 20px;
-  font-family: 'Nurom Bold';
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 2.3em;
+  height: 45px;
+  padding: 12.5px 26.5px;
+  border-radius: 10px;
+
+  font-family: $montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17.07px;
+  letter-spacing: -0.01em;
+  color: $white;
+
   transition: all $transition-time;
   white-space: nowrap;
   box-shadow: 1px 2px 160px 11px $color-button-shadow;
@@ -20,11 +24,10 @@
   }
 
   &.primary {
-    background-color: $color-button-primary;
-    color: $color-button-text;
+    background-color: $blue;   
 
     &:hover, &:focus {
-      background-color: $color-button-primary;
+      background-color: $blue;
     }
 
     &:disabled {
@@ -32,58 +35,21 @@
     }
   }
 
-  &.secondary {
-    background-color: $color-button-secondary;
-    color: $color-button-text;
+  &.outline {
+    background-color: $dark;
+    border: 0.5px solid $white;
+
 
     &:hover, &:focus {
-      background-color: $color-button-secondary;
+      background-color: $dark;
     }
 
     &:disabled {
       opacity: 0.5;
     }
-  }
-
-  &.gradient {
-    background: linear-gradient( 180deg, $color-button-primary 0%, $color-button-secondary 100%);
-    color: $color-button-text;
-
-    &:hover, &:focus {
-      background-color: $color-button-primary;
-    }
-
-    &:disabled {
-      opacity: 0.5;
-    }
-  }
+  }  
 
   &.full_width {
     width: 100%;
-  }
-}
-
-.arrowPrimary{
-  margin-left: -1.4em;
-  transition: all 300ms ease 0ms;
-  display: inline-block;
-  position: relative;
-  opacity: 0;
-  left: 0;
-  &.hover{
-    left: 25px;
-    opacity: 1;
-  }
-}
-
-.arrowSecondary{
-  margin-left: -1.4em;
-  transition: all 300ms ease 0ms;
-  display: inline-block;
-  position: relative;
-  opacity: 0;
-  &.hover{
-    opacity: 1;
-    margin-left: 0.5em;
   }
 }
