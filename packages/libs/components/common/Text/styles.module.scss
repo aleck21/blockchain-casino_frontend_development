@@ -1,0 +1,70 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.h1 {
+  font-family: $nuromBold;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 1em;
+  text-align: center;
+  background: -webkit-linear-gradient(65deg, $blue, $purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
+.h2 {
+  font-family: $nuromBold;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1em;
+  text-align: center;
+  background: -webkit-linear-gradient(65deg, $blue, $purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
+.h3 {
+  font-family: $nuromBold;
+  color: $white;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 1.5px;
+  line-height: 140%;
+  margin: 0;
+}
+
+.h4 {
+  font-family: $nuromBold;
+  color: $purple2;
+  font-size: 27px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.span {
+  font-family: $eTmodules;
+  font-size: 30px;
+  color: $white;
+  line-height: 100%;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.p {
+  font-family: $sansationRegular;
+  text-align: center;
+  color: $white;
+  font-size: 34px;
+  line-height: 50px;
+  margin: 0;
+
+  strong {
+    font-weight: inherit;
+    color: $purple;
+  }
+}
