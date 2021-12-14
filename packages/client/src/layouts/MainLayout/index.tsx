@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react';
 import cx from 'classnames';
-import { Header, Sidebar } from 'components';
+import { Header, Sidebar, Footer, Main } from 'components';
 import styles from './styles.module.scss';
 
 type MainLayoutProps = {
@@ -23,9 +23,10 @@ const MainLayout = ({
   >
     <Header />
     <Sidebar />
-    <>
+    <Main >
       {children}
-    </>
+    </Main>
+    <Footer />
   </div>
 );
 

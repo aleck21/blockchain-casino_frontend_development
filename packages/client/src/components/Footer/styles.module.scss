@@ -1,0 +1,22 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  border-top: .5px solid $grayLines;
+  margin: 0 30px;
+  background-color: $black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 188px;
+  padding: 30px 0;
+  height: 209px;
+  /*width: calc(100% - 188px - 60px); */
+}
+
+.footer__logo {
+  width: 77px;
+  height: 51px;
+}
+
