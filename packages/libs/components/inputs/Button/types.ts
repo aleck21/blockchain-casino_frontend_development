@@ -6,15 +6,9 @@ import {
   PropsWithChildren,
 } from 'react';
 
-export enum ButtonArrowStyle {
-  primary = 'arrowPrimary',
-  secondary = 'arrowSecondary',
-}
-
 export enum ButtonTheme {
   primary = 'primary',
-  secondary = 'secondary',
-  gradient = 'gradient',
+  outline = 'outline',
 }
 
 export type ButtonProps = PropsWithChildren<DetailedHTMLProps<
@@ -22,7 +16,6 @@ ButtonHTMLAttributes<HTMLButtonElement>,
 HTMLButtonElement
 > & {
   theme?: ButtonTheme,
-  hoverStyle?: ButtonArrowStyle,
   isFullWidth?: boolean,
   onClick?: MouseEventHandler<HTMLButtonElement>,
   iconClassName?: string,

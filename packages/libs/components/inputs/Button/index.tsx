@@ -1,10 +1,8 @@
 import React, { forwardRef } from 'react';
 import cx from 'classnames';
 import { useHoverEvent } from '@project/libs/hooks/useHoverEvent';
-import { FontIcon, FontIconName } from '../FontIcon';
 import Loader from '../Loader';
 import {
-  ButtonArrowStyle,
   ButtonProps,
   ButtonRef,
   ButtonTheme,
@@ -13,18 +11,15 @@ import styles from './styles.module.scss';
 
 const Button = forwardRef(({
   theme = ButtonTheme.primary,
-  hoverStyle = ButtonArrowStyle.primary,
   isFullWidth,
   onClick,
   className,
   children,
   disabled,
-  iconClassName,
   isLoading,
-  ...rest
 }: ButtonProps,
 ref: ButtonRef) => {
-  const { hover, onMouseEnter, onMouseLeave } = useHoverEvent();
+  const { onMouseEnter, onMouseLeave } = useHoverEvent();
 
   return (
     <button
@@ -40,7 +35,6 @@ ref: ButtonRef) => {
       )}
       onClick={onClick}
       disabled={disabled || isLoading}
-      {...rest}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -49,11 +43,6 @@ ref: ButtonRef) => {
           {children}
         </>
       )}
-      <FontIcon
-        name={FontIconName.ArrowRight}
-        size={16}
-        className={cx(styles.arrow, { [styles.hover]: hover }, styles[hoverStyle])}
-      />
     </button>
   );
 });
