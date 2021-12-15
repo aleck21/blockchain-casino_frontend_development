@@ -20,3 +20,38 @@ $montserrat: Montserrat;
   font-family: 'Sansation Regular';
   src: url('~@project/libs/assets/fonts/Sansation-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('~@project/libs/assets/fonts/HelveticaNeueRoman.eot');
+  src: local('Helvetica Neue'),
+      url('~@project/libs/assets/fonts/HelveticaNeueRoman.eot?#iefix') format('embedded-opentype'),
+      url('~@project/libs/assets/fonts/HelveticaNeueRoman.woff2') format('woff2'),
+      url('~@project/libs/assets/fonts/HelveticaNeueRoman.woff') format('woff'),
+      url('~@project/libs/assets/fonts/HelveticaNeueRoman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('~@project/libs/assets/fonts/HelveticaNeueMedium.eot');
+  src: local('Helvetica Neue'),
+      url('~@project/libs/assets/fonts/HelveticaNeueMedium.eot?#iefix') format('embedded-opentype'),
+      url('~@project/libs/assets/fonts/HelveticaNeueMedium.woff2') format('woff2'),
+      url('~@project/libs/assets/fonts/HelveticaNeueMedium.woff') format('woff'),
+      url('~@project/libs/assets/fonts/HelveticaNeueMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*
+@font-face {
+  font-family: 'Helvetica Heue';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('~@project/libs/assets/fonts/HelveticaNeueMedium.woff') format('woff');
+}
+*/

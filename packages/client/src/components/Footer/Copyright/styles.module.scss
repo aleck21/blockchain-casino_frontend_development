@@ -1,0 +1,18 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: copyright;
+  
+  .copyright__text {
+    @include footer_text;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    @media (max-width: 400px) {
+      text-align: center;
+    }
+  }
+
+}

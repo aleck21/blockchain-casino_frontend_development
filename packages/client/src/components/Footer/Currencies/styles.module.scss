@@ -1,0 +1,34 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: currencies;
+  width: 235px;
+  display: grid;
+  grid-template-rows: 17px 1fr;
+  grid-row-gap: 20px;
+  
+  @media (max-width: 400px) {
+    margin: 0 auto;
+  }
+
+  .currencies__text {
+    @include footer_text;
+
+    @media (max-width: 400px) {
+      text-align: center;     
+    }
+  }
+
+  .currencies__icons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-between;
+
+    .currencies__icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

@@ -3,20 +3,71 @@
 @import '~@project/libs/assets/styles/palette';
 
 .container {
-  border-top: .5px solid $grayLines;
-  margin: 0 30px;
+  grid-area: footer;
+  
+  margin: 0;
   background-color: $black;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 188px;
-  padding: 30px 0;
+  padding: 0 30px;
+  box-sizing: border-box;
   height: 209px;
-  /*width: calc(100% - 188px - 60px); */
+
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  grid-template-areas: 'main' 'bottom';
+  
+  @media (max-width: 400px) {
+    padding: 0 20px;
+    height: 100%;
+  }
+  
+  .footer__main {
+    grid-area: main;
+
+    border-top: .5px solid $middle;
+    padding: 30px 0;
+    height: calc(209px - 47px);
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'about links currencies contacts';
+    grid-template-columns: auto auto auto 322px;
+    box-sizing: border-box;
+    
+    @media (max-width: 400px) { 
+      grid-template-areas: 'about' 'links' 'contacts' 'currencies';
+      grid-row-gap: 12px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      border-top: 0;
+    }
+  }
+  
+  .footer__bottom {
+    grid-area: bottom;
+
+    display: grid;
+    grid-template-areas: 'space rate copyright';
+    grid-template-columns: 1fr 1fr 322px;
+    
+    @media (max-width: 400px) {
+      grid-template-areas: 'rate' 'copyright';
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .footer__bottom__text {
+      @include footer_text;
+      font-weight: 500;
+
+      @media (max-width: 400px) {
+        text-align: center;
+      }
+    }
+  }
 }
 
-.footer__logo {
-  width: 77px;
-  height: 51px;
+.footer__space {
+  grid-area: space;
 }
+
+
 

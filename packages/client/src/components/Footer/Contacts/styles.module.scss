@@ -1,0 +1,41 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: contacts;
+  display: grid;
+  grid-template-rows: 17px 1fr;
+  grid-row-gap: 22px;
+
+  @media (max-width: 400px) {
+    margin: 0 auto;
+  }
+
+  .contacts__title {
+    width: max-content;
+
+    @media (max-width: 400px) {
+      margin: 0 auto;
+    }
+
+    .contacts__text {
+      @include footer_text;
+    }
+  }
+  
+  .contacts__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  
+    .contacts__text {
+      @include footer_text;
+      padding-bottom: 12px;
+    }
+  
+    .contacts__link {
+      @include footer_text;
+      color: $blue;
+    }
+  }
+}

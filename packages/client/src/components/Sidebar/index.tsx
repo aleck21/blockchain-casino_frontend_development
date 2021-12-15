@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
+import { Main } from './Main';
+import { Footer } from './Footer';
 import { Image } from '@project/libs/components';
 import { BunnyGameLogoBig } from '@project/libs/assets/images';
 import { useUser } from 'hooks';
@@ -14,10 +16,18 @@ export const Sidebar: FC = () => {
 
   return (
     <div className={cx(styles.container)}>
-      <Image
-        url={BunnyGameLogoBig}
-        className={styles.logo}
-      />
+      <div className={cx(styles.sidebar__logo)}>
+        <Image
+          url={BunnyGameLogoBig}
+          className={styles.sidebar__logo__image}
+        />
+      </div>
+      <nav className={cx(styles.sidebar__main)}>
+        <Main />
+      </nav>
+      <footer className={cx(styles.sidebar__footer)}>
+        <Footer />
+      </footer>
     </div>
   );
 };

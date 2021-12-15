@@ -3,21 +3,38 @@
 @import '~@project/libs/assets/styles/palette';
 
 .container {
-  /* border: solid 2px yellow; */
+  grid-area: sidebar;
 
-  position: absolute;
-  width: 188px;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  display: grid;
+  grid-template-areas: 'logo' 'main' 'footer';
+  grid-template-rows: 78px auto 64px;
+
+  @media (max-width: 400px) {
+    grid-template-rows: 100px;
+    grid-template-areas: 'logo';
+  }
+
+  .sidebar__logo {
+    grid-area: logo;
+
+    .sidebar__logo__image {
+      margin: 30px 30px 0px;
+    }
+  }
+
+  .sidebar__main {
+    grid-area: main;
+  }
+
+  .sidebar__footer {
+    grid-area: footer;
+  }
 
   @include tablet{
     display: none;
    }
 }
 
-.logo {
-  margin: 30px 30px 0px;
-}
+
 
 
