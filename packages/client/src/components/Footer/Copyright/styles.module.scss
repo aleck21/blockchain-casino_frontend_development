@@ -4,6 +4,10 @@
 
 .container {
   grid-area: copyright;
+
+  @media (max-width: 400px) {
+    
+  }
   
   .copyright__text {
     @include footer_text;
