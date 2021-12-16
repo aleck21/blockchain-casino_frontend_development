@@ -7,7 +7,7 @@
   height: 68px;
   grid-area: about;
   
-  @media (max-width: 400px) {
+  @include mobile_sm {
     text-align: center;
     margin: 0 auto;
     height: auto;
@@ -16,7 +16,7 @@
   .about__text {
     @include footer_text;
   
-    @media (max-width: 400px) {
+    @include mobile_sm {
       text-align: center;
     }
   }

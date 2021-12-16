@@ -1,0 +1,69 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: info;
+
+  display: grid;
+  grid-template-areas: 'currency count';
+  grid-template-columns: max-content max-content;
+  grid-template-rows: 1fr;
+  align-items: center;
+  box-sizing: border-box;
+
+  @include mobile_sm {
+    grid-template-areas: 'currency' 'count';
+    grid-template-columns: 44px;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .header_info__currency {
+    grid-area: currency;
+    display: grid;
+    grid-template-areas: 'text arrow';
+    align-content: center;
+    padding: 0 10px;
+
+    .text {
+      @include footer_text;
+      font-size: 18px;
+      font-weight: bold;
+      color: $white;
+
+      grid-area: text;
+
+      @include mobile_sm {
+        font-size: 12px;
+      }
+    }
+
+    .header_info__curency__arrow {
+      grid-area: arrow;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .header_info__count {
+    grid-area: count;
+    padding: 0 12px 0 0;
+
+    .text {
+      @include footer_text;
+      color: $white;
+      font-size: 18px;
+      @include mobile_sm {
+        font-size: 12px;
+      }
+
+      .text_pale {
+        @include footer_text;
+        font-size: 18px;
+        @include mobile_sm {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+}

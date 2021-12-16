@@ -1,0 +1,14 @@
+@import "@project/libs/assets/styles/mixins.scss";
+
+.container {
+  grid-area: wallet;
+  display: none;
+
+  @include mobile_sm {
+    display: block;
+  }  
+
+  .button {
+    width: 66px;
+  }
+}

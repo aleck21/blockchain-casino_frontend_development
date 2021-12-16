@@ -15,12 +15,24 @@
   grid-template-columns: 188px 1fr;
   grid-template-rows: 64px auto 209px;
 
-  @media (max-width: 400px) {
-    grid-template-areas: 'sidebar header' 
-      'main main'
-      'footer footer';
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 100px auto auto;
+  @include desktop_sm {
+    grid-template-areas: 'header'
+      'main'
+      'footer';
+    grid-template-columns: 100%;
+    grid-template-rows: 64px auto 209px;
+  }
+
+  @include desktop {
+    grid-template-rows: 64px auto 500px;
+  }
+
+  @include mobile_sm {
+    grid-template-areas: 'header' 
+      'main'
+      'footer';
+    grid-template-columns: 100%;
+    grid-template-rows: 100px auto 500px;
   }
 }
 

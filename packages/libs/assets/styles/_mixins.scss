@@ -30,8 +30,20 @@ $defaultFlexBoxJustify: center;
   }
 }
 
+@mixin mobile_sm {
+  @media screen and (max-width: 420px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop_sm {
+  @media screen and (max-width: 1024px) {
     @content;
   }
 }

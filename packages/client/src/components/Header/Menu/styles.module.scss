@@ -1,0 +1,16 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: menu;
+  display: none;
+
+  @include mobile_sm {
+    display: block;
+  }
+
+  .header__menu {
+    width: 24px;
+    height: 24px;
+  }
+}

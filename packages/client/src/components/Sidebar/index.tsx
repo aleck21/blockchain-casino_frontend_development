@@ -15,7 +15,7 @@ export const Sidebar: FC = () => {
   console.log(t('Hello'));
 
   return (
-    <div className={cx(styles.container)}>
+    <aside className={cx(styles.container)}>
       <div className={cx(styles.sidebar__logo)}>
         <Image
           url={BunnyGameLogoBig}
@@ -28,6 +28,6 @@ export const Sidebar: FC = () => {
       <footer className={cx(styles.sidebar__footer)}>
         <Footer />
       </footer>
-    </div>
+    </aside>
   );
 };

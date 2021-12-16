@@ -7,7 +7,7 @@
   margin-top: 36px;
   width: max-content;
 
-  @media (max-width: 400px) {
+  @include mobile_sm {
     margin: 12px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -17,7 +17,7 @@
     @include footer_text;
     text-transform: uppercase;
 
-    @media (max-width: 400px) {
+    @include mobile_sm {
       display: inline-block;
     }
   }

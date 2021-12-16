@@ -5,7 +5,7 @@
 .container {
   grid-area: copyright;
 
-  @media (max-width: 400px) {
+  @include mobile_sm {
     
   }
   
@@ -14,7 +14,7 @@
     text-transform: uppercase;
     font-weight: 500;
 
-    @media (max-width: 400px) {
+    @include mobile_sm {
       text-align: center;
     }
   }

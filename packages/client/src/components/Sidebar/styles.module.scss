@@ -9,9 +9,12 @@
   grid-template-areas: 'logo' 'main' 'footer';
   grid-template-rows: 78px auto 64px;
 
-  @media (max-width: 400px) {
-    grid-template-rows: 100px;
-    grid-template-areas: 'logo';
+  @include desktop_sm {
+    display: none;
+  }
+
+  @include mobile_sm {
+    display: none;
   }
 
   .sidebar__logo {
@@ -19,6 +22,10 @@
 
     .sidebar__logo__image {
       margin: 30px 30px 0px;
+
+      @include mobile_sm {
+        margin: 19px 0 0 20px;
+      }
     }
   }
 
@@ -30,9 +37,6 @@
     grid-area: footer;
   }
 
-  @include tablet{
-    display: none;
-   }
 }
 
 
