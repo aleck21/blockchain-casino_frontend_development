@@ -1,0 +1,22 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/fonts';
+
+.details__block {
+  align-self: flex-end;
+
+  .details__block__text {
+    @include footer_text;
+    color: $blue;
+    display: flex;
+    align-content: center;
+  }
+
+  .details__block__arrowToRight {
+    width: 16px;
+    height: 16px;
+    transform: rotate(-90deg);
+    margin-left: 10px;
+  }
+}
