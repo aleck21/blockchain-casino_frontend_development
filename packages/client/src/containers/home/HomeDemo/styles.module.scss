@@ -49,3 +49,7 @@
   line-height: 1.5em;
   font-family: Monospaced, monospace;
 }
+
+.text {
+  @include footer_text;
+}

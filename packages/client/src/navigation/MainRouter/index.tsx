@@ -4,6 +4,7 @@ import { history } from '@project/libs/utils';
 import {
   Homepage,
 } from 'pages';
+import { WalletPage } from 'pages';
 import { RouteLink } from '../../constants/routes';
 
 const MainRouter: FC = () => (
@@ -13,6 +14,11 @@ const MainRouter: FC = () => (
         path={RouteLink.home}
         exact
         component={Homepage}
+      />
+      <Route
+        path={RouteLink.wallet}
+        exact
+        component={WalletPage}
       />
     </Switch>
   </Router>

@@ -1,0 +1,31 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+
+.wallet__container {
+  color: $white;
+  display: grid;
+  grid-template-areas: 'walletPanel balance'
+    'walletPanel bgdDashboard';
+  grid-template-columns: 576px 556px;  
+  grid-template-rows: auto 161px;
+  // grid-row-gap: px;
+  grid-column-gap: 52px;
+  
+  .wallet__panel {
+    grid-area: walletPanel;
+  }
+
+  .wallet__balance {
+    grid-area: balance;
+  }
+
+  .wallet__bgd_dashboard {
+    grid-area: bgdDashboard;
+  }
+
+  .bgd_dashboard__container {
+    width: 556px;
+    height: 161px;
+  }
+}

@@ -1,0 +1,55 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/fonts';
+
+%big-text-base {
+  font-family: $montserrat;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 110%;
+}
+
+.dashboard__lockedBlock {
+  border-bottom: .5px solid $middle;
+  padding-bottom: 10px;
+  width: 246px;
+  height: 61px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .dachboard__unlocked__h6 {
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .gray_text {
+    color: $middle;
+  }
+
+  .dashboard__lockedBlock__unlocked {
+    border-right: .5px solid $middle;
+
+    .dashboard__locked__count_white {
+      @extend %big-text-base;
+      color: $white;
+    }
+
+    .dashboard__locked__count_blue {
+      @extend %big-text-base;
+      color: $blue;
+    }
+  }
+
+  .dashboard__lockedBlock__locked {
+    
+    .dashboard__locked__count {
+      @extend %big-text-base;
+      color: $middle;
+    }
+  }
+}

@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-template-areas: 'wallet profile';
+  justify-content: flex-end;
 
   @include mobile_sm {
     
@@ -14,19 +15,19 @@
 
   .button {
     margin-right: 20px;
-  
+    width: 88px;
+
     @include mobile_sm {
       height: 27.41px;
-      width: 88px;
       margin-right: 0;
     }
   }
 
   .buttonSignIn {
+    width: 81px;
 
     @include mobile_sm {
       margin-right: 8px;
-      width: 81px;
     }
   }
 }

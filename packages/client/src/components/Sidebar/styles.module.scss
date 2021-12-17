@@ -9,6 +9,8 @@
   grid-template-areas: 'logo' 'main' 'footer';
   grid-template-rows: 78px auto 64px;
 
+  background-color: $dark;
+
   @include desktop_sm {
     display: none;
   }

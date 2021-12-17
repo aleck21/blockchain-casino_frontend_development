@@ -1,0 +1,33 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+@import '~@project/libs/assets/styles/variables';
+
+.item__container {
+  display: grid;
+  grid-template-columns: 100px 130px 94px;
+  border-bottom: .5px solid $middle;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  padding-top: 15px;
+
+  .item__currency {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 32px auto;
+    grid-column-gap: 10px;
+  }
+
+  .item__text {
+    font-size: 18px;
+    font-family: $helvetica;
+    font-weight: 500;
+    line-height: 140%;
+    color: $white;
+  }
+
+  .item__text_gray {
+    color: $middle;
+  }
+}

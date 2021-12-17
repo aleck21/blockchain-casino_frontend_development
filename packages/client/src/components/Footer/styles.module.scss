@@ -50,6 +50,12 @@
     grid-template-columns: 1fr 1fr 322px;
     
     @include desktop {
+      grid-template-areas: 'rate copyright';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 40px;
+    }
+
+    @include mobile_sm {
       grid-template-areas: 'rate' 'copyright';
       grid-template-columns: 1fr;
       grid-template-rows: .5fr 1fr;
