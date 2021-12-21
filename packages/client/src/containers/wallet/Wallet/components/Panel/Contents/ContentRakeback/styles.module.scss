@@ -1,0 +1,92 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.rakeback__container {
+  @include base_text;
+  color: $white;
+  font-size: 18px;
+
+  .rakeback__table_header {
+    display: grid;
+    grid-template-columns: 174px 90px 100px 101px;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .empty {
+      height: 20px;
+    }
+
+    .table_header__text {
+      p {
+        @include base_text;
+        font-size: 14px;
+        color: $middle;
+        text-align: left;
+      }
+    }
+  }
+
+  .last_table_row {
+    border-bottom: 0;
+  }
+
+  .middle_table_row {
+    border-bottom: .5px solid $middle;
+  }
+
+  .rakeback__table_row {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 174px 90px 100px 101px;
+    justify-content: space-between;
+    padding: 14px 0;    
+    
+    .coin__container {
+      display: grid;
+      justify-content: flex-start;
+      align-items: center;
+      grid-template-columns: 32px 52px;
+
+      .coinLogo {
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+  
+      .coinName {
+        p {
+          @include base_text;
+          font-size: 24px;
+          font-weight: 500;
+          color: $white;
+          padding-left: 8px;
+        }
+      }
+    }
+
+
+    .rakeback {
+      p {
+        @include base_text;
+        font-size: 18px;
+        font-weight: 500;
+        color: $white;
+        text-align: left;
+      }
+    }
+
+    .button {
+      height: 34px;
+      width: 101px;
+
+      .button_return {
+        background-color: $black;
+        font-size: 14px;
+        height: 34px;
+      }
+    }
+  }
+
+
+}

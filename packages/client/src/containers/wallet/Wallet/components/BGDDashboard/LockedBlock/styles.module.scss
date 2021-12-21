@@ -16,9 +16,16 @@
   padding-bottom: 10px;
   width: 246px;
   height: 61px;
-
+  grid-area: locked;
+  
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @include mobile_sm {
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
 
   .dachboard__unlocked__h6 {
     margin: 0;

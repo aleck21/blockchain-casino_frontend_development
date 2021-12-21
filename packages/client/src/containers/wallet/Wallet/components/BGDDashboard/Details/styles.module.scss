@@ -5,6 +5,7 @@
 
 .details__block {
   align-self: flex-end;
+  // grid-area: details;
 
   .details__block__text {
     @include base_text;

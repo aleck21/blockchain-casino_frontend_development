@@ -9,6 +9,11 @@
   align-items: flex-start;
   margin-top: 30px;
 
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
   .deposit__title {
     @include base_text;
     font-size: 14px;
@@ -18,7 +23,7 @@
 
   .deposit__textMode {
     position: relative;
-
+    
     input.deposit__textMode__input[type=text] {
       border: 0;
       outline: 0;
@@ -31,12 +36,31 @@
       font-size: 18px;
       font-weight: 500;
       border-radius: 15px;
+
+      @include mobile_sm {
+        width: calc(100% - 56px);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
     }
 
     .deposit__textMode__input__icon {
       position: absolute;
       top: 56px;
       right: 30px;
+
+      @include mobile_sm {
+        width: 56px;
+        height: 86px;
+        background-color: $black;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        display: grid;
+        align-items: center;
+        top: 29px;
+        right: 0;
+      }
 
       img {
         width: 24px;
@@ -47,6 +71,10 @@
 
   .deposit__QR_Mode {
     text-align: center;
+
+    @include mobile_sm {
+      margin: 20px auto 0 auto;
+    }
 
     img {
       width: 76px;

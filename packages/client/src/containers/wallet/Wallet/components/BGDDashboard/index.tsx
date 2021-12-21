@@ -11,7 +11,9 @@ export const BGDDashboard: React.FC = () => {
     <section className={cx(styles.dashboard__container)}>
       <DashboardTitle />
       <LockedBlock />
-      <Details />    
+      <div className={cx(styles.details__desktop)}>
+        <Details />    
+      </div>
       <Percentage />
     </section>
   );

@@ -3,6 +3,7 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Text } from '@project/libs/components';
+import { Details } from '../Details';
 
 export const DashboardTitle: React.FC = () => {
   const { t } = useTranslation('main');
@@ -15,6 +16,9 @@ export const DashboardTitle: React.FC = () => {
       <Text type='p' className={cx(styles.dashboard__text)}>
         {t('Enjoy the game while unlocking BGD to your wallet')}
       </Text>
+      <div className={cx(styles.dashboard__text__mobile__details)}>
+        <Details />
+      </div>
     </div>
   );
 }

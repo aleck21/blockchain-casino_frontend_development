@@ -13,6 +13,11 @@
   box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .6);
   position: relative;
 
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+    height: 116px;
+  }
+
   .active__container__otherBkg {
     z-index: 1;
 

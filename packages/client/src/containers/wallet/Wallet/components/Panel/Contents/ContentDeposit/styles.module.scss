@@ -1,14 +1,20 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/palette.scss";
 
-.panel__container {
-  width: 100%;
-  height: 100%;
+.contentDeposit__container {
   display: grid;
-  grid-template-rows: 36px 1fr;
-  grid-template-areas: 'tabs' 'content';
+  grid-template-areas: 
+    'titleChoose' 
+    'selectChoose'
+    'active'
+    'linkBonus'
+    'deposit'
+    'free';
+  grid-template-rows: 66px 96px 136px 29px 162px 40px;
+  width: 100%;
+  height: auto;
 
-  /* @include mobile_sm {
+  @include mobile_sm {
     grid-template-rows: repeat(6, auto);
     grid-template-areas: 
       'titleChoose'
@@ -18,5 +24,5 @@
       'deposit'
       'free';
     padding-bottom: 0px;
-  }*/
+  }
 }

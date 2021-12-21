@@ -3,6 +3,7 @@
 
 .linkBonus__container {
   grid-area: linkBonus;
+  margin-top: 10px;
 
   .linkBonus__text {
     @include base_text;
@@ -14,6 +15,11 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    @include mobile_sm {
+      text-align: left;
+      margin-top: 10px;
     }
   }
 }

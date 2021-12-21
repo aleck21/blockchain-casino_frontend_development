@@ -13,7 +13,24 @@
 
 .dashboard__container {
   display: grid;
+  grid-template-areas: 'title locked' 'details percentage';
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 70px 50px;
   justify-content: space-between;
+
+  @include mobile_sm {
+    grid-template-areas: 'title' 'locked' 'percentage';
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .details__desktop {
+    display: block;
+    grid-area: details;
+    align-self: flex-end;
+
+    @include mobile_sm {
+      display: none;
+    }
+  }
 }

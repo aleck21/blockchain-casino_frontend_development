@@ -11,26 +11,53 @@
   grid-template-rows: auto 161px;
   // grid-row-gap: px;
   grid-column-gap: 52px;
+
+  @include mobile_sm {
+    grid-template-areas: 'walletPanel' 'bgdDashboard' 'tabsMobile';
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 100%;
+  }
   
   .wallet__panel {
     grid-area: walletPanel;
 
     .wallet__panel__paper {
       width: 576px;
-      height: 585px;
+      height: auto; // 585px;
+
+      @include mobile_sm {
+        max-width: calc(100vw - 40px);
+        padding: 20px;
+        height: auto;
+      }
     }
   }
 
   .wallet__balance {
     grid-area: balance;
+
+    @include mobile_sm {
+      display: none;
+    }
   }
 
   .wallet__bgd_dashboard {
     grid-area: bgdDashboard;
+
+    @include mobile_sm {
+      margin-top: 30px;
+    }
+
   }
 
   .bgd_dashboard__container {
     width: 556px;
     height: 161px;
+    margin-top: 30px;
+
+    @include mobile_sm {
+      max-width: calc(100vw - 40px);
+      height: auto;
+    }
   }
 }

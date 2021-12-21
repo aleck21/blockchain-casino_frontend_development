@@ -1,20 +1,20 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/palette.scss";
 
-.choose__title {
-  grid-area: titleChoose;
-  height: 66px;
-  padding-top: 46px;
+.free__container {
+  grid-area: free;
+
+  margin: 20px auto 24px auto;
+  height: 20px;
 
   @include mobile_sm {
-    height: 40px;
-    padding-top: 0;
+    margin-top: 30px;
   }
 
-  .choose__title__text {
+  .free__text {
     @include base_text;
     font-size: 14px;
     color: $middle;
+    text-align: center;
   }
 }
-

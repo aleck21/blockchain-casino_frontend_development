@@ -5,9 +5,32 @@
 
 .dashboard__titleBlock {
   width: 220px;
+  grid-area: title;
+
+  @include mobile_sm {
+    width: 100%;
+    display: grid;
+    justify-self: center;
+  }
 
   .dashboard__titleBlock__h3 {
     margin-bottom: 10px;
+
+    @include mobile_sm {
+      text-align: center;
+    }
+  }
+
+  .dashboard__text__mobile__details {
+    display: none;
+
+    @include mobile_sm {
+      display: block;
+      width: max-content;
+      position: relative;
+      right: -200px;
+      top: -17px;
+    }
   }
 }
 
@@ -17,4 +40,10 @@
   color: $white;
   text-align: left;
   width: 160px;
+
+  @include mobile_sm {
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+  }
 }

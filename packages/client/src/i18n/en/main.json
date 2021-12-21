@@ -32,5 +32,15 @@
   "+100% BGD bonus for the next 100-200 USD deposit": "+100% BGD bonus for the next 100-200 USD deposit",
   "Use another bonus for the next deposit": "Use another bonus for the next deposit",
   "To deposit funds send them to the wallet": "To deposit funds send them to the wallet",
-  "Or use the QR code": "Or use the QR code"
+  "Or use the QR code": "Or use the QR code",
+  "Free": "Free",
+  "How much funds do you want to withdraw?": "How much funds do you want to withdraw?",
+  "To withdraw funds enter your wallet address in BSC": "To withdraw funds enter your wallet address in BSC",
+  "Withdraw funds": "Withdraw funds",
+  "My Rakeback": "My Rakeback",
+  "Max Rakeback": "Max Rakeback",
+  "Return": "Return",
+  "You swap": "You swap",
+  "Swap": "Swap",
+  "You will receive": "You will receive"
 }

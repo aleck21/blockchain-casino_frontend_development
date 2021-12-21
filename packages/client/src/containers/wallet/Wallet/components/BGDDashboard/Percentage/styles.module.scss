@@ -6,6 +6,7 @@
 .percentage__block {
   display: grid;
   align-self: flex-end;
+  grid-area: percentage;
 
   .percantage__title {
     @include base_text;

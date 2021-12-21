@@ -28,3 +28,7 @@ export { default as IconProfile } from './iconProfile.svg';
 export { default as IconNotification } from './iconNotification.svg';
 export { default as IconRoulette } from './iconRoulette.svg';
 export { default as IconVerification } from './iconVerification.svg';
+export { default as XrpColor} from './xrpLogoColor.svg';
+export { default as LiteCoinColor } from './liteCoinColor.svg';
+export { default as BitCoinCashColor } from './bitcoinCashColor.svg';
+export { default as ExchangeIcon } from './exchangeIcon.svg';

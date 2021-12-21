@@ -15,6 +15,16 @@
   grid-template-areas: 'select result';
   justify-items: flex-end;
 
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+    grid-template-columns: 1fr;
+    grid-template-areas: 'select' 'result';
+    background-color: transparent;
+    height: 126px;
+    padding: 0;
+    margin-top: 0;
+  }
+
   .select__chnageElement {
     grid-area: select;
     display: grid;
@@ -22,6 +32,13 @@
     align-items: center;
     grid-template-areas: 'icon currencyName type arrow';
     justify-content: flex-start;
+
+    @include mobile_sm {
+      border-radius: 15px;
+      background-color: $black;
+      padding: 30px;
+      width: 100%;
+    }
 
     .changeElement__icon {
       grid-area: icon;
@@ -36,6 +53,10 @@
       font-size: 18px;
       font-weight: 500;
       margin-left: 16px;
+
+      @include mobile_sm {
+        margin-left: 8px;
+      }
     }
 
     .changeElement__type {
@@ -45,6 +66,10 @@
       font-size: 18px;
       font-weight: 500;
       margin-left: 10px;
+
+      @include mobile_sm {
+        margin-left: 8px;
+      }
     }
 
     .changeElement__arrow {
@@ -63,6 +88,15 @@
     align-items: center;
     padding-left: 30px;
     width: max-content;
+
+    @include mobile_sm {
+      background-color: $dark;
+      padding-left: 0;
+      border: 0;
+      justify-content: flex-start;
+      width: 100%;
+      margin-top: 10px;
+    }
 
     .select__result__title {
       @include base_text;

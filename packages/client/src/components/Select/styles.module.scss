@@ -1,0 +1,73 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.select__container {
+  width: 516px;
+  display: grid;
+  grid-template-columns: 281px 235px;
+  height: 86px;
+  background-color: $black;
+  padding: 16px 30px;
+  border-radius: 15px;
+
+  .selectBlock {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+    grid-template-columns: auto 24px;
+    padding: 14px 0;
+    width: 281px;
+
+    border-right: .5px solid $middle;
+
+    .selectBlock__content {
+      display: grid;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .selectBlock__arrow {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+
+      img {
+        height: 24px;
+        width: 24px;
+      }
+
+      .arrow__up {
+        transform: rotate(-180deg);
+        transition: transform .5s;
+      }
+
+      .arrow__down {
+        transform: rotate(0deg);
+        transition: transform .5s;
+      }
+    }
+  }
+
+  .resultBlock {
+    padding-left: 30px;
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+    grid-template-columns: auto auto;
+
+    .resultBlock__title {
+      @include base_text;
+      color: $middle;
+      font-size: 14px;
+      padding-right: 12px;
+    }
+
+    .resultBlock__text {
+      @include base_text;
+      color: $white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+}

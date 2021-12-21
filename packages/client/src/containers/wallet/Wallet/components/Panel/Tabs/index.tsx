@@ -3,7 +3,11 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 import { TabItem } from './TabItem';
 
-export const Tabs: React.FC = () => {
+type TabsProps = {
+  selectTab: Function;
+}
+
+export const Tabs: React.FC<TabsProps> = ({ selectTab }) => {
   const [isActive, setIsActive] = useState({
     deposit: true,
     withdraw: false,
@@ -17,7 +21,8 @@ export const Tabs: React.FC = () => {
       withdraw: false,
       rakeback: false,
       exchange: false
-    })
+    });
+    selectTab('deposit');
   };
 
   const onWithdraw = () => {
@@ -26,7 +31,8 @@ export const Tabs: React.FC = () => {
       withdraw: true,
       rakeback: false,
       exchange: false
-    })
+    });
+    selectTab('withdraw');
   };
   
   const onRakeback = () => {
@@ -35,7 +41,8 @@ export const Tabs: React.FC = () => {
       withdraw: false,
       rakeback: true,
       exchange: false
-    })
+    });
+    selectTab('rakeback');
   };
 
   const onExchange = () => {
@@ -44,7 +51,8 @@ export const Tabs: React.FC = () => {
       withdraw: false,
       rakeback: false,
       exchange: true
-    })
+    });
+    selectTab('exchange');
   };
 
   return (
