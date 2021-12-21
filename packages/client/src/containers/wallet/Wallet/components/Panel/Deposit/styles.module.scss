@@ -1,0 +1,61 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.deposit__container {
+  grid-area: deposit;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+
+  .deposit__title {
+    @include base_text;
+    font-size: 14px;
+    color: $middle;
+    padding-bottom: 10px;
+  }
+
+  .deposit__textMode {
+    position: relative;
+
+    input.deposit__textMode__input[type=text] {
+      border: 0;
+      outline: 0;
+      background-color: $black;
+      color: $white;
+      padding: 30px;
+      height: 86px;
+      width: 364px;
+      @include base_text;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 15px;
+    }
+
+    .deposit__textMode__input__icon {
+      position: absolute;
+      top: 56px;
+      right: 30px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .deposit__QR_Mode {
+    text-align: center;
+
+    img {
+      width: 76px;
+      height: 76px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}

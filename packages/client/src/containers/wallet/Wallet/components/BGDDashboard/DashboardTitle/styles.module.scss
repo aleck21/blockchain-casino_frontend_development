@@ -12,7 +12,8 @@
 }
 
 .dashboard__text {
-  @include footer_text;
+  @include base_text;
+  font-size: 12px;
   color: $white;
   text-align: left;
   width: 160px;

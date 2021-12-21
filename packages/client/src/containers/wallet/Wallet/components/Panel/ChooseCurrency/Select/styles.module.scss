@@ -1,0 +1,81 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.select__container {
+  grid-area: selectChoose;
+  border-radius: 15px;
+  background-color: $black;
+  padding: 16px 30px;
+  height: 86px;
+  box-sizing: border-box;
+  width: 516px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 225px;
+  grid-template-areas: 'select result';
+  justify-items: flex-end;
+
+  .select__chnageElement {
+    grid-area: select;
+    display: grid;
+    grid-template-columns: 32px auto auto 24px;
+    align-items: center;
+    grid-template-areas: 'icon currencyName type arrow';
+    justify-content: flex-start;
+
+    .changeElement__icon {
+      grid-area: icon;
+      width: 32px;
+      height: 32px;
+    }
+
+    .changeElement__name {
+      grid-area: currencyName;
+      @include base_text;
+      color: $white;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 16px;
+    }
+
+    .changeElement__type {
+      grid-area: type;
+      @include base_text;
+      color: $middle;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+
+    .changeElement__arrow {
+      width: 24px;
+      height: 24px;
+      margin-left: 4px;
+    }
+  }
+
+  .select__result {
+    grid-area: result;
+    border-left: .5px solid $middle;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    width: max-content;
+
+    .select__result__title {
+      @include base_text;
+      font-size: 14px;
+      color: $middle;
+      padding-right: 16px;
+    }
+
+    .select__result__content {
+      @include base_text;
+      color: $white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

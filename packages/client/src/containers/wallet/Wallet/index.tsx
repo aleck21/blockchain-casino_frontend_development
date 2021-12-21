@@ -1,13 +1,14 @@
 import { FC } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
-import { Paper } from './components/Paper';
+import { Paper } from '../../../components/Paper';
 import { Text } from '@project/libs/components';
 import { TableGrid } from './components/TableGrid';
 import { BalanceItem } from './components/BalaceItem';
 import { content } from './contentDemo';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { BGDDashboard } from './components/BGDDashboard';
+import { Panel } from './components/Panel';
 
 const Wallet: FC = () => {
   const { t } = useTranslation('main');
@@ -19,8 +20,8 @@ const Wallet: FC = () => {
         <Text type='h2'>
           Wallet
         </Text>
-        <Paper>
-
+        <Paper className={cx(styles.wallet__panel__paper)}>
+          <Panel />
         </Paper>
       </div>
       <div className={cx(styles.wallet__balance)}>

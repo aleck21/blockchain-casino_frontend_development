@@ -1,0 +1,20 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.item_active {
+  border-bottom: 4px solid $blue;
+}
+
+.item_inactive {
+  border-bottom: 4px solid $dark;
+}
+
+.item__title {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+

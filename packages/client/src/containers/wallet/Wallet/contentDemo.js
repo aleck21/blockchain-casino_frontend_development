@@ -1,4 +1,4 @@
-import { BitcoinColor, BunnyCoinColor, EtheriumColor, ShibaInuShibColor, TetherUsdtColor } from "@project/libs/assets/images";
+import { BitcoinColor, BunnyCoinColor, EthereumColor, ShibaInuShibColor, TetherUsdtColor } from "@project/libs/assets/images";
 
 export const content = {
   balance: [
@@ -9,7 +9,7 @@ export const content = {
       countUSD: 1395
     },
     {
-      logo: EtheriumColor,
+      logo: EthereumColor,
       currency: 'ETH',
       countCoin: '0.00000009174',
       countUSD: 1395

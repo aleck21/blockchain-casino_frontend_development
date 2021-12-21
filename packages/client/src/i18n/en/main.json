@@ -22,5 +22,15 @@
   "Balance": "Balance",
   "BGD Dashboard": "BGD Dashboard",
   "Enjoy the game while unlocking BGD to your wallet": "Enjoy the game while unlocking BGD to your wallet",
-  "Details": "Details"
+  "Details": "Details",
+  "Deposit": "Deposit",
+  "Withdraw": "Withdraw",
+  "Rakeback": "Rakeback",
+  "Exchange": "Exchange",
+  "Choose currency that you want to deposit": "Choose currency that you want to deposit",
+  "Active Bonus": "Active Bonus",
+  "+100% BGD bonus for the next 100-200 USD deposit": "+100% BGD bonus for the next 100-200 USD deposit",
+  "Use another bonus for the next deposit": "Use another bonus for the next deposit",
+  "To deposit funds send them to the wallet": "To deposit funds send them to the wallet",
+  "Or use the QR code": "Or use the QR code"
 }

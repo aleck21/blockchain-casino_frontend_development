@@ -14,6 +14,11 @@
   
   .wallet__panel {
     grid-area: walletPanel;
+
+    .wallet__panel__paper {
+      width: 576px;
+      height: 585px;
+    }
   }
 
   .wallet__balance {
