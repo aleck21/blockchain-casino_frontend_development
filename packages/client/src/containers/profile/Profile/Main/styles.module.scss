@@ -1,0 +1,28 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.panel__main__container {
+  margin-top: 18px;
+  display: grid;
+  row-gap: 30px;
+
+  .panel__main__personal {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    column-gap: 30px;
+  }
+  
+  .panel__main__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 22px;
+    margin-top: 10px;
+  
+    .button {
+      background-color: $black;
+      width: 100%;
+    }
+  }
+
+}

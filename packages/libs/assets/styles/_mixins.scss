@@ -42,15 +42,22 @@ $defaultFlexBoxJustify: center;
   }
 }
 
+
+@mixin desktop {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+
 @mixin desktop_sm {
   @media screen and (max-width: 1024px) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media screen and (max-width: 980px) {
-    @content;
+@mixin laptop {
+  @media screen and (max-width: 1366px) {
+    
   }
 }
 

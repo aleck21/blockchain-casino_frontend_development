@@ -36,3 +36,6 @@ export { default as DepositIcon } from './depositIcon.svg';
 export { default as WithdrawIcon } from './withdrawIcon.svg';
 export { default as ExchangeIconTabs } from './exchangeIconTabs.svg';
 export { default as RakebackIcon }  from './rakebackIcon.svg';
+export { default as ChangePasswordIcon } from './changePasswordIcon.svg';
+export { default as LogOutIcon } from './logOutIcon.svg';
+export { default as AvatarDefault } from './avatarFrameDefault.svg';

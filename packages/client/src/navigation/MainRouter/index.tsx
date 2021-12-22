@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Route, Switch, Router } from 'react-router-dom';
 import { history } from '@project/libs/utils';
 import {
   Homepage,
 } from 'pages';
 import { WalletPage } from 'pages';
+import { ProfilePage } from 'pages/Profile';
 import { RouteLink } from '../../constants/routes';
 
 const MainRouter: FC = () => (
@@ -19,6 +20,11 @@ const MainRouter: FC = () => (
         path={RouteLink.wallet}
         exact
         component={WalletPage}
+      />
+      <Route
+        path={RouteLink.profile}
+        exact
+        component={ProfilePage}
       />
     </Switch>
   </Router>

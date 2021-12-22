@@ -1,9 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+import { Image } from '@project/libs/components';
 
 type ButtonProps = {
   text?: string;
+  icon?: string;
   onClick: Function;
   className?: string;
   disabled?: boolean;
@@ -15,7 +17,8 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   className,
   disabled = true,
-  type
+  type,
+  icon
 }) => {
   return(
     <div
@@ -27,7 +30,10 @@ export const Button: React.FC<ButtonProps> = ({
         disabled={disabled}
         onClick={() => onClick()}
       >
-        {text}
+        <div className={cx(styles.button__content)}>
+          {icon && <Image url={icon} />}
+          {text}
+        </div>
       </button>
     </div>
   );

@@ -25,6 +25,7 @@
 
   @include desktop {
     grid-template-rows: 64px auto 500px;
+    
   }
 
   @include mobile_sm {
