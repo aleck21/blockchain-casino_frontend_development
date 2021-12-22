@@ -7,16 +7,17 @@
   display: grid;
   grid-template-rows: 36px 1fr;
   grid-template-areas: 'tabs' 'content';
+  
+  .tabs_in_panel {
+    display: block;
+    @include mobile_sm {
+      position: absolute;
+      bottom: 0px;
 
-  /* @include mobile_sm {
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas: 
-      'titleChoose'
-      'selectChoose'
-      'active'
-      'linkBonus'
-      'deposit'
-      'free';
-    padding-bottom: 0px;
-  }*/
+    }
+  }
+
+  @include mobile_sm {
+    grid-template-rows: auto;
+  }
 }

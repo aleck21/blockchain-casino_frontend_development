@@ -12,6 +12,7 @@
   @include mobile_sm {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    width: calc(100vw - 80px);
   }
 
   .deposit__title {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from '@project/libs/components';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 

@@ -11,6 +11,10 @@
   height: 86px;
   width: 100%;
 
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
   .doubleInput__left {
     border-right: .5px solid $middle;
     display: grid;
@@ -32,7 +36,11 @@
     outline: 0;
     z-index: 10;
     position: relative;
-    top: -24px;
+    top: -26px;
+
+    @include mobile_sm {
+      width: 50%;
+    }
   }
 }
 

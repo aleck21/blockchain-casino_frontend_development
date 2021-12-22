@@ -12,6 +12,12 @@
     justify-content: space-between;
     margin-top: 40px;
 
+    @include mobile_sm {
+      margin-top: 0;
+      grid-template-columns: 86px 60px 60px 74px;
+      width: calc(100vw - 80px);
+    }
+
     .empty {
       height: 20px;
     }
@@ -39,7 +45,14 @@
     align-items: center;
     grid-template-columns: 174px 90px 100px 101px;
     justify-content: space-between;
-    padding: 14px 0;    
+    padding: 14px 0;   
+    
+    @include mobile_sm {
+      margin-top: 0;
+      grid-template-columns: 86px 60px 60px 74px;
+      width: calc(100vw - 80px);
+    }
+
     
     .coin__container {
       display: grid;
@@ -79,6 +92,10 @@
     .button {
       height: 34px;
       width: 101px;
+
+      @include mobile_sm {
+        width: 74px;
+      }
 
       .button_return {
         background-color: $black;

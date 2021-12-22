@@ -27,8 +27,14 @@ export const Select: React.FC<SelectProps> = ({
   return(
     <div className={cx(styles.select__container)}>
       <div className={cx(styles.selectBlock)}>
-        <div className={cx(styles.selectBlock__content)}>
-          {list[0].element}
+        <div className={cx(styles.selectBlock__content, open
+          ? styles.open : styles.hidden
+        )}>
+          {list.map((itemList) => (
+            <div className={cx(styles.content__item)}>
+              {itemList.element}
+            </div>
+          ))}
         </div>
         <div className={cx(styles.selectBlock__arrow)} onClick={openList}>
           <Image

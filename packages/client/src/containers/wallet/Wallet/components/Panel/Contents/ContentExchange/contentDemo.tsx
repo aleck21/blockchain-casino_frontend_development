@@ -1,5 +1,5 @@
 import { BitcoinColor, EthereumColor } from '@project/libs/assets/images';
-import { SelectItem } from './item';
+import { SelectItem } from 'components/SelectItem';
 
 const listDemo = [
   {
@@ -7,6 +7,12 @@ const listDemo = [
     name: 'Bitcoin',
     shortName: 'BTC',
     balance: 34382.0052
+  },
+  {
+    logo: EthereumColor,
+    name: 'Ethereum',
+    shortName: 'ETH',
+    balance: 1382.0052
   }
 ];
 

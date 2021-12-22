@@ -3,7 +3,9 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { Text } from '@project/libs/components';
-import { Select } from './Select';
+// import { Select } from './Select';
+import { Select } from 'components/Select';
+import { SelectItem } from 'components/SelectItem';
 import { BinaceCoinColor, BitcoinColor, EthereumColor } from '@project/libs/assets/images';
 
 export const ChooseCurrency: React.FC = () => {
@@ -11,24 +13,33 @@ export const ChooseCurrency: React.FC = () => {
   
   const dataDemo = [
     {
-      icon: BinaceCoinColor,
-      type: 'BNB',
+      logo: BinaceCoinColor,
+      shortName: 'BNB',
       name: 'Binance Coin',
       balance: '34,382.0052'
     },
     {
-      icon: BitcoinColor,
-      type: 'BTC',
+      logo: BitcoinColor,
+      shortName: 'BTC',
       name: 'Bitcoin',
       balance: '34,382.0053'
     },
     {
-      icon: EthereumColor,
-      type: 'ETH',
+      logo: EthereumColor,
+      shortName: 'ETH',
       name: 'Ethereum',
       balance: '34,382.0054'
     },
   ];
+
+  const list = dataDemo.map((item, key) => {
+    return {
+      element: (
+        <SelectItem {...item} key={key} />
+      ),
+      result: item.balance
+    }
+  });
 
   return (
     <>
@@ -37,7 +48,7 @@ export const ChooseCurrency: React.FC = () => {
           {t('Choose currency that you want to deposit')}
         </Text>
       </div>
-      <Select data={dataDemo} />
+      <Select list={list} />
     </>
   );
 };

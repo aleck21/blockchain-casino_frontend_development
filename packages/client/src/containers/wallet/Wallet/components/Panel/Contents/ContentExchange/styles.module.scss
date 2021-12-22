@@ -41,10 +41,19 @@
     margin-top: 12px;
     margin-bottom: 18px;
 
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+      grid-template-columns: 50px 1fr;
+    }
+
     .arrows__line {
       height: 1px;
       background-color: $middle;
       width: 446px;
+
+      @include mobile_sm {
+        width: calc(100vw - 150px);
+      }
     }
 
     .arrows__icon {

@@ -14,8 +14,9 @@
 
   @include mobile_sm {
     grid-template-areas: 'walletPanel' 'bgdDashboard' 'tabsMobile';
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: auto auto 112px;
     grid-template-columns: 100%;
+    height: auto;
   }
   
   .wallet__panel {
@@ -45,7 +46,7 @@
     grid-area: bgdDashboard;
 
     @include mobile_sm {
-      margin-top: 30px;
+      // margin-top: 30px;
     }
 
   }

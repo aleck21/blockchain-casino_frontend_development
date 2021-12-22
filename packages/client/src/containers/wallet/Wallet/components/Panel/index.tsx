@@ -5,7 +5,7 @@ import { Tabs } from './Tabs';
 import { ContentDeposit } from './Contents/ContentDeposit';
 import { ContentWithdraw } from './Contents/ContentWithdraw';
 import { ContentRakeback } from './Contents/ContentRakeback';
-import { ContentExchange } from './Contents/ContanrExchange';
+import { ContentExchange } from './Contents/ContentExchange';
 
 export const Panel: React.FC = () => {
   const [tab, setTab] = useState('deposit');
@@ -16,7 +16,9 @@ export const Panel: React.FC = () => {
 
   return (
     <section className={cx(styles.panel__container)}>
-      <Tabs selectTab={selectTab} />
+      <div className={cx(styles.tabs_in_panel)}>
+        <Tabs selectTab={selectTab} />
+      </div>
       {(tab === 'deposit') && <ContentDeposit />}
       {(tab === 'withdraw') && <ContentWithdraw />}
       {(tab === 'rakeback') && <ContentRakeback />}

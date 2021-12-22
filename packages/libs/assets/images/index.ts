@@ -32,3 +32,7 @@ export { default as XrpColor} from './xrpLogoColor.svg';
 export { default as LiteCoinColor } from './liteCoinColor.svg';
 export { default as BitCoinCashColor } from './bitcoinCashColor.svg';
 export { default as ExchangeIcon } from './exchangeIcon.svg';
+export { default as DepositIcon } from './depositIcon.svg';
+export { default as WithdrawIcon } from './withdrawIcon.svg';
+export { default as ExchangeIconTabs } from './exchangeIconTabs.svg';
+export { default as RakebackIcon }  from './rakebackIcon.svg';
