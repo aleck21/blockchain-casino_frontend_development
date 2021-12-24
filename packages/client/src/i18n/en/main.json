@@ -44,5 +44,19 @@
   "Swap": "Swap",
   "You will receive": "You will receive",
   "Hide my personal data": "Hide my personal data",
-  "Enable 2FA": "Enable 2FA"
+  "Enable 2FA": "Enable 2FA",
+  "Membership level progress": "Membership level progress",
+  "Statistics": "Statistics",
+  "Transactions": "Transactions",
+  "Collect rewards": "Collect rewards",
+  "Activate new promocode": "Activate new promocode",
+  "Promo code": "Promo code",
+  "Your promo code": "Your promo code",
+  "You will receive:": "You will receive:",
+  "Classic dice is a game, where a user can choose a number (let it be X) between 0 and M, where M is max dice mean (in BC.Game it’s 100), and make a bet that the next generated random number will be greater or less than X. Using X and the user's prediction, the system will calculate the user's win chance (P) and victory": "Classic dice is a game, where a user can choose a number (let it be X) between 0 and M, where M is max dice mean (in BC.Game it’s 100), and make a bet that the next generated random number will be greater or less than X. Using X and the user's prediction, the system will calculate the user's win chance (P) and victory",
+  "Use promo code": "Use promo code",
+  "Reset": "Reset",
+  "Accept Password": "Accept Password",
+  "New Password": "New Password",
+  "Old Password": "Old Password"
 }

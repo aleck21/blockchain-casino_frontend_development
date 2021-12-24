@@ -2,20 +2,32 @@ import React, { useState } from 'react';
 import { Text } from '@project/libs/components';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+import { useTranslation } from '@project/libs/utils/i18n';
 
 type InputProps = {
   label?: string;
   className?: string;
+  classNameButton?: string;
+  classNameContainer?: string;
+  classNameLabel?: string;
   defaultValue?: string;
   name?: string;
+  reset?: boolean;
+  resetContent?: string | Element | React.ReactNode;
 }
 
 export const TextInput: React.FC<InputProps> = ({
   label,
   className,
+  classNameButton,
+  classNameContainer,
+  classNameLabel,
   defaultValue,
-  name
+  name,
+  reset = false,
+  resetContent
 }) => {
+  const { t } = useTranslation('main');
   const [value, setValue] = useState(defaultValue);
 
   const onChangeInput = (e: any) => {
@@ -26,17 +38,31 @@ export const TextInput: React.FC<InputProps> = ({
   return(
     <div className={cx(styles.input__container)}>
       {label &&
-        <Text type='p' className={cx(styles.input__text__label)}>
+        <Text
+          type='p'
+          className={cx(styles.input__text__label, classNameLabel)}
+        >
           {label}
         </Text>
       }
-      <input
-        type='text'
-        value={value}
-        className={cx(styles.input__body, className)}
-        onChange={onChangeInput}
-        name={name}
-      />
+      <div className={cx(classNameContainer)}>
+        <input
+          type='text'
+          value={value}
+          className={cx(styles.input__body, className)}
+          onChange={onChangeInput}
+          name={name}
+        />
+        {reset && 
+          <button
+            type='reset'
+            className={cx(classNameButton)}
+            onClick={() => setValue('')}
+          >
+            {resetContent || t('Reset')}
+          </button>
+        }
+      </div>
     </div>
   );
 }

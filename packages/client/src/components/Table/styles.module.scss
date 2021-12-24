@@ -1,0 +1,42 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.table__container {
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+
+  .table__head__row {
+    border: 0;
+
+    .table__head__td {
+      text-align: left;
+      padding: 10px 0;
+      @include base_text;
+      color: $middle;
+      font-size: 12px;
+    }
+  }
+
+  .table__row {
+
+    .table__td {
+      border: 0;
+      @include base_text;
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: .5px solid $middle;
+      padding: 18px 0;
+
+      span {
+        @include base_text;
+      }
+
+      p {
+        @include base_text;
+      }
+    }
+  }
+
+}

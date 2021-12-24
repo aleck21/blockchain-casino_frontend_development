@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import cx from 'classnames';
 import { Main } from './Main';
 import { Footer } from './Footer';
@@ -10,9 +10,9 @@ import styles from './styles.module.scss';
 
 export const Sidebar: FC = () => {
   const { t } = useTranslation('main');
-  const { isUser } = useUser();
-  console.log(isUser);
-  console.log(t('Hello'));
+  // const { isUser } = useUser();
+  //console.log(isUser);
+  //console.log(t('Hello'));
 
   return (
     <aside className={cx(styles.container)}>

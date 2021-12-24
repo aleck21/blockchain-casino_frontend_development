@@ -37,3 +37,11 @@
   }
 }
 
+.no_scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+.scroll {
+  overflow: auto;
+}

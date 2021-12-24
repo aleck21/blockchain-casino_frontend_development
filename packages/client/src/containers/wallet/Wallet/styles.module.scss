@@ -7,10 +7,9 @@
   display: grid;
   grid-template-areas: 'walletPanel balance'
     'walletPanel bgdDashboard';
-  grid-template-columns: 576px 556px;  
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 161px;
-  // grid-row-gap: px;
-  grid-column-gap: 52px;
+  grid-column-gap: 50px;
 
   @include mobile_sm {
     grid-template-areas: 'walletPanel' 'bgdDashboard' 'tabsMobile';
@@ -23,8 +22,8 @@
     grid-area: walletPanel;
 
     .wallet__panel__paper {
-      width: 576px;
-      height: auto; // 585px;
+      width: 100%;
+      height: auto;
 
       @include mobile_sm {
         max-width: calc(100vw - 40px);
@@ -44,15 +43,10 @@
 
   .wallet__bgd_dashboard {
     grid-area: bgdDashboard;
-
-    @include mobile_sm {
-      // margin-top: 30px;
-    }
-
   }
 
   .bgd_dashboard__container {
-    width: 556px;
+    width: 100%;
     height: 161px;
     margin-top: 30px;
 

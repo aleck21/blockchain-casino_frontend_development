@@ -11,6 +11,16 @@
     grid-template-columns: 100px auto;
     align-items: center;
     column-gap: 30px;
+
+    @include mobile_sm {
+      grid-template-columns: 1fr;
+    }
+
+    .personal__avatar {
+      @include mobile_sm {
+        display: none;
+      }
+    }
   }
   
   .panel__main__buttons {

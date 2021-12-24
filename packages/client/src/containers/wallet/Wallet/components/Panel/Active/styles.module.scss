@@ -6,7 +6,7 @@
   border-radius: 15px;
   background-image: linear-gradient(180deg, $blue 0%, $blue1 100%);
   margin-top: 30px;
-  width: 516px;
+  width: 100%; //516px;
   height: 96px;
   display: grid;
   align-items: center;
@@ -22,7 +22,7 @@
     z-index: 1;
 
     .active__container__otherBkg__image {
-      max-width: 516px; 
+      max-width: 100%; //516px; 
 
       @include mobile_sm {
         display: none;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { TextInput } from 'components/TextInput';
@@ -7,11 +7,18 @@ import { Button } from 'components/Button';
 import { AvatarDefault, ChangePasswordIcon, LogOutIcon } from '@project/libs/assets/images';
 import { Image } from '@project/libs/components';
 import { SwitchPanel } from './SwitchPanel';
+import { ModalContext } from 'context/modalOpen';
+
+export const avatarDemo = AvatarDefault;
 
 export const Main: React.FC = () => {
   const { t } = useTranslation('main');
+  const { openModal, setContentModal } = useContext(ModalContext);
 
-  const avatarDemo = AvatarDefault;
+  const changePassword = () => {
+    setContentModal('changePassword');
+    openModal();
+  }
 
   return(
     <div className={cx(styles.panel__main__container)}>
@@ -38,7 +45,7 @@ export const Main: React.FC = () => {
         <Button
           text={t('Change password')}
           icon={ChangePasswordIcon}
-          onClick={() => {}}
+          onClick={changePassword}
           className={cx(styles.button)}
         />
         <Button

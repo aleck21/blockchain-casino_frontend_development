@@ -5,7 +5,7 @@
 
 .item__container {
   display: grid;
-  grid-template-columns: 100px 130px 94px;
+  grid-template-columns: .77fr  1fr .72fr; // 100px 130px 94px;
   border-bottom: .5px solid $middle;
   justify-content: space-between;
   align-items: center;

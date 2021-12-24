@@ -1,20 +1,24 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import cx from 'classnames';
 import { About } from './About';
 import { Links } from './Links';
 import { Currencies } from './Currencies';
 import { Contacts } from './Contacts';
 import { Rate } from './Rate';
-// import { useTranslation } from '@project/libs/utils/i18n';
 import styles from './styles.module.scss';
 import { Copyright } from './Copyright';
+import { ModalContext } from 'context/modalOpen';
 
-export const Footer: FC = () =>
-// const { t } = useTranslation('main');
+export const Footer: FC = () => {
+  const { modal } = useContext(ModalContext);
 
-  (
+  return(
     <footer className={cx(styles.container)}>
-      <div className={cx(styles.footer__main)}>
+      <div
+        className={cx(styles.footer__main,
+          modal ? styles.on_blur : styles.no_blur
+        )}
+      >
         <About />
         <Links />
         <Currencies />
@@ -27,3 +31,5 @@ export const Footer: FC = () =>
       </div>
     </footer>
   );
+}
+  

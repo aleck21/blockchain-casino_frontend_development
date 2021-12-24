@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { TabItemMobile } from './TabItemMobile';
@@ -8,74 +8,34 @@ import {
   RakebackIcon,
   WithdrawIcon
 } from '@project/libs/assets/images';
+import { WalletTabsContext } from 'context/walletTabs';
 
 export const TabsMobile: React.FC = () => {
-  const [isActive, setIsActive] = useState({
-    deposit: true,
-    withdraw: false,
-    rakeback: false,
-    exchange: false
-  });
-  
-  const onDeposit = () => {
-    setIsActive({
-      deposit: true,
-      withdraw: false,
-      rakeback: false,
-      exchange: false
-    });
-  };
-
-  const onWithdraw = () => {
-    setIsActive({
-      deposit: false,
-      withdraw: true,
-      rakeback: false,
-      exchange: false
-    });
-  };
-  
-  const onRakeback = () => {
-    setIsActive({
-      deposit: false,
-      withdraw: false,
-      rakeback: true,
-      exchange: false
-    });
-  };
-
-  const onExchange = () => {
-    setIsActive({
-      deposit: false,
-      withdraw: false,
-      rakeback: false,
-      exchange: true
-    });
-  };
+  const { tabs } = useContext(WalletTabsContext);
 
   return (
     <nav className={cx(styles.tabs__container__mobile)}>
       <TabItemMobile
-        isActive={isActive.deposit}
-        onClick={onDeposit}
+        isActive={tabs.deposit}
+        tab='deposit'
         title='Deposit'
         icon={DepositIcon}
       />
       <TabItemMobile
-        isActive={isActive.withdraw}
-        onClick={onWithdraw}
+        isActive={tabs.withdraw}
+        tab='withdraw'
         title='Withdraw'
         icon={WithdrawIcon}
       />
       <TabItemMobile
-        isActive={isActive.exchange}
-        onClick={onExchange}
+        isActive={tabs.exchange}
+        tab='exchange'
         title='Exchange'
         icon={ExchangeIconTabs}
       />
       <TabItemMobile
-        isActive={isActive.rakeback}
-        onClick={onRakeback}
+        isActive={tabs.rakeback}
+        tab='rakeback'
         title='Rakeback'
         icon={RakebackIcon}
       />

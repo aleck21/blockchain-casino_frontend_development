@@ -3,7 +3,6 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { Text } from '@project/libs/components';
-// import { Select } from './Select';
 import { Select } from 'components/Select';
 import { SelectItem } from 'components/SelectItem';
 import { BinaceCoinColor, BitcoinColor, EthereumColor } from '@project/libs/assets/images';

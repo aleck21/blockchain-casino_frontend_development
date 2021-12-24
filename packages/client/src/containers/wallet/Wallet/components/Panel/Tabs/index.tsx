@@ -1,80 +1,32 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { TabItem } from './TabItem';
+import { WalletTabsContext } from 'context/walletTabs';
 
-type TabsProps = {
-  selectTab: Function;
-}
-
-export const Tabs: React.FC<TabsProps> = ({ selectTab }) => {
-  const [isActive, setIsActive] = useState({
-    deposit: true,
-    withdraw: false,
-    rakeback: false,
-    exchange: false
-  });
+export const Tabs: React.FC = () => {
+  const { tabs } = useContext(WalletTabsContext);
   
-  const onDeposit = () => {
-    setIsActive({
-      deposit: true,
-      withdraw: false,
-      rakeback: false,
-      exchange: false
-    });
-    selectTab('deposit');
-  };
-
-  const onWithdraw = () => {
-    setIsActive({
-      deposit: false,
-      withdraw: true,
-      rakeback: false,
-      exchange: false
-    });
-    selectTab('withdraw');
-  };
-  
-  const onRakeback = () => {
-    setIsActive({
-      deposit: false,
-      withdraw: false,
-      rakeback: true,
-      exchange: false
-    });
-    selectTab('rakeback');
-  };
-
-  const onExchange = () => {
-    setIsActive({
-      deposit: false,
-      withdraw: false,
-      rakeback: false,
-      exchange: true
-    });
-    selectTab('exchange');
-  };
-
   return (
     <nav className={cx(styles.tabs__container)}>
       <TabItem
-        isActive={isActive.deposit}
-        onClick={onDeposit}
+        isActive={tabs.deposit}
+        tab='deposit'
         title='Deposit'
       />
       <TabItem
-        isActive={isActive.withdraw}
-        onClick={onWithdraw}
+        isActive={tabs.withdraw}
+        tab='withdraw'
         title='Withdraw'
       />
       <TabItem
-        isActive={isActive.rakeback}
-        onClick={onRakeback}
+        isActive={tabs.rakeback}
+        tab='rakeback'
         title='Rakeback'
       />
       <TabItem
-        isActive={isActive.exchange}
-        onClick={onExchange}
+        isActive={tabs.exchange}
+        tab='exchange'
         title='Exchange'
       />
     </nav>

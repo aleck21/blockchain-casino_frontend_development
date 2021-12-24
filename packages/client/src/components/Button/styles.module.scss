@@ -4,6 +4,7 @@
 
 .button__container {
   width: 100%;
+  display: grid;
 
   .button__body {
     height: 53px;
@@ -19,6 +20,9 @@
     font-size: 14px;
     line-height: 17px;
     background-color: $blue;
+    &:hover {
+      cursor: pointer;
+    }
 
     .button__content {
       display: grid;

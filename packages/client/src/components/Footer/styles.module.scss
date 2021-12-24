@@ -78,5 +78,13 @@
   grid-area: space;
 }
 
+.on_blur {
+  filter: blur(20px);
+  transition: .25s filter;
+}
 
+.no_blur {
+  filter: blur(0px);
+  transition: .25s filter;
+}
 

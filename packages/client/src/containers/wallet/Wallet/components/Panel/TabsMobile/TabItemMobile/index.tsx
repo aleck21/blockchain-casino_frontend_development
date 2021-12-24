@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { Text, Image } from '@project/libs/components';
+import { WalletTabsContext } from 'context/walletTabs';
 
 type ItemProps = {
   isActive: boolean;
   title: string;
   icon: string;
-  onClick: CallableFunction;
+  tab: any;
 };
 
 export const TabItemMobile: React.FC<ItemProps> = ({
   isActive,
   title,
   icon,
-  onClick
+  tab
 }) => {
   const { t } = useTranslation('main');
   
-  const onChange = () => {
-    onClick();
-  }
+  const {
+    onDeposit,
+    onWithdraw,
+    onRakeback,
+    onExchange
+  } = useContext(WalletTabsContext);
+
+  const type: any = {
+    deposit: onDeposit,
+    withdraw: onWithdraw,
+    rakeback: onRakeback,
+    exchange: onExchange
+  };
 
   return (
     <div
       className={cx(styles.item__container,
         isActive ? styles.item_active : styles.item_inactive
       )}
-      onClick={onChange}
+      onClick={type[tab]}
     >
       <Image url={icon} />
       <Text type='h6' className={cx(styles.item__title)}>

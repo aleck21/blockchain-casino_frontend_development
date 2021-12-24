@@ -1,0 +1,36 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.progress__container {
+  width: 100%;
+  background-color: $black;
+  border-radius: 12px;
+  height: 33px;
+  position: relative;
+
+  .progress__level {
+    background-image: linear-gradient(to right, $blue1 0%, $blue 100%);
+    height: 33px;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .progress__text {
+    width: 100%;
+    height: 33px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    
+    p {
+      text-align: center;
+      @include base_text;
+      font-size: 16px;
+      font-weight: 500;
+      color: $white;
+      z-index: 50;
+    }
+  }
+}

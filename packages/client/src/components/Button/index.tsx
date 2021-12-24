@@ -6,7 +6,7 @@ import { Image } from '@project/libs/components';
 type ButtonProps = {
   text?: string;
   icon?: string;
-  onClick: Function;
+  onClick: any;
   className?: string;
   disabled?: boolean;
   type?: 'submit' | 'reset' | 'button';
@@ -24,17 +24,18 @@ export const Button: React.FC<ButtonProps> = ({
     <div
       className={cx(styles.button__container)}
     >
-      <button
+      <div
         className={cx(styles.button__body, className)}
-        type={type || 'submit'}
-        disabled={disabled}
-        onClick={() => onClick()}
+        onClick={onClick}
+        // type={type || 'submit'}
+        // disabled={disabled}
+        // onClick={onClick}
       >
         <div className={cx(styles.button__content)}>
           {icon && <Image url={icon} />}
           {text}
         </div>
-      </button>
+      </div>
     </div>
   );
 };

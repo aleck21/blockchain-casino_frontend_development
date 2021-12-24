@@ -1,6 +1,6 @@
-import React, { FC, useCallback } from 'react';
+import { FC } from 'react';
 import cx from 'classnames';
-import { useUser } from 'hooks';
+// import { useUser } from 'hooks';
 import { useTranslation } from 'i18n';
 import styles from './styles.module.scss';
 import { Logo } from './Logo';
@@ -13,7 +13,7 @@ import { HeaderContentNotUser } from './HeaderContentNotUser';
 export const Header: FC = () => {
   const { t } = useTranslation('main');
   // const { isUser } = useUser();
-  const isUser = false;
+  const isUser = true;
 
   return (
     <header className={cx(styles.container)}>

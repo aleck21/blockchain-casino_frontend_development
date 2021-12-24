@@ -7,15 +7,13 @@ import { useTranslation } from '@project/libs/utils/i18n';
 
 type SwitchItemProps = {
   text: string;
-  key: number | string;
 }
 
 const SwitchItem: React.FC<SwitchItemProps> = ({
-  text,
-  key
+  text
 }) => {
   return(
-    <div className={cx(styles.switch__item__container)} key={key}>
+    <div className={cx(styles.switch__item__container)}>
       <Text type='p'>
         {text}
       </Text>

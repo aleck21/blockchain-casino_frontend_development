@@ -16,8 +16,9 @@ export const Toggle: React.FC = () => {
       <div className={cx(styles.toggle__green__layer,
         state ? styles.on : styles.off  
       )}>
-        <div className={cx(styles.toggle__element)}>
-        </div>
+        <div className={cx(styles.toggle__element,
+          state ? styles.element_on : styles.element_off
+        )} />
       </div>
     </div>
   );
