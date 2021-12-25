@@ -10,10 +10,14 @@ export const ButtonBlock: React.FC = () => {
   const { t } = useTranslation('main');
   const { content, openModal, setContentModal } = useContext(ModalContext);
 
-  const setModal = () => {
+  const openPromocode = () => {
     setContentModal('promocode');
     openModal();
-    console.log(content)
+  }
+
+  const openCollectRewards = () => {
+    setContentModal('collectRewards');
+    openModal();
   }
 
   return(
@@ -21,12 +25,12 @@ export const ButtonBlock: React.FC = () => {
       <Button
         text={t('Collect rewards')}
         icon={RewardsIcon}
-        onClick={() => {}}
+        onClick={openCollectRewards}
         className={cx(styles.left__button)}
       />
       <Button
         text={t('Activate new promocode')}
-        onClick={setModal}
+        onClick={openPromocode}
         className={cx(styles.right__button)}
       />
     </div>

@@ -28,12 +28,12 @@ const MainLayout = ({
           >
           <Header />
           <Sidebar />
-            <Main>
-              {children}
-            </Main>
-            <Footer />
-          <ModalWindow />
+          <Main>
+            {children}
+          </Main>
+          <Footer />
         </div>
+        <ModalWindow />
       </NavigationProvider>
     </ModalProvider>
   )

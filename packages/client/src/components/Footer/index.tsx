@@ -24,7 +24,11 @@ export const Footer: FC = () => {
         <Currencies />
         <Contacts />
       </div>
-      <div className={cx(styles.footer__bottom)}>
+      <div
+        className={cx(styles.footer__bottom,
+          modal ? styles.on_blur : styles.no_blur
+        )}
+      >
         <div className={cx(styles.footer__space)} />
         <Rate rate={47377.22} />
         <Copyright />

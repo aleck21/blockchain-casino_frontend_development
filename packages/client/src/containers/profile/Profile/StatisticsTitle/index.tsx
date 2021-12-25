@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Text } from '@project/libs/components';
 import { Button } from 'components/Button';
+import { ModalContext } from 'context/modalOpen';
 
 export const StatisticsTitle: React.FC = () => {
   const { t } = useTranslation('main');
+  const { setContentModal, openModal } = useContext(ModalContext);
+
+  const showStatisstics = () => {
+    setContentModal('statistics');
+    openModal();
+  }
 
   return(
     <div className={cx(styles.title__container)}>
@@ -15,7 +22,7 @@ export const StatisticsTitle: React.FC = () => {
       </Text>
       <Button
         text={t('Transactions')}
-        onClick={() => {}}
+        onClick={showStatisstics}
         className={cx(styles.transaction__button)}
       />
     </div>

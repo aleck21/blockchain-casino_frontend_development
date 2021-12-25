@@ -1,0 +1,39 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.statistics__container {
+  
+  .statistics__head {
+    display: grid;
+    align-items: flex-start;
+    border-bottom: .5px solid $middle;
+    grid-template-columns: 1fr 24px;
+    padding: 24px 25px 0 40px;
+
+
+    .statistics__tabs {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 70px;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      .item__tab {
+        @include base_text;
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        width: max-content;
+        padding-bottom: 10px;
+      }
+
+      .active {
+        border-bottom: 4px solid $blue;
+      }
+
+      .enactive {
+        border-bottom: 4px solid transparent;
+      }
+    }
+  }
+}

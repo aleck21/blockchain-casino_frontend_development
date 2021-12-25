@@ -45,3 +45,8 @@ export { default as RewardsIcon } from './rewardsIcon.svg';
 export { default as ArrowWhite } from './arrowWhite.svg';
 export { default as CloseIcon } from './closeIcon.svg';
 export { default as HidPasswordIcon } from './hidPasswordIcon.svg';
+export { default as RewardBkgGreen } from './rewardBackgroundGreen.svg';
+export { default as RewardBkgBlue } from './rewardBackgroundBlue.svg';
+export { default as RewardBkgGold } from './rewardBackgroundGold.svg';
+export { default as RewardBkgGray } from './rewardBackgroundGray.svg';
+export { default as CheckIcon } from './checkIcon.svg';

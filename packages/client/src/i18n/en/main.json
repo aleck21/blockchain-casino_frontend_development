@@ -49,6 +49,7 @@
   "Statistics": "Statistics",
   "Transactions": "Transactions",
   "Collect rewards": "Collect rewards",
+  "Collect Rewards": "Collect Rewards",
   "Activate new promocode": "Activate new promocode",
   "Promo code": "Promo code",
   "Your promo code": "Your promo code",
@@ -58,5 +59,15 @@
   "Reset": "Reset",
   "Accept Password": "Accept Password",
   "New Password": "New Password",
-  "Old Password": "Old Password"
+  "Old Password": "Old Password",
+  "Bets": "Bets",
+  "Total Wins": "Total Wins",
+  "Total Bets": "Total Bets",
+  "Total Won": "Total Won",
+  "Total Wagered": "Total Wagered",
+  "Currency": "Currency",
+  "Win": "Win",
+  "Bet": "Bet",
+  "Won": "Won",
+  "Wagered": "Wagered"
 }
