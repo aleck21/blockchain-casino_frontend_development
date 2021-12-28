@@ -3,8 +3,8 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { Text } from '@project/libs/components';
-import { Select } from 'components/Select';
-import { SelectItem } from 'components/SelectItem';
+import { SelectWithResult } from 'components/SelectWithResult';
+import { SelectItem } from 'components/SelectWithResult/SelectItem';
 import { BinaceCoinColor, BitcoinColor, EthereumColor } from '@project/libs/assets/images';
 
 export const ChooseCurrency: React.FC = () => {
@@ -47,7 +47,7 @@ export const ChooseCurrency: React.FC = () => {
           {t('Choose currency that you want to deposit')}
         </Text>
       </div>
-      <Select list={list} />
+      <SelectWithResult list={list} />
     </>
   );
 };

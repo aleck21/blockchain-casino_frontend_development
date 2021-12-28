@@ -7,11 +7,18 @@
   align-items: center;
   margin-bottom: 10px;
 
-  .title__text {
-    text-align: center;
-    color: $white;
-    font-weight: 500;
+  .title__text__box {
     justify-self: start;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .title__text {
+      text-align: center;
+      color: $white;
+      font-weight: 500;
+    }
   }
 
   .transaction__button {

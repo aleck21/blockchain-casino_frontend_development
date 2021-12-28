@@ -2,12 +2,13 @@
 @import "~@project/libs/assets/styles/palette.scss";
 
 .statistics__container {
-  
+  width: 860px;
+
   .statistics__head {
     display: grid;
     align-items: flex-start;
     border-bottom: .5px solid $middle;
-    grid-template-columns: 1fr 24px;
+    grid-template-columns: 1fr;
     padding: 24px 25px 0 40px;
 
 
@@ -25,6 +26,10 @@
         font-weight: 500;
         width: max-content;
         padding-bottom: 10px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .active {

@@ -1,0 +1,35 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.bill__container {
+  padding: 22px 40px 34px 40px;
+  display: grid;
+  grid-template-columns: 152px 605px;
+  column-gap: 20px;
+
+  .left__column {
+    display: grid;
+    row-gap: 20px;
+
+    .box {
+      border-radius: 10px;
+      border: .5px solid $middle;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: Montserrat, sans;
+      text-align: center;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      color: $white;
+      height: 44px;
+    }
+
+    .black__box {
+      background-color: $black;
+      border: 0;
+      color: $blue;
+    }
+  }
+
+}

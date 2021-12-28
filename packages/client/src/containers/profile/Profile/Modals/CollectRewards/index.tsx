@@ -46,7 +46,6 @@ export const CollectRewards: React.FC = () => {
         >
           {t('Collect Rewards')}
         </Text>
-        <Close />
       </div>
       <div className={cx(styles.collectRewards__tiles__box)}>
         <article className={cx(styles.collectRewards__tile, styles.green)}>

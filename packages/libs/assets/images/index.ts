@@ -50,3 +50,7 @@ export { default as RewardBkgBlue } from './rewardBackgroundBlue.svg';
 export { default as RewardBkgGold } from './rewardBackgroundGold.svg';
 export { default as RewardBkgGray } from './rewardBackgroundGray.svg';
 export { default as CheckIcon } from './checkIcon.svg';
+export { default as CalendarIcon } from './calendarIcon.svg';
+export { default as ClockIcon } from './clockIcon.svg';
+export { default as ComfirmedIcon } from './comfirmedIcon.svg';
+export { default as CrossRedIcon } from './crossRedIcon.svg';

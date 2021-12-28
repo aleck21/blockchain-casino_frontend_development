@@ -1,0 +1,57 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.select__box {
+  .ant-select {
+    width: 143px;
+
+    .ant-select-selector {
+      background-color: $black;
+      color: $white;
+      border-radius: 15px;
+      height: 44px;
+      border: 0;
+      padding-left: 20px;
+      padding-top: 8px;
+    }
+
+    .ant-select-arrow {
+      color: $middle;
+    }
+  }
+}
+
+body {
+  .ant-select-dropdown {
+    background-color: $black;
+    color: $white;
+  }
+
+  .ant-select-item {
+    color: $white;
+    @include base_text;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .ant-select-single {
+    .ant-select-selector::after {
+      color: $white
+    }
+  }
+
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: $dark;
+    color: $white;
+  }
+
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: $dark;
+  }
+  span.ant-select-selection-item {
+    @include base_text;
+    font-size: 16px;
+    font-weight: 500;
+    color: $white;
+  }
+}

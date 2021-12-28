@@ -39,7 +39,6 @@ export const Statistics: React.FC = () => {
             {t('Bets')}
           </div>
         </nav>
-        <Close />
       </div>
       <article className={cx(styles.statistics__content__box)}>
         {tab === 'statistics' && <StatisticsTab />}

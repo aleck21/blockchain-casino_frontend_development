@@ -19,7 +19,7 @@ export const Tile: React.FC<TileProps> = ({content}) => {
         {title}
       </h6>
       <p>
-        {count}
+        {count.toLocaleString('ru-RU')}
         {currency && <span>&nbsp;{currency}</span>}
       </p>
     </div>

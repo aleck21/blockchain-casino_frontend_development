@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
-import { Select } from 'components/Select';
+import { SelectWithResult } from 'components/SelectWithResult';
 import { list, list2 } from './contentDemo';
 import { Arrows } from './arrows';
 import { DoubleInput } from 'components/DoubleInput';
@@ -14,11 +14,11 @@ export const ContentExchange: React.FC = () => {
  
   return(
     <div className={cx(styles.exchange__container)}>
-      <Select
+      <SelectWithResult
         list={list}
       />
       <Arrows />
-      <Select
+      <SelectWithResult
         list={list2}
       />
       <div className={cx(styles.exchange__doubleInput__box)}>

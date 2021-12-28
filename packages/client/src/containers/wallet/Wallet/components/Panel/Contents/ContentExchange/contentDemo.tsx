@@ -1,5 +1,5 @@
 import { BitcoinColor, EthereumColor } from '@project/libs/assets/images';
-import { SelectItem } from 'components/SelectItem';
+import { SelectItem } from 'components/SelectWithResult/SelectItem';
 
 const listDemo = [
   {

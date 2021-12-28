@@ -86,3 +86,14 @@ export const tiles = {
     currency: 'USD'
   }
 };
+
+export const list = [
+  {
+    id: '01',
+    data: 'Dice'
+  },
+  {
+    id: '02',
+    data: 'Crach'
+  }
+];

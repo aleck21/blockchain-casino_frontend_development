@@ -1,0 +1,137 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.data__picker__box {
+
+  .ant-picker {
+    background-color: $blue;
+    color: $white;
+    border-radius: 12px;
+    height: 44px;
+    border: 0;
+  }
+
+  .anticon {
+    color: $white;
+  }
+
+  .ant-picker-focused {
+    background-color: $black;
+    border: 0;
+    box-shadow: none;
+    border-radius: 12px;
+  }
+
+  .ant-picker-input {
+    input {
+      color: $white;
+
+      &::-webkit-input-placeholder {
+        color: $white;
+      }
+      &::-moz-placeholder {
+        color: $white;
+      }
+    }
+  }
+
+  .ant-picker-clear {
+    background-color: $dark;
+    color: $white;
+  }
+}
+
+body {
+  .ant-picker-range-arrow::after {
+    border-color: $dark $dark transparent transparent;
+  }
+
+  .ant-picker-panel-container {
+    background-color: $dark;
+    box-shadow: 6px 6px 30px 5px rgba(0,0,0,.4);
+    color: $white;
+  }
+
+  .ant-picker-panel {
+    border-bottom: 0;
+  }
+  
+  .ant-picker-cell {
+    color: $middle;
+
+    .ant-picker-cell-inner {
+      &:hover {
+        background-color: $blue1;
+      }
+    }
+  }
+  
+  .ant-picker-cell-in-view {
+    color: $white;
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-in-range {
+    .ant-picker-cell-inner {
+      color: $blue;
+    } 
+  }
+ 
+  .ant-picker-cell:hover:not(.ant-picker-cell-selected):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):not(.ant-picker-cell-range-hover-start):not(.ant-picker-cell-range-hover-end) {
+
+    .ant-picker-cell-inner {
+      background-color: $blue1;
+    }
+  }
+
+  .ant-picker-header {
+    border-bottom: 0;
+
+    button {
+      color: $middle;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .ant-picker-header-view {
+      button {
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):not(.ant-picker-cell-range-end) {
+
+    .ant-picker-cell-inner {
+      border-radius: 50% 0 0 50%;
+    }
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before, .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+    background-color: $blue;
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+    background-color: rgba(19,142,255,.08);
+  }
+
+  .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start) {
+
+    .ant-picker-cell-inner {
+      border-radius: 0 50% 50% 0;
+    }
+  }
+
+  .ant-picker-content {
+    th {
+      color: $white;
+    }
+  }
+
+  .ant-picker-month-btn {
+    color: $white;
+    font-weight: 500;
+  }
+}

@@ -1,15 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
-import { content, tiles } from './contentDemo';
+import { content, tiles, list } from './contentDemo';
 import { ColorFormatNumber } from './ColorFormatNumber';
 import { FirstTd } from './FirstTd';
 import { Tile } from './Tile';
+import { Select } from 'components/Select';
 
 export const StatisticsTab: React.FC = () => {
   return(
     <section className={cx(styles.tab__container)}>
       <div className={cx(styles.tab__leftBlock)}>
+        <Select list={list} />
         <Tile content={tiles.wins} />
         <Tile content={tiles.bets} />
         <Tile content={tiles.won} />

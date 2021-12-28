@@ -1,4 +1,5 @@
-import { CSSProperties, ReactNode, useContext } from 'react';
+import { CSSProperties, ReactNode } from 'react';
+import 'antd/dist/antd.css';
 import cx from 'classnames';
 import {
   Header, Sidebar, Footer, Main,

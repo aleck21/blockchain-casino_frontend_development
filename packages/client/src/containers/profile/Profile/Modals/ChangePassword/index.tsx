@@ -4,7 +4,6 @@ import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { PasswordInput } from 'components/PasswordInput';
 import { Text } from '@project/libs/components';
-import { Close } from 'components/ModalWindow/Close';
 import { Button } from 'components/Button';
 
 export const ChangePassword: React.FC = () => {
@@ -16,7 +15,6 @@ export const ChangePassword: React.FC = () => {
         <Text type='h3' className={cx(styles.changPass__head__title)}>
           {t('Change Password')}
         </Text>
-        <Close />
       </div>
       <form>
         <div className={cx(styles.changePass__inputs__box)}>

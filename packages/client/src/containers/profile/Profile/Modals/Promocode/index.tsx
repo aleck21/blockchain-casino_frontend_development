@@ -1,4 +1,4 @@
-import Reat, { useContext } from 'react';
+import React from 'react';
 import { Text, Image } from '@project/libs/components';
 import { Button } from 'components/Button';
 import { TextInput } from 'components/TextInput';
@@ -6,11 +6,9 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { CloseIcon } from '@project/libs/assets/images';
-import { ModalContext } from 'context/modalOpen';
 
 export const Promocode: React.FC = () => {
   const { t } = useTranslation('main');
-  const { closeModal } = useContext(ModalContext);
 
   const codeDemo = 'q10358vn1983tvn';
 
@@ -20,9 +18,6 @@ export const Promocode: React.FC = () => {
         <Text type='h3' className={cx(styles.promocode__title)}>
           {t('Promo code')}
         </Text>
-        <div onClick={closeModal} className={cx(styles.promocode__close)}>
-          <Image url={CloseIcon} />
-        </div>
       </div>
       <form >
         <TextInput

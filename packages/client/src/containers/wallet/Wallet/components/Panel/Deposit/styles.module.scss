@@ -50,6 +50,33 @@
       position: absolute;
       top: 56px;
       right: 30px;
+      &:hover {
+        cursor: pointer;
+      }
+
+      .deposit__textMode__input__message {
+        position: absolute;
+        text-align: center;
+        top: -40px;
+        left: 10px;
+        width: max-content;
+        padding: 4px 8px;
+        height: max-content;
+        background-color: $middle;
+        color: $white;
+        border-radius: 4px;
+        @include base_text;
+        font-size: 14px;
+        box-shadow: 1px 1px 3px 2px rbga(0, 0, 0, .4);
+      }
+
+      .message__show {
+        display: block;
+      }
+
+      .message__hidden {
+        display: none;
+      } 
 
       @include mobile_sm {
         width: 56px;

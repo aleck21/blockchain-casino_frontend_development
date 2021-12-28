@@ -1,55 +1,81 @@
-import React, { useState } from 'react';
-import { Image, Text } from '@project/libs/components';
-import { ArrowToDown } from '@project/libs/assets/images';
+import React, { CSSProperties, useState } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
-import { useTranslation } from '@project/libs/utils/i18n';
+import { Image } from '@project/libs/components';
+import { ArrowToDown } from '@project/libs/assets/images';
 
 type SelectProps = {
-  list: {element: JSX.Element; result: string | number}[];
-  defaultItem?: string | number;
-  className?: string;
-}
+  list: {id: string | number, data: any}[];
+  callback?: Function;
+  classBox?: string;
+  classArrow?: string;
+  classItems?: string;
+  classItem?: string;
+  classContainer?: string;
+  stylesItems?: CSSProperties;
+  stylesItem?: CSSProperties;
+  stylesArrowBox?: CSSProperties;
+  classHidden?: string;
+};
 
 export const Select: React.FC<SelectProps> = ({
   list,
-  defaultItem,
-  className
+  callback,
+  stylesItems,
+  stylesItem,
+  stylesArrowBox,
+  classArrow,
+  classItems,
+  classItem,
+  classHidden,
+  classContainer
 }) => {
-  const [open, setOpen] = useState(false);
-  
-  const openList = () => {
-    setOpen(!open);
-  };
+  const [ rolled, setRolled ] = useState(false);
+  const [ content, setContent ] = useState(list);
 
-  const { t } = useTranslation('main');
+  const onRolled = () => {
+    setRolled(!rolled);
+  }
   
+  const onSelect = (index: number) => {
+    const l = content.length;
+    const newList = [content[index]];
+    for (let i = 0; i < l; i++) {
+      if (i === index) continue;
+      newList.push(content[i]);
+    }
+    setContent(newList);
+    if (callback) callback();
+  }
+
   return(
-    <div className={cx(styles.select__container)}>
-      <div className={cx(styles.selectBlock)}>
-        <div className={cx(styles.selectBlock__content, open
-          ? styles.open : styles.hidden
-        )}>
-          {list.map((itemList) => (
-            <div className={cx(styles.content__item)}>
-              {itemList.element}
-            </div>
-          ))}
-        </div>
-        <div className={cx(styles.selectBlock__arrow)} onClick={openList}>
-          <Image
-            url={ArrowToDown}
-            className={cx(open ? styles.arrow__up : styles.arrow__down)}
-          />
-        </div>
+    <div className={cx(styles.select__container, classContainer)} onClick={onRolled}>
+      <div
+        className={cx(styles.select__itemsBlock, classItems,
+          rolled ? styles.items__show : styles.items__hidden, 
+          !rolled ? classHidden : null
+        )}
+        style={{ ...stylesItems }}
+      >
+        {content.map((item, index) => (
+          <div
+            className={cx(classItem, styles.select__item)}
+            key={item.id}
+            onClick={() => onSelect(index)}
+            style={{ ...stylesItem }}
+          >
+            {item.data}
+          </div>
+        ))}
       </div>
-      <div className={cx(styles.resultBlock)}>
-        <Text type='p' className={cx(styles.resultBlock__title)}>
-          {t('Balance')}
-        </Text>
-        <Text type='p' className={cx(styles.resultBlock__text)}>
-          {list[0].result.toLocaleString('en-EN', {useGrouping: true})}
-        </Text>
+      <div
+        className={cx(classArrow, styles.select__arrow)}
+        style={{ ...stylesArrowBox }}
+      >
+        <Image
+          url={ArrowToDown}
+          className={cx(rolled ? styles.unrolled : styles.rolledUp)}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import styles from './styles.module.scss';
@@ -7,6 +7,26 @@ import { IconCopy, QRDemo } from '@project/libs/assets/images';
 
 export const Deposit: React.FC = () => {
   const { t } = useTranslation('main');
+
+  const [ value, setValue ] = useState('c2m19375...0dj2c9c48n25m2u5p');
+  const [ copy, setCopy ] = useState(false);
+
+  const changeValue = (e: any) => {
+    setValue(e.target.value);
+  }
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(value)
+      .then(() => {
+        setCopy(true);
+        setTimeout(() => {setCopy(false)}, 1000);
+      })
+      .catch(error => {
+        setCopy(false);
+        console.log('Error copying to clipboard: ' + error);
+      })
+    ;
+  }
 
   return (
     <section className={cx(styles.deposit__container)}>
@@ -17,10 +37,20 @@ export const Deposit: React.FC = () => {
         <input
           type='text'
           className={cx(styles.deposit__textMode__input)}
-          value={'c2m19375...0dj2c9c48n25m2u5p'}
+          onChange={changeValue}
+          value={value}
         />
-        <div className={cx(styles.deposit__textMode__input__icon)}>
-          <Image url={IconCopy} />
+        <div
+          className={cx(styles.deposit__textMode__input__icon)}
+          onClick={onCopy}
+        >
+          <img src={IconCopy} alt='copy' />
+          <div className={cx(
+            styles.deposit__textMode__input__message,
+            copy ? styles.message__show : styles.message__hidden
+          )} >
+            {t('copied')}
+          </div>
         </div>
       </div>
       <div className={cx(styles.deposit__QR_Mode)}>

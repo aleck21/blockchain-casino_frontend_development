@@ -15,14 +15,21 @@ export const StatisticsTitle: React.FC = () => {
     openModal();
   }
 
+  const showTransactions = () => {
+    setContentModal('transactions');
+    openModal();
+  }
+
   return(
     <div className={cx(styles.title__container)}>
-      <Text type='h3' className={cx(styles.title__text)}>
-        {t('Statistics')}
-      </Text>
+      <div onClick={showStatisstics} className={cx(styles.title__text__box)}>
+        <Text type='h3' className={cx(styles.title__text)}>
+          {t('Statistics')}
+        </Text>
+      </div>
       <Button
         text={t('Transactions')}
-        onClick={showStatisstics}
+        onClick={showTransactions}
         className={cx(styles.transaction__button)}
       />
     </div>
