@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, useContext } from 'react';
 import 'antd/dist/antd.css';
 import cx from 'classnames';
 import {
@@ -6,8 +6,10 @@ import {
 } from 'components';
 import styles from './styles.module.scss';
 import { NavigationProvider } from 'context/navigation';
-import { ModalProvider } from 'context/modalOpen';
+import { ModalContext, ModalProvider } from 'context/modalOpen';
 import { ModalWindow } from 'components/ModalWindow';
+import { Widget } from 'components/Widget';
+import { WidgetProvider } from 'context/widget';
 
 type MainLayoutProps = {
   pageLayout?: string;
@@ -20,21 +22,28 @@ const MainLayout = ({
   pageLayout,
   style,
 }: MainLayoutProps) => {
+  const { modal } = useContext(ModalContext);
+  
   return(
     <ModalProvider>
       <NavigationProvider>
-        <div
-          className={cx(styles.container, pageLayout)}
-          style={style}
-          >
-          <Header />
-          <Sidebar />
-          <Main>
-            {children}
-          </Main>
-          <Footer />
-        </div>
-        <ModalWindow />
+        <WidgetProvider>
+          <div
+            className={cx(styles.page__container, pageLayout,
+              modal ? styles.no_scroll : styles.scroll              
+            )}
+            style={style}
+            >
+            <Header />
+            <Sidebar />
+            <Main>
+              {children}
+            </Main>
+            <Footer />
+          </div>
+          <ModalWindow />
+          <Widget />
+        </WidgetProvider>
       </NavigationProvider>
     </ModalProvider>
   )

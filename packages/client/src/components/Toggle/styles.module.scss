@@ -9,6 +9,10 @@
   position: relative;
   overflow: hidden;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .on {
     position: absolute;
     left: 0;

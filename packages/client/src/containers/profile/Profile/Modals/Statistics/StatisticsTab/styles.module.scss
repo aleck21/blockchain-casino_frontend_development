@@ -7,9 +7,34 @@
   column-gap: 50px;
   padding: 30px 20px;
 
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
   .tab__leftBlock {
     display: grid;
     row-gap: 16px;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+    }
+
+    .tab__tiles__box {
+      row-gap: 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 66px);
+
+
+      @include mobile_sm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 66px 66px;
+        column-gap: 11px;
+        row-gap: 16px;
+      }
+    }
 
     .tab__tile {
       border-radius: 15px;
@@ -52,11 +77,19 @@
   }
 
   .tab__rightBlock {
+    @include mobile_sm {
+      padding-top: 30px;
+    }
+
     .tab__table {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
       justify-content: flex-start;
       width: 562px;
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
 
       .table__head__item {
         @include base_text;

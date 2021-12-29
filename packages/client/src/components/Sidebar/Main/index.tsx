@@ -5,9 +5,11 @@ import { Image, Text } from '@project/libs/components';
 import { ArrowWhite, IconHome, IconNotification, IconProfile, IconRoulette, IconVerification, IconWallet } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { NavigationContext } from 'context/navigation';
+import { WidgetContext } from 'context/widget';
 
 export const Main: FC = () => {
   const { t } = useTranslation('main');
+  const isMobile = document.documentElement.clientWidth < 460;
 
   const {
     menuItem,
@@ -18,7 +20,39 @@ export const Main: FC = () => {
     onRoulette,
     onVerification
   } = useContext(NavigationContext);
+
+  const { setContentWidget } = useContext(WidgetContext);
+
+  const onClickHome = () => {
+    onHome();
+    // isMobile && setContentWidget('home')
+  }
   
+  const onClickWallet = () => {
+    onWallet();
+    isMobile && setContentWidget('wallet')
+  }
+
+  const onClickProfile = () => {
+    onProfile();
+    isMobile && setContentWidget('profile')
+  }
+
+  const onClickNotification = () => {
+    onNotification();
+    // isMobile && setContentWidget('notification')
+  }
+
+  const onClickRoulette = () => {
+    onRoulette();
+    // isMobile && setContentWidget('roulette')
+  }
+
+  const onClickVerification = () => {
+    onVerification();
+    // isMobile && setContentWidget('verification')
+  }
+
   return (
     <div className={cx(styles.container)} >
       <nav className={cx(styles.nav_top__container)}>
@@ -26,7 +60,7 @@ export const Main: FC = () => {
           className={cx(styles.nav__item,
             menuItem.home ? styles.active : styles.inactive
           )}
-          onClick={onHome}
+          onClick={onClickHome}
         >
           <Image url={IconHome} />
           <Text type='p'>{t('Home')}</Text>
@@ -36,7 +70,7 @@ export const Main: FC = () => {
           className={cx(styles.nav__item,
             menuItem.wallet ? styles.active : styles.inactive
           )}
-          onClick={onWallet}
+          onClick={onClickWallet}
         >
           <Image url={IconWallet} />
           <Text type='p'>{t('Wallet')}</Text>
@@ -46,7 +80,7 @@ export const Main: FC = () => {
           className={cx(styles.nav__item,
             menuItem.profile ? styles.active : styles.inactive
           )}
-          onClick={onProfile}
+          onClick={onClickProfile}
         >
           <Image url={IconProfile} />
           <Text type='p'>{t('Profile')}</Text>
@@ -56,7 +90,7 @@ export const Main: FC = () => {
           className={cx(styles.nav__item,
             menuItem.notification ? styles.active : styles.inactive
           )}
-          onClick={onNotification}
+          onClick={onClickNotification}
         >
           <Image url={IconNotification} />
           <Text type='p'>{t('Notification')}</Text>
@@ -69,7 +103,7 @@ export const Main: FC = () => {
           className={cx(styles.nav__item,
             menuItem.roulette ? styles.active : styles.inactive
           )}
-          onClick={onRoulette}
+          onClick={onClickRoulette}
         >
           <Image url={IconRoulette} />
           <Text type='p'>{t('Roulette')}</Text>
@@ -79,7 +113,7 @@ export const Main: FC = () => {
           className={cx(styles.nav__item,
             menuItem.verification ? styles.active : styles.inactive
           )}
-          onClick={onVerification}
+          onClick={onClickVerification}
         >
           <Image url={IconVerification} />
           <Text type='p'>{t('Verification')}</Text>

@@ -21,9 +21,13 @@
   .modal__paper {
     border-radius: 20px;
     padding: 0;
-    width: max-content;
     margin-left: 188px;
     position: relative;
+    
+    @include mobile_sm {
+      width: calc(100vw - 40px);
+      margin-left: 0;
+    }
     
     .close__button__box {
       position: absolute;

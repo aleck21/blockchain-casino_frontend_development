@@ -11,6 +11,10 @@
     display: grid;
     row-gap: 20px;
 
+    .date__button {
+      height: 44px;
+    }
+
     .box {
       border-radius: 10px;
       border: .5px solid $middle;
@@ -23,6 +27,10 @@
       justify-content: center;
       color: $white;
       height: 44px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .black__box {

@@ -28,6 +28,12 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 22px;
     margin-top: 10px;
+
+    @include mobile_sm {
+      grid-template-columns: 1fr;
+      grid-template-rows: 44px 44px;
+      row-gap: 20px;
+    }
   
     .button {
       background-color: $black;

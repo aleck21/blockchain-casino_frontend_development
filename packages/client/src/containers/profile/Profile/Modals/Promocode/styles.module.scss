@@ -4,6 +4,10 @@
 .promocode__container {
   width: 390px;
 
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
   .promocode__head {
     display: grid;
     grid-template-columns: auto 24px;

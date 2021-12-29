@@ -4,9 +4,33 @@
 .bets__header__container {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-areas: 'calendar tabs select';
   justify-content: space-between;
   padding: 30px 40px 34px 40px;
   column-gap: 115px;
+
+  @include mobile_sm {
+    grid-template-areas: 'calendar select' 'tabs tabs';
+    grid-template-columns: 
+      calc(((100vw - 60px) / 2) - 10px) calc(((100vw - 60px) / 2) - 20px);
+    grid-template-rows: 44px 35px;
+    row-gap: 30px;
+    column-gap: 10px;
+    width: calc(100vw - 60px);
+    padding: 30px 20px;
+  }
+
+  .header__calendar__button {
+    grid-area: calendar;
+  }
+
+  .header__selectCurrency {
+    grid-area: select;
+
+    @include mobile_sm {
+      padding-left: 0px;
+    }
+  }
 
   .select__container {
     height: 44px;
@@ -59,12 +83,18 @@
   }
 
   .header__tabs {
+    grid-area: tabs;
+
     .header__tabs__box {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(3, auto);
       border-bottom: .5px solid $middle;
       justify-content: space-between;
+
+      @include mobile_sm {
+        width: 100%;
+      }
 
       .tabs__item {
         @include base_text;
@@ -104,4 +134,8 @@
 
 .bets__main__container {
   padding: 0 40px 34px 40px;
+
+  @include mobile_sm {
+    padding: 0 10px
+  }
 }

@@ -17,6 +17,7 @@ export const SelectWithResult: React.FC<SelectProps> = ({
   className
 }) => {
   const [open, setOpen] = useState(false);
+  const [content, setContent] = useState(list);
   
   const openList = () => {
     setOpen(!open);
@@ -24,14 +25,29 @@ export const SelectWithResult: React.FC<SelectProps> = ({
 
   const { t } = useTranslation('main');
   
+  const onSelect = (index: number) => {
+    const l = content.length;
+    const newList = [content[index]];
+    for (let i = 0; i < l; i++) {
+      if (i === index) continue;
+      newList.push(content[i]);
+    }
+    setContent(newList);
+    setOpen(false);
+  }
+
   return(
     <div className={cx(styles.select__container)}>
       <div className={cx(styles.selectBlock)}>
         <div className={cx(styles.selectBlock__content, open
           ? styles.open : styles.hidden
         )}>
-          {list.map((itemList, k) => (
-            <div className={cx(styles.content__item)} key={`select_item_${k}`}>
+          {content.map((itemList, k) => (
+            <div
+              className={cx(styles.content__item)}
+              key={`select_item_${k}`}
+              onClick={() => onSelect(k)}
+            >
               {itemList.element}
             </div>
           ))}

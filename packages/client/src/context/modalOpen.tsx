@@ -14,15 +14,14 @@ export const ModalProvider: React.FC = ({children}) => {
   
   const openModal = () => {
     setModal(true);
-    // document.body.style.position = 'fixed';
-    // document.body.style.overflowY = 'scroll';
-    document.body.style.overflowY = 'hidden';
-    document.body.style.paddingRight = '15px';
+    // document.body.style.overflowY = 'hidden';
+    //document.documentElement.clientWidth > 460
+    //  ? document.body.style.paddingRight = '15px'
+    //  : null;
   };
 
   const closeModal = () => {
     setModal(false);
-    // document.body.style.position = 'inherit';
     document.body.style.overflowY = 'scroll';
     document.body.style.paddingRight = '0';
   };

@@ -4,6 +4,10 @@
 .changePass__container {
   width: 410px;
 
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
   .changePass__head {
     padding: 20px;
     display: grid;

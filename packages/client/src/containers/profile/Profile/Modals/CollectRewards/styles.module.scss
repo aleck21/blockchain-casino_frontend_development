@@ -3,7 +3,8 @@
 @import "~@project/libs/assets/styles/fonts.scss";
 
 .collectReawards__container {
-  
+  overflow-y: auto;
+
   .collectReawards__head {
     display: grid;
     grid-template-columns: 1fr;
@@ -29,6 +30,11 @@
     row-gap: 30px;
     padding: 20px;
     padding-bottom: 30px;
+
+    @include mobile_sm {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+    }
 
     .collectRewards__tile {
       border-radius: 15px;

@@ -5,8 +5,15 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 27px;
+  column-gap: 27px;
   padding: 0 30px 40px;
+
+  @include mobile_sm {
+    width: 100%;
+    justify-items: stretch;
+    text-align: center;
+  }
+
   .sidebar_footer__icon {
     width: 24px;
     height: 24px;

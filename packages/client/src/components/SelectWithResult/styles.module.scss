@@ -66,6 +66,10 @@
 
       .content__item {
         height: 54px;
+        
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 

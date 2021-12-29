@@ -12,10 +12,12 @@ export const StatisticsTab: React.FC = () => {
     <section className={cx(styles.tab__container)}>
       <div className={cx(styles.tab__leftBlock)}>
         <Select list={list} />
-        <Tile content={tiles.wins} />
-        <Tile content={tiles.bets} />
-        <Tile content={tiles.won} />
-        <Tile content={tiles.wagered} />
+        <div className={cx(styles.tab__tiles__box)}>
+          <Tile content={tiles.wins} />
+          <Tile content={tiles.bets} />
+          <Tile content={tiles.won} />
+          <Tile content={tiles.wagered} />
+        </div>
       </div>
       <div className={cx(styles.tab__rightBlock)}>
         <div className={cx(styles.tab__table)}>
@@ -30,38 +32,33 @@ export const StatisticsTab: React.FC = () => {
             </div>
           ))}
           {content.body.map((row, key) => (
-            <>
+            <React.Fragment key={`row__${key}`}>
               <div
                 className={cx(styles.tab__table__item)}
-                key={`currency_${key}`}
               >
                 {<FirstTd icon={row.icon} text={row.currency} />}
               </div>
               <div
                 className={cx(styles.tab__table__item)}
-                key={`win_${key}`}
               >
                 {row.win}
               </div>
               <div
                 className={cx(styles.tab__table__item)}
-                key={`bet_${key}`}
               >
                 {row.bet}
               </div>
               <div
                 className={cx(styles.tab__table__item)}
-                key={`won_${key}`}
               >
                 {row.won}
               </div>
               <div
                 className={cx(styles.tab__table__item, styles.last__item)}
-                key={`wegered_${key}`}
               >
                 {<ColorFormatNumber floatNumber={row.wagered} />} 
               </div>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>

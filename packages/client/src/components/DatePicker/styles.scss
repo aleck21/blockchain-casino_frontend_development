@@ -4,6 +4,10 @@
 
 .data__picker__box {
 
+  .button__show__dates {
+    background-color: $black;
+  }
+
   .ant-picker {
     background-color: $blue;
     color: $white;

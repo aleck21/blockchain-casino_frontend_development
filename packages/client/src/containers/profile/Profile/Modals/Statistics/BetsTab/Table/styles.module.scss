@@ -5,10 +5,19 @@
   width: 100%;
   display: grid;
   grid-row: repeat(auto, 60px);
+
+  @include mobile_sm {
+    width: calc(100vw - 60px);
+  }
   
   .table__row {
     display: grid;
     grid-template-columns: 1fr repeat(3, 1.5fr) 1fr;
+
+    @include mobile_sm {
+      column-gap: 0px;
+      grid-template-columns: repeat(5, auto);
+    }
   }
 
   .border {
@@ -25,6 +34,10 @@
     font-size: 14px;
     font-weight: 500;
     color: $white;
+
+    @include mobile_sm {
+      font-size: 12px;
+    }
 
     img {
       height: 18px;

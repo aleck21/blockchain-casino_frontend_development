@@ -61,7 +61,9 @@ export const BetsTab: React.FC = () => {
     <section className={cx(styles.bets__container)}>
       <header className={cx(styles.bets__header__container)}>
         <section className={cx(styles.header__calendar__button)}>
-          <WrapDatePicker />
+          <WrapDatePicker
+            classNameButton={cx(styles.calendar__button)}
+          />
         </section>
         <section className={cx(styles.header__tabs)}>
           <nav className={cx(styles.header__tabs__box)}>
