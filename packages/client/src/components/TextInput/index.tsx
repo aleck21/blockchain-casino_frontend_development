@@ -14,6 +14,7 @@ type InputProps = {
   name?: string;
   reset?: boolean;
   resetContent?: string | Element | React.ReactNode;
+  placeholder?: string;
 }
 
 export const TextInput: React.FC<InputProps> = ({
@@ -25,7 +26,8 @@ export const TextInput: React.FC<InputProps> = ({
   defaultValue,
   name,
   reset = false,
-  resetContent
+  resetContent,
+  placeholder
 }) => {
   const { t } = useTranslation('main');
   const [value, setValue] = useState(defaultValue);
@@ -52,6 +54,7 @@ export const TextInput: React.FC<InputProps> = ({
           className={cx(styles.input__body, className)}
           onChange={onChangeInput}
           name={name}
+          placeholder={placeholder}
         />
         {reset && 
           <button

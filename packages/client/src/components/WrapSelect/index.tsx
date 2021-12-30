@@ -4,14 +4,18 @@ import 'antd/dist/antd.css';
 import './styles.scss';
 
 type SelectProps = {
-  list: {value: string, text: string}[]
+  list: {value: string, text: string}[];
+  classNameContainer?: string;
 }
 
-export const WrapSelect: React.FC<SelectProps> = ({list}) => {
+export const WrapSelect: React.FC<SelectProps> = ({
+  list,
+  classNameContainer
+}) => {
   const { Option } = Select;
   
   return(
-    <div className={'select__box'}>
+    <div className={`select__box ${classNameContainer}`}>
       <Select
         defaultValue={list[0].value}
         onChange={() => {}}

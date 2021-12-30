@@ -54,3 +54,5 @@ export { default as CalendarIcon } from './calendarIcon.svg';
 export { default as ClockIcon } from './clockIcon.svg';
 export { default as ComfirmedIcon } from './comfirmedIcon.svg';
 export { default as CrossRedIcon } from './crossRedIcon.svg';
+export { default as BackArrow } from './backArrow.svg';
+export { default as ArrowBlue } from './arrowBlue.svg';

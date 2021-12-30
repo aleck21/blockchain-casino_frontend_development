@@ -18,12 +18,13 @@
     z-index: 100;
     display: grid;
     row-gap: 20px;
-    padding-top: 20px;
+    //padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
     background-color: $black;
     overflow: hidden;
     border-radius: 15px;
+    align-items: flex-start;
 
     .select__item {
       @include base_text;
@@ -31,6 +32,9 @@
       font-size: 18px;
       font-weight: 500;
       padding-bottom: 20px;
+      background-color: $black;
+      position: relative;
+      z-index: 500;
 
       &:hover {
         cursor: pointer;
@@ -43,11 +47,12 @@
   }
 
   .items__hidden {
-    max-height: 64px;
+    max-height: 100%;
   }
 
   .select__arrow {
-    padding-top: 20px;
+    display: grid;
+    align-self: center;
     
     &:hover {
       cursor: pointer;

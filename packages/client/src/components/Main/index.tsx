@@ -3,7 +3,7 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 import { ModalContext } from 'context/modalOpen';
 import { NavigationContext } from 'context/navigation';
-import { HomeDemo, Wallet } from 'containers';
+import { HomeDemo, Verification, Wallet } from 'containers';
 import { Profile } from 'containers/profile';
 
 export const Main: FC = ({ children }) => {
@@ -19,8 +19,8 @@ export const Main: FC = ({ children }) => {
         {/*
         {menuItem.notification && <Notification />}
         {menuItem.roulette && <Roulette />}
-        {menuItem.verification && <Verification />}
         */}
+        {menuItem.verification && <Verification />}
       </div>
     </main>
   );

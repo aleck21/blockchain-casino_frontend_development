@@ -21,7 +21,7 @@ export const Main: FC = () => {
     onVerification
   } = useContext(NavigationContext);
 
-  const { setContentWidget } = useContext(WidgetContext);
+  const { setContentWidget, closeWidget } = useContext(WidgetContext);
 
   const onClickHome = () => {
     onHome();
@@ -50,6 +50,7 @@ export const Main: FC = () => {
 
   const onClickVerification = () => {
     onVerification();
+    isMobile && closeWidget();
     // isMobile && setContentWidget('verification')
   }
 
