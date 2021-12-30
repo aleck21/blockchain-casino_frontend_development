@@ -5,10 +5,12 @@ import styles from './styles.module.scss';
 import { Text, Image } from '@project/libs/components';
 import { IconCopy, QRDemo } from '@project/libs/assets/images';
 
+const depositDemo = 'c2m19375...0dj2c9c48n25m2u5p';
+
 export const Deposit: React.FC = () => {
   const { t } = useTranslation('main');
 
-  const [ value, setValue ] = useState('c2m19375...0dj2c9c48n25m2u5p');
+  const [ value, setValue ] = useState(depositDemo);
   const [ copy, setCopy ] = useState(false);
 
   const changeValue = (e: any) => {
