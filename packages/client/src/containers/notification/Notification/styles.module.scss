@@ -1,0 +1,100 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.notification__container {
+  padding: 20px;
+  width: 410px;
+
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
+  .notification__head {
+    @include base_text;
+    font-size: 28.62px;
+    font-weight: bold;
+    color: $white;
+    letter-spacing: .03em;
+  }
+
+  .notification__main {
+    display: grid;
+    margin-top: 30px;
+
+    .promocode__box {
+      background-color: $dark2;
+      border-radius: 20px;
+      padding: 10px 10px 20px 20px;
+      position: relative;
+      height: 95px;
+
+      h6 {
+        @include base_text;
+        color: $blue;
+        font-size: 14px;
+      }
+
+      .promocode__body {
+        display: grid;
+        grid-template-columns: max-content 24px;
+        column-gap: 10px;
+        align-content: center;
+
+        p {
+          @include base_text;
+          color: $white;
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        img {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .notification__item__box {
+      padding: 16px 0;
+      border-bottom: .5px solid $middle;
+      position: relative;
+
+      h6 {
+        @include base_text;
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+
+        span {
+          color: $middle;
+          font-weight: 400;
+        }
+      }
+
+      p {
+        @include base_text;
+        color: $white;
+        font-size: 14px;
+      }
+    }
+
+    .no__border {
+      border-bottom: 0;
+    }
+
+    .new__icon {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: $blue;
+      border-radius: 50%;
+    }
+
+    .new__icon__hidden {
+      background-color: transparent;
+    }
+  }
+}

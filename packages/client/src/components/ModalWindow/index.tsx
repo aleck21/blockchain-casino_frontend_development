@@ -11,6 +11,7 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Close } from './Close';
+import { Notification } from 'containers';
 
 export const ModalWindow: React.FC = () => {
   const { modal, content } = useContext(ModalContext)
@@ -28,6 +29,7 @@ export const ModalWindow: React.FC = () => {
         {content === 'collectRewards' && <CollectRewards />} 
         {content === 'statistics' && <Statistics />}
         {content === 'transactions' && <Transactions />}
+        {content === 'notifications' && <Notification />}
         <div className={cx(styles.close__button__box)}>
           <Close />
         </div>

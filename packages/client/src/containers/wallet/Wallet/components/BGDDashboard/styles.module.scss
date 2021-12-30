@@ -17,6 +17,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 70px 50px;
   justify-content: space-between;
+  max-width: 536px;
 
   @include mobile_sm {
     grid-template-areas: 'title' 'locked' 'percentage';

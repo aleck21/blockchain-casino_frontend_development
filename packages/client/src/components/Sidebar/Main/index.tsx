@@ -6,6 +6,7 @@ import { ArrowWhite, IconHome, IconNotification, IconProfile, IconRoulette, Icon
 import { useTranslation } from '@project/libs/utils/i18n';
 import { NavigationContext } from 'context/navigation';
 import { WidgetContext } from 'context/widget';
+import { ModalContext } from 'context/modalOpen';
 
 export const Main: FC = () => {
   const { t } = useTranslation('main');
@@ -22,6 +23,7 @@ export const Main: FC = () => {
   } = useContext(NavigationContext);
 
   const { setContentWidget, closeWidget } = useContext(WidgetContext);
+  const { openModal, setContentModal } = useContext(ModalContext);
 
   const onClickHome = () => {
     onHome();
@@ -39,7 +41,10 @@ export const Main: FC = () => {
   }
 
   const onClickNotification = () => {
-    onNotification();
+    // onNotification();
+    setContentModal('notifications');
+    openModal();
+    isMobile && closeWidget();
     // isMobile && setContentWidget('notification')
   }
 
