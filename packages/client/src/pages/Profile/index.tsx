@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { MainLayout } from '../../layouts/MainLayout';
 import { Profile } from 'containers/profile';
+import { MainLayout } from '../../layouts/MainLayout';
 
 const ProfilePage: FC = () => (
   <MainLayout>

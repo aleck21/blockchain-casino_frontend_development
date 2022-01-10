@@ -10,9 +10,12 @@ export const Copyright: FC = () => {
 
   return (
     <div className={cx(styles.container)}>
-      <Text type='p' className={cx(styles.copyright__text)}>
+      <Text
+        type="p"
+        className={cx(styles.copyright__text)}
+      >
         {t('2021 BunnyGame All Rights reserved')}
       </Text>
     </div>
   );
-}
+};

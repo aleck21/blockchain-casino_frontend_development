@@ -10,15 +10,24 @@ export const Links: FC = () => {
 
   return (
     <div className={cx(styles.container)}>
-      <Text type='p' className={cx(styles.links__text)}>
+      <Text
+        type="p"
+        className={cx(styles.links__text)}
+      >
         {t('HELP CENTER')}
       </Text>
-      <Text type='p' className={cx(styles.links__text)}>
+      <Text
+        type="p"
+        className={cx(styles.links__text)}
+      >
         {t('USER AGREEMENT')}
       </Text>
-      <Text type='p' className={cx(styles.links__text)}>
+      <Text
+        type="p"
+        className={cx(styles.links__text)}
+      >
         {t('PRIVACY POLICY')}
       </Text>
     </div>
   );
-}
+};

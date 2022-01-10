@@ -11,25 +11,40 @@ export const Contacts: FC = () => {
   return (
     <div className={cx(styles.container)}>
       <div className={cx(styles.contacts__title)}>
-        <Text type='p' className={cx(styles.contacts__text)}>
+        <Text
+          type="p"
+          className={cx(styles.contacts__text)}
+        >
           {t('Contact Us')}
         </Text>
       </div>
       <div className={cx(styles.contacts__content)}>
         <div>
-          <Text type='p' className={cx(styles.contacts__text)}>
+          <Text
+            type="p"
+            className={cx(styles.contacts__text)}
+          >
             <>
               {t('Support')}
-              <Text type='span' className={cx(styles.contacts__link)}>
+              <Text
+                type="span"
+                className={cx(styles.contacts__link)}
+              >
                 {t('janedoe@mail.com')}
               </Text>
             </>
           </Text>
-          <Text type='p' className={cx(styles.contacts__text)}>
+          <Text
+            type="p"
+            className={cx(styles.contacts__text)}
+          >
             <>
               {t('Support')}
               <a href="">
-                <Text type='span' className={cx(styles.contacts__link)}>
+                <Text
+                  type="span"
+                  className={cx(styles.contacts__link)}
+                >
                   {t('janedoe@mail.com')}
                 </Text>
               </a>
@@ -37,18 +52,30 @@ export const Contacts: FC = () => {
           </Text>
         </div>
         <div>
-          <Text type='p' className={cx(styles.contacts__text)}>
+          <Text
+            type="p"
+            className={cx(styles.contacts__text)}
+          >
             <>
               {t('Support')}
-              <Text type='span' className={cx(styles.contacts__link)}>
+              <Text
+                type="span"
+                className={cx(styles.contacts__link)}
+              >
                 {t('janedoe@mail.com')}
               </Text>
             </>
           </Text>
-          <Text type='p' className={cx(styles.contacts__text)}>
+          <Text
+            type="p"
+            className={cx(styles.contacts__text)}
+          >
             <>
               {t('Support')}
-              <Text type='span' className={cx(styles.contacts__link)}>
+              <Text
+                type="span"
+                className={cx(styles.contacts__link)}
+              >
                 {t('janedoe@mail.com')}
               </Text>
             </>
@@ -57,4 +84,4 @@ export const Contacts: FC = () => {
       </div>
     </div>
   );
-}
+};

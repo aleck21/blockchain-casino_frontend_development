@@ -1,26 +1,26 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Button } from 'components/Button';
+import { ButtonWithContent as Button } from '@project/libs/components';
 import { RewardsIcon } from '@project/libs/assets/images';
 import { ModalContext } from 'context/modalOpen';
+import styles from './styles.module.scss';
 
 export const ButtonBlock: React.FC = () => {
   const { t } = useTranslation('main');
-  const { content, openModal, setContentModal } = useContext(ModalContext);
+  const { openModal, setContentModal } = useContext(ModalContext);
 
   const openPromocode = () => {
     setContentModal('promocode');
     openModal();
-  }
+  };
 
   const openCollectRewards = () => {
     setContentModal('collectRewards');
     openModal();
-  }
+  };
 
-  return(
+  return (
     <div className={cx(styles.buttons__container)}>
       <Button
         text={t('Collect rewards')}
@@ -35,4 +35,4 @@ export const ButtonBlock: React.FC = () => {
       />
     </div>
   );
-}
+};

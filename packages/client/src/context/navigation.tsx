@@ -7,19 +7,18 @@ export const NavigationContext = React.createContext({
     profile: false,
     notification: false,
     roulette: false,
-    verification: false
+    verification: false,
   },
   onHome: () => {},
   onWallet: () => {},
   onProfile: () => {},
   onNotification: () => {},
   onRoulette: () => {},
-  onVerification: () => {}
+  onVerification: () => {},
 });
 
-
 export const NavigationProvider: React.FC = ({
-  children
+  children,
 }) => {
   const [menuItem, setMenuItem] = React.useState({
     home: true,
@@ -27,7 +26,7 @@ export const NavigationProvider: React.FC = ({
     profile: false,
     notification: false,
     roulette: false,
-    verification: false
+    verification: false,
   });
 
   const onHome = () => {
@@ -37,9 +36,9 @@ export const NavigationProvider: React.FC = ({
       profile: false,
       notification: false,
       roulette: false,
-      verification: false
+      verification: false,
     });
-  }
+  };
 
   const onWallet = () => {
     setMenuItem({
@@ -48,9 +47,9 @@ export const NavigationProvider: React.FC = ({
       profile: false,
       notification: false,
       roulette: false,
-      verification: false
+      verification: false,
     });
-  }
+  };
 
   const onProfile = () => {
     setMenuItem({
@@ -59,9 +58,9 @@ export const NavigationProvider: React.FC = ({
       profile: true,
       notification: false,
       roulette: false,
-      verification: false
+      verification: false,
     });
-  }
+  };
 
   const onNotification = () => {
     setMenuItem({
@@ -70,9 +69,9 @@ export const NavigationProvider: React.FC = ({
       profile: false,
       notification: true,
       roulette: false,
-      verification: false
+      verification: false,
     });
-  }
+  };
 
   const onRoulette = () => {
     setMenuItem({
@@ -81,9 +80,9 @@ export const NavigationProvider: React.FC = ({
       profile: false,
       notification: false,
       roulette: true,
-      verification: false
+      verification: false,
     });
-  }
+  };
 
   const onVerification = () => {
     setMenuItem({
@@ -92,11 +91,11 @@ export const NavigationProvider: React.FC = ({
       profile: false,
       notification: false,
       roulette: false,
-      verification: true
+      verification: true,
     });
-  }
+  };
 
-  return(
+  return (
     <NavigationContext.Provider value={{
       menuItem,
       onHome,
@@ -104,9 +103,10 @@ export const NavigationProvider: React.FC = ({
       onProfile,
       onNotification,
       onRoulette,
-      onVerification
-    }}>
+      onVerification,
+    }}
+    >
       {children}
     </NavigationContext.Provider>
   );
-}
+};

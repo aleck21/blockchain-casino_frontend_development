@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Image, Text } from '@project/libs/components';
 import cx from 'classnames';
-import styles from './styles.module.scss';
 import { HidPasswordIcon } from '@project/libs/assets/images';
+import styles from './styles.module.scss';
 
 type InputProps = {
   label?: string;
@@ -12,7 +12,7 @@ type InputProps = {
   classNameLabel?: string;
   defaultValue?: string;
   name?: string;
-}
+};
 
 export const PasswordInput: React.FC<InputProps> = ({
   label,
@@ -27,21 +27,19 @@ export const PasswordInput: React.FC<InputProps> = ({
   const [show, setShow] = useState(false);
 
   const onChangeInput = (e: any) => {
-    console.log(e.target);
     setValue(e.target.value);
-  } 
+  };
 
-
-  return(
+  return (
     <div className={cx(styles.input__container)}>
-      {label &&
+      {label && (
         <Text
-          type='p'
+          type="p"
           className={cx(styles.input__text__label, classNameLabel)}
         >
           {label}
         </Text>
-      }
+      )}
       <div className={cx(styles.input__block, classNameContainer)}>
         <input
           type={show ? 'text' : 'password'}
@@ -51,7 +49,7 @@ export const PasswordInput: React.FC<InputProps> = ({
           name={name}
         />
         <button
-          type='reset'
+          type="reset"
           className={cx(styles.input__showButton, classNameButton)}
           onClick={() => setShow(!show)}
         >
@@ -60,4 +58,4 @@ export const PasswordInput: React.FC<InputProps> = ({
       </div>
     </div>
   );
-}
+};

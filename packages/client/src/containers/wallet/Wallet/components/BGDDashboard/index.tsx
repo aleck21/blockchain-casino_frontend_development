@@ -6,15 +6,13 @@ import { LockedBlock } from './LockedBlock';
 import { Percentage } from './Percentage';
 import { Details } from './Details';
 
-export const BGDDashboard: React.FC = () => {
-  return(
-    <section className={cx(styles.dashboard__container)}>
-      <DashboardTitle />
-      <LockedBlock />
-      <div className={cx(styles.details__desktop)}>
-        <Details />    
-      </div>
-      <Percentage />
-    </section>
-  );
-}
+export const BGDDashboard: React.FC = () => (
+  <section className={cx(styles.dashboard__container)}>
+    <DashboardTitle />
+    <LockedBlock />
+    <div className={cx(styles.details__desktop)}>
+      <Details />
+    </div>
+    <Percentage />
+  </section>
+);

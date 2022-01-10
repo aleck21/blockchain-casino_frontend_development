@@ -1,0 +1,102 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.select__wrap__container {
+  position: relative;
+}
+
+.select__container {
+  height: 64px;
+  width: 100%;
+  background-color: $black;
+  border-radius: 15px;
+  padding: 0;
+  padding-right: 20px;
+  box-sizing: border-box;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 1fr 24px;
+
+  .selected__item {
+    background-color: $black;
+    height: 64px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px 0 0 15px;
+    @include base_text;
+    color: $white;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 20px;
+  }
+  
+  .select__arrow {
+    display: grid;
+    align-self: center;
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .rolledUp {
+      transform: rotate(0deg);
+      transition: .5s transform;
+    }
+
+    .unrolled {
+      transform: rotate(-180deg);
+      transition: .5s transform;
+    }
+  }
+  
+}
+
+.select__itemsBlock {
+  width: 100%;
+  position: absolute;
+  top: auto;
+  left: 0;
+  z-index: 200;
+  display: grid;
+  row-gap: 20px;
+  background-color: $black;
+  overflow: hidden;
+  border-radius: 15px;
+  align-items: flex-start;
+  box-sizing: border-box;
+
+  .select__item {
+    @include base_text;
+    color: $white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px 20px;
+    background-color: $black;
+    position: relative;
+    z-index: 500;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(50,50,50,.1);
+    }
+  }
+
+  .select__item__selected {
+    background-color: rgba(50,50,50,.3);
+  }
+}
+
+.items__show {
+  max-height: 500px;
+}
+
+.items__hidden {
+  max-height: 0px;
+}

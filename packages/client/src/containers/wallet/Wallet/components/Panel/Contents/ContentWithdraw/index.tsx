@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Button } from 'components/Button';
+import { ButtonWithContent as Button } from '@project/libs/components';
 import { croppingText } from 'utils/croppingText';
 import { ChooseCurrency } from '../../ChooseCurrency';
 import styles from './styles.module.scss';

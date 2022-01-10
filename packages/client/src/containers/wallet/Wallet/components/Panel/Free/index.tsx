@@ -7,18 +7,23 @@ import styles from './styles.module.scss';
 type FreeProps = {
   currencyCount: number | string;
   currencyType: string;
-}
+};
 
-export const Free: React.FC<FreeProps> = ({currencyCount, currencyType}) => {
+export const Free: React.FC<FreeProps> = ({ currencyCount, currencyType }) => {
   const { t } = useTranslation('main');
 
-  return(
+  return (
     <div className={cx(styles.free__container)}>
-      <Text type='p' className={cx(styles.free__text)}>
-        {t('Free')}&nbsp;
-        {currencyCount}&nbsp;
+      <Text
+        type="p"
+        className={cx(styles.free__text)}
+      >
+        {t('Free')}
+&nbsp;
+        {currencyCount}
+&nbsp;
         {currencyType}
       </Text>
     </div>
   );
-}
+};

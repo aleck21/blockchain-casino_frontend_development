@@ -5,30 +5,31 @@ export const WidgetContext = React.createContext({
   content: '',
   setContentWidget: (content: string) => {},
   openWidget: () => {},
-  closeWidget: () => {}
+  closeWidget: () => {},
 });
 
-export const WidgetProvider: React.FC = ({children}) => {
-  const [ widget, setWidget ] = useState(false);
-  const [ content, setContent ] = useState('');
+export const WidgetProvider: React.FC = ({ children }) => {
+  const [widget, setWidget] = useState(false);
+  const [content, setContent] = useState('');
 
   const openWidget = () => {
     setWidget(true);
-  }
+  };
 
   const closeWidget = () => {
     setWidget(false);
-  }
+  };
 
   const setContentWidget = (content: string) => {
     setContent(content);
-  }
+  };
 
-  return(
+  return (
     <WidgetContext.Provider value={{
-      widget, content, openWidget, closeWidget, setContentWidget
-    }}>
+      widget, content, openWidget, closeWidget, setContentWidget,
+    }}
+    >
       {children}
     </WidgetContext.Provider>
   );
-}
+};

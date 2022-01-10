@@ -1,21 +1,21 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
+import { WrapSelect, ButtonWithContent as Button } from '@project/libs/components';
 import styles from '../styles.module.scss';
-import { Button } from 'components/Button';
-import { WrapSelect } from 'components/WrapSelect';
 import '../select.scss';
 
 export type StageProps = {
   goNextStage: Function;
-}
+};
 
 export const Stage1: React.FC<StageProps> = ({
   goNextStage,
 }) => {
   const { t } = useTranslation('main');
-  
-  return(
+
+  return (
     <>
       <p className={cx(styles.white__text)}>
         {t('You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet. You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet.')}
@@ -27,12 +27,12 @@ export const Stage1: React.FC<StageProps> = ({
         <div className={cx(styles.stage1__buttons)}>
           <div className={cx(styles.stage1__input__box)}>
             <p>{t('Game')}</p>
-            <div className={'verification__select'}>
+            <div className="verification__select">
               <WrapSelect
                 list={[
-                  {value: 'dice', text: 'Dice'},
-                  {value: 'crash', text: 'Crash'},
-                  {value: 'classic_dice', text: 'Classic Dice'}
+                  { value: 'dice', text: 'Dice' },
+                  { value: 'crash', text: 'Crash' },
+                  { value: 'classic_dice', text: 'Classic Dice' },
                 ]}
                 // classNameContainer={'verification__select'}
               />
@@ -47,4 +47,4 @@ export const Stage1: React.FC<StageProps> = ({
       </footer>
     </>
   );
-}
+};

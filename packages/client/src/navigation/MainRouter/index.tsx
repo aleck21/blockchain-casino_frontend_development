@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Route, Switch, Router } from 'react-router-dom';
 import { history } from '@project/libs/utils';
 import {
   Homepage,
+  WalletPage,
 } from 'pages';
-import { WalletPage } from 'pages';
 import { ProfilePage } from 'pages/Profile';
 import { RouteLink } from '../../constants/routes';
 

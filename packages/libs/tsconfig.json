@@ -4,5 +4,5 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "."
   },
-  "include": [".", "../client/src/components/Paper"]
+  "include": [".", "components/common/Paper"]
 }

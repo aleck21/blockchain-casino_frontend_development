@@ -1,17 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from '../styles.module.scss';
-import { StageProps } from './Stage1';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Button } from 'components/Button';
+import { ButtonWithContent as Button } from '@project/libs/components/inputs/ButtonWithContent';
+import { StageProps } from './Stage1';
+import styles from '../styles.module.scss';
 
 export const Stage2: React.FC<StageProps> = ({
   goNextStage,
 }) => {
   const { t } = useTranslation('main');
-  
-  return(
+
+  return (
     <div className={cx(styles.stageX__container)}>
       <h4>
         Input
@@ -37,11 +37,24 @@ export const Stage2: React.FC<StageProps> = ({
         />
       </div>
       <p>
-        You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet. You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet.You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet. You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet.
+        You can get BGD through deposit bonus and other activities.
+        You can also directly exchange other currencies into the available
+        balance of BCD through the BCSwap function in the wallet. You can get
+        BGD through deposit bonus and other activities. You can also directly
+        exchange other currencies into the available balance of BCD through the
+        BCSwap function in the wallet.You can get BGD through deposit bonus and
+        other activities. You can also directly exchange other currencies into
+        the available balance of BCD through the BCSwap function in the wallet.
+        You can get BGD through deposit bonus and other activities. You can
+        also directly exchange other currencies into the available balance of
+        BCD through the BCSwap function in the wallet.
       </p>
       <footer className={cx(styles.verification__footer)}>
-        <Button text={t('Validate')} onClick={goNextStage} />
+        <Button
+          text={t('Validate')}
+          onClick={goNextStage}
+        />
       </footer>
     </div>
   );
-}
+};

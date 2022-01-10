@@ -2,8 +2,8 @@ import React, { FC, useContext } from 'react';
 import { Image } from '@project/libs/components';
 import { MenuBurger } from '@project/libs/assets/images';
 import cx from 'classnames';
-import styles from './styles.module.scss';
 import { WidgetContext } from 'context/widget';
+import styles from './styles.module.scss';
 
 export const Menu: FC = () => {
   const { setContentWidget, openWidget } = useContext(WidgetContext);
@@ -11,7 +11,7 @@ export const Menu: FC = () => {
   const openMenu = () => {
     setContentWidget('menu');
     openWidget();
-  }
+  };
 
   return (
     <div
@@ -24,4 +24,4 @@ export const Menu: FC = () => {
       />
     </div>
   );
-}
+};

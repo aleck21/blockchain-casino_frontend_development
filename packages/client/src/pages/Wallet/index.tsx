@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import {
-  Wallet
+  Wallet,
 } from 'containers';
 import { MainLayout } from '../../layouts/MainLayout';
 

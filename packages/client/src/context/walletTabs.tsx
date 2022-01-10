@@ -5,20 +5,20 @@ export const WalletTabsContext = React.createContext({
     deposit: true,
     withdraw: false,
     rakeback: false,
-    exchange: false
+    exchange: false,
   },
   onDeposit: () => {},
   onWithdraw: () => {},
   onRakeback: () => {},
   onExchange: () => {},
-})
+});
 
-export const WalletTabsProvider: React.FC = ({children}) => {
+export const WalletTabsProvider: React.FC = ({ children }) => {
   const [tabs, setTabs] = React.useState({
     deposit: true,
     withdraw: false,
     rakeback: false,
-    exchange: false
+    exchange: false,
   });
 
   const onDeposit = () => {
@@ -26,8 +26,8 @@ export const WalletTabsProvider: React.FC = ({children}) => {
       deposit: true,
       withdraw: false,
       rakeback: false,
-      exchange: false
-    })
+      exchange: false,
+    });
   };
 
   const onWithdraw = () => {
@@ -35,8 +35,8 @@ export const WalletTabsProvider: React.FC = ({children}) => {
       deposit: false,
       withdraw: true,
       rakeback: false,
-      exchange: false
-    })
+      exchange: false,
+    });
   };
 
   const onRakeback = () => {
@@ -44,8 +44,8 @@ export const WalletTabsProvider: React.FC = ({children}) => {
       deposit: false,
       withdraw: false,
       rakeback: true,
-      exchange: false
-    })
+      exchange: false,
+    });
   };
 
   const onExchange = () => {
@@ -53,19 +53,20 @@ export const WalletTabsProvider: React.FC = ({children}) => {
       deposit: false,
       withdraw: false,
       rakeback: false,
-      exchange: true
-    })
+      exchange: true,
+    });
   };
 
-  return(
+  return (
     <WalletTabsContext.Provider value={{
       tabs,
       onDeposit,
       onWithdraw,
       onRakeback,
-      onExchange
-    }}>
+      onExchange,
+    }}
+    >
       {children}
     </WalletTabsContext.Provider>
   );
-}
+};

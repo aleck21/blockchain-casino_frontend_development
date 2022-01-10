@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
+import { WalletTabsContext } from 'context/walletTabs';
 import styles from './styles.module.scss';
 import { Tabs } from './Tabs';
 import { ContentDeposit } from './Contents/ContentDeposit';
 import { ContentWithdraw } from './Contents/ContentWithdraw';
 import { ContentRakeback } from './Contents/ContentRakeback';
 import { ContentExchange } from './Contents/ContentExchange';
-import { WalletTabsContext } from 'context/walletTabs';
 
 export const Panel: React.FC = () => {
   const { tabs } = useContext(WalletTabsContext);
@@ -22,4 +22,4 @@ export const Panel: React.FC = () => {
       {tabs.exchange && <ContentExchange />}
     </section>
   );
-}
+};

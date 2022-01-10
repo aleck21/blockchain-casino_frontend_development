@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import styles from '../styles.module.scss';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { result, bytes, hash } from './contentDemo';
-import { Image } from '@project/libs/components';
+import { Image, ButtonWithContent as Button } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
-import { Button } from 'components/Button';
 import { croppingText } from 'utils/croppingText';
+import { result, bytes, hash } from './contentDemo';
+import styles from '../styles.module.scss';
 
 export const Stage4: React.FC = () => {
   const { t } = useTranslation('main');
 
   const [short, setShort] = useState(true);
-  
+
   const [isHash, setIsHash] = useState(false);
 
   const onValidate = () => {
     setIsHash(true);
-  }
+  };
 
   const isMobile = document.documentElement.clientWidth < 460;
 
-  return(
+  return (
     <div className={cx(styles.stageX__container)}>
       <h4>
         Input
@@ -39,14 +38,14 @@ export const Stage4: React.FC = () => {
           placeholder={t('Salt')}
           className={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
-          defaultValue='Salt'
+          defaultValue="Salt"
         />
         <TextInput
           label={t('Amount of games')}
           placeholder={t('Amount of games')}
           className={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
-          defaultValue='1'
+          defaultValue="1"
         />
       </div>
       <footer
@@ -60,7 +59,8 @@ export const Stage4: React.FC = () => {
           Results
         </h4>
         {isHash
-          ? <>
+          ? (
+            <>
               <div className={cx(styles.result__hash__container)}>
                 <div className={cx(styles.result__hash__box)}>
                   <div className={cx(styles.result__title)}>
@@ -69,8 +69,7 @@ export const Stage4: React.FC = () => {
                   <div className={cx(styles.result__text)}>
                     {isMobile
                       ? croppingText(hash.hash, 36)
-                      : hash.hash
-                    }
+                      : hash.hash}
                   </div>
                 </div>
                 <div className={cx(styles.result__hash__box)}>
@@ -83,13 +82,15 @@ export const Stage4: React.FC = () => {
                 </div>
               </div>
             </>
-          :  <>
+          )
+          : (
+            <>
               <div className={cx(styles.result__table__container)}>
                 <table>
                   <thead>
                     <tr>
-                      {result.map((th, key) => (
-                        <th key={`result_th_${key}`}>
+                      {result.map((th) => (
+                        <th key={th.id}>
                           {th.title}
                         </th>
                       ))}
@@ -97,8 +98,8 @@ export const Stage4: React.FC = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      {result.map((td, key) => (
-                        <td key={`result_td_${key}`}>
+                      {result.map((td) => (
+                        <td key={td.id}>
                           {td.data}
                         </td>
                       ))}
@@ -110,24 +111,38 @@ export const Stage4: React.FC = () => {
                 <span
                   className={cx(styles.bytes__title)}
                   onClick={() => setShort(!short)}
+                  onKeyPress={() => {}}
+                  tabIndex={0}
+                  role="button"
                 >
                   Bytes to number
-                  <Image url={ArrowBlue} className={cx(
-                    short ? styles.arrow__toRight : styles.arrow__toDown
-                  )} />
+                  <Image
+                    url={ArrowBlue}
+                    className={cx(
+                      short ? styles.arrow__toRight : styles.arrow__toDown,
+                    )}
+                  />
                 </span>
                 <span className={cx(styles.bytes__text)}>
                   {short
                     ? bytes.short
-                    : <>{bytes.details[0]}<br/>{bytes.details[1]}</>
-                  }
+                    : (
+                      <>
+                        {bytes.details[0]}
+                        <br />
+                        {bytes.details[1]}
+                      </>
+                    )}
                 </span>
               </div>
             </>
-        }
-        
-        <Button text={t('Validate')} onClick={onValidate} />
+          )}
+
+        <Button
+          text={t('Validate')}
+          onClick={onValidate}
+        />
       </footer>
     </div>
   );
-}
+};

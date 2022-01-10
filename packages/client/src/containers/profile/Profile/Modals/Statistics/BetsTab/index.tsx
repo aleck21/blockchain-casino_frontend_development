@@ -1,63 +1,57 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
-import { Select } from 'components/Select';
-import { list, table, tableCrash } from './contentDemo';
-import { Image } from '@project/libs/components';
-import { useTranslation } from '@project/libs/utils/i18n';
+import { Image, WrapDatePicker, SelectWithContent } from '@project/libs/components';
 import { Table } from './Table';
-import { WrapDatePicker } from 'components/DatePicker';
+import { table, tableCrash, list } from './contentDemo';
+import styles from './styles.module.scss';
 
 export const listForSelect = (
-  list: {id: string | number, data: string | any, icon: string}[]
-) => {
-  return list.map((item, i) => {
-    return {
-      id: item.id,
-      data: <>
-        <Image url={item.icon} />
-        <p className={cx(styles.select__item__text)}>
-          {item.data}
-        </p>
-      </>
-    }
-  });
-}
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  list: { id: string | number, data: any, icon: string }[],
+) => list.map((item) => ({
+  id: item.id,
+  data: (
+    <>
+      <Image url={item.icon} />
+      <p className={cx(styles.select__item__text)}>
+        {item.data}
+      </p>
+    </>
+  ),
+}));
 
 export const BetsTab: React.FC = () => {
-  const { t } = useTranslation('main');
-
-  const [ tabs, setTabs ] = useState({
+  const [tabs, setTabs] = useState({
     all: true,
     crash: false,
-    dice: false
-  })
+    dice: false,
+  });
 
   const onAll = () => {
     setTabs({
       all: true,
       crash: false,
-      dice: false
-    })
-  }
-  
+      dice: false,
+    });
+  };
+
   const onCrash = () => {
     setTabs({
       all: false,
       crash: true,
-      dice: false
-    })
-  }
+      dice: false,
+    });
+  };
 
   const onDice = () => {
     setTabs({
       all: false,
       crash: false,
-      dice: true
-    })
-  }
+      dice: true,
+    });
+  };
 
-  return(
+  return (
     <section className={cx(styles.bets__container)}>
       <header className={cx(styles.bets__header__container)}>
         <section className={cx(styles.header__calendar__button)}>
@@ -69,36 +63,43 @@ export const BetsTab: React.FC = () => {
           <nav className={cx(styles.header__tabs__box)}>
             <div
               className={cx(styles.tabs__item, styles.tab__left,
-                tabs.all ? styles.active : styles.enactive
-              )}
+                tabs.all ? styles.active : styles.enactive)}
               onClick={onAll}
+              onKeyPress={() => {}}
+              tabIndex={0}
+              role="button"
             >
               All
             </div>
             <div
               className={cx(styles.tabs__item, styles.tab__middle,
-                tabs.crash ? styles.active : styles.enactive
-              )}
+                tabs.crash ? styles.active : styles.enactive)}
               onClick={onCrash}
+              onKeyPress={() => {}}
+              tabIndex={0}
+              role="button"
             >
               Crash
             </div>
             <div
               className={cx(styles.tabs__item, styles.tab__right,
-                tabs.dice ? styles.active : styles.enactive
-              )}
+                tabs.dice ? styles.active : styles.enactive)}
               onClick={onDice}
+              onKeyPress={() => {}}
+              tabIndex={0}
+              role="button"
             >
               Dice
             </div>
           </nav>
         </section>
         <section className={cx(styles.header__selectCurrency)}>
-          <Select
+          <SelectWithContent
             list={listForSelect(list)}
-            classItems={cx(styles.select__items)}
+            // classItems={cx(styles.select__item__box)}
             classItem={cx(styles.select__item__box)}
             classContainer={cx(styles.select__container)}
+            classWrapContainer={cx(styles.select__wrap__container)}
             classArrow={cx(styles.select__arrow)}
             classHidden={cx(styles.items__hidden)}
           />
@@ -111,4 +112,4 @@ export const BetsTab: React.FC = () => {
       </main>
     </section>
   );
-}
+};

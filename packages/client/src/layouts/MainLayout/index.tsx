@@ -4,12 +4,12 @@ import cx from 'classnames';
 import {
   Header, Sidebar, Footer, Main,
 } from 'components';
-import styles from './styles.module.scss';
 import { NavigationProvider } from 'context/navigation';
 import { ModalContext, ModalProvider } from 'context/modalOpen';
 import { ModalWindow } from 'components/ModalWindow';
 import { Widget } from 'components/Widget';
 import { WidgetProvider } from 'context/widget';
+import styles from './styles.module.scss';
 
 type MainLayoutProps = {
   pageLayout?: string;
@@ -23,17 +23,16 @@ const MainLayout = ({
   style,
 }: MainLayoutProps) => {
   const { modal } = useContext(ModalContext);
-  
-  return(
+
+  return (
     <ModalProvider>
       <NavigationProvider>
         <WidgetProvider>
           <div
             className={cx(styles.page__container, pageLayout,
-              modal ? styles.no_scroll : styles.scroll              
-            )}
+              modal ? styles.no_scroll : styles.scroll)}
             style={style}
-            >
+          >
             <Header />
             <Sidebar />
             <Main>
@@ -46,7 +45,7 @@ const MainLayout = ({
         </WidgetProvider>
       </NavigationProvider>
     </ModalProvider>
-  )
+  );
 };
 
 export { MainLayout };

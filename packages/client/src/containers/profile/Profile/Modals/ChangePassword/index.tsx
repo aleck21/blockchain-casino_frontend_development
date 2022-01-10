@@ -1,33 +1,35 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { PasswordInput } from 'components/PasswordInput';
-import { Text } from '@project/libs/components';
-import { Button } from 'components/Button';
+import { Text, ButtonWithContent as Button } from '@project/libs/components';
+import styles from './styles.module.scss';
 
 export const ChangePassword: React.FC = () => {
   const { t } = useTranslation('main');
 
-  return(
+  return (
     <section className={cx(styles.changePass__container)}>
       <div className={cx(styles.changePass__head)}>
-        <Text type='h3' className={cx(styles.changPass__head__title)}>
+        <Text
+          type="h3"
+          className={cx(styles.changPass__head__title)}
+        >
           {t('Change Password')}
         </Text>
       </div>
       <form>
         <div className={cx(styles.changePass__inputs__box)}>
           <PasswordInput
-            name='oldPassword'
+            name="oldPassword"
             label={t('Old Password')}
           />
           <PasswordInput
-            name='newPassword'
+            name="newPassword"
             label={t('New Password')}
           />
           <PasswordInput
-            name='acceptPassword'
+            name="acceptPassword"
             label={t('Accept Password')}
           />
         </div>
@@ -41,4 +43,4 @@ export const ChangePassword: React.FC = () => {
       </form>
     </section>
   );
-}
+};

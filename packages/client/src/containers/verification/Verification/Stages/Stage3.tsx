@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import styles from '../styles.module.scss';
-import { StageProps } from './Stage1';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { result, bytes } from './contentDemo';
 import { Image } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
+import { result, bytes } from './contentDemo';
+import { StageProps } from './Stage1';
+import styles from '../styles.module.scss';
 
 export const Stage3: React.FC<StageProps> = ({
   goNextStage,
@@ -14,8 +14,8 @@ export const Stage3: React.FC<StageProps> = ({
   const { t } = useTranslation('main');
 
   const [short, setShort] = useState(true);
-  
-  return(
+
+  return (
     <div className={cx(styles.stageX__container)}>
       <h4>
         Input
@@ -61,7 +61,12 @@ export const Stage3: React.FC<StageProps> = ({
         className={cx(styles.verification__footer)}
         style={{ paddingTop: 30 }}
       >
-        <h4 className={cx(styles.left)} onClick={() => goNextStage()}>Results</h4>
+        <h4
+          className={cx(styles.left)}
+          onClick={() => goNextStage()}
+        >
+          Results
+        </h4>
         <div className={cx(styles.result__table__container)}>
           <table>
             <thead>
@@ -90,18 +95,26 @@ export const Stage3: React.FC<StageProps> = ({
             onClick={() => setShort(!short)}
           >
             Bytes to number
-            <Image url={ArrowBlue} className={cx(
-              short ? styles.arrow__toRight : styles.arrow__toDown
-            )} />
+            <Image
+              url={ArrowBlue}
+              className={cx(
+                short ? styles.arrow__toRight : styles.arrow__toDown,
+              )}
+            />
           </span>
           <span className={cx(styles.bytes__text)}>
             {short
               ? bytes.short
-              : <>{bytes.details[0]}<br/>{bytes.details[1]}</>
-            }
+              : (
+                <>
+                  {bytes.details[0]}
+                  <br />
+                  {bytes.details[1]}
+                </>
+              )}
           </span>
         </div>
       </footer>
     </div>
   );
-}
+};

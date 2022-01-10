@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Text } from '@project/libs/components';
-import { Button } from 'components/Button';
+import { Text, ButtonWithContent as Button } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
+import styles from './styles.module.scss';
 
 export const StatisticsTitle: React.FC = () => {
   const { t } = useTranslation('main');
@@ -13,17 +12,26 @@ export const StatisticsTitle: React.FC = () => {
   const showStatisstics = () => {
     setContentModal('statistics');
     openModal();
-  }
+  };
 
   const showTransactions = () => {
     setContentModal('transactions');
     openModal();
-  }
+  };
 
-  return(
+  return (
     <div className={cx(styles.title__container)}>
-      <div onClick={showStatisstics} className={cx(styles.title__text__box)}>
-        <Text type='h3' className={cx(styles.title__text)}>
+      <div
+        onClick={showStatisstics}
+        className={cx(styles.title__text__box)}
+        onKeyPress={() => {}}
+        tabIndex={0}
+        role="button"
+      >
+        <Text
+          type="h3"
+          className={cx(styles.title__text)}
+        >
           {t('Statistics')}
         </Text>
       </div>
@@ -34,4 +42,4 @@ export const StatisticsTitle: React.FC = () => {
       />
     </div>
   );
-}
+};

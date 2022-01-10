@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 type RateProps = {
   rate: string | number;
-}
+};
 
 export const Rate = (props: RateProps) => {
   const { t } = useTranslation('main');
@@ -14,9 +14,12 @@ export const Rate = (props: RateProps) => {
 
   return (
     <div className={cx(styles.container)}>
-      <Text type='p' className={cx(styles.rate__text)}>
+      <Text
+        type="p"
+        className={cx(styles.rate__text)}
+      >
         {t(`1BTC=$${rate}`)}
       </Text>
     </div>
   );
-}
+};

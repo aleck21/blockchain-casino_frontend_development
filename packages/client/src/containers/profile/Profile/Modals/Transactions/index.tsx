@@ -12,19 +12,31 @@ export const Transactions: React.FC = () => {
   const { TabPane } = Tabs;
   const { t } = useTranslation('main');
 
-  return(
-    <section className={'transactions__container'}>
-      <Tabs defaultActiveKey='1' onChange={() => {}}>
-        <TabPane tab={t('Deposit')} key='1'>
+  return (
+    <section className="transactions__container">
+      <Tabs
+        defaultActiveKey="1"
+        onChange={() => {}}
+      >
+        <TabPane
+          tab={t('Deposit')}
+          key="1"
+        >
           <Deposit />
         </TabPane>
-        <TabPane tab={t('Withdraw')} key='2'>
+        <TabPane
+          tab={t('Withdraw')}
+          key="2"
+        >
           <Deposit />
         </TabPane>
-        <TabPane tab={t('Bill')} key='3'>
+        <TabPane
+          tab={t('Bill')}
+          key="3"
+        >
           <Bill />
         </TabPane>
       </Tabs>
     </section>
   );
-}
+};

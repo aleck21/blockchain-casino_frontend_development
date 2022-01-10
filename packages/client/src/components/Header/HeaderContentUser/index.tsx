@@ -6,15 +6,13 @@ import { Wallet } from '../Wallet';
 import { Profile } from '../Profile';
 import { Note } from '../Note';
 
-export const HeaderContentUser: FC = () => {
-  return (
-    <section className={cx(styles.container)}>
-      <Info />
-      <Wallet />
-      <Profile />
-      <div className={cx(styles.head_user_contet__note)}>
-        <Note />
-      </div>
-    </section>
-  );
-}
+export const HeaderContentUser: FC = () => (
+  <section className={cx(styles.container)}>
+    <Info />
+    <Wallet />
+    <Profile />
+    <div className={cx(styles.head_user_contet__note)}>
+      <Note />
+    </div>
+  </section>
+);

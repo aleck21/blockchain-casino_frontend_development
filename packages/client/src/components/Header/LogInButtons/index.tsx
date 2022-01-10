@@ -9,8 +9,8 @@ export const LogInButtons: FC = () => {
   const { t } = useTranslation('main');
 
   const onSignInClick = useCallback(() => {}, []);
-  
-  return(
+
+  return (
     <section className={cx(styles.container)}>
       <Button
         onClick={onSignInClick}
@@ -26,4 +26,4 @@ export const LogInButtons: FC = () => {
       </Button>
     </section>
   );
-}
+};

@@ -1,10 +1,10 @@
 import React from 'react';
+import cx from 'classnames';
 import { ChooseCurrency } from '../../ChooseCurrency';
 import { Active } from '../../Active';
 import { LinkBonus } from '../../LinkBonus';
 import { Free } from '../../Free';
 import { Deposit } from '../../Deposit';
-import cx from 'classnames';
 import styles from './styles.module.scss';
 
 export const ContentDeposit: React.FC = () => {
@@ -12,8 +12,8 @@ export const ContentDeposit: React.FC = () => {
     currencyCount: 1000,
     currencyType: 'BNB',
   };
-  
-  return(
+
+  return (
     <section className={cx()}>
       <ChooseCurrency />
       <Active />
@@ -22,4 +22,4 @@ export const ContentDeposit: React.FC = () => {
       <Free {...freeDemo} />
     </section>
   );
-}
+};

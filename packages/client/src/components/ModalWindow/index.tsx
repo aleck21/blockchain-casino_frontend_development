@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import { Paper } from 'components/Paper';
+import { Paper } from '@project/libs/components/common';
 import { ModalContext } from 'context/modalOpen';
 import {
   Promocode,

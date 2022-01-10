@@ -9,9 +9,12 @@ export const LinkBonus: React.FC = () => {
 
   return (
     <div className={cx(styles.linkBonus__container)}>
-      <Text type='p' className={cx(styles.linkBonus__text)}>
+      <Text
+        type="p"
+        className={cx(styles.linkBonus__text)}
+      >
         {t('Use another bonus for the next deposit')}
       </Text>
     </div>
   );
-}
+};
