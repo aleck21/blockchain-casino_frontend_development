@@ -1,11 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
-import { ChooseCurrency } from '../../ChooseCurrency';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Button } from 'components/Button';
 import { croppingText } from 'utils/croppingText';
+import { ChooseCurrency } from '../../ChooseCurrency';
+import styles from './styles.module.scss';
 
 const addressDemo = 'c2m19375cn2978r5nvn2975rvneu20dj2c9c48n25m2u5p';
 
@@ -13,20 +13,20 @@ export const ContentWithdraw: React.FC = () => {
   const { t } = useTranslation('main');
   const isMobile = document.documentElement.clientWidth < 460;
 
-  return(
+  return (
     <div className={cx(styles.withdraw__container)}>
       <ChooseCurrency />
-      <form >
+      <form>
         <div className={cx(styles.form_element__box)}>
-          <TextInput 
-            name='withdraw'
+          <TextInput
+            name="withdraw"
             label={t('How much funds do you want to withdraw?')}
-            defaultValue='1000'
+            defaultValue="1000"
           />
         </div>
         <div className={cx(styles.form_element__box)}>
           <TextInput
-            name='walletAddress'
+            name="walletAddress"
             label={t('To withdraw funds enter your wallet address in BSC')}
             defaultValue={
               isMobile ? croppingText(addressDemo, 24) : addressDemo
@@ -38,11 +38,11 @@ export const ContentWithdraw: React.FC = () => {
             disabled={false}
             onClick={() => {}}
             text={t('Withdraw funds')}
-            type='submit'
+            type="submit"
             className={cx(styles.withdraw__button)}
           />
         </div>
       </form>
     </div>
   );
-}
+};
