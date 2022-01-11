@@ -1,3 +1,44 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/palette.scss";
 
+.roulette__container {
+
+  .roulette__content__box {
+    display: grid;
+    grid-template-areas: 'roulette info';
+    grid-template-columns: 557px 321px;
+    background-image: '~@project/libs/assets/images/rouletteBackground.png';
+  }
+
+  .roulette__game {
+    grid-area: roulette;
+  }
+
+  .roulette__info {
+    grid-area: info;
+
+    .roulette__info__textBlock {
+      p {
+        font-size: 14px;
+        color: $middle;
+        font-weight: 400;
+        text-align: left;
+      }
+
+      @include mobile_sm {
+        display: none;
+      }
+    }
+
+    .roulette__info__gameMonitor {
+      background-color: $black;
+      border-radius: 20px;
+      height: 65px;
+      width: 321px;
+
+      @include mobile_sm {
+        width: calc(100% - 52px);
+      }
+    }
+  }
+}

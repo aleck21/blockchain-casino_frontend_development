@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-import { Image } from '@project/libs/components';
-// import { BellNote, Bell } from '@project/libs/assets/images';
-import { Text } from '@project/libs/components';
+import { Text, Image } from '@project/libs/components';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import styles from './styles.module.scss';

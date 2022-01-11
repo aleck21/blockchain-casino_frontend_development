@@ -1,7 +1,6 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
 // import { useUser } from 'hooks';
-import { useTranslation } from 'i18n';
 import styles from './styles.module.scss';
 import { Logo } from './Logo';
 import { Menu } from './Menu';
@@ -11,7 +10,6 @@ import { HeaderContentUser } from './HeaderContentUser';
 import { HeaderContentNotUser } from './HeaderContentNotUser';
 
 export const Header: FC = () => {
-  const { t } = useTranslation('main');
   // const { isUser } = useUser();
   const isUser = true;
 

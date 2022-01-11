@@ -19,6 +19,9 @@ export const Note: FC = () => {
     <div
       className={cx(styles.container)}
       onClick={onNotifications}
+      onKeyPress={() => {}}
+      tabIndex={0}
+      role="button"
     >
       <Image
         url={isNote ? BellNote : Bell}

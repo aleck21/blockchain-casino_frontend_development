@@ -12,18 +12,21 @@ export const ChooseCurrency: React.FC = () => {
 
   const dataDemo = [
     {
+      id: 'bnb',
       logo: BinaceCoinColor,
       shortName: 'BNB',
       name: 'Binance Coin',
       balance: '34,382.0052',
     },
     {
+      id: 'btc',
       logo: BitcoinColor,
       shortName: 'BTC',
       name: 'Bitcoin',
       balance: '34,382.0053',
     },
     {
+      id: 'eth',
       logo: EthereumColor,
       shortName: 'ETH',
       name: 'Ethereum',
@@ -31,14 +34,15 @@ export const ChooseCurrency: React.FC = () => {
     },
   ];
 
-  const list = dataDemo.map((item, key) => ({
+  const list = dataDemo.map((item) => ({
     element: (
       <SelectItem
         {...item}
-        key={key}
+        key={item.id}
       />
     ),
     result: item.balance,
+    id: item.id,
   }));
 
   return (
