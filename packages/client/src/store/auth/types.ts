@@ -8,4 +8,11 @@ export interface AuthState {
     access: string;
     refresh: string;
   },
+
+  isLoginEmailLoading: boolean;
 }
+
+export type AuthLoginEmailPayload = {
+  email: string;
+  password: string;
+};
