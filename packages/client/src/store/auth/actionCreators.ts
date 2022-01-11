@@ -1,4 +1,4 @@
-import { AuthState } from './types';
+import { AuthLoginEmailPayload, AuthState } from './types';
 import { AuthActionType } from './actionTypes';
 
 export const authReady = () => ({ type: AuthActionType.Ready });
@@ -19,3 +19,8 @@ export const authLogout = (payload?: { reason?: string }) => ({
 });
 
 export const authRefresh = () => ({ type: AuthActionType.Refresh });
+
+export const authLoginEmail = (payload: AuthLoginEmailPayload) => ({
+  type: AuthActionType.LoginEmail,
+  payload,
+});
