@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Profile } from 'containers/profile';
 import { MainLayout } from '../../layouts/MainLayout';
 

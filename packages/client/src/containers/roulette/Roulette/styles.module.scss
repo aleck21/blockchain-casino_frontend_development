@@ -1,3 +1,100 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
 
+.roulette__container {
+
+  .roulette__title {
+    margin: 20px;
+    margin-bottom: 0;
+  }
+
+  .roulette__content__box {
+    display: grid;
+    grid-template-areas: 'roulette info';
+    grid-template-columns: 557px 341px;
+    background-image: url('~@project/libs/assets/images/rouletteBackground.png');
+    background-size: 90%;
+    background-position: top -88px left -20px;
+    background-repeat: no-repeat;
+  }
+
+  .roulette__game {
+    grid-area: roulette;
+
+    img {
+      height: 449px;
+      width: 487px;
+      margin-top: 30px;
+      margin-left: 47px;
+    }
+
+    .spin__button {
+      height: 44px;
+      width: 280px;
+      margin: 10px auto 41px auto;
+    }
+
+    p {
+      font-size: 16px;
+      color: $middle;
+      margin-top: 20px;
+
+      strong {
+        color: $white;
+        font-weight: 500;
+      }
+    }
+
+    .timer__container {
+
+      .timer__windowTime {
+        background-color: $black;
+        border-radius: 10px;
+        width: 40px;
+        height: 44px;
+        font-family: $montserrat;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
+
+  .roulette__info {
+    grid-area: info;
+    padding: 40px 30px 0 0;
+
+    .roulette__info__textBlock {
+      p {
+        font-family: $helvetica;
+        font-size: 14px;
+        color: $middle;
+        font-weight: 400;
+        text-align: left;
+        line-height: 140%;
+        padding-bottom: 10px;
+      }
+
+      @include mobile_sm {
+        display: none;
+      }
+    }
+
+    .roulette__info__gameMonitor {
+      background-color: $black;
+      overflow: hidden;
+      border-radius: 20px;
+      height: 65px;
+      width: 321px;
+      margin-bottom: 30px;
+      margin-top: 70px;
+
+      @include mobile_sm {
+        width: calc(100% - 52px);
+      }
+    }
+  }
+}

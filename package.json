@@ -16,8 +16,7 @@
     "build:client": "yarn lerna run build:client",
     "storybook": "start-storybook -p 6006",
     "fontello": "bash ./fontello.sh",
-    "fontello:open": "fontello-cli --config packages/libs/assets/fonts/fontello/config.json open",
-    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ."
+    "fontello:open": "fontello-cli --config packages/libs/assets/fonts/fontello/config.json open"
   },
   "engines": {
     "node": "<=14.17.0"

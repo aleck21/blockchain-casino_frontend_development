@@ -33,7 +33,6 @@ export const TextInput: React.FC<InputProps> = ({
   const [value, setValue] = useState(defaultValue);
 
   const onChangeInput = (e: any) => {
-    console.log(e.target);
     setValue(e.target.value);
   };
 

@@ -8,5 +8,5 @@
   "include": [
     "src/**/*",
     "tsconfig.paths.json"
-, "../libs/components/common/Paper", "../libs/components/inputs/ButtonWithContent", "../libs/components/inputs/WrapDatePicker", "../libs/components/inputs/WrapSelect", "../libs/components/inputs/DoubleInput"  ]
+  ]
 }

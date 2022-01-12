@@ -6,15 +6,19 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import styles from './styles.module.scss';
 
 type SelectProps = {
-  list: { element: JSX.Element; result: string | number }[];
+  list: {
+    element: JSX.Element;
+    result: string | number;
+    id: string | number
+  }[];
   defaultItem?: string | number;
-  className?: string;
+  // className?: string;
 };
 
 export const SelectWithResult: React.FC<SelectProps> = ({
   list,
-  defaultItem,
-  className,
+  defaultItem = 0,
+  // className,
 }) => {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState(list);
@@ -29,8 +33,9 @@ export const SelectWithResult: React.FC<SelectProps> = ({
     const l = content.length;
     const newList = [content[index]];
     for (let i = 0; i < l; i++) {
-      if (i === index) continue;
-      newList.push(content[i]);
+      if (i !== index) {
+        newList.push(content[i]);
+      }
     }
     setContent(newList);
     setOpen(false);
@@ -45,8 +50,12 @@ export const SelectWithResult: React.FC<SelectProps> = ({
           {content.map((itemList, k) => (
             <div
               className={cx(styles.content__item)}
-              key={`select_item_${k}`}
+              key={itemList.id}
               onClick={() => onSelect(k)}
+              onKeyPress={() => {}}
+              tabIndex={0}
+              role="option"
+              aria-selected={defaultItem === k}
             >
               {itemList.element}
             </div>
@@ -55,6 +64,9 @@ export const SelectWithResult: React.FC<SelectProps> = ({
         <div
           className={cx(styles.selectBlock__arrow)}
           onClick={openList}
+          role="button"
+          onKeyPress={() => {}}
+          tabIndex={0}
         >
           <Image
             url={ArrowToDown}

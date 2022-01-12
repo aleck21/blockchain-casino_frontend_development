@@ -30,9 +30,9 @@ export const Stage1: React.FC<StageProps> = ({
             <div className="verification__select">
               <WrapSelect
                 list={[
-                  { value: 'dice', text: 'Dice' },
-                  { value: 'crash', text: 'Crash' },
-                  { value: 'classic_dice', text: 'Classic Dice' },
+                  { value: 'dice', text: 'Dice', id: '001' },
+                  { value: 'crash', text: 'Crash', id: '002' },
+                  { value: 'classic_dice', text: 'Classic Dice', id: '003' },
                 ]}
                 // classNameContainer={'verification__select'}
               />

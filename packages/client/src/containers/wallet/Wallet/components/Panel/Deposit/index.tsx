@@ -47,6 +47,9 @@ export const Deposit: React.FC = () => {
         <div
           className={cx(styles.deposit__textMode__input__icon)}
           onClick={onCopy}
+          onKeyPress={() => {}}
+          tabIndex={0}
+          role="button"
         >
           <img
             src={IconCopy}

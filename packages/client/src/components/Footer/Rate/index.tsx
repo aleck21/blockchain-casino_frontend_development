@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Text } from '@project/libs/components';
 
@@ -8,9 +9,10 @@ type RateProps = {
   rate: string | number;
 };
 
-export const Rate = (props: RateProps) => {
+export const Rate: React.FC<RateProps> = ({
+  rate = '47377.20',
+}) => {
   const { t } = useTranslation('main');
-  const rate = props.rate || '47377.20';
 
   return (
     <div className={cx(styles.container)}>

@@ -1,4 +1,4 @@
-import React, { ReactComponentElement, ReactElement, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import cx from 'classnames';
 import { Text } from '@project/libs/components';
 import styles from './styles.module.scss';

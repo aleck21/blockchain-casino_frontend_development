@@ -4,14 +4,17 @@ import { Image } from '@project/libs/components';
 
 export const select = [
   {
+    id: 'all',
     value: 'all',
     text: 'All',
   },
   {
+    id: 'bitcoin',
     value: 'bitcoin',
     text: 'BTC',
   },
   {
+    id: 'ethereum',
     value: 'ethereum',
     text: 'ETH',
   },

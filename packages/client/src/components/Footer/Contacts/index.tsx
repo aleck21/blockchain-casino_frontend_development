@@ -40,7 +40,7 @@ export const Contacts: FC = () => {
           >
             <>
               {t('Support')}
-              <a href="">
+              <a href="mailto:demo@mail.com">
                 <Text
                   type="span"
                   className={cx(styles.contacts__link)}

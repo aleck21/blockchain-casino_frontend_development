@@ -1,6 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
-import styles from './styles.module.scss';
 import 'antd/dist/antd.css';
 import './styles.scss';
 import { Tabs } from 'antd';

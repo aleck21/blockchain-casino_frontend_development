@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import cx from 'classnames';
 import { ModalContext } from 'context/modalOpen';
 import { NavigationContext } from 'context/navigation';
@@ -6,7 +6,7 @@ import { HomeDemo, Verification, Wallet } from 'containers';
 import { Profile } from 'containers/profile';
 import styles from './styles.module.scss';
 
-export const Main: FC = ({ children }) => {
+export const Main: FC = () => {
   const { modal } = useContext(ModalContext);
   const { menuItem } = useContext(NavigationContext);
 

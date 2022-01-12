@@ -11,17 +11,21 @@ type ProgressProps = {
 export const ProgressBar: React.FC<ProgressProps> = ({
   quanity,
   ofValue,
-}) => (
-  <div className={cx(styles.progress__container)}>
-    <div
-      className={cx(styles.progress__level)}
-      style={{ width: `${quanity * 100 / ofValue}%` }}
-    />
-    <div className={cx(styles.progress__text)}>
-      <Text type="p">
-        {`${quanity.toLocaleString()
-        } / ${ofValue.toLocaleString()}`}
-      </Text>
+}) => {
+  const width = (quanity * 100) / ofValue;
+
+  return (
+    <div className={cx(styles.progress__container)}>
+      <div
+        className={cx(styles.progress__level)}
+        style={{ width: `${width}%` }}
+      />
+      <div className={cx(styles.progress__text)}>
+        <Text type="p">
+          {`${quanity.toLocaleString()
+          } / ${ofValue.toLocaleString()}`}
+        </Text>
+      </div>
     </div>
-  </div>
-);
+  );
+};

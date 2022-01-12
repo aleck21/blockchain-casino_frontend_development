@@ -7,19 +7,19 @@ import styles from './styles.module.scss';
 
 export const Footer: FC = () => (
   <div className={cx(styles.container)}>
-    <a href="">
+    <a href="https://facebook.com">
       <Image
         url={Facebook}
         className={cx(styles.sidebar_footer__icon)}
       />
     </a>
-    <a href="">
+    <a href="https://discord.com">
       <Image
         url={Discord}
         className={cx(styles.sidebar_footer__icon)}
       />
     </a>
-    <a href="">
+    <a href="https://twitter.com">
       <Image
         url={Twitter}
         className={cx(styles.sidebar_footer__icon)}

@@ -3,6 +3,5 @@
   "compilerOptions": {
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "."
-  },
-  "include": [".", "components/common/Paper"]
+  }
 }

@@ -32,6 +32,9 @@ export const TabItem: React.FC<ItemProps> = ({ isActive, title, tab }) => {
     <div
       className={cx(isActive ? styles.item_active : styles.item_inactive)}
       onClick={type[tab]}
+      onKeyPress={() => {}}
+      tabIndex={0}
+      role="button"
     >
       <Text
         type="h6"

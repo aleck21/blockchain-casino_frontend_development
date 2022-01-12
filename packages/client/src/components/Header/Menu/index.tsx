@@ -17,6 +17,9 @@ export const Menu: FC = () => {
     <div
       className={cx(styles.container)}
       onClick={openMenu}
+      onKeyPress={() => {}}
+      tabIndex={0}
+      role="button"
     >
       <Image
         url={MenuBurger}

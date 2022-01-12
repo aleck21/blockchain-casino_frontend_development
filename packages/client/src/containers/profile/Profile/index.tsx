@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { HeadPage } from 'components/HeadPage';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Table } from 'components/Table';
+import { Table } from 'containers/profile/Profile/Table';
 import { Image, Text, Paper } from '@project/libs/components';
 import styles from './styles.module.scss';
 import { avatarDemo, Main } from './Main';
@@ -48,8 +48,7 @@ export const Profile: React.FC = () => {
         <ButtonBlock />
         <StatisticsTitle />
         <Table
-          data={dataTable.data}
-          head={dataTable.head}
+          data={dataTable}
         />
       </div>
     </section>
