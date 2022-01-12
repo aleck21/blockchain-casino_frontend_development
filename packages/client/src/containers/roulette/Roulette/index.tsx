@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import cx from 'classnames';
 import { ButtonWithContent as Button, Image, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { RouletteDemo } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
-import { spins, users } from './contentDemo';
+import { spinsQuantity, users } from './contentDemo';
 import { Timer } from './Timer';
 import { GameMonitor } from './GameMonitor';
 
-export const Roulette: React.FC = () => {
+export const Roulette: React.FC = React.memo(() => {
   const { t } = useTranslation('main');
-  const [spin, setSpin] = useState(false);
+  const [isSpining, setIsSpining] = useState(false);
 
-  const onSpin = () => {
-    setSpin(!spin);
-  };
+  const onSpinClick = useCallback(() => {
+    setIsSpining(!isSpining);
+  }, [isSpining]);
 
   return (
     <section className={cx(styles.roulette__container)}>
@@ -28,19 +28,19 @@ export const Roulette: React.FC = () => {
         <div className={cx(styles.roulette__game)}>
           <Image url={RouletteDemo} />
           <Text type="p">
-            {spin
+            {isSpining
               ? t('Next free spin in')
               : (
                 <>
                   {t('You have')}
                   &ensp;
-                  <strong>{spins}</strong>
+                  <strong>{spinsQuantity}</strong>
                   &ensp;
                   {t('spins')}
                 </>
               )}
           </Text>
-          {spin
+          {isSpining
             ? (
               <Timer
                 hours={12}
@@ -51,7 +51,7 @@ export const Roulette: React.FC = () => {
             : (
               <Button
                 text={t('Spin!')}
-                onClick={onSpin}
+                onClick={onSpinClick}
                 className={cx(styles.spin__button)}
               />
             )}
@@ -87,4 +87,4 @@ export const Roulette: React.FC = () => {
       </div>
     </section>
   );
-};
+});

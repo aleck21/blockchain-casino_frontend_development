@@ -22,11 +22,7 @@ type GameMonitorProps = {
   index: number;
 };
 
-type CurrencyMap = {
-  [index: string]: string;
-};
-
-const currencyList: CurrencyMap = {
+const currencyImages: Record<string, string> = {
   BNB: BinaceCoinColor,
   SHIB: ShibaInuShibColor,
   ETH: EthereumColor,
@@ -34,7 +30,7 @@ const currencyList: CurrencyMap = {
   BGD: BunnyCoinColor,
 };
 
-const UsersList: React.FC<UserProps> = ({
+const UserItem: React.FC<UserProps> = ({
   id,
   userName,
   currency,
@@ -47,7 +43,7 @@ const UsersList: React.FC<UserProps> = ({
     <Text type="p">
       {userName}
     </Text>
-    <Image url={currencyList[currency]} />
+    <Image url={currencyImages[currency]} />
     <Text
       type="p"
       className={cx(styles.user__currencyCount)}
@@ -57,7 +53,7 @@ const UsersList: React.FC<UserProps> = ({
   </div>
 );
 
-export const GameMonitor: React.FC<GameMonitorProps> = ({
+export const GameMonitor: React.FC<GameMonitorProps> = React.memo(({
   content,
   index,
 }) => {
@@ -69,8 +65,8 @@ export const GameMonitor: React.FC<GameMonitorProps> = ({
       className={cx(styles.users__container)}
     >
       {content.map((user) => (
-        <UsersList {...user} />
+        <UserItem {...user} />
       ))}
     </div>
   );
-};
+});

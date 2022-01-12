@@ -8,12 +8,12 @@ type TimerProps = {
   seconds: number | string;
 };
 
-const Points: React.FC = () => (
+const Points: React.FC = React.memo(() => (
   <div className={cx(styles.points)}>
     <div className={cx(styles.point)} />
     <div className={cx(styles.point)} />
   </div>
-);
+));
 
 export const Timer: React.FC<TimerProps> = ({
   hours,

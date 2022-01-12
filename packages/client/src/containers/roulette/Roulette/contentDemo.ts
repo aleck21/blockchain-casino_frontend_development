@@ -1,4 +1,4 @@
-export const spins = 15;
+export const spinsQuantity = 15;
 
 export const users = [
   {
