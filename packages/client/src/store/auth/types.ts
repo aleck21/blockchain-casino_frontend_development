@@ -19,3 +19,7 @@ export type AuthEmailPayload = {
 export type AuthEmailPasswordPayload = AuthEmailPayload & {
   password: string;
 };
+
+export type MetamaMaskPreLoginRequestPayload = {
+  walletAddress: string;
+};
