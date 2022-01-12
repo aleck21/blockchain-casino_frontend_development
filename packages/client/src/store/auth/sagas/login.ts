@@ -4,6 +4,7 @@ import { AuthActionType } from '../actionTypes';
 
 export function* loginEmail({ payload }: ReturnType<typeof authLoginEmail>) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { email, password } = payload;
 
     yield put(authSetState({ isLoginEmailLoading: true }));

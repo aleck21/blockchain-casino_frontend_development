@@ -16,7 +16,6 @@
     background-image: url('~@project/libs/assets/images/rouletteBackground.png');
     background-size: 90%;
     background-position: top -88px left -20px;
-    mix-blend-mode: screen;
     background-repeat: no-repeat;
   }
 
@@ -46,6 +45,22 @@
         font-weight: 500;
       }
     }
+
+    .timer__container {
+
+      .timer__windowTime {
+        background-color: $black;
+        border-radius: 10px;
+        width: 40px;
+        height: 44px;
+        font-family: $montserrat;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+        text-align: center;
+      }
+    }
   }
 
   .roulette__info {
@@ -69,10 +84,8 @@
     }
 
     .roulette__info__gameMonitor {
-      // background-color: $black;
-      background: none;
+      background-color: $black;
       overflow: hidden;
-      border: 1px solid red;
       border-radius: 20px;
       height: 65px;
       width: 321px;
