@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import cx from 'classnames';
 // import { useUser } from 'hooks';
 import { useTranslation } from 'i18n';
