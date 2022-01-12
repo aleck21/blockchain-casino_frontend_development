@@ -12,7 +12,10 @@ export interface AuthState {
   isLoginEmailLoading: boolean;
 }
 
-export type AuthLoginEmailPayload = {
+export type AuthEmailPayload = {
   email: string;
+};
+
+export type AuthEmailPasswordPayload = AuthEmailPayload & {
   password: string;
 };

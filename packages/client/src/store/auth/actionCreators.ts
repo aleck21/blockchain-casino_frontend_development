@@ -1,4 +1,4 @@
-import { AuthLoginEmailPayload, AuthState } from './types';
+import { AuthEmailPasswordPayload, AuthEmailPayload, AuthState } from './types';
 import { AuthActionType } from './actionTypes';
 
 export const authReady = () => ({ type: AuthActionType.Ready });
@@ -20,7 +20,17 @@ export const authLogout = (payload?: { reason?: string }) => ({
 
 export const authRefresh = () => ({ type: AuthActionType.Refresh });
 
-export const authLoginEmail = (payload: AuthLoginEmailPayload) => ({
+export const authLoginEmail = (payload: AuthEmailPasswordPayload) => ({
   type: AuthActionType.LoginEmail,
+  payload,
+});
+
+export const authSignUpEmail = (payload: AuthEmailPasswordPayload) => ({
+  type: AuthActionType.SignUpEmail,
+  payload,
+});
+
+export const authRequestPasswordRecovery = (payload: AuthEmailPayload) => ({
+  type: AuthActionType.RequestPasswordRecovery,
   payload,
 });
