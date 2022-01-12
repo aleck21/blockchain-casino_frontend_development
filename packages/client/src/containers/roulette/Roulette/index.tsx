@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import { ButtonWithContent as Button, Image, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { RouletteDemo } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
-import { spins } from './contentDemo';
+import { spins, users } from './contentDemo';
+import { Timer } from './Timer';
+import { GameMonitor } from './GameMonitor';
 
 export const Roulette: React.FC = () => {
   const { t } = useTranslation('main');
+  const [spin, setSpin] = useState(false);
+
+  const onSpin = () => {
+    setSpin(!spin);
+  };
+
   return (
     <section className={cx(styles.roulette__container)}>
       <Text
@@ -20,17 +28,33 @@ export const Roulette: React.FC = () => {
         <div className={cx(styles.roulette__game)}>
           <Image url={RouletteDemo} />
           <Text type="p">
-            {t('You have')}
-            &ensp;
-            <strong>{spins}</strong>
-            &ensp;
-            {t('spins')}
+            {spin
+              ? t('Next free spin in')
+              : (
+                <>
+                  {t('You have')}
+                  &ensp;
+                  <strong>{spins}</strong>
+                  &ensp;
+                  {t('spins')}
+                </>
+              )}
           </Text>
-          <Button
-            text={t('Spin!')}
-            onClick={() => {}}
-            className={cx(styles.spin__button)}
-          />
+          {spin
+            ? (
+              <Timer
+                hours={12}
+                minutes={54}
+                seconds={32}
+              />
+            )
+            : (
+              <Button
+                text={t('Spin!')}
+                onClick={onSpin}
+                className={cx(styles.spin__button)}
+              />
+            )}
         </div>
         <div className={cx(styles.roulette__info)}>
           <div className={cx(styles.roulette__info__textBlock)}>
@@ -54,7 +78,10 @@ export const Roulette: React.FC = () => {
             </Text>
           </div>
           <div className={cx(styles.roulette__info__gameMonitor)}>
-            <div />
+            <GameMonitor
+              content={users}
+              index={3}
+            />
           </div>
         </div>
       </div>

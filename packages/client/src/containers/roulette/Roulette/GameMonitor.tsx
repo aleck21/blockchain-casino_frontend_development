@@ -41,7 +41,7 @@ const UsersList: React.FC<UserProps> = ({
   currencyCount,
 }) => (
   <div
-    className={cx(styles.user__container)}
+    className={cx(styles.user__box)}
     key={id}
   >
     <Text type="p">
@@ -60,10 +60,17 @@ const UsersList: React.FC<UserProps> = ({
 export const GameMonitor: React.FC<GameMonitorProps> = ({
   content,
   index,
-}) => (
-  <div key={index}>
-    {content.map((user) => (
-      <UsersList {...user} />
-    ))}
-  </div>
-);
+}) => {
+  const left = index * 70;
+
+  return (
+    <div
+      style={{ left: -left }}
+      className={cx(styles.users__container)}
+    >
+      {content.map((user) => (
+        <UsersList {...user} />
+      ))}
+    </div>
+  );
+};

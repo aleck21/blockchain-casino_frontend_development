@@ -8,6 +8,13 @@ type TimerProps = {
   seconds: number | string;
 };
 
+const Points: React.FC = () => (
+  <div className={cx(styles.points)}>
+    <div className={cx(styles.point)} />
+    <div className={cx(styles.point)} />
+  </div>
+);
+
 export const Timer: React.FC<TimerProps> = ({
   hours,
   minutes,
@@ -17,11 +24,11 @@ export const Timer: React.FC<TimerProps> = ({
     <div className={cx(styles.timer__windowTime)}>
       {hours}
     </div>
-    :
+    <Points />
     <div className={cx(styles.timer__windowTime)}>
       {minutes}
     </div>
-    :
+    <Points />
     <div className={cx(styles.timer__windowTime)}>
       {seconds}
     </div>

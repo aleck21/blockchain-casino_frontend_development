@@ -31,4 +31,34 @@ export const users = [
     currency: 'SHIB',
     currencyCount: 5,
   },
+  {
+    id: '0006',
+    userName: 'Username 19',
+    currency: 'BTC',
+    currencyCount: 1,
+  },
+  {
+    id: '0007',
+    userName: 'Username 190',
+    currency: 'BNB',
+    currencyCount: 2,
+  },
+  {
+    id: '0008',
+    userName: 'Username 87',
+    currency: 'ETH',
+    currencyCount: 3,
+  },
+  {
+    id: '0009',
+    userName: 'Username 312',
+    currency: 'BGD',
+    currencyCount: 1,
+  },
+  {
+    id: '0010',
+    userName: 'Username 46',
+    currency: 'SHIB',
+    currencyCount: 5,
+  },
 ];
