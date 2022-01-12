@@ -1,0 +1,29 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.input__container {
+  width: 100%;
+  height: auto;
+  
+  .input__text__label {
+    @include base_text;
+    font-size: 14px;
+    color: $middle;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  input.input__body[type=text] {
+    width: 100%;
+    height: 86px;
+    background-color: $black;
+    color: $white;
+    @include base_text;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 30px;
+    border: 0;
+    outline: 0;
+    border-radius: 15px;
+  }
+}

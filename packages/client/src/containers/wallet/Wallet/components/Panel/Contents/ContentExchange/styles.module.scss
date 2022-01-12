@@ -1,0 +1,112 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.exchange__container {
+  @include base_text;
+  color: $white;
+  font-size: 18px;
+  padding-top: 30px;
+
+  
+  .coin__container {
+    display: grid;
+    grid-template-columns: 32px auto auto;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .coin__name {
+      @include base_text;
+      font-size: 18px;
+      color: $white;
+      font-weight: 500;
+      margin-left: 16px;
+    }
+
+    .coin__shortName {
+      color: $middle;
+      margin-left: 8px;
+    }
+  }
+
+  .arrows__container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50px 446px;
+    column-gap: 20px;
+    margin-top: 12px;
+    margin-bottom: 18px;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+      grid-template-columns: 50px 1fr;
+    }
+
+    .arrows__line {
+      height: 1px;
+      background-color: $middle;
+      width: 446px;
+
+      @include mobile_sm {
+        width: calc(100vw - 150px);
+      }
+    }
+
+    .arrows__icon {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      background-color: $black;
+      border-radius: 12.5px;
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  .exchange__doubleInput__box {
+    margin-top: 30px;
+    margin-bottom: 40px;
+
+    .exchange__doubleInput__title {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      height: 20px;
+      margin-bottom: 10px;
+
+      p {
+        @include base_text;
+        font-size: 14px;
+        color: $middle;
+        font-weight: 400;
+
+      }
+      .right {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  .exchange__button__box {
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  .exchange__free__box {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+
+    p {
+      @include base_text;
+      font-size: 14px;
+      color: $middle;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.table__container {
+  display: grid;
+  padding-top: 20px;
+
+  .table__row {
+    padding: 20px 0;
+    border-bottom: .5px solid $middle;
+    display: grid;
+    grid-template-columns: .9fr 1.2fr 2fr 1fr;
+    column-gap: 16px;
+  }
+
+  .table__row__head {
+    padding: 0;
+    border: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    column-gap: 16px;
+  }
+
+  .table__item {
+    @include base_text;
+    font-size: 14px;
+    font-weight: 500;
+    color: $white;
+
+    span.green {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      color: $green2;
+    }
+
+    span.red {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      color: $red;
+    }
+
+    span.lite {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 300;
+      color: inherit;
+    }
+  }
+
+  .table__item__head {
+    @include base_text;
+    font-size: 12px;
+    font-weight: 400;
+    color: $middle;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .right {
+    text-align: right;
+  }
+}

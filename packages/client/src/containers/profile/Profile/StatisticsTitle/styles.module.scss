@@ -1,0 +1,32 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.title__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .title__text__box {
+    justify-self: start;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .title__text {
+      text-align: center;
+      color: $white;
+      font-weight: 500;
+    }
+  }
+
+  .transaction__button {
+    width: 142px;
+    justify-self: end;
+
+    @include mobile_sm {
+      display: none;
+    }
+  }
+}

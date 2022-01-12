@@ -1,0 +1,25 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.linkBonus__container {
+  grid-area: linkBonus;
+  margin-top: 10px;
+
+  .linkBonus__text {
+    @include base_text;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline; 
+    text-align: right;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include mobile_sm {
+      text-align: left;
+      margin-top: 10px;
+    }
+  }
+}

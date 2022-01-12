@@ -1,0 +1,27 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.coin__container {
+  display: grid;
+  grid-template-columns: 32px auto auto;
+  align-items: center;
+  justify-content: flex-start;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .coin__name {
+    @include base_text;
+    font-size: 18px;
+    color: $white;
+    font-weight: 500;
+    margin-left: 16px;
+  }
+
+  .coin__shortName {
+    color: $middle;
+    margin-left: 8px;
+  }
+}

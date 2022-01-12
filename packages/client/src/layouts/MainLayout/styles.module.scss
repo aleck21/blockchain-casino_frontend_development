@@ -1,11 +1,44 @@
 @import "@project/libs/assets/styles/mixins.scss";
 @import "@project/libs/assets/styles/palette.scss";
 
-.container {
-  border: solid 3px red;
-
-  width: 100vw;
+.page__container {
+  width: 100%;
   height: 100%;
   background: $dark;
+
+  display: grid;
+  grid-template-areas: 'sidebar header'
+    'sidebar main'
+    'sidebar footer';
+  grid-template-columns: 188px 1fr;
+  grid-template-rows: 64px auto 209px;
+
+  @include desktop_sm {
+    grid-template-areas: 'header'
+      'main'
+      'footer';
+    grid-template-columns: 100%;
+    grid-template-rows: 64px auto 209px;
+  }
+
+  @include desktop {
+    grid-template-rows: 64px auto 500px;
+  }
+
+  @include mobile_sm {
+    grid-template-areas: 'header' 
+      'main'
+      'footer';
+    grid-template-columns: 100%;
+    grid-template-rows: 100px auto 500px;
+  }
 }
 
+.no_scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+.scroll {
+  overflow: auto;
+}

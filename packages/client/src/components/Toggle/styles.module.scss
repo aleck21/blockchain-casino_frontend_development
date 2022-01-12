@@ -1,0 +1,56 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.toggle__container {
+  width: 50px;
+  height: 28px;
+  border-radius: 14px; // 40px;
+  background-color: $middle;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .on {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .25s left;
+  }
+
+  .off {
+    position: absolute;
+    left: -22px;
+    top: 0;
+    transition: .25s left;
+  }
+
+  .element_on {
+    border: 2px solid $green;
+    transition: .25s border-color;
+  }
+
+  .element_off {
+    border: 2px solid $middle;
+    transition: .25s border-color;
+  }
+
+  .toggle__green__layer {
+    background-color: $green;
+    border-radius: 14px;
+    width: 50px;
+    height: 28px;
+
+    .toggle__element {
+      width: 28px;
+      height: 28px;
+      background-color: $light;
+      border-radius: 14px;
+      // border: 2px solid $green;
+      position:absolute;
+      right: 0;
+    }
+  }
+}

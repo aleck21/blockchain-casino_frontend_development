@@ -1,0 +1,79 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.doubleInput__container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  background-color: $black;
+  border-radius: 15px;
+  padding: 16px 30px;
+  height: 86px;
+  width: 100%;
+
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
+  .doubleInput__left {
+    border-right: .5px solid $middle;
+    display: grid;
+    align-items: center;
+    padding-top: 14px;
+  }
+  
+  .doubleInput__right {
+    display: grid;
+    align-items: center;
+    padding-top: 14px;
+    padding-left: 30px;
+  }
+  
+  input[type=text] {
+    background-color: transparent;
+    color: transparent;
+    border: 0;
+    outline: 0;
+    z-index: 10;
+    position: relative;
+    top: -26px;
+
+    @include mobile_sm {
+      width: 50%;
+    }
+  }
+}
+
+.left__monitor {
+  z-index: 1;
+  p {
+    @include base_text;
+    font-size: 18px;
+    font-weight: 500;
+    color: $white;
+
+    span {
+      @include base_text;
+      font-size: 18px;
+      font-weight: 500;
+      color: $middle;
+    }
+  }
+}
+
+.right__monitor {
+  z-index: 1;
+  p {
+    @include base_text;
+    font-size: 18px;
+    font-weight: 500;
+    color: $white;
+
+    span {
+      @include base_text;
+      font-size: 18px;
+      font-weight: 500;
+      color: $middle;
+    }
+  }
+}

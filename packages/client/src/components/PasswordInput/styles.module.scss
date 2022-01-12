@@ -1,0 +1,51 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.input__container {
+  width: 100%;
+  height: auto;
+  
+  .input__text__label {
+    @include base_text;
+    font-size: 14px;
+    color: $middle;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .input__block {
+    background-color: $black;
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    column-gap: 0;
+    border-radius: 12px;
+    height: 44px;
+    width: 100%;
+
+    input.input__body {
+      width: 100%;
+      height: 44px;
+      background-color: $black;
+      color: $white;
+      @include base_text;
+      font-size: 16px;
+      line-height: 2.8;
+      padding: 12px;
+      border: 0;
+      outline: 0;
+      border-radius: 15px 0 0 15px;
+    }
+
+    .input__showButton {
+      width: 44px;
+      height: 44px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin: 10px;
+      }
+    }
+  }
+
+}

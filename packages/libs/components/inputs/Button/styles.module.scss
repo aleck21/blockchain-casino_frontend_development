@@ -15,7 +15,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 17.07px;
-  letter-spacing: -1%;
+  letter-spacing: -.01em;
   color: $white;
 
   transition: all $transition-time;
@@ -28,10 +28,12 @@
   &.primary {
     background: linear-gradient(180deg, $blue 0%, $blue1 100%);
 
+    /*
     &:hover, &:focus {
       // background-color: $blue;
     }
-
+    */
+    
     &:disabled {
       opacity: 0.5;
     }
@@ -39,7 +41,7 @@
 
   &.outline {
     background-color: $dark;
-    border: 0.5px solid $white;
+    border: .5px solid $white;
   
     &:hover, &:focus {
       background-color: $dark;

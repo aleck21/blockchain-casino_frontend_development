@@ -1,0 +1,34 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/fonts';
+
+.percentage__block {
+  display: grid;
+  align-self: flex-end;
+  grid-area: percentage;
+
+  .percantage__title {
+    @include base_text;
+    color: $white;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .progressbar__block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 4px;
+    height: 4px;
+
+    .progressbar__element {
+      height: 4px;
+      border-radius: 2px;
+      background-color: $black;
+    }
+
+    .progressbar__element__blue {
+      background-image: linear-gradient(180deg, $blue1 0%, $blue 100%);
+    }
+  }
+}

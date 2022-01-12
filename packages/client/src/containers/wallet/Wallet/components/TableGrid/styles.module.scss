@@ -1,0 +1,16 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.tableGrid__container {
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-columns: 100%;
+  width: 556px;
+  
+  .tableGrid__title {
+    color: $middle;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  
+}

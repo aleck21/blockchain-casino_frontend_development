@@ -3,31 +3,57 @@
 @import '~@project/libs/assets/styles/palette';
 
 .container {
-  border: solid 2px green;
-  height: 64px;
-
-  display: flex;
-  justify-content: flex-end;
+  /* border: solid 2px green; */
+  grid-area: header;
+    
+  display: grid;
+  grid-template-areas: 'headerContent';
   align-items: center;
 
+  height: 64px;
   color: $white;
+  padding-right: 20px;
 
-  @include tablet{
-   height: 74px;
+  .header_modile__notifications {
+    display: none;
   }
-}
 
-.button {
-  margin-right: 20px;
-  
-  @include tablet{
-    height: 27.41px;
+  @include mobile_sm {
+    grid-template-areas: 'headerTop' 'headerBottom';
+    grid-template-rows: 41px 28px;
+    grid-template-columns: 100%;
+    grid-row-gap: 10px;
+
+    padding-top: 17px;
+    padding-left: 20px;
+    padding-right: 24px;
+
+    .header_mobile__content {
+      grid-area: headerTop;
+      display: grid;
+      grid-template-areas: 'logo menu headerContent';
+      grid-template-columns: 80px 18px 1fr;
+      grid-template-rows: 41px;
+      grid-row-gap: 10px;
+      grid-column-gap: 12px;
+      align-items: center;
+    }
+
+    .header_modile__notifications {
+      grid-area: headerBottom;
+      display: grid;
+      grid-template-areas: 'roulette noteMobile';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 28px;
+      justify-content: space-between;
+    }
   }
-}
 
-.buttonSignIn {
+  //@include tablet{
+  // height: 74px;
+  //}
 
-  @include tablet{
-    margin-right: 8px;
+  .header_mobile__note {
+    grid-area: noteMobile;
   }
 }

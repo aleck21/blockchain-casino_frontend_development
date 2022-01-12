@@ -28,7 +28,8 @@ div[id="root"] {
 
 body {
   color: var(--color-text);
-  background-color: var(--color-background);
+  // background-color: var(--color-background);
+  background-color: $dark;
   transition: color $transition-time, background-color $transition-time;
 }
 
@@ -76,6 +77,6 @@ button {
   color: inherit;
 }
 
-p, span{
-  font-family: 'Sansation Regular';
-}
+//p, span{
+//  font-family: 'Sansation Regular';
+//}

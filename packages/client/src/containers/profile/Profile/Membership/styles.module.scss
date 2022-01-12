@@ -1,0 +1,43 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.membership__container {
+  margin-top: 42px;
+
+  h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    
+    @include mobile_sm {
+      text-align: center;
+    }
+  }
+
+  .membership__paper {
+    background-image: 
+      url('~@project/libs/assets/images/membershipProgressBkg.svg');
+    background-position: top 11.46px right 20px;
+    background-repeat: no-repeat;
+    padding: 23px 16px 20px 16px;
+    border-radius: 12px;
+
+    .membership__type {
+      display: grid;
+      grid-template-columns: 101px auto;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 33px;
+
+      img {
+        width: 78px;
+        height: 78px;
+        margin-right: 23px;
+      }
+
+      p {
+        @include base_text;
+        color: $gold;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/variables';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: copyright;
+
+  @include mobile_sm {
+    
+  }
+  
+  .copyright__text {
+    @include footer_text;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    @include mobile_sm {
+      text-align: center;
+    }
+  }
+
+}

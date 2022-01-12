@@ -1,0 +1,113 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.collectReawards__container {
+  overflow-y: auto;
+
+  .collectReawards__head {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .collectRewards__head__title {
+      @include base_text;
+      font-size: 28.62px;
+      text-align: left;
+      color: $white;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+  }
+
+  .collectRewards__tiles__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 32px;
+    row-gap: 30px;
+    padding: 20px;
+    padding-bottom: 30px;
+
+    @include mobile_sm {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+    }
+
+    .collectRewards__tile {
+      border-radius: 15px;
+      background-color: $black;
+      width: 326px;
+      height: 217px;
+      background-position: top 0;
+      background-repeat: no-repeat;
+      padding-bottom: 20px;
+      padding-top: 50px;
+      display: grid;
+      justify-content: center;
+
+      .small__title {
+        @include base_text;
+        font-size: 12px;
+        font-weight: 500;
+        color: $white;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .summ__text {
+        @include base_text;
+        font-size: 36px;
+        font-weight: 600;
+        font-family: $montserrat;
+        text-align: center;
+      }
+
+      .button__narrow {
+        width: 180px;
+        height: 42px;
+        margin-top: 34px;
+      }
+
+      .button__wide {
+        width: max-content;
+        height: 42px;
+        padding-left: 26.5px;
+        padding-right: 26.5px;
+        margin-top: 34px;
+      }
+
+      .disabled {
+        background-color: $dark;
+      }
+
+      .active {
+        background-color: $blue;
+      }
+    }
+  }
+
+  .green {
+    background-image:
+      url('~@project/libs/assets/images/rewardBackgroundGreen.svg');
+  }
+
+  .gray {
+    background-image:
+      url('~@project/libs/assets/images/rewardBackgroundGray.svg');
+  }
+
+  .gold {
+    background-image:
+      url('~@project/libs/assets/images/rewardBackgroundGold.svg');
+  }
+
+  .blue {
+    background-image:
+      url('~@project/libs/assets/images/rewardBackgroundBlue.svg');
+  }
+}
+

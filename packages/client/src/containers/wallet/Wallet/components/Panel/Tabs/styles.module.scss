@@ -1,0 +1,30 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.tabs__container {
+  grid-area: tabs;
+  width: 100%;
+  height: 35px;
+  box-sizing: border-box;
+  border-bottom: .5px solid $middle;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(4, auto);
+
+  @include mobile_sm {
+    display: none;
+  }
+}
+
+.tabs__container__mobile {
+  display: none;
+
+  @include mobile_sm {
+    display: grid;
+    grid-area: tabsMobile;
+    width: calc(100vw - 80px);
+    grid-template-columns: repeat(4, 56px);
+    justify-content: space-between;
+    height: 69px;
+  }
+}

@@ -1,0 +1,44 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.button__body {
+  height: 53px;
+  width: 100%;
+  text-align: center;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  align-content: center; 
+  border-radius: 10px;
+  color: $white;
+  font-family: $montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: $blue;
+  &:hover {
+    cursor: pointer;
+  }
+
+  .button__content {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+  }
+}
+
+.disabled {
+  background-color: $middle;
+
+  &:hover {
+    cursor: default;
+  }
+}

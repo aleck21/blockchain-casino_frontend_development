@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 type TextProps = {
   className?: string;
-  type?: 'h1' | 'h2' | 'h3' | 'h4' | 'span' | 'p';
+  type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p';
   children?: ReactNode;
   dangerouslySetInnerHTML?: { __html: string } | undefined;
   style?: CSSProperties;

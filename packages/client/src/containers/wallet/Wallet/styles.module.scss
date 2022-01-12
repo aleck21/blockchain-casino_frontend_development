@@ -1,0 +1,59 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+
+.wallet__container {
+  color: $white;
+  display: grid;
+  grid-template-areas: 'walletPanel balance'
+    'walletPanel bgdDashboard';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 161px;
+  grid-column-gap: 50px;
+  max-width: 1160px;
+
+  @include mobile_sm {
+    grid-template-areas: 'walletPanel' 'bgdDashboard' 'tabsMobile';
+    grid-template-rows: auto auto 112px;
+    grid-template-columns: 100%;
+    height: auto;
+  }
+  
+  .wallet__panel {
+    grid-area: walletPanel;
+
+    .wallet__panel__paper {
+      width: 100%;
+      height: auto;
+
+      @include mobile_sm {
+        max-width: calc(100vw - 40px);
+        padding: 20px;
+        height: auto;
+      }
+    }
+  }
+
+  .wallet__balance {
+    grid-area: balance;
+
+    @include mobile_sm {
+      display: none;
+    }
+  }
+
+  .wallet__bgd_dashboard {
+    grid-area: bgdDashboard;
+  }
+
+  .bgd_dashboard__container {
+    width: 100%;
+    height: 161px;
+    margin-top: 30px;
+
+    @include mobile_sm {
+      max-width: calc(100vw - 40px);
+      height: auto;
+    }
+  }
+}

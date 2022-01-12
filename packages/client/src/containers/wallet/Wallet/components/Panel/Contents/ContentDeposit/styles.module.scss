@@ -1,0 +1,28 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.contentDeposit__container {
+  display: grid;
+  grid-template-areas: 
+    'titleChoose' 
+    'selectChoose'
+    'active'
+    'linkBonus'
+    'deposit'
+    'free';
+  grid-template-rows: 66px 96px 136px 29px 162px 40px;
+  width: 100%;
+  height: auto;
+
+  @include mobile_sm {
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+      'titleChoose'
+      'selectChoose'
+      'active'
+      'linkBonus'
+      'deposit'
+      'free';
+    padding-bottom: 0px;
+  }
+}

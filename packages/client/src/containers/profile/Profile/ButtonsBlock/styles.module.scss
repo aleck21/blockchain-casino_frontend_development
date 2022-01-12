@@ -1,0 +1,24 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.buttons__container {
+  width: 100%;
+  padding: 20px 20px 46px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  column-gap: 20px;
+
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .right__button {
+    background-color: transparent;
+    border: .5px solid $middle;
+  }
+}

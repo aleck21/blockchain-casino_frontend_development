@@ -1,0 +1,94 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.promocode__container {
+  width: 390px;
+
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
+  .promocode__head {
+    display: grid;
+    grid-template-columns: auto 24px;
+    justify-content: space-between;
+    padding: 20px;
+    padding-bottom: 42px;
+    
+    .promocode__close {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+    .promocode__title {
+      @include base_text;
+      font-size: 28.6px;
+      font-weight: bold;
+      text-align: left;
+      color: $white;
+      line-height: 1;
+    }
+  }
+
+  .promocode__input__label {
+    padding: 0 20px;
+  }
+
+  .promocode__input__container {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    align-items: center;
+    column-gap: 0;
+    padding: 0 20px;
+
+    input.promocode__input {
+      height: 44px;
+      font-size: 16px;
+      line-height: 2.85;
+      padding: 12px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .promocode__input__resetButton {
+      height: 44px;
+      width: 44px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: $black;
+      padding: 10px;
+
+      img {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  .promocode__subTitle {
+    padding: 30px 20px 10px 20px;
+    @include base_text;
+    font-size: 18px;
+    color: $white;
+    text-align: left;
+    line-height: 110%;
+  }
+
+  .promocode__text {
+    @include base_text;
+    font-size: 14px;
+    color: $middle;
+    text-align: justify;
+    padding: 0 20px 48px 20px;
+    border-bottom: .5px solid $middle;
+  }
+
+  .promocode__submitButton {
+    height: 42px;
+    width: calc(100% - 40px);
+    margin: 24px 20px 30px 20px;
+  }
+}

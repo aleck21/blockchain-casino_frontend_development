@@ -1,0 +1,22 @@
+@import "@project/libs/assets/styles/mixins.scss";
+@import "@project/libs/assets/styles/palette.scss";
+
+.verification__select {
+  .select__box {
+
+    @include mobile_sm {
+      width: 100%;
+      .ant-select {
+        width: 100%;
+    
+        .ant-select-selector {
+          background-color: $dark;
+        }
+    
+        .ant-select-arrow {
+          color: $middle;
+        }
+      }
+    }
+  }
+}

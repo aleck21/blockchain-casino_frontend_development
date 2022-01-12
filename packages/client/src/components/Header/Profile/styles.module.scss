@@ -1,0 +1,46 @@
+@import '~@project/libs/assets/styles/mixins';
+@import '~@project/libs/assets/styles/palette';
+
+.container {
+  grid-area: profile;
+
+  display: grid;
+  grid-template-areas: 'avatar userName';
+  align-items: center;
+  justify-content: flex-start;
+
+  @include mobile_sm {
+    grid-template-areas: 'avatar';
+  }
+
+  .header_profile__avatar {
+    grid-area: avatar;
+    
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, #0061BD 0%, #138EFF 100%);
+    margin-right: 10px;
+
+    .header_profile__avatar__image {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  .header_profile__userName {
+    grid-area: userName;
+
+    @include mobile_sm {
+      display: none;
+    }
+
+    .smallTitle {
+      font-family: Helvetica Neue, sans;
+      font-size: 18px;
+      font-weight: normal;
+      color: $white;
+    } 
+  }
+}

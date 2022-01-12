@@ -1,4 +1,5 @@
 @import './variables';
+@import './palette';
 
 $defaultFlexBoxAlign: center;
 $defaultFlexBoxJustify: center;
@@ -29,15 +30,34 @@ $defaultFlexBoxJustify: center;
   }
 }
 
+@mixin mobile_sm {
+  @media screen and (max-width: 420px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (max-width: 768px) {
     @content;
   }
 }
 
+
 @mixin desktop {
   @media screen and (max-width: 980px) {
     @content;
+  }
+}
+
+@mixin desktop_sm {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1366px) {
+    
   }
 }
 
@@ -55,4 +75,18 @@ $defaultFlexBoxJustify: center;
 
 @mixin max_dropdown_height {
   max-height: 50vh;
+}
+
+@mixin base_text {
+  font-family: 'Helvetica Neue', sans;
+  font-weight: normal;
+  line-height: 140%;
+  letter-spacing: -.01em;
+  text-align: left;
+}
+
+@mixin footer_text {
+  @include base_text;
+  font-size: 12px;
+  color: $middle;
 }

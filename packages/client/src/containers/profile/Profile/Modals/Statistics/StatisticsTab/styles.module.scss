@@ -1,0 +1,149 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.tab__container {
+  display: grid;
+  grid-template-columns: 203px 1fr;
+  column-gap: 50px;
+  padding: 30px 20px;
+
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .tab__leftBlock {
+    display: grid;
+    row-gap: 16px;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+    }
+
+    .tab__tiles__box {
+      row-gap: 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 66px);
+
+
+      @include mobile_sm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 66px 66px;
+        column-gap: 11px;
+        row-gap: 16px;
+      }
+    }
+
+    .tab__tile {
+      border-radius: 15px;
+      background-color: $dark2;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      display: grid;
+      justify-content: center;
+      height: 65.98px;
+
+      p {
+        @include base_text;
+        font-size: 22px;
+        font-weight: bold;
+        color: $white;
+        line-height: 1.1;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        span {
+          @include base_text;
+          font-size: 22px;
+          font-weight: bold;
+          color: $middle;
+        }
+      }
+
+      h6 {
+        @include base_text;
+        font-size: 12px;
+        font-weight: normal;
+        color: $middle;
+        line-height: 1.1;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .tab__rightBlock {
+    @include mobile_sm {
+      padding-top: 30px;
+    }
+
+    .tab__table {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      justify-content: flex-start;
+      width: 562px;
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
+
+      .table__head__item {
+        @include base_text;
+        font-size: 12px;
+        color: $middle;
+        text-align: left;
+      }
+
+      .tab__table__item {
+        border-bottom: .5px solid $middle;
+        padding: 20px 0;
+        text-align: left;
+        @include base_text;
+        font-size: 14px;
+        font-weight: 500;
+        color: $white;
+      }
+
+      .last__item {
+        text-align: right;
+      }
+
+      .first__td__box {
+        display: grid;
+        grid-template-columns: 22px auto;
+        column-gap: 8px;
+        align-items: center;
+
+        img {
+          width: 22px;
+          height: 22px;
+        }        
+
+        p {
+          @include base_text;
+          font-size: 14px;
+          font-weight: 500;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.whole__text {
+  @include base_text;
+  font-size: 14px;
+  font-weight: 500;
+  color: $white;
+}
+
+.fraction__text {
+  @include base_text;
+  font-size: 14px;
+  font-weight: 500;
+  color: $middle;
+}
