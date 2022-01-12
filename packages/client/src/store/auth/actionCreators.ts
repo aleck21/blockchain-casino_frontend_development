@@ -25,6 +25,10 @@ export const authLoginEmail = (payload: AuthEmailPasswordPayload) => ({
   payload,
 });
 
+export const authLoginMetamask = () => ({
+  type: AuthActionType.LoginMetamask,
+});
+
 export const authSignUpEmail = (payload: AuthEmailPasswordPayload) => ({
   type: AuthActionType.SignUpEmail,
   payload,
