@@ -30,6 +30,7 @@
     "connected-react-router": "6.8.0",
     "axios": "^0.21.1",
     "date-fns": "2.0.1",
+    "@metamask/providers": "^8.1.1",
     "formik": "2.2.6",
     "history": "4.10.0",
     "node-sass": "6.0.1",
