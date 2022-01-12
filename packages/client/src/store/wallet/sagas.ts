@@ -16,6 +16,7 @@ import {
 import { Token, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 
 import { EventChannel, eventChannel } from 'redux-saga';
+import { Solana } from 'types';
 import { WalletActionType } from './actionTypes';
 import { walletSetState } from './actionCreators';
 

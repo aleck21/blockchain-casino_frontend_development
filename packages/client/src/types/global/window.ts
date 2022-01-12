@@ -1,6 +1,6 @@
 import { MetaMaskInpageProvider } from '@metamask/providers';
 
-interface Solana {
+export interface Solana {
   isPhantom: boolean;
   connect: () => Promise<void>;
   on: any;
