@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 export const WidgetContext = React.createContext({
   widget: false,
   content: '',
-  setContentWidget: (content: string) => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setContentWidget: (contentWidget: string) => {},
   openWidget: () => {},
   closeWidget: () => {},
 });
@@ -20,8 +21,8 @@ export const WidgetProvider: React.FC = ({ children }) => {
     setWidget(false);
   };
 
-  const setContentWidget = (content: string) => {
-    setContent(content);
+  const setContentWidget = (contentWidget: string) => {
+    setContent(contentWidget);
   };
 
   return (

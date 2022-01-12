@@ -15,7 +15,7 @@ export const Table: React.FC<TableProps> = ({
         className={cx(
           styles.table__row, key === 0 ? styles.table__row__head : null,
         )}
-        key={key}
+        key={row.id}
       >
         <div
           className={cx(styles.left,

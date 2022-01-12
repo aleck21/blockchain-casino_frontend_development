@@ -53,7 +53,7 @@ function* handlePayload({ eventName }: { eventName: ProviderEventName }) {
     if (eventName === ProviderEventName.disconnect) {
       yield put(walletSetState({ isConnected: false }));
     }
-  } catch (e) {
+  } catch (e: any) {
     console.log('ERROR inside handle payload');
     console.log(e.message);
   }

@@ -57,4 +57,4 @@ export { default as CrossRedIcon } from './crossRedIcon.svg';
 export { default as BackArrow } from './backArrow.svg';
 export { default as ArrowBlue } from './arrowBlue.svg';
 export { default as RouletteBackground } from './rouletteBackground.png';
-export { default as RouletteDemo } from './rouletteDemo.svg';
+export { default as RouletteDemo } from './rouletteDemo.png';

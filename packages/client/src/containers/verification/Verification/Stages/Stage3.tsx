@@ -63,16 +63,22 @@ export const Stage3: React.FC<StageProps> = ({
       >
         <h4
           className={cx(styles.left)}
-          onClick={() => goNextStage()}
         >
-          Results
+          <div
+            onClick={() => goNextStage()}
+            onKeyPress={() => {}}
+            tabIndex={0}
+            role="button"
+          >
+            Results
+          </div>
         </h4>
         <div className={cx(styles.result__table__container)}>
           <table>
             <thead>
               <tr>
-                {result.map((th, key) => (
-                  <th key={`result_th_${key}`}>
+                {result.map((th) => (
+                  <th key={th.id}>
                     {th.title}
                   </th>
                 ))}
@@ -80,8 +86,8 @@ export const Stage3: React.FC<StageProps> = ({
             </thead>
             <tbody>
               <tr>
-                {result.map((td, key) => (
-                  <td key={`result_td_${key}`}>
+                {result.map((td) => (
+                  <td key={td.id}>
                     {td.data}
                   </td>
                 ))}
@@ -93,6 +99,9 @@ export const Stage3: React.FC<StageProps> = ({
           <span
             className={cx(styles.bytes__title)}
             onClick={() => setShort(!short)}
+            onKeyPress={() => {}}
+            tabIndex={0}
+            role="button"
           >
             Bytes to number
             <Image

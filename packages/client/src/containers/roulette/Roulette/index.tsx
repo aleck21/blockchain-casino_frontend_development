@@ -20,15 +20,16 @@ export const Roulette: React.FC = () => {
         <div className={cx(styles.roulette__game)}>
           <Image url={RouletteDemo} />
           <Text type="p">
-            {t('Yo have')}
+            {t('You have')}
             &ensp;
-            {spins}
+            <strong>{spins}</strong>
             &ensp;
             {t('spins')}
           </Text>
           <Button
             text={t('Spin!')}
             onClick={() => {}}
+            className={cx(styles.spin__button)}
           />
         </div>
         <div className={cx(styles.roulette__info)}>

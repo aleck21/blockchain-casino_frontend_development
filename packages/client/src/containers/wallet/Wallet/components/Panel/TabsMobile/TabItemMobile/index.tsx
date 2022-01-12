@@ -39,6 +39,9 @@ export const TabItemMobile: React.FC<ItemProps> = ({
       className={cx(styles.item__container,
         isActive ? styles.item_active : styles.item_inactive)}
       onClick={type[tab]}
+      onKeyPress={() => {}}
+      tabIndex={0}
+      role="button"
     >
       <Image url={icon} />
       <Text

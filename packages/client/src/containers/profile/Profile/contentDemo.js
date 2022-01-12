@@ -1,24 +1,22 @@
-import cx from 'classnames';
-import styles from './styles.module.scss';
-
-export const dataTable = {
-  head: [
-    'Game', 'Bets', 'Wins', 'Wagered', 'Won'
-  ],
-  data: [
-    [
-      <span className={cx(styles.f18)}>Crash</span>,
-      '1000',
-      '890',
-      <>2095 <span className={cx(styles.f__gray)}>USD</span></>,
-      <>1395 <span className={cx(styles.f__gray)}>USD</span></>
-    ],
-    [
-      <span className={cx(styles.f18)}>Classic Dice</span>,
-      '1000',
-      '900',
-      <>1995 <span className={cx(styles.f__gray)}>USD</span></>,
-      <>1395 <span className={cx(styles.f__gray)}>USD</span></>
-    ],
-  ]
-}
+export const dataTable = [
+  {
+    id: '01',
+    game: 'Crash',
+    bets: 1000,
+    wins: 890,
+    wagered: 2095,
+    wageredCurrency: 'USD',
+    won: 1395,
+    wonCurrency: 'USD',
+  },
+  {
+    id: '02',
+    game: 'Classic Dice',
+    bets: 1000,
+    wins: 900,
+    wagered: 1995,
+    wageredCurrency: 'USD',
+    won: 1395,
+    wonCurrency: 'USD',
+  },
+];

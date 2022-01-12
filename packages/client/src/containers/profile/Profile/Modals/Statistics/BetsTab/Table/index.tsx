@@ -3,7 +3,14 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 
 type Content = {
-  data: any[];
+  data: {
+    id: string | number,
+    game: string,
+    date: Date | string,
+    bet: string | JSX.Element,
+    currency: string,
+    profit: string | JSX.Element,
+  }[];
 };
 
 export const Table: React.FC<Content> = ({ data }) => (
@@ -11,7 +18,7 @@ export const Table: React.FC<Content> = ({ data }) => (
     {data.map((row, key) => (
       <div
         className={cx(styles.table__row, key !== 0 && styles.border)}
-        key={`row_${key}`}
+        key={row.id}
       >
         <div className={cx(
           styles.left__items, key === 0 ? styles.items__head : styles.items,

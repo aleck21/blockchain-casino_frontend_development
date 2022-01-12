@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import './styles.scss';
 
 type SelectProps = {
-  list: { value: string, text: string }[];
+  list: { value: string, text: string, id: string | number }[];
   classNameContainer?: string;
 };
 
@@ -20,10 +20,10 @@ export const WrapSelect: React.FC<SelectProps> = ({
         defaultValue={list[0].value}
         onChange={() => {}}
       >
-        {list.map((item, key) => (
+        {list.map((item) => (
           <Option
             value={item.value}
-            key={key}
+            key={item.id}
           >
             {item.text}
           </Option>
