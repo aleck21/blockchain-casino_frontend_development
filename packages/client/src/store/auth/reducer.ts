@@ -7,6 +7,8 @@ export const authInitialState: Readonly<AuthState> = {
     access: '',
     refresh: '',
   },
+
+  isLoginEmailLoading: false,
 };
 
 export default createReducer(authInitialState, authHandlers);

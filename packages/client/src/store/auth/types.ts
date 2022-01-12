@@ -8,4 +8,14 @@ export interface AuthState {
     access: string;
     refresh: string;
   },
+
+  isLoginEmailLoading: boolean;
 }
+
+export type AuthEmailPayload = {
+  email: string;
+};
+
+export type AuthEmailPasswordPayload = AuthEmailPayload & {
+  password: string;
+};

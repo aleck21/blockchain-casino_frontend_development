@@ -1,8 +1,10 @@
-import { fork } from 'redux-saga/effects';
-import authSaga from './auth/sagas';
+import { all } from 'redux-saga/effects';
+import { authEffects } from './auth/sagas';
 import { walletSagas } from './wallet/sagas';
 
 export default function* rootSaga() {
-  yield fork(authSaga);
-  yield fork(walletSagas);
+  yield all([
+    ...authEffects,
+    walletSagas,
+  ]);
 }
