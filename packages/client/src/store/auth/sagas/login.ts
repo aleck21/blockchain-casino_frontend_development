@@ -4,7 +4,6 @@ import { AuthActionType } from '../actionTypes';
 
 export function* loginEmail({ payload }: ReturnType<typeof authLoginEmail>) {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { email, password } = payload;
 
     yield put(authSetState({ isLoginEmailLoading: true }));
@@ -15,6 +14,22 @@ export function* loginEmail({ payload }: ReturnType<typeof authLoginEmail>) {
   }
 }
 
+export function* loginMetamask() {
+  try {
+    console.log('inside login metamask saga');
+    const { ethereum } = window;
+    if (ethereum && ethereum.selectedAddress != null) {
+      const walletAddress = ethereum.selectedAddress;
+      console.log('walletAddress', walletAddress);
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    yield put(authSetState({ isLoginEmailLoading: false }));
+  }
+}
+
 export function* authLoginSaga() {
   yield takeLatest(AuthActionType.LoginEmail, loginEmail);
+  yield takeLatest(AuthActionType.LoginMetamask, loginMetamask);
 }
