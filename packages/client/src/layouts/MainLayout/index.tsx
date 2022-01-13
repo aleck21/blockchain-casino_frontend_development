@@ -2,9 +2,8 @@ import React, { CSSProperties, ReactNode, useContext } from 'react';
 import 'antd/dist/antd.css';
 import cx from 'classnames';
 import {
-  Header, Sidebar, Footer, Main,
+  Header, Sidebar, Footer,
 } from 'components';
-import { NavigationProvider } from 'context/navigation';
 import { ModalContext, ModalProvider } from 'context/modalOpen';
 import { ModalWindow } from 'components/ModalWindow';
 import { Widget } from 'components/Widget';
@@ -26,24 +25,24 @@ const MainLayout = ({
 
   return (
     <ModalProvider>
-      <NavigationProvider>
-        <WidgetProvider>
-          <div
-            className={cx(styles.page__container, pageLayout,
-              modal ? styles.no_scroll : styles.scroll)}
-            style={style}
-          >
-            <Header />
-            <Sidebar />
-            <Main>
+      <WidgetProvider>
+        <div
+          className={cx(styles.page__container, pageLayout,
+            modal ? styles.no_scroll : styles.scroll)}
+          style={style}
+        >
+          <Header />
+          <Sidebar />
+          <main className={cx(styles.mainContainer)}>
+            <div className={cx(modal ? styles.on_blur : styles.no_blur)}>
               {children}
-            </Main>
-            <Footer />
-          </div>
-          <ModalWindow />
-          <Widget />
-        </WidgetProvider>
-      </NavigationProvider>
+            </div>
+          </main>
+          <Footer />
+        </div>
+        <ModalWindow />
+        <Widget />
+      </WidgetProvider>
     </ModalProvider>
   );
 };
