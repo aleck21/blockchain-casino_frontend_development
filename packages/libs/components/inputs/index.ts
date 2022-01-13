@@ -8,3 +8,4 @@ export * from './WrapDatePicker';
 export * from './ButtonWithContent';
 export * from './DoubleInput';
 export * from './SelectWithContent';
+export * from './TextInputWithIcon';

@@ -1,9 +1,24 @@
-export enum CurrencyImages {
-  BTC = '/packages/libs/assets/images/bitcoinColor.svg',
-  ETH = '/packages/libs/assets/images/ethereumColor.svg',
-  USDT = '/packages/libs/assets/images/tetherUsdtColor.svg',
-  BGD = '/packages/libs/assets/images/bunnyCoinColor.svg',
-  BG = '/packages/libs/assets/images/bunnyCoinColor.svg',
-  SHIB = '/packages/libs/assets/images/shibaInuShibColor.svg',
-  BNB = '/packages/libs/assets/images/binaceCoinColor.svg',
-}
+import {
+  BinaceCoinColorIcon,
+  BitCoinCashColorIcon,
+  BitcoinColorIcon,
+  BunnyCoinColorIcon,
+  EthereumColorIcon,
+  LiteCoinColorIcon,
+  ShibaInuShibColorIcon,
+  TetherUsdtColorIcon,
+  XrpColorIcon,
+} from '@project/libs/assets/images';
+
+export const CurrencyImages: Record<string, string> = {
+  BTC: BitcoinColorIcon,
+  ETH: EthereumColorIcon,
+  USDT: TetherUsdtColorIcon,
+  BGD: BunnyCoinColorIcon,
+  BG: BunnyCoinColorIcon,
+  SHIB: ShibaInuShibColorIcon,
+  BNB: BinaceCoinColorIcon,
+  LTC: LiteCoinColorIcon,
+  XRP: XrpColorIcon,
+  BCH: BitCoinCashColorIcon,
+};

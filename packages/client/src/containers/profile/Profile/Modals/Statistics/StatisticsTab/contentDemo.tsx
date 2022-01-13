@@ -1,11 +1,3 @@
-import {
-  BitcoinColor,
-  BunnyCoinColor,
-  EthereumColor,
-  ShibaInuShibColor,
-  TetherUsdtColor,
-} from '@project/libs/assets/images';
-
 export const content = {
   head: [
     'Currency',
@@ -17,7 +9,6 @@ export const content = {
   body: [
     {
       id: '01',
-      icon: BitcoinColor,
       currency: 'BTC',
       win: 9,
       bet: 10,
@@ -26,7 +17,6 @@ export const content = {
     },
     {
       id: '02',
-      icon: TetherUsdtColor,
       currency: 'USDT',
       win: 9,
       bet: 10,
@@ -35,7 +25,6 @@ export const content = {
     },
     {
       id: '03',
-      icon: EthereumColor,
       currency: 'ETH',
       win: 9,
       bet: 10,
@@ -44,7 +33,6 @@ export const content = {
     },
     {
       id: '04',
-      icon: ShibaInuShibColor,
       currency: 'SHIB',
       win: 9,
       bet: 10,
@@ -53,7 +41,6 @@ export const content = {
     },
     {
       id: '05',
-      icon: BunnyCoinColor,
       currency: 'BG',
       win: 9,
       bet: 10,
@@ -62,7 +49,6 @@ export const content = {
     },
     {
       id: '06',
-      icon: BunnyCoinColor,
       currency: 'BGD',
       win: 9,
       bet: 10,

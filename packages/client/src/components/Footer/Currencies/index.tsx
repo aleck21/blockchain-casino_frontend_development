@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Text, Image } from '@project/libs/components';
 import {
-  Ethereum, Bitcoin, ShibaInu, TetherUsdt,
+  EthereumIcon, BitcoinIcon, ShibaInuIcon, TetherUsdtIcon,
 } from '@project/libs/assets/images';
 
 import cx from 'classnames';
@@ -21,27 +21,27 @@ export const Currencies: FC = () => {
       </Text>
       <div className={cx(styles.currencies__icons)}>
         <Image
-          url={Bitcoin}
+          url={BitcoinIcon}
           className={cx(styles.currencies__icons__icon)}
         />
         <Image
-          url={Ethereum}
+          url={EthereumIcon}
           className={cx(styles.currencies__icons__icon)}
         />
         <Image
-          url={TetherUsdt}
+          url={TetherUsdtIcon}
           className={cx(styles.currencies__icons__icon)}
         />
         <Image
-          url={ShibaInu}
+          url={ShibaInuIcon}
           className={cx(styles.currencies__icons__icon)}
         />
         <Image
-          url={Bitcoin}
+          url={BitcoinIcon}
           className={cx(styles.currencies__icons__icon)}
         />
         <Image
-          url={Bitcoin}
+          url={BitcoinIcon}
           className={cx(styles.currencies__icons__icon)}
         />
       </div>

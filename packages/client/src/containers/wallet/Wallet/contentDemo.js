@@ -1,45 +1,45 @@
-import { BitcoinColor, BunnyCoinColor, EthereumColor, ShibaInuShibColor, TetherUsdtColor } from "@project/libs/assets/images";
+import { BitcoinColorIcon, BunnyCoinColorIcon, EthereumColorIcon, ShibaInuShibColorIcon, TetherUsdtColorIcon } from "@project/libs/assets/images";
 
 export const content = {
   balance: [
     {
       id: '00001',
-      logo: BitcoinColor,
+      logo: BitcoinColorIcon,
       currency: 'BTC',
       countCoin: '0.00000009174',
       countUSD: 1395
     },
     {
       id: '00002',
-      logo: EthereumColor,
+      logo: EthereumColorIcon,
       currency: 'ETH',
       countCoin: '0.00000009174',
       countUSD: 1395
     },
     {
       id: '00003',
-      logo: TetherUsdtColor,
+      logo: TetherUsdtColorIcon,
       currency: 'USDT',
       countCoin: '0.00000009174',
       countUSD: 1395
     },
     {
       id: '00004',
-      logo: BunnyCoinColor,
+      logo: BunnyCoinColorIcon,
       currency: 'BGD',
       countCoin: '0.00000009174',
       countUSD: 1395
     },
     {
       id: '00005',
-      logo: BunnyCoinColor,
+      logo: BunnyCoinColorIcon,
       currency: 'BG',
       countCoin: '0.00000009174',
       countUSD: 1395
     },
     {
       id: '00006',
-      logo: ShibaInuShibColor,
+      logo: ShibaInuShibColorIcon,
       currency: 'SHIB',
       countCoin: '0.00000009174',
       countUSD: 1395

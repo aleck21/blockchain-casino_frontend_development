@@ -1,22 +1,22 @@
 import React from 'react';
-import { BitcoinColor, BunnyCoinColor, EthereumColor } from '@project/libs/assets/images';
+import { BitcoinColorIcon, BunnyCoinColorIcon, EthereumColorIcon } from '@project/libs/assets/images';
 import { Image } from '@project/libs/components';
 
 export const list = [
   {
     id: '01',
     data: 'BTC',
-    icon: BitcoinColor,
+    icon: BitcoinColorIcon,
   },
   {
     id: '02',
     data: 'BGD',
-    icon: BunnyCoinColor,
+    icon: BunnyCoinColorIcon,
   },
   {
     id: '03',
     data: 'ETH',
-    icon: EthereumColor,
+    icon: EthereumColorIcon,
   },
 ];
 
@@ -35,14 +35,14 @@ export const table = [
     date: new Date(2021, 9, 14, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -53,14 +53,14 @@ export const table = [
     date: new Date(2021, 9, 14, 21, 15),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -71,14 +71,14 @@ export const table = [
     date: new Date(2021, 10, 14, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -89,14 +89,14 @@ export const table = [
     date: new Date(2021, 9, 15, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -107,14 +107,14 @@ export const table = [
     date: new Date(2021, 9, 17, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -136,14 +136,14 @@ export const tableCrash = [
     date: new Date(2021, 9, 14, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -154,14 +154,14 @@ export const tableCrash = [
     date: new Date(2021, 9, 14, 21, 15),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -172,14 +172,14 @@ export const tableCrash = [
     date: new Date(2021, 10, 14, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -190,14 +190,14 @@ export const tableCrash = [
     date: new Date(2021, 9, 15, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -208,14 +208,14 @@ export const tableCrash = [
     date: new Date(2021, 9, 17, 21, 9),
     bet: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         1 BTC
       </>),
     currency: '10x',
     profit: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         9 BTC
       </>),
@@ -246,7 +246,7 @@ export const allTable = {
     3: {
       type: 'with icon',
       style: '',
-      icon: ['', BitcoinColor, BitcoinColor, BitcoinColor, BitcoinColor, BitcoinColor],
+      icon: ['', BitcoinColorIcon, BitcoinColorIcon, BitcoinColorIcon, BitcoinColorIcon, BitcoinColorIcon],
       data: ['Bet', '1 BTC', '1 BTC', '1 BTC', '1 BTC', '1 BTC'],
     },
     4: {
@@ -257,7 +257,7 @@ export const allTable = {
     5: {
       type: 'with icon',
       style: '',
-      icon: ['', BitcoinColor, BitcoinColor, BitcoinColor, BitcoinColor, BitcoinColor],
+      icon: ['', BitcoinColorIcon, BitcoinColorIcon, BitcoinColorIcon, BitcoinColorIcon, BitcoinColorIcon],
       data: ['Profit', '9 BTC', '9 BTC', '9 BTC', '9 BTC', '9 BTC'],
     },
   },

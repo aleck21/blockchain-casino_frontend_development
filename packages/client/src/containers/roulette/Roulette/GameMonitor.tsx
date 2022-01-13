@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import cx from 'classnames';
 import {
-  BinaceCoinColor,
-  BitcoinColor,
-  BunnyCoinColor,
-  EthereumColor,
-  ShibaInuShibColor,
+  BinaceCoinColorIcon,
+  BitcoinColorIcon,
+  BunnyCoinColorIcon,
+  EthereumColorIcon,
+  ShibaInuShibColorIcon,
 } from '@project/libs/assets/images';
 import { Image, Text } from '@project/libs/components';
 import styles from './styles.module.scss';
@@ -23,11 +23,11 @@ type GameMonitorProps = {
 };
 
 const currencyImages: Record<string, string> = {
-  BNB: BinaceCoinColor,
-  SHIB: ShibaInuShibColor,
-  ETH: EthereumColor,
-  BTC: BitcoinColor,
-  BGD: BunnyCoinColor,
+  BNB: BinaceCoinColorIcon,
+  SHIB: ShibaInuShibColorIcon,
+  ETH: EthereumColorIcon,
+  BTC: BitcoinColorIcon,
+  BGD: BunnyCoinColorIcon,
 };
 
 const UserItem: React.FC<User> = ({
