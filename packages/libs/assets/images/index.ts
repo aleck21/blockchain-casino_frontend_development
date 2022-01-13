@@ -17,7 +17,7 @@ export { default as BinaceCoinColor } from './binanceCoinColor.svg';
 export { default as BitcoinColor } from './bitcoinColor.svg';
 export { default as EthereumColor } from './etheriumColor.svg';
 export { default as TetherUsdtColor } from './tetherUsdtColor.svg';
-export { default as BunnyCoinColor } from './bunnyColor.svg';
+export { default as BunnyCoinColor } from './bunnyCoinColor.svg';
 export { default as ShibaInuShibColor } from './shibaInuShibColor.svg';
 export { default as ActiveBonusBkgDesktop } from './activeBonusBackground.svg';
 export { default as IconCopy } from './iconCopy.svg';

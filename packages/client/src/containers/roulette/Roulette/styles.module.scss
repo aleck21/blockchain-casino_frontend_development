@@ -17,6 +17,14 @@
     background-size: 90%;
     background-position: top -88px left -20px;
     background-repeat: no-repeat;
+
+    @include mobile_sm {
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto;
+      grid-template-areas: 'roulette' 'info';
+      background-size: 140vw; // 150%;
+      background-position: top -48px left -16px;
+    }
   }
 
   .roulette__game {
@@ -27,6 +35,14 @@
       width: 487px;
       margin-top: 30px;
       margin-left: 47px;
+    }
+
+    @include mobile_sm {
+      img {
+        width: calc(100vw - 80px);
+        height: auto;
+        margin-left: 20px;
+      }
     }
 
     .spin__button {
@@ -47,6 +63,26 @@
     }
 
     .timer__container {
+      display: grid;
+      grid-template-columns: 40px 20px 40px 20px 40px;
+      grid-template-rows: 44px;
+      margin: 0 auto;
+      width: 160px;
+      
+      .points {
+        margin: 15px 8px;
+        display: grid;
+        grid-template-columns: 4px;
+        grid-template-rows: 4px 4px;
+        row-gap: 6px;
+
+        .point {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $middle;
+        }
+      }
 
       .timer__windowTime {
         background-color: $black;
@@ -59,7 +95,14 @@
         line-height: 22px;
         color: $white;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+    }
+
+    @include mobile_sm {
+      margin: 10px auto 41px auto;
     }
   }
 
@@ -81,6 +124,11 @@
       @include mobile_sm {
         display: none;
       }
+      
+    }
+    
+    @include mobile_sm {
+      padding: 0;
     }
 
     .roulette__info__gameMonitor {
@@ -92,9 +140,56 @@
       margin-bottom: 30px;
       margin-top: 70px;
 
-      @include mobile_sm {
-        width: calc(100% - 52px);
+      @media (max-height: 768px) {
+        margin-top: 20px;
       }
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+        margin: 0 auto 30px auto;
+      }
+
+      .users__container {
+        display: grid;
+        grid-template-columns: repeat(11, 140px);
+        position: relative;
+        column-gap: -70px;
+        top: 0;
+        left: 0px;
+        padding-top: 10px;
+
+        .user__box {
+          text-align: center;
+          display: grid;
+          grid-template-columns: auto 16px auto;
+          justify-content: center;
+          column-gap: 4px;
+          width: 140px;
+          // margin-left: -140px;
+
+          &:nth-child(even) {
+            margin-top: 22px;
+            // margin-left: 0px;
+          }
+
+          p {
+            @include base_text;
+            font-size: 12.3427px;
+            font-weight: 500;
+            color: $white;
+          }
+  
+          p.user__currencyCount {
+            color: $green2;
+          }
+  
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
     }
   }
 }
