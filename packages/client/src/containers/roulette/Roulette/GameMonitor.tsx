@@ -17,10 +17,6 @@ type User = {
   currencyCount: number;
 };
 
-type UserProps = {
-  user: User;
-};
-
 type GameMonitorProps = {
   userItems: User[];
   index: number;
@@ -34,22 +30,25 @@ const currencyImages: Record<string, string> = {
   BGD: BunnyCoinColor,
 };
 
-const UserItem: React.FC<UserProps> = ({
-  user,
+const UserItem: React.FC<User> = ({
+  id,
+  userName,
+  currency,
+  currencyCount,
 }) => (
   <div
     className={cx(styles.user__box)}
-    key={user.id}
+    key={id}
   >
     <Text type="p">
-      {user.userName}
+      {userName}
     </Text>
-    <Image url={currencyImages[user.currency]} />
+    <Image url={currencyImages[currency]} />
     <Text
       type="p"
       className={cx(styles.user__currencyCount)}
     >
-      {user.currencyCount}
+      {currencyCount}
     </Text>
   </div>
 );
@@ -66,7 +65,12 @@ export const GameMonitor = memo(({
       className={cx(styles.users__container)}
     >
       {userItems.map((user) => (
-        <UserItem user={user} />
+        <UserItem
+          id={user.id}
+          userName={user.userName}
+          currencyCount={user.currencyCount}
+          currency={user.currency}
+        />
       ))}
     </div>
   );
