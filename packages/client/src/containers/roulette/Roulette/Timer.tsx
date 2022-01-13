@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
@@ -8,7 +8,7 @@ type TimerProps = {
   seconds: number | string;
 };
 
-const Points: React.FC = React.memo(() => (
+const Points = memo(() => (
   <div className={cx(styles.points)}>
     <div className={cx(styles.point)} />
     <div className={cx(styles.point)} />

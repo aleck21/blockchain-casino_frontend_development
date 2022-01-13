@@ -79,7 +79,7 @@ export const Roulette: React.FC = React.memo(() => {
           </div>
           <div className={cx(styles.roulette__info__gameMonitor)}>
             <GameMonitor
-              content={users}
+              userItems={users}
               index={3}
             />
           </div>

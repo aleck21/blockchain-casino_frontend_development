@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import {
   BinaceCoinColor,
@@ -10,15 +10,19 @@ import {
 import { Image, Text } from '@project/libs/components';
 import styles from './styles.module.scss';
 
-type UserProps = {
+type User = {
   id: string;
   userName: string;
   currency: string;
   currencyCount: number;
 };
 
+type UserProps = {
+  user: User;
+};
+
 type GameMonitorProps = {
-  content: UserProps[];
+  userItems: User[];
   index: number;
 };
 
@@ -31,32 +35,29 @@ const currencyImages: Record<string, string> = {
 };
 
 const UserItem: React.FC<UserProps> = ({
-  id,
-  userName,
-  currency,
-  currencyCount,
+  user,
 }) => (
   <div
     className={cx(styles.user__box)}
-    key={id}
+    key={user.id}
   >
     <Text type="p">
-      {userName}
+      {user.userName}
     </Text>
-    <Image url={currencyImages[currency]} />
+    <Image url={currencyImages[user.currency]} />
     <Text
       type="p"
       className={cx(styles.user__currencyCount)}
     >
-      {currencyCount}
+      {user.currencyCount}
     </Text>
   </div>
 );
 
-export const GameMonitor: React.FC<GameMonitorProps> = React.memo(({
-  content,
+export const GameMonitor = memo(({
+  userItems,
   index,
-}) => {
+}: GameMonitorProps) => {
   const left = index * 70;
 
   return (
@@ -64,8 +65,8 @@ export const GameMonitor: React.FC<GameMonitorProps> = React.memo(({
       style={{ left: -left }}
       className={cx(styles.users__container)}
     >
-      {content.map((user) => (
-        <UserItem {...user} />
+      {userItems.map((user) => (
+        <UserItem user={user} />
       ))}
     </div>
   );
