@@ -1,5 +1,5 @@
 import React from 'react';
-import { BitcoinColor } from '@project/libs/assets/images';
+import { BitcoinColorIcon } from '@project/libs/assets/images';
 import { Image } from '@project/libs/components';
 
 export const select = [
@@ -33,7 +33,7 @@ export const table = [
     time: '12:08',
     amount: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         21 BTC
       </>
@@ -46,7 +46,7 @@ export const table = [
     time: '12:08',
     amount: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         21 BTC
       </>
@@ -59,7 +59,7 @@ export const table = [
     time: '12:08',
     amount: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         21 BTC
       </>
@@ -72,7 +72,7 @@ export const table = [
     time: '12:08',
     amount: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         21 BTC
       </>
@@ -85,7 +85,7 @@ export const table = [
     time: '12:08',
     amount: (
       <>
-        <Image url={BitcoinColor} />
+        <Image url={BitcoinColorIcon} />
         {' '}
         21 BTC
       </>

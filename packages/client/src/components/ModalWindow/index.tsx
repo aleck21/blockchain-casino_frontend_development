@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import cx from 'classnames';
-import { Paper } from '@project/libs/components/common';
+import { Paper, ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import {
   Promocode,
@@ -10,28 +10,48 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
-import { Close } from './Close';
+import { Authorisation } from 'containers/home/HomeDemo/Authorisation';
+import { useMobile } from 'hooks';
+import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
+const modals: Record<string, ReactNode> = {
+  promocode: <Promocode />,
+  changePassword: <ChangePassword />,
+  collectRewards: <CollectRewards />,
+  statistics: <Statistics />,
+  transactions: <Transactions />,
+  notifications: <Notification />,
+  roulette: <Roulette />,
+  authorisation: <Authorisation />,
+};
+
 export const ModalWindow: React.FC = () => {
-  const { isModalOpen, content } = useContext(ModalContext);
+  const { isModalOpen, content, closeModal } = useContext(ModalContext);
+  const isMobile = useMobile();
+
   return (
     <div
       className={cx(styles.modal__container,
         isModalOpen ? styles.open : styles.close)}
       style={{ top: `${window.pageYOffset}px` }}
     >
-      <Paper className={cx(styles.modal__paper)}>
-        {content === 'promocode' && <Promocode />}
-        {content === 'changePassword' && <ChangePassword />}
-        {content === 'collectRewards' && <CollectRewards />}
-        {content === 'statistics' && <Statistics />}
-        {content === 'transactions' && <Transactions />}
-        {content === 'notifications' && <Notification />}
-        {content === 'roulette' && <Roulette />}
-        <div className={cx(styles.close__button__box)}>
-          <Close />
-        </div>
+      <Paper
+        className={cx(styles.modal__paper)}
+        style={{
+          width: (isMobile && content === 'authorisation')
+            ? '100vw'
+            : '',
+        }}
+      >
+        {modals[content]}
+        <ButtonIcon
+          className={cx(styles.close__button__box)}
+          styleImage={{ width: 24, height: 24 }}
+          onClick={closeModal}
+          imageURL={CloseIcon}
+          alt="x"
+        />
       </Paper>
     </div>
   );

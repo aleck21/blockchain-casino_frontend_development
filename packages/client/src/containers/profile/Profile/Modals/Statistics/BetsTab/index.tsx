@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { Image, WrapDatePicker, SelectWithContent } from '@project/libs/components';
+import { CurrencyImages } from 'constants/currencies';
 import { Table } from './Table';
 import { table, tableCrash, list } from './contentDemo';
 import styles from './styles.module.scss';
 
 export const listForSelect = (
   // eslint-disable-next-line @typescript-eslint/no-shadow
-  list: { id: string | number, data: any, icon: string }[],
+  list: { id: string | number, data: string }[],
 ) => list.map((item) => ({
   id: item.id,
   data: (
     <>
-      <Image url={item.icon} />
+      <Image url={CurrencyImages[item.data]} />
       <p className={cx(styles.select__item__text)}>
         {item.data}
       </p>

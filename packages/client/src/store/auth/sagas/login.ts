@@ -6,6 +6,8 @@ export function* loginEmail({ payload }: ReturnType<typeof authLoginEmail>) {
   try {
     console.log(payload);
 
+    console.log(email, password);
+
     yield put(authSetState({ isLoginEmailLoading: true }));
   } catch (error) {
     console.log(error);
