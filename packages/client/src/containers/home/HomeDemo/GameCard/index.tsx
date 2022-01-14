@@ -41,6 +41,7 @@ export const GameCard: React.FC<GameCardProps> = ({
         <ButtonWithContent
           text={t('Play Now')}
           onClick={onClick}
+          className={cx(styles.gameCard__button)}
         />
       </div>
     </Paper>

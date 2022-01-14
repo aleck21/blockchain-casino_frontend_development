@@ -8,12 +8,56 @@
 }
 
 .gameCard__container {
+  width: 100%;
+  background-image: url('~@project/libs/assets/images/gameCardBackground.svg');
+  background-repeat: no-repeat;
+
+  @include mobile_sm {
+    background-size: contain;
+    background-position: top 20% left 0;
+  }
 
   h3 {
     color: $white;
   }
 
   .gameCard__imageBox {
-    background-image: url('~@project/libs/assets/images/gameCardBackground.svg');
-  }  
+    display: grid;
+    justify-content: center;
+
+    img {
+      width: auto;
+      max-height: 214px;
+    }
+  }
+  
+  .gameCard__textBox {
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    @include mobile_sm {
+      display: none;
+    }
+
+    p {
+      @include base_text;
+      color: $middle;
+      font-size: 14px;
+      text-align: justify;
+    }
+  }
+
+  .gameCard__button {
+    width: 118px;
+    height: 42px;
+    background-color: $dark;
+    border-radius: 10px;
+    border: .5px solid $middle;
+    font-size: 14px;
+    font-family: $montserrat;
+
+    @include mobile_sm {
+      margin-top: 20px;
+    }
+  }
 }

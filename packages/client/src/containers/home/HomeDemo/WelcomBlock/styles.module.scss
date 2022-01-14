@@ -7,10 +7,19 @@
   border-radius: 15px;
   padding: 30px 30px 36px 30px;
   width: 100%;
+  grid-column: 1 / 3;
+
+  @include mobile_sm {
+    grid-column: 1 / 2;
+  }
 
   h2 {
     color: $white;
     width: 500px;
+
+    @include mobile_sm {
+      width: calc(100vw - 100px);
+    }
   }
 
   p {

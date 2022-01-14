@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext } from 'react';
 import cx from 'classnames';
-import { Paper } from '@project/libs/components/common';
+import { Paper, ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import {
   Promocode,
@@ -12,7 +12,7 @@ import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
 import { Authorisation } from 'containers/home/HomeDemo/Authorisation';
 import { useMobile } from 'hooks';
-import { Close } from './Close';
+import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
 const modals: Record<string, ReactNode> = {
@@ -27,7 +27,7 @@ const modals: Record<string, ReactNode> = {
 };
 
 export const ModalWindow: React.FC = () => {
-  const { modal, content } = useContext(ModalContext);
+  const { modal, content, closeModal } = useContext(ModalContext);
   const isMobile = useMobile();
 
   return (
@@ -46,7 +46,12 @@ export const ModalWindow: React.FC = () => {
       >
         {modals[content]}
         <div className={cx(styles.close__button__box)}>
-          <Close />
+          <ButtonIcon
+            styleImage={{ width: 24, height: 24 }}
+            onClick={closeModal}
+            imageURL={CloseIcon}
+            alt="x"
+          />
         </div>
       </Paper>
     </div>
