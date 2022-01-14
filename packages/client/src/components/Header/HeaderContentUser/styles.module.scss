@@ -25,3 +25,13 @@
     }
   }
 }
+
+.wallet_button {
+  display: none;
+  padding: 0;
+  width: 66px;
+
+  @include mobile_sm {
+    display: block;
+  }  
+}
