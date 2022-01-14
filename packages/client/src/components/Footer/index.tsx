@@ -10,13 +10,13 @@ import styles from './styles.module.scss';
 import { Copyright } from './Copyright';
 
 export const Footer: FC = () => {
-  const { modal } = useContext(ModalContext);
+  const { isModalOpen } = useContext(ModalContext);
 
   return (
     <footer className={cx(styles.container)}>
       <div
         className={cx(styles.footer__main,
-          modal ? styles.on_blur : styles.no_blur)}
+          isModalOpen ? styles.on_blur : styles.no_blur)}
       >
         <About />
         <Links />
@@ -25,7 +25,7 @@ export const Footer: FC = () => {
       </div>
       <div
         className={cx(styles.footer__bottom,
-          modal ? styles.on_blur : styles.no_blur)}
+          isModalOpen ? styles.on_blur : styles.no_blur)}
       >
         <div className={cx(styles.footer__space)} />
         <Rate rate={47377.22} />

@@ -7,6 +7,8 @@
   grid-template-rows: auto auto;
   padding: 10px;
 
+  border: solid 2px green;
+
   .nav_top__container {
     display: grid;
     grid-template-rows: repeat(4, 49px);
@@ -55,6 +57,10 @@
   @include mobile_sm {
     width: 188px;
   }
+
+  .arrow {
+    opacity: 0;
+  }
 }
 
 .active {
@@ -66,13 +72,5 @@
     color: $white;
     width: 16px;
     height: 16px;
-  }
-}
-
-.inactive {
-  background: transparent;
-
-  .arrow {
-    opacity: 0;
   }
 }

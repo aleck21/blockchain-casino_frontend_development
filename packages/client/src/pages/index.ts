@@ -1,2 +1,4 @@
-export * from './Homepage';
-export * from './Wallet';
+export * from './HomePage';
+export * from './WalletPage';
+export * from './ProfilePage';
+export * from './VerificationPage';

@@ -1,33 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import cx from 'classnames';
 import { Image } from '@project/libs/components';
 import { BunnyGameLogoBig, BunnyGameLogoSmall } from '@project/libs/assets/images';
+import { MenuContext } from 'context';
 import { Main } from './Main';
 import { Footer } from './Footer';
-import './styles.scss';
+import styles from './styles.module.scss';
 // import { useUser } from 'hooks';
 
-export const Sidebar: FC = () =>
+export const Sidebar: FC = () => {
 // const { isUser } = useUser();
-
-  (
-    <aside className="sidebar__container">
-      <div className="sidebar__logo">
+  const { isMenuOpen } = useContext(MenuContext);
+  return (
+    <aside className={cx(styles.sidebar__container, { [styles.sidebar_mobile_open]: isMenuOpen })}>
+      <div className={styles.sidebar__logo}>
         <Image
           url={BunnyGameLogoBig}
-          className="sidebar__logo__image"
+          className={styles.sidebar__logo__image}
         />
       </div>
-      <div className="sidebar__logo__mobile">
+      <div className={styles.sidebar__logo__mobile}>
         <Image
           url={BunnyGameLogoSmall}
-          className="sidebar__logo__image"
+          className={styles.sidebar__logo__image}
         />
       </div>
-      <nav className="sidebar__main">
+      <nav className={styles.sidebar__main}>
         <Main />
       </nav>
-      <footer className="sidebar__footer">
+      <footer className={styles.sidebar__footer}>
         <Footer />
       </footer>
     </aside>
   );
+};

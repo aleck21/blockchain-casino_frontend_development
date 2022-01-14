@@ -11,6 +11,8 @@
 
   background-color: $dark;
 
+  border: solid 2px red;
+
   @include desktop_sm {
     display: none;
   }
@@ -64,6 +66,10 @@
       height: 100vh;
     }
   }
+}
+
+.sidebar_mobile_open {
+  
 }
 
 

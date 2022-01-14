@@ -4,7 +4,7 @@ import { AuthActionType } from '../actionTypes';
 
 export function* loginEmail({ payload }: ReturnType<typeof authLoginEmail>) {
   try {
-    const { email, password } = payload;
+    console.log(payload);
 
     yield put(authSetState({ isLoginEmailLoading: true }));
   } catch (error) {

@@ -14,11 +14,11 @@ import { Close } from './Close';
 import styles from './styles.module.scss';
 
 export const ModalWindow: React.FC = () => {
-  const { modal, content } = useContext(ModalContext);
+  const { isModalOpen, content } = useContext(ModalContext);
   return (
     <div
       className={cx(styles.modal__container,
-        modal ? styles.open : styles.close)}
+        isModalOpen ? styles.open : styles.close)}
       style={{ top: `${window.pageYOffset}px` }}
     >
       <Paper className={cx(styles.modal__paper)}>

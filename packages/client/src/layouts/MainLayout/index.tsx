@@ -2,13 +2,11 @@ import React, { CSSProperties, ReactNode, useContext } from 'react';
 import 'antd/dist/antd.css';
 import cx from 'classnames';
 import {
-  Header, Sidebar, Footer, Main,
+  Header, Sidebar, Footer,
 } from 'components';
-import { NavigationProvider } from 'context/navigation';
-import { ModalContext, ModalProvider } from 'context/modalOpen';
+import { ModalContext } from 'context/modalOpen';
 import { ModalWindow } from 'components/ModalWindow';
 import { Widget } from 'components/Widget';
-import { WidgetProvider } from 'context/widget';
 import styles from './styles.module.scss';
 
 type MainLayoutProps = {
@@ -22,29 +20,27 @@ const MainLayout = ({
   pageLayout,
   style,
 }: MainLayoutProps) => {
-  const { modal } = useContext(ModalContext);
+  const { isModalOpen } = useContext(ModalContext);
 
   return (
-    <ModalProvider>
-      <NavigationProvider>
-        <WidgetProvider>
-          <div
-            className={cx(styles.page__container, pageLayout,
-              modal ? styles.no_scroll : styles.scroll)}
-            style={style}
-          >
-            <Header />
-            <Sidebar />
-            <Main>
-              {children}
-            </Main>
-            <Footer />
+    <>
+      <div
+        className={cx(styles.page__container, pageLayout,
+          isModalOpen ? styles.no_scroll : styles.scroll)}
+        style={style}
+      >
+        <Header />
+        <Sidebar />
+        <main className={cx(styles.mainContainer)}>
+          <div className={cx(isModalOpen ? styles.on_blur : styles.no_blur)}>
+            {children}
           </div>
-          <ModalWindow />
-          <Widget />
-        </WidgetProvider>
-      </NavigationProvider>
-    </ModalProvider>
+        </main>
+        <Footer />
+      </div>
+      <ModalWindow />
+      <Widget />
+    </>
   );
 };
 

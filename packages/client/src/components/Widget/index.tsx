@@ -14,7 +14,7 @@ type MapContent = {
 
 export const Widget: React.FC = () => {
   const { closeWidget, content, widget } = useContext(WidgetContext);
-  const { modal } = useContext(ModalContext);
+  const { isModalOpen } = useContext(ModalContext);
   const contents: MapContent = {
     menu: <Sidebar />,
     wallet: <Wallet />,
@@ -25,7 +25,7 @@ export const Widget: React.FC = () => {
       className={
         widget ? 'widget__container' : 'hidden__widget'
       }
-      style={{ filter: modal ? 'blur(20px)' : 'blur(0px)' }}
+      style={{ filter: isModalOpen ? 'blur(20px)' : 'blur(0px)' }}
     >
       {contents[content]}
       {/* content === 'menu' && <Sidebar />}
