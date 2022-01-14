@@ -6,6 +6,7 @@ import {
   WalletPage,
 } from 'pages';
 import { ProfilePage } from 'pages/Profile';
+import { VerificationPage } from 'pages/VerificationPage';
 import { RouteLink } from '../../constants/routes';
 
 const MainRouter: FC = () => (
@@ -25,6 +26,11 @@ const MainRouter: FC = () => (
         path={RouteLink.profile}
         exact
         component={ProfilePage}
+      />
+      <Route
+        path={RouteLink.verification}
+        exact
+        component={VerificationPage}
       />
     </Switch>
   </Router>
