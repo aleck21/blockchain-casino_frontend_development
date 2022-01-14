@@ -4,10 +4,9 @@ import cx from 'classnames';
 import {
   Header, Sidebar, Footer,
 } from 'components';
-import { ModalContext, ModalProvider } from 'context/modalOpen';
+import { ModalContext } from 'context/modalOpen';
 import { ModalWindow } from 'components/ModalWindow';
 import { Widget } from 'components/Widget';
-import { WidgetProvider } from 'context/widget';
 import styles from './styles.module.scss';
 
 type MainLayoutProps = {
@@ -24,26 +23,24 @@ const MainLayout = ({
   const { modal } = useContext(ModalContext);
 
   return (
-    <ModalProvider>
-      <WidgetProvider>
-        <div
-          className={cx(styles.page__container, pageLayout,
-            modal ? styles.no_scroll : styles.scroll)}
-          style={style}
-        >
-          <Header />
-          <Sidebar />
-          <main className={cx(styles.mainContainer)}>
-            <div className={cx(modal ? styles.on_blur : styles.no_blur)}>
-              {children}
-            </div>
-          </main>
-          <Footer />
-        </div>
-        <ModalWindow />
-        <Widget />
-      </WidgetProvider>
-    </ModalProvider>
+    <>
+      <div
+        className={cx(styles.page__container, pageLayout,
+          modal ? styles.no_scroll : styles.scroll)}
+        style={style}
+      >
+        <Header />
+        <Sidebar />
+        <main className={cx(styles.mainContainer)}>
+          <div className={cx(modal ? styles.on_blur : styles.no_blur)}>
+            {children}
+          </div>
+        </main>
+        <Footer />
+      </div>
+      <ModalWindow />
+      <Widget />
+    </>
   );
 };
 
