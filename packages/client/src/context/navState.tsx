@@ -5,15 +5,15 @@ export const MenuContext = createContext({
   toggleMenu: () => {},
 });
 
-export const NavState : FC = ({ children }) => {
-  const [isMenuOpen, toggleMenu] = useState(false);
+export const MenuProvider : FC = ({ children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function toggleMenuMode() {
-    toggleMenu(!isMenuOpen);
-  }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <MenuContext.Provider value={{ isMenuOpen, toggleMenu: toggleMenuMode }}>
+    <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
       {children}
     </MenuContext.Provider>
   );
