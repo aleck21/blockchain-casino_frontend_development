@@ -1,16 +1,18 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
+import cx from 'classnames';
 import { Image } from '@project/libs/components';
 import { BunnyGameLogoBig, BunnyGameLogoSmall } from '@project/libs/assets/images';
+import { MenuContext } from 'context';
 import { Main } from './Main';
 import { Footer } from './Footer';
 import styles from './styles.module.scss';
 // import { useUser } from 'hooks';
 
-export const Sidebar: FC = () =>
+export const Sidebar: FC = () => {
 // const { isUser } = useUser();
-
-  (
-    <aside className={styles.sidebar__container}>
+  const { isMenuOpen } = useContext(MenuContext);
+  return (
+    <aside className={cx(styles.sidebar__container, { [styles.sidebar_mobile_open]: isMenuOpen })}>
       <div className={styles.sidebar__logo}>
         <Image
           url={BunnyGameLogoBig}
@@ -31,3 +33,4 @@ export const Sidebar: FC = () =>
       </footer>
     </aside>
   );
+};

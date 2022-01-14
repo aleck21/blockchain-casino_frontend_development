@@ -12,11 +12,7 @@ import {
   IconWallet,
 } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
-import {
-  WidgetContext,
-  ModalContext,
-  MenuContext,
-} from 'context';
+import { WidgetContext, ModalContext } from 'context';
 import { RouteLink } from '@project/client/src/constants';
 import styles from './styles.module.scss';
 
@@ -26,7 +22,6 @@ export const Main: FC = () => {
 
   const { closeWidget } = useContext(WidgetContext);
   const { openModal, setContentModal } = useContext(ModalContext);
-  const { isMenuOpen } = useContext(MenuContext);
 
   const onClickNotification = () => {
     setContentModal('notifications');
