@@ -1,11 +1,13 @@
 import React from 'react';
-import { ModalProvider, WidgetProvider } from 'context';
+import { ModalProvider, WidgetProvider, MenuProvider } from 'context';
 import { MainRouter } from '../navigation/MainRouter';
 
 const App = () => (
   <ModalProvider>
     <WidgetProvider>
-      <MainRouter />
+      <MenuProvider>
+        <MainRouter />
+      </MenuProvider>
     </WidgetProvider>
   </ModalProvider>
 );
