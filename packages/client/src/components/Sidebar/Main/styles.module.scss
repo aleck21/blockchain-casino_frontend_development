@@ -55,6 +55,10 @@
   @include mobile_sm {
     width: 188px;
   }
+
+  .arrow {
+    opacity: 0;
+  }
 }
 
 .active {
@@ -66,13 +70,5 @@
     color: $white;
     width: 16px;
     height: 16px;
-  }
-}
-
-.inactive {
-  background: transparent;
-
-  .arrow {
-    opacity: 0;
   }
 }
