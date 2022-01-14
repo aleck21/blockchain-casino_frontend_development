@@ -20,19 +20,19 @@ const MainLayout = ({
   pageLayout,
   style,
 }: MainLayoutProps) => {
-  const { modal } = useContext(ModalContext);
+  const { isModalOpen } = useContext(ModalContext);
 
   return (
     <>
       <div
         className={cx(styles.page__container, pageLayout,
-          modal ? styles.no_scroll : styles.scroll)}
+          isModalOpen ? styles.no_scroll : styles.scroll)}
         style={style}
       >
         <Header />
         <Sidebar />
         <main className={cx(styles.mainContainer)}>
-          <div className={cx(modal ? styles.on_blur : styles.no_blur)}>
+          <div className={cx(isModalOpen ? styles.on_blur : styles.no_blur)}>
             {children}
           </div>
         </main>

@@ -3,7 +3,7 @@
 import React, { createContext, useState } from 'react';
 
 export const ModalContext = createContext({
-  modal: false,
+  isModalOpen: false,
   content: '',
   openModal: () => {},
   closeModal: () => {},
@@ -11,15 +11,15 @@ export const ModalContext = createContext({
 });
 
 export const ModalProvider: React.FC = ({ children }) => {
-  const [modal, setModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [content, setContent] = useState('');
 
   const openModal = () => {
-    setModal(true);
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setModal(false);
+    setIsModalOpen(false);
   };
 
   const setContentModal = (content: string) => {
@@ -28,7 +28,11 @@ export const ModalProvider: React.FC = ({ children }) => {
 
   return (
     <ModalContext.Provider value={{
-      modal, content, openModal, closeModal, setContentModal,
+      isModalOpen,
+      content,
+      openModal,
+      closeModal,
+      setContentModal,
     }}
     >
       {children}
