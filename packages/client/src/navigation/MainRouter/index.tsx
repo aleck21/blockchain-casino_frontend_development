@@ -4,9 +4,9 @@ import { history } from '@project/libs/utils';
 import {
   Homepage,
   WalletPage,
+  ProfilePage,
+  VerificationPage,
 } from 'pages';
-import { ProfilePage } from 'pages/Profile';
-import { VerificationPage } from 'pages/VerificationPage';
 import { RouteLink } from '../../constants/routes';
 
 const MainRouter: FC = () => (
