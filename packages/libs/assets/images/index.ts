@@ -63,3 +63,6 @@ export { default as SingInBackground } from './singInBackground.png';
 export { default as GoogleIcon } from './googleIcon.svg';
 export { default as MetaMaskIcon } from './metaMaskIcon.svg';
 export { default as EmailIcon } from './emailIcon.svg';
+export { default as GameCardBackground } from './gameCardBackground.svg';
+export { default as ClasicDice } from './classicDice.png';
+export { default as Crash } from './crash.png';

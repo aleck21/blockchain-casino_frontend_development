@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import {
@@ -15,14 +15,14 @@ import {
 } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
-export const Authorisation: React.FC = () => {
+export const Authorisation: React.FC = memo(() => {
   const { t } = useTranslation('main');
 
-  const onGoogleClick = () => {};
+  const onGoogleClick = useCallback(() => {}, []);
 
-  const onMetaMaskClick = () => {};
+  const onMetaMaskClick = useCallback(() => {}, []);
 
-  const onEmailClick = () => {};
+  const onEmailClick = useCallback(() => {}, []);
 
   return (
     <div className={cx(styles.singIn__container)}>
@@ -44,7 +44,6 @@ export const Authorisation: React.FC = () => {
             label={t('Your email address')}
             className={cx(styles.singIn__input)}
             defaultValue="janedoe@mail.com"
-            typeInput="text"
             typeIcon="clear"
             name="email"
           />
@@ -52,7 +51,7 @@ export const Authorisation: React.FC = () => {
         <TextInputWithIcon
           label={t('Password')}
           className={cx(styles.singIn__input)}
-          typeInput="password"
+          password
           typeIcon="password"
           name="password"
         />
@@ -95,4 +94,4 @@ export const Authorisation: React.FC = () => {
       </div>
     </div>
   );
-};
+});

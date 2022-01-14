@@ -11,6 +11,7 @@ import {
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
 import { Authorisation } from 'containers/home/HomeDemo/Authorisation';
+import { useMobile } from 'hooks';
 import { Close } from './Close';
 import styles from './styles.module.scss';
 
@@ -27,7 +28,7 @@ const modals: Record<string, ReactNode> = {
 
 export const ModalWindow: React.FC = () => {
   const { modal, content } = useContext(ModalContext);
-  const isMobile = document.documentElement.clientWidth < 460;
+  const isMobile = useMobile();
 
   return (
     <div

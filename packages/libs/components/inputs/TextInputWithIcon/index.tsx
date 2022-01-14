@@ -1,53 +1,50 @@
 import React, { useState } from 'react';
 import { IconCopy, CloseIcon, HidPasswordIcon } from '@project/libs/assets/images';
-import './styles.scss';
+import cx from 'classnames';
+import styles from './styles.module.scss';
 
 type InputProps = {
   name: string;
   defaultValue?: string;
   typeIcon?: 'clear' | 'password' | 'copy';
-  typeInput?: string;
+  password?: boolean;
   label?: string;
   className?: string;
   classNameLabel?: string;
+  disabled?: boolean;
 };
 
 export const TextInputWithIcon: React.FC<InputProps> = ({
   name,
   defaultValue = '',
   typeIcon = 'clear',
-  typeInput = 'text',
+  password = false,
   label,
   className,
   classNameLabel,
+  disabled = false,
 }) => {
   const [value, setValue] = useState(defaultValue);
-  const [type, setType] = useState(typeInput);
+  const [isPassword, setIsPassword] = useState(password);
 
   const onChangeInput = (e: any) => {
     setValue(e.target.value);
   };
 
-  const onClear = () => {
-    setValue('');
-  };
-
-  const onCopy = () => {
-    navigator.clipboard.writeText(value).then(() => {}).catch(() => {});
-  };
-
-  const onShowPassword = () => {
-    if (type === 'password') {
-      setType('text');
-    } else {
-      setType('password');
+  const onIconClick = () => {
+    switch (typeIcon) {
+      case 'clear':
+        setValue('');
+        break;
+      case 'copy':
+        navigator.clipboard.writeText(value).then(() => {}).catch(() => {});
+        break;
+      case 'password':
+        setIsPassword(!isPassword);
+        break;
+      default:
+        break;
     }
-  };
-
-  const onFunctions: Record<string, () => void> = {
-    clear: onClear,
-    copy: onCopy,
-    password: onShowPassword,
   };
 
   const icons: Record<string, string> = {
@@ -57,25 +54,26 @@ export const TextInputWithIcon: React.FC<InputProps> = ({
   };
 
   return (
-    <div className="inputWI__container">
+    <div className={cx(styles.inputWI__container)}>
       {label && (
-        <p className={`inputWI__label ${classNameLabel}`}>
+        <p className={cx(styles.inputWI__label, classNameLabel)}>
           {label}
         </p>
       )}
-      <div className="inputWI__box">
+      <div className={cx(styles.inputWI__box)}>
         <input
           name={name}
           defaultValue={defaultValue}
           onChange={onChangeInput}
           value={value}
-          type={type}
-          className={`inputWI__field ${className}`}
+          type={isPassword ? 'password' : 'text'}
+          className={cx(styles.inputWI__field, className)}
+          disabled={disabled}
         />
         <div
-          className="inputWI__icon"
-          onClick={onFunctions[typeIcon]}
-          onKeyPress={() => {}}
+          className={cx(styles.inputWI__icon)}
+          onClick={onIconClick}
+          onKeyPress={undefined}
           role="button"
           tabIndex={0}
         >

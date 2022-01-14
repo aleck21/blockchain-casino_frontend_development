@@ -1,5 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
+import { CurrencyImages } from 'constants/currencies';
+import { Image } from '@project/libs/components';
 import styles from './styles.module.scss';
 
 type Content = {
@@ -7,9 +9,15 @@ type Content = {
     id: string | number,
     game: string,
     date: Date | string,
-    bet: string | JSX.Element,
+    bet: {
+      type: string,
+      quanity: number | string,
+    },
     currency: string,
-    profit: string | JSX.Element,
+    profit: {
+      type: string,
+      quanity: number | string,
+    },
   }[];
 };
 
@@ -24,43 +32,58 @@ export const Table: React.FC<Content> = ({ data }) => (
           styles.left__items, key === 0 ? styles.items__head : styles.items,
         )}
         >
-          {row.game}
+          {key === 0 ? 'Game' : row.game}
         </div>
         <div className={cx(
           key === 0 ? styles.items__head : styles.items,
           styles.middle__items,
         )}
         >
-          {row.date
-            .toLocaleString('en-GB',
-              {
-                year: 'numeric',
-                month: 'numeric',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-              })
-            .replace(',', '')}
+          {key === 0 ? 'Date & Time'
+            : row.date
+              .toLocaleString('en-GB',
+                {
+                  year: 'numeric',
+                  month: 'numeric',
+                  day: 'numeric',
+                  hour: 'numeric',
+                  minute: 'numeric',
+                })
+              .replace(',', '')}
         </div>
         <div className={cx(
           key === 0 ? styles.items__head : styles.items,
           styles.middle__items,
         )}
         >
-          {row.bet}
+          {key === 0
+            ? 'Bets'
+            : (
+              <>
+                <Image url={CurrencyImages[row.bet.type]} />
+                {` ${row.bet.quanity} ${row.bet.type}`}
+              </>
+            )}
         </div>
         <div className={cx(
           key !== 0 ? (styles.items, styles.blue_text) : styles.items__head,
           styles.middle__items,
         )}
         >
-          {row.currency}
+          {key === 0 ? 'Currency' : row.currency}
         </div>
         <div className={cx(
           key === 0 ? styles.items__head : styles.items, styles.right__items,
         )}
         >
-          {row.profit}
+          {key === 0
+            ? 'Profit'
+            : (
+              <>
+                <Image url={CurrencyImages[row.profit.type]} />
+                {` ${row.profit.quanity} ${row.profit.type}`}
+              </>
+            )}
         </div>
       </div>
     ))}
