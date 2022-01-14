@@ -21,8 +21,20 @@ export const Main: FC = () => {
   const { t } = useTranslation('main');
   const isMobile = document.documentElement.clientWidth < 460;
 
-  const { setContentWidget, closeWidget } = useContext(WidgetContext);
+  const { closeWidget } = useContext(WidgetContext);
   const { openModal, setContentModal } = useContext(ModalContext);
+
+  const onClickNotification = () => {
+    setContentModal('notifications');
+    openModal();
+    if (isMobile) closeWidget();
+  };
+
+  const onClickRoulette = () => {
+    setContentModal('roulette');
+    openModal();
+    if (isMobile) closeWidget();
+  };
 
   return (
     <div className={cx(styles.container)}>
@@ -31,7 +43,7 @@ export const Main: FC = () => {
         <NavLink
           to={RouteLink.home}
           exact
-          className={cx(styles.nav__item, styles.inactive)}
+          className={cx(styles.nav__item)}
           activeClassName={styles.active}
         >
           <Image url={IconHome} />
@@ -45,7 +57,7 @@ export const Main: FC = () => {
         <NavLink
           to={RouteLink.wallet}
           exact
-          className={cx(styles.nav__item, styles.inactive)}
+          className={cx(styles.nav__item)}
           activeClassName={styles.active}
         >
           <Image url={IconWallet} />
@@ -59,7 +71,7 @@ export const Main: FC = () => {
         <NavLink
           to={RouteLink.profile}
           exact
-          className={cx(styles.nav__item, styles.inactive)}
+          className={cx(styles.nav__item)}
           activeClassName={styles.active}
         >
           <Image url={IconProfile} />
@@ -70,11 +82,12 @@ export const Main: FC = () => {
           />
         </NavLink>
 
-        <NavLink
-          to={RouteLink.notification}
-          exact
-          className={cx(styles.nav__item, styles.inactive)}
-          activeClassName={styles.active}
+        <section
+          className={cx(styles.nav__item)}
+          onClick={onClickNotification}
+          onKeyPress={undefined}
+          role="menuitem"
+          tabIndex={0}
         >
           <Image url={IconNotification} />
           <Text type="p">{t('Notification')}</Text>
@@ -82,16 +95,16 @@ export const Main: FC = () => {
             url={ArrowWhite}
             className={cx(styles.arrow)}
           />
-        </NavLink>
-
+        </section>
       </nav>
       <div className={cx(styles.separator)} />
       <nav className={cx(styles.nav_bottom__container)}>
-        <NavLink
-          to={RouteLink.roulette}
-          exact
-          className={cx(styles.nav__item, styles.inactive)}
-          activeClassName={styles.active}
+        <section
+          className={cx(styles.nav__item)}
+          onClick={onClickRoulette}
+          onKeyPress={undefined}
+          role="menuitem"
+          tabIndex={0}
         >
           <Image url={IconRoulette} />
           <Text type="p">{t('Roulette')}</Text>
@@ -99,11 +112,11 @@ export const Main: FC = () => {
             url={ArrowWhite}
             className={cx(styles.arrow)}
           />
-        </NavLink>
+        </section>
         <NavLink
           to={RouteLink.verification}
           exact
-          className={cx(styles.nav__item, styles.inactive)}
+          className={cx(styles.nav__item)}
           activeClassName={styles.active}
         >
           <Image url={IconVerification} />
