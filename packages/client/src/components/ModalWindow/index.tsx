@@ -45,14 +45,13 @@ export const ModalWindow: React.FC = () => {
         }}
       >
         {modals[content]}
-        <div className={cx(styles.close__button__box)}>
-          <ButtonIcon
-            styleImage={{ width: 24, height: 24 }}
-            onClick={closeModal}
-            imageURL={CloseIcon}
-            alt="x"
-          />
-        </div>
+        <ButtonIcon
+          className={cx(styles.close__button__box)}
+          styleImage={{ width: 24, height: 24 }}
+          onClick={closeModal}
+          imageURL={CloseIcon}
+          alt="x"
+        />
       </Paper>
     </div>
   );

@@ -5,6 +5,7 @@ import styles from './styles.module.scss';
 type ButtonIconProps = {
   imageURL: string;
   className?: string;
+  classNameImage?: string;
   onClick: () => void;
   styleImage?: CSSProperties;
   alt?: string;
@@ -13,6 +14,7 @@ type ButtonIconProps = {
 export const ButtonIcon: React.FC<ButtonIconProps> = ({
   imageURL,
   className,
+  classNameImage,
   onClick,
   styleImage,
   alt = '',
@@ -26,6 +28,7 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
       src={imageURL}
       style={styleImage}
       alt={alt}
+      className={classNameImage}
     />
   </button>
 );

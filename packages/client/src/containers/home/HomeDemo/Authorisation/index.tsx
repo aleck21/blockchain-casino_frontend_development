@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import {
+  ButtonIcon,
   ButtonWithContent as Button,
   Image,
   Text,
@@ -66,30 +67,18 @@ export const Authorisation: React.FC = memo(() => {
           {t('Register with')}
         </Text>
         <div className={cx(styles.singIn__iconsBox)}>
-          <div
+          <ButtonIcon
             onClick={onGoogleClick}
-            onKeyPress={() => {}}
-            tabIndex={0}
-            role="button"
-          >
-            <Image url={GoogleIcon} />
-          </div>
-          <div
+            imageURL={GoogleIcon}
+          />
+          <ButtonIcon
             onClick={onMetaMaskClick}
-            onKeyPress={() => {}}
-            tabIndex={0}
-            role="button"
-          >
-            <Image url={MetaMaskIcon} />
-          </div>
-          <div
+            imageURL={MetaMaskIcon}
+          />
+          <ButtonIcon
             onClick={onEmailClick}
-            onKeyPress={() => {}}
-            tabIndex={0}
-            role="button"
-          >
-            <Image url={EmailIcon} />
-          </div>
+            imageURL={EmailIcon}
+          />
         </div>
       </div>
     </div>
