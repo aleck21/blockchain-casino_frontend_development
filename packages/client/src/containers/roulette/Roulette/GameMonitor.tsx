@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
-import { CurrencyImages } from 'constants/currencies';
+import { CurrencyColorIcons } from 'constants/currencies';
 import styles from './styles.module.scss';
 
 type User = {
@@ -29,7 +29,7 @@ const UserItem: React.FC<User> = ({
     <Text type="p">
       {userName}
     </Text>
-    <Image url={CurrencyImages[currency]} />
+    <Image url={CurrencyColorIcons[currency]} />
     <Text
       type="p"
       className={cx(styles.user__currencyCount)}

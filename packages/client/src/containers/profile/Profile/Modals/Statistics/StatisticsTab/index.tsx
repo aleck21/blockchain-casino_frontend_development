@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { SelectWithContent } from '@project/libs/components';
-import { CurrencyImages } from 'constants/currencies';
+import { CurrencyColorIcons } from 'constants/currencies';
 import styles from './styles.module.scss';
 import { content, tiles, list } from './contentDemo';
 import { ColorFormatNumber } from './ColorFormatNumber';
@@ -35,7 +35,7 @@ export const StatisticsTab: React.FC = () => (
               className={cx(styles.tab__table__item)}
             >
               <FirstTd
-                icon={CurrencyImages[row.currency]}
+                icon={CurrencyColorIcons[row.currency]}
                 text={row.currency}
               />
             </div>

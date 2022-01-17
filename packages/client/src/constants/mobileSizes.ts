@@ -1,3 +1,3 @@
-export const MOBILE_PHONE = 420;
-export const SMALL_DESKTOP = 1024;
-export const TABLET = 800;
+export const mobilePhoneWidth = 420;
+export const smallDesktopWidth = 1024;
+export const tabletWidth = 800;

@@ -10,8 +10,7 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
-import { Authorisation } from 'containers/home/HomeDemo/Authorisation';
-import { useMobile } from 'hooks';
+import { Authorisation } from 'containers/home/Home/Authorisation';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
@@ -29,7 +28,6 @@ const modals: Record<string, ReactNode> = {
 
 export const ModalWindow: React.FC = () => {
   const { isModalOpen, content, closeModal } = useContext(ModalContext);
-  const isMobile = useMobile();
 
   return (
     <div
@@ -38,12 +36,10 @@ export const ModalWindow: React.FC = () => {
       style={{ top: `${window.pageYOffset}px` }}
     >
       <Paper
-        className={cx(styles.modal__paper)}
-        style={{
-          width: (isMobile && content === 'authorisation')
-            ? '100vw'
-            : '',
-        }}
+        className={cx(
+          styles.modal__paper,
+          content === 'authorisation' ? styles.w100 : styles.w100m40,
+        )}
       >
         {modals[content]}
         <ButtonIcon

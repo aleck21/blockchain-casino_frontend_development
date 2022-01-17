@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { CurrencyImages } from 'constants/currencies';
+import { CurrencyColorIcons } from 'constants/currencies';
 import { Image } from '@project/libs/components';
 import styles from './styles.module.scss';
 
@@ -60,7 +60,7 @@ export const Table: React.FC<Content> = ({ data }) => (
             ? 'Bets'
             : (
               <>
-                <Image url={CurrencyImages[row.bet.type]} />
+                <Image url={CurrencyColorIcons[row.bet.type]} />
                 {` ${row.bet.quanity} ${row.bet.type}`}
               </>
             )}
@@ -80,7 +80,7 @@ export const Table: React.FC<Content> = ({ data }) => (
             ? 'Profit'
             : (
               <>
-                <Image url={CurrencyImages[row.profit.type]} />
+                <Image url={CurrencyColorIcons[row.profit.type]} />
                 {` ${row.profit.quanity} ${row.profit.type}`}
               </>
             )}

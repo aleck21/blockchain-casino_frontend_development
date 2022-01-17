@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import {
-  HomeDemo,
+  Home,
 } from 'containers';
 
 const Homepage: FC = () => (
-  <HomeDemo />
+  <Home />
 );
 
 export { Homepage };

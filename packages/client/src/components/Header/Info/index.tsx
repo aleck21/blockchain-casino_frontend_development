@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Image, Paper, Text } from '@project/libs/components';
 import { ArrowToDown, QuestionIcon } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { CurrencyImages } from 'constants/currencies';
+import { CurrencyColorIcons } from 'constants/currencies';
 import styles from './styles.module.scss';
 import { balance } from './contentDemo';
 
@@ -57,42 +57,40 @@ export const Info: React.FC = () => {
       <div className={cx(styles.header_info__count)}>
         {currencyFormat(contentDemo.currencyCount)}
       </div>
-      {isShowBalance
-        ? (
-          <Paper
-            className={cx(styles.balance__paper)}
-          >
-            <Text type="h4">
-              {t('Show the balance in this currency')}
-            </Text>
-            {balance.map((row) => (
-              <div className={cx(styles.balance__row)}>
-                <div className={cx(styles.balance__row__currency)}>
-                  <Image url={CurrencyImages[row.currency]} />
-                  &nbsp;
-                  {row.currency}
-                  &nbsp;
-                  {row.question
-                    ? (
-                      <Image
-                        url={QuestionIcon}
-                        className={cx(styles.question)}
-                      />
-                    )
-                    : ' '}
-                </div>
-                <div className={cx(styles.balance__row__quantity)}>
-                  {row.quantity}
-                </div>
-                <div className={cx(styles.balance__row__usd)}>
-                  {row.convertToUSD}
-                  <span> USD</span>
-                </div>
+      {isShowBalance && (
+        <Paper
+          className={cx(styles.balance__paper)}
+        >
+          <Text type="h4">
+            {t('Show the balance in this currency')}
+          </Text>
+          {balance.map((row) => (
+            <div className={cx(styles.balance__row)}>
+              <div className={cx(styles.balance__row__currency)}>
+                <Image url={CurrencyColorIcons[row.currency]} />
+                &nbsp;
+                {row.currency}
+                &nbsp;
+                {row.question
+                  ? (
+                    <Image
+                      url={QuestionIcon}
+                      className={cx(styles.question)}
+                    />
+                  )
+                  : ' '}
               </div>
-            ))}
-          </Paper>
-        )
-        : null}
+              <div className={cx(styles.balance__row__quantity)}>
+                {row.quantity}
+              </div>
+              <div className={cx(styles.balance__row__usd)}>
+                {row.convertToUSD}
+                <span> USD</span>
+              </div>
+            </div>
+          ))}
+        </Paper>
+      )}
     </section>
   );
 };

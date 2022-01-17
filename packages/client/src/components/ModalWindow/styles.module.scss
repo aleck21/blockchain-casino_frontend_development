@@ -17,6 +17,14 @@
 
   @include mobile_sm {
     margin-left: 0;
+    
+    .w100 {
+      width: 100vw;
+    }
+
+    .w100m40 {
+      width: calc(100vw - 40px);
+    }
   }
 
   .modal__paper {
@@ -26,7 +34,6 @@
     position: relative;
     
     @include mobile_sm {
-      width: calc(100vw - 40px);
       margin-left: 0;
     }
     

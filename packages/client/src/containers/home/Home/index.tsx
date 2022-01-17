@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { WelcomBlock } from './WelcomBlock';
 import { GameCard } from './GameCard';
 
-const HomeDemo: FC = () => {
+const Home: FC = () => {
   const { t } = useTranslation('main');
 
   return (
@@ -28,4 +28,4 @@ const HomeDemo: FC = () => {
   );
 };
 
-export { HomeDemo };
+export { Home };

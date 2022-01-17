@@ -10,7 +10,7 @@ import {
   XrpColorIcon,
 } from '@project/libs/assets/images';
 
-export const CurrencyImages: Record<string, string> = {
+export const CurrencyColorIcons: Record<string, string> = {
   BTC: BitcoinColorIcon,
   ETH: EthereumColorIcon,
   USDT: TetherUsdtColorIcon,

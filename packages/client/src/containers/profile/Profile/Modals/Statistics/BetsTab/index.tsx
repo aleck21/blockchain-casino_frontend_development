@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { Image, WrapDatePicker, SelectWithContent } from '@project/libs/components';
-import { CurrencyImages } from 'constants/currencies';
+import { CurrencyColorIcons } from 'constants/currencies';
 import { Table } from './Table';
 import { table, tableCrash, list } from './contentDemo';
 import styles from './styles.module.scss';
@@ -13,7 +13,7 @@ export const listForSelect = (
   id: item.id,
   data: (
     <>
-      <Image url={CurrencyImages[item.data]} />
+      <Image url={CurrencyColorIcons[item.data]} />
       <p className={cx(styles.select__item__text)}>
         {item.data}
       </p>
