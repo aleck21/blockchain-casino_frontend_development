@@ -2,27 +2,18 @@ import React, { memo, useCallback } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import {
-  ButtonIcon,
   ButtonWithContent as Button,
   Image,
   Text,
   TextInputWithIcon,
 } from '@project/libs/components';
 import {
-  EmailIcon,
-  GoogleIcon,
-  MetaMaskIcon,
   SingInImage,
 } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
+import { ButtonIconsBox } from '../ButtonIconsBox';
 
-type AuthorisationProps = {
-  isRegister?: boolean;
-};
-
-export const Authorisation = memo(({
-  isRegister,
-}: AuthorisationProps) => {
+export const SignInModal = memo(() => {
   const { t } = useTranslation('main');
 
   const onGoogleClick = useCallback(() => {}, []);
@@ -41,7 +32,7 @@ export const Authorisation = memo(({
           type="h3"
           className={cx(styles.singIn__title)}
         >
-          {isRegister ? t('Register') : t('Sing In')}
+          {t('Sing In')}
           {' '}
           Bunny
           <span className={cx(styles.singIn__title__blue)}>Game</span>
@@ -62,40 +53,21 @@ export const Authorisation = memo(({
           typeIcon="password"
           name="password"
         />
-        {isRegister && (
-          <TextInputWithIcon
-            label={t('Accept password')}
-            className={cx(styles.singIn__input)}
-            classNameLabel={cx(styles.singIn__acceptPassword__box)}
-            password
-            typeIcon="password"
-            name="password"
-          />
-        )}
       </div>
       <div className={cx(styles.singIn__bottom)}>
         <Button
-          text={isRegister ? t('Register') : t('Sing in')}
+          text={t('Sing in')}
           className={cx(styles.singIn__button)}
           onClick={() => {}}
         />
         <Text type="p">
           {t('Register with')}
         </Text>
-        <div className={cx(styles.singIn__iconsBox)}>
-          <ButtonIcon
-            onClick={onGoogleClick}
-            imageURL={GoogleIcon}
-          />
-          <ButtonIcon
-            onClick={onMetaMaskClick}
-            imageURL={MetaMaskIcon}
-          />
-          <ButtonIcon
-            onClick={onEmailClick}
-            imageURL={EmailIcon}
-          />
-        </div>
+        <ButtonIconsBox
+          onGoogleClick={onGoogleClick}
+          onMetaMaskClick={onMetaMaskClick}
+          onEmailClick={onEmailClick}
+        />
       </div>
     </div>
   );
