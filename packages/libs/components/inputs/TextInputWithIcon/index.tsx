@@ -63,7 +63,6 @@ export const TextInputWithIcon: React.FC<InputProps> = ({
       <div className={cx(styles.inputWI__box)}>
         <input
           name={name}
-          defaultValue={defaultValue}
           onChange={onChangeInput}
           value={value}
           type={isPassword ? 'password' : 'text'}

@@ -1,13 +1,7 @@
 import React, { memo } from 'react';
 import cx from 'classnames';
-import {
-  BinaceCoinColorIcon,
-  BitcoinColorIcon,
-  BunnyCoinColorIcon,
-  EthereumColorIcon,
-  ShibaInuShibColorIcon,
-} from '@project/libs/assets/images';
 import { Image, Text } from '@project/libs/components';
+import { CurrencyImages } from 'constants/currencies';
 import styles from './styles.module.scss';
 
 type User = {
@@ -20,14 +14,6 @@ type User = {
 type GameMonitorProps = {
   userItems: User[];
   index: number;
-};
-
-const currencyImages: Record<string, string> = {
-  BNB: BinaceCoinColorIcon,
-  SHIB: ShibaInuShibColorIcon,
-  ETH: EthereumColorIcon,
-  BTC: BitcoinColorIcon,
-  BGD: BunnyCoinColorIcon,
 };
 
 const UserItem: React.FC<User> = ({
@@ -43,7 +29,7 @@ const UserItem: React.FC<User> = ({
     <Text type="p">
       {userName}
     </Text>
-    <Image url={currencyImages[currency]} />
+    <Image url={CurrencyImages[currency]} />
     <Text
       type="p"
       className={cx(styles.user__currencyCount)}

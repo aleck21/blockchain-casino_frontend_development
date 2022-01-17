@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import {
   ButtonWithContent,
@@ -16,7 +16,7 @@ type GameCardProps = {
   onClick: () => void;
 };
 
-export const GameCard: React.FC<GameCardProps> = ({
+export const GameCard: React.FC<GameCardProps> = memo(({
   title,
   image,
   text,
@@ -46,4 +46,4 @@ export const GameCard: React.FC<GameCardProps> = ({
       </div>
     </Paper>
   );
-};
+});
