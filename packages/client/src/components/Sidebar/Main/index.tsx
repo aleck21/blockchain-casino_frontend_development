@@ -1,4 +1,9 @@
-import React, { FC, useCallback, useContext } from 'react';
+import React, {
+  FC,
+  useCallback,
+  useContext,
+  useMemo,
+} from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
@@ -43,16 +48,20 @@ export const Main: FC = () => {
     closeMenu();
   }, [closeMenu, closeModal]);
 
+  const navLinkCommonProps = useMemo(() => ({
+    exact: true,
+    className: cx(styles.nav__item),
+    activeClassName: styles.active,
+    onClick: closeModalAndMenu,
+  }), [closeModalAndMenu]);
+
   return (
     <div className={cx(styles.container)}>
       <nav className={cx(styles.nav_top__container)}>
 
         <NavLink
           to={RouteLink.home}
-          exact
-          className={cx(styles.nav__item)}
-          activeClassName={styles.active}
-          onClick={closeModalAndMenu}
+          {...navLinkCommonProps}
         >
           <Image url={IconHome} />
           <Text type="p">{t('Home')}</Text>
@@ -64,10 +73,7 @@ export const Main: FC = () => {
 
         <NavLink
           to={RouteLink.wallet}
-          exact
-          className={cx(styles.nav__item)}
-          activeClassName={styles.active}
-          onClick={closeModalAndMenu}
+          {...navLinkCommonProps}
         >
           <Image url={IconWallet} />
           <Text type="p">{t('Wallet')}</Text>
@@ -79,10 +85,7 @@ export const Main: FC = () => {
 
         <NavLink
           to={RouteLink.profile}
-          exact
-          className={cx(styles.nav__item)}
-          activeClassName={styles.active}
-          onClick={closeModalAndMenu}
+          {...navLinkCommonProps}
         >
           <Image url={IconProfile} />
           <Text type="p">{t('Profile')}</Text>
@@ -125,9 +128,7 @@ export const Main: FC = () => {
         </section>
         <NavLink
           to={RouteLink.verification}
-          exact
-          className={cx(styles.nav__item)}
-          activeClassName={styles.active}
+          {...navLinkCommonProps}
         >
           <Image url={IconVerification} />
           <Text type="p">{t('Verification')}</Text>
