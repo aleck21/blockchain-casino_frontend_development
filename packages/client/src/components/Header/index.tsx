@@ -27,15 +27,15 @@ export const Header: FC = () => {
     openWidget();
   }, [openWidget, setContentWidget]);
 
-  const onSignInClick = () => {
-    setContentModal('authorisation');
+  const onSignInClick = useCallback(() => {
+    setContentModal('signInModal');
     openModal();
-  };
+  }, [openModal, setContentModal]);
 
-  const onRegisterClick = () => {
-    setContentModal('registration');
+  const onRegisterClick = useCallback(() => {
+    setContentModal('registerModal');
     openModal();
-  };
+  }, [openModal, setContentModal]);
 
   return (
     <header className={cx(styles.container)}>
