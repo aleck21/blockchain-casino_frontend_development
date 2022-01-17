@@ -11,14 +11,18 @@
 
   background-color: $dark;
 
-  border: solid 2px red;
-
   @include desktop_sm {
     display: none;
   }
 
   @include mobile_sm {
     display: none;
+    position: fixed;
+    
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    transition: 850ms;
   }
 
   .sidebar__logo {
@@ -69,7 +73,12 @@
 }
 
 .sidebar_mobile_open {
-  
+  z-index: 1000;
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  transition: 850ms;  
 }
 
 
