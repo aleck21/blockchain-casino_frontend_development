@@ -18,14 +18,14 @@ export const balance = [
     currency: 'USDT',
     quantity: '0.000009174',
     convertToUSD: 1395,
-    question: true,
+    question: false,
   },
   {
     id: 'b04',
     currency: 'BGD',
     quantity: '0.000009174',
     convertToUSD: 1395,
-    question: false,
+    question: true,
   },
   {
     id: 'b05',

@@ -11,7 +11,7 @@ import { HeaderContentNotUser } from './HeaderContentNotUser';
 
 export const Header: FC = () => {
   // const { isUser } = useUser();
-  const isUser = false;
+  const isUser = true;
 
   return (
     <header className={cx(styles.container)}>

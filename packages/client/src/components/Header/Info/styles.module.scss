@@ -23,6 +23,7 @@
     grid-template-areas: 'text arrow';
     align-content: center;
     padding: 0 10px;
+    background: none;
 
     &:hover {
       cursor: pointer;
@@ -138,6 +139,14 @@
       span {
         color: $middle;
       }
-    }    
+    }
+    
+    .question__button {
+      background: none;
+      width: max-content;
+      height: max-content;
+      margin: 0;
+      padding: 0;
+    }
   }
 }

@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import cx from 'classnames';
-import { Image, Paper, Text } from '@project/libs/components';
+import {
+  Button,
+  Image,
+  Paper,
+  Text,
+} from '@project/libs/components';
 import { ArrowToDown, QuestionIcon } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { CurrencyColorIcons } from 'constants/currencies';
+import { ModalContext } from 'context';
 import styles from './styles.module.scss';
 import { balance } from './contentDemo';
 
@@ -14,6 +20,7 @@ const contentDemo = {
 
 export const Info: React.FC = () => {
   const [isShowBalance, setIsShowBalance] = useState(false);
+  const { openModal, setContentModal } = useContext(ModalContext);
   const { t } = useTranslation('main');
 
   const currencyFormat = (currency: number) => {
@@ -34,14 +41,17 @@ export const Info: React.FC = () => {
     setIsShowBalance(!isShowBalance);
   };
 
+  const onQuestionClick = () => {
+    setIsShowBalance(false);
+    setContentModal('aboutBgd');
+    openModal();
+  };
+
   return (
     <section className={cx(styles.container)}>
-      <div
+      <Button
         className={cx(styles.header_info__currency)}
         onClick={onBalaceClick}
-        onKeyPress={undefined}
-        tabIndex={0}
-        role="button"
       >
         <Text
           type="p"
@@ -53,7 +63,7 @@ export const Info: React.FC = () => {
           url={ArrowToDown}
           className={cx(styles.header_info__curency__arrow)}
         />
-      </div>
+      </Button>
       <div className={cx(styles.header_info__count)}>
         {currencyFormat(contentDemo.currencyCount)}
       </div>
@@ -73,10 +83,15 @@ export const Info: React.FC = () => {
                 &nbsp;
                 {row.question
                   ? (
-                    <Image
-                      url={QuestionIcon}
-                      className={cx(styles.question)}
-                    />
+                    <Button
+                      className={cx(styles.question__button)}
+                      onClick={onQuestionClick}
+                    >
+                      <Image
+                        url={QuestionIcon}
+                        className={cx(styles.question)}
+                      />
+                    </Button>
                   )
                   : ' '}
               </div>
