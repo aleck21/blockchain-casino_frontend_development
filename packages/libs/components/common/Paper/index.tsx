@@ -8,7 +8,11 @@ type PaperProps = {
   style?: React.CSSProperties;
 };
 
-export const Paper = ({ children, className, style }: PaperProps) => (
+export const Paper = ({
+  children,
+  className,
+  style,
+}: PaperProps) => (
   <section
     className={cx(styles.paper__container, className)}
     style={style}

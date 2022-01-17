@@ -1,21 +1,20 @@
 import React from 'react';
 import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
+import { CurrencyColorIcons } from 'constants/currencies';
 import styles from './styles.module.scss';
 
 type ItemProps = {
-  logo: string;
   name: string;
   shortName: string;
 };
 
 export const SelectItem: React.FC<ItemProps> = ({
-  logo,
   name,
   shortName,
 }) => (
   <div className={cx(styles.coin__container)}>
-    <Image url={logo} />
+    <Image url={CurrencyColorIcons[shortName]} />
     <Text
       type="p"
       className={cx(styles.coin__name)}

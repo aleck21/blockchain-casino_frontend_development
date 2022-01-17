@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Image, Text, ButtonWithContent as Button } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
+import { CurrencyColorIcons } from 'constants/currencies';
 import { contentDemo } from './contentDemo';
 import styles from './styles.module.scss';
 
@@ -35,7 +36,7 @@ export const ContentRakeback: React.FC = () => {
         >
           <div className={cx(styles.coin__container)}>
             <div className={cx(styles.coinLogo)}>
-              <Image url={fields.logo} />
+              <Image url={CurrencyColorIcons[fields.type]} />
             </div>
             <div className={cx(styles.coinName)}>
               <Text type="p">{fields.type}</Text>
