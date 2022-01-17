@@ -12,6 +12,7 @@ import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
 import { Authorisation } from 'containers/home/Home/Authorisation';
 import { CloseIcon } from '@project/libs/assets/images';
+import { AboutBGD } from 'containers/home/Home/AboutBGD';
 import styles from './styles.module.scss';
 
 const modals: Record<string, ReactNode> = {
@@ -24,6 +25,7 @@ const modals: Record<string, ReactNode> = {
   roulette: <Roulette />,
   authorisation: <Authorisation />,
   registration: <Authorisation isRegister />,
+  aboutBgd: <AboutBGD />,
 };
 
 export const ModalWindow: React.FC = () => {
