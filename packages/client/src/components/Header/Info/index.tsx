@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import cx from 'classnames';
-import { Image, Text } from '@project/libs/components';
-import { ArrowToDown } from '@project/libs/assets/images';
+import {
+  Button,
+  Image,
+  Paper,
+  Text,
+} from '@project/libs/components';
+import { ArrowToDown, QuestionIcon } from '@project/libs/assets/images';
+import { useTranslation } from '@project/libs/utils/i18n';
+import { CurrencyColorIcons } from 'constants/currencies';
+import { ModalContext } from 'context';
 import styles from './styles.module.scss';
+import { balance } from './contentDemo';
+
+const contentDemo = {
+  currencyCount: 0.0000001,
+  currency: 'BTC',
+};
 
 export const Info: React.FC = () => {
-  const currencyCount = 0.0000001;
+  const [isShowBalance, setIsShowBalance] = useState(false);
+  const { openModal, setContentModal } = useContext(ModalContext);
+  const { t } = useTranslation('main');
 
   const currencyFormat = (currency: number) => {
     const currencyString = currency.toFixed(7);
@@ -21,23 +37,75 @@ export const Info: React.FC = () => {
     );
   };
 
+  const onBalaceClick = () => {
+    setIsShowBalance(!isShowBalance);
+  };
+
+  const onQuestionClick = () => {
+    setIsShowBalance(false);
+    setContentModal('aboutBgd');
+    openModal();
+  };
+
   return (
-    <div className={cx(styles.container)}>
-      <section className={cx(styles.header_info__currency)}>
+    <section className={cx(styles.container)}>
+      <Button
+        className={cx(styles.header_info__currency)}
+        onClick={onBalaceClick}
+      >
         <Text
           type="p"
           className={cx(styles.text)}
         >
-          BTC
+          {contentDemo.currency}
         </Text>
         <Image
           url={ArrowToDown}
           className={cx(styles.header_info__curency__arrow)}
         />
-      </section>
-      <section className={cx(styles.header_info__count)}>
-        {currencyFormat(currencyCount)}
-      </section>
-    </div>
+      </Button>
+      <div className={cx(styles.header_info__count)}>
+        {currencyFormat(contentDemo.currencyCount)}
+      </div>
+      {isShowBalance && (
+        <Paper
+          className={cx(styles.balance__paper)}
+        >
+          <Text type="h4">
+            {t('Show the balance in this currency')}
+          </Text>
+          {balance.map((row) => (
+            <div className={cx(styles.balance__row)}>
+              <div className={cx(styles.balance__row__currency)}>
+                <Image url={CurrencyColorIcons[row.currency]} />
+                &nbsp;
+                {row.currency}
+                &nbsp;
+                {row.question
+                  ? (
+                    <Button
+                      className={cx(styles.question__button)}
+                      onClick={onQuestionClick}
+                    >
+                      <Image
+                        url={QuestionIcon}
+                        className={cx(styles.question)}
+                      />
+                    </Button>
+                  )
+                  : ' '}
+              </div>
+              <div className={cx(styles.balance__row__quantity)}>
+                {row.quantity}
+              </div>
+              <div className={cx(styles.balance__row__usd)}>
+                {row.convertToUSD}
+                <span> USD</span>
+              </div>
+            </div>
+          ))}
+        </Paper>
+      )}
+    </section>
   );
 };

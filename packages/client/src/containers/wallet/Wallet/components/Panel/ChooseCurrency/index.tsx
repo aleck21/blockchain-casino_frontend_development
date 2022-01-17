@@ -4,7 +4,6 @@ import cx from 'classnames';
 import { Text } from '@project/libs/components';
 import { SelectWithResult } from 'components/SelectWithResult';
 import { SelectItem } from 'components/SelectWithResult/SelectItem';
-import { BinaceCoinColor, BitcoinColor, EthereumColor } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
 export const ChooseCurrency: React.FC = () => {
@@ -13,21 +12,18 @@ export const ChooseCurrency: React.FC = () => {
   const dataDemo = [
     {
       id: 'bnb',
-      logo: BinaceCoinColor,
       shortName: 'BNB',
       name: 'Binance Coin',
       balance: '34,382.0052',
     },
     {
       id: 'btc',
-      logo: BitcoinColor,
       shortName: 'BTC',
       name: 'Bitcoin',
       balance: '34,382.0053',
     },
     {
       id: 'eth',
-      logo: EthereumColor,
       shortName: 'ETH',
       name: 'Ethereum',
       balance: '34,382.0054',
