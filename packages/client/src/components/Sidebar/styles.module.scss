@@ -11,14 +11,14 @@
 
   background-color: $dark;
 
-  border: solid 2px red;
+  // border: solid 2px red;
 
   @include desktop_sm {
     display: none;
   }
 
   @include mobile_sm {
-    display: none;
+    display: block;
   }
 
   .sidebar__logo {

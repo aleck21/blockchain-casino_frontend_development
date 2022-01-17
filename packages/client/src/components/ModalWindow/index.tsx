@@ -24,6 +24,7 @@ const modals: Record<string, ReactNode> = {
   notifications: <Notification />,
   roulette: <Roulette />,
   authorisation: <Authorisation />,
+  registration: <Authorisation isRegister />,
 };
 
 export const ModalWindow: React.FC = () => {

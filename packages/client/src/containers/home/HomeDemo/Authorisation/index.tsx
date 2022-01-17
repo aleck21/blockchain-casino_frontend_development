@@ -16,7 +16,13 @@ import {
 } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
-export const Authorisation: React.FC = memo(() => {
+type AuthorisationProps = {
+  isRegister?: boolean;
+};
+
+export const Authorisation = memo(({
+  isRegister,
+}: AuthorisationProps) => {
   const { t } = useTranslation('main');
 
   const onGoogleClick = useCallback(() => {}, []);
@@ -35,7 +41,7 @@ export const Authorisation: React.FC = memo(() => {
           type="h3"
           className={cx(styles.singIn__title)}
         >
-          {t('Sing In')}
+          {isRegister ? t('Register') : t('Sing In')}
           {' '}
           Bunny
           <span className={cx(styles.singIn__title__blue)}>Game</span>
@@ -56,10 +62,20 @@ export const Authorisation: React.FC = memo(() => {
           typeIcon="password"
           name="password"
         />
+        {isRegister && (
+          <TextInputWithIcon
+            label={t('Accept password')}
+            className={cx(styles.singIn__input)}
+            classNameLabel={cx(styles.singIn__acceptPassword__box)}
+            password
+            typeIcon="password"
+            name="password"
+          />
+        )}
       </div>
       <div className={cx(styles.singIn__bottom)}>
         <Button
-          text={t('Sing in')}
+          text={isRegister ? t('Register') : t('Sing in')}
           className={cx(styles.singIn__button)}
           onClick={() => {}}
         />

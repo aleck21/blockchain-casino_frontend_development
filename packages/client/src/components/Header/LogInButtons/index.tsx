@@ -16,6 +16,11 @@ export const LogInButtons: FC = () => {
     openModal();
   };
 
+  const onRegisterClick = () => {
+    setContentModal('registration');
+    openModal();
+  };
+
   return (
     <section className={cx(styles.container)}>
       <Button
@@ -27,6 +32,7 @@ export const LogInButtons: FC = () => {
       <Button
         className={styles.button}
         theme={ButtonTheme.outline}
+        onClick={onRegisterClick}
       >
         {t('Register')}
       </Button>
