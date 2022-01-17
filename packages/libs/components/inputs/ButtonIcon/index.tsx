@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, memo } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
@@ -11,7 +11,7 @@ type ButtonIconProps = {
   alt?: string;
 };
 
-export const ButtonIcon: React.FC<ButtonIconProps> = ({
+export const ButtonIcon: React.FC<ButtonIconProps> = memo(({
   imageURL,
   className,
   classNameImage,
@@ -31,4 +31,4 @@ export const ButtonIcon: React.FC<ButtonIconProps> = ({
       className={classNameImage}
     />
   </button>
-);
+));

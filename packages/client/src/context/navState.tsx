@@ -3,6 +3,8 @@ import React, { createContext, FC, useState } from 'react';
 export const MenuContext = createContext({
   isMenuOpen: true,
   toggleMenu: () => {},
+  openMenu: () => {},
+  closeMenu: () => {},
 });
 
 export const MenuProvider : FC = ({ children }) => {
@@ -12,8 +14,23 @@ export const MenuProvider : FC = ({ children }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <MenuContext.Provider value={{ isMenuOpen, toggleMenu }}>
+    <MenuContext.Provider
+      value={{
+        isMenuOpen,
+        toggleMenu,
+        openMenu,
+        closeMenu,
+      }}
+    >
       {children}
     </MenuContext.Provider>
   );
