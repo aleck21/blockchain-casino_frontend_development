@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useCallback, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
@@ -12,7 +12,7 @@ import {
   IconWallet,
 } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { WidgetContext, ModalContext } from 'context';
+import { WidgetContext, ModalContext, MenuContext } from 'context';
 import { RouteLink } from '@project/client/src/constants';
 import styles from './styles.module.scss';
 
@@ -21,19 +21,27 @@ export const Main: FC = () => {
   const isMobile = document.documentElement.clientWidth < 460;
 
   const { closeWidget } = useContext(WidgetContext);
-  const { openModal, setContentModal } = useContext(ModalContext);
+  const { openModal, setContentModal, closeModal } = useContext(ModalContext);
+  const { closeMenu } = useContext(MenuContext);
 
-  const onClickNotification = () => {
+  const onClickNotification = useCallback(() => {
     setContentModal('notifications');
     openModal();
+    closeMenu();
     if (isMobile) closeWidget();
-  };
+  }, [closeMenu, closeWidget, isMobile, openModal, setContentModal]);
 
-  const onClickRoulette = () => {
+  const onClickRoulette = useCallback(() => {
     setContentModal('roulette');
     openModal();
+    closeMenu();
     if (isMobile) closeWidget();
-  };
+  }, [closeMenu, closeWidget, isMobile, openModal, setContentModal]);
+
+  const closeModalAndMenu = useCallback(() => {
+    closeModal();
+    closeMenu();
+  }, [closeMenu, closeModal]);
 
   return (
     <div className={cx(styles.container)}>
@@ -44,6 +52,7 @@ export const Main: FC = () => {
           exact
           className={cx(styles.nav__item)}
           activeClassName={styles.active}
+          onClick={closeModalAndMenu}
         >
           <Image url={IconHome} />
           <Text type="p">{t('Home')}</Text>
@@ -58,6 +67,7 @@ export const Main: FC = () => {
           exact
           className={cx(styles.nav__item)}
           activeClassName={styles.active}
+          onClick={closeModalAndMenu}
         >
           <Image url={IconWallet} />
           <Text type="p">{t('Wallet')}</Text>
@@ -72,6 +82,7 @@ export const Main: FC = () => {
           exact
           className={cx(styles.nav__item)}
           activeClassName={styles.active}
+          onClick={closeModalAndMenu}
         >
           <Image url={IconProfile} />
           <Text type="p">{t('Profile')}</Text>
