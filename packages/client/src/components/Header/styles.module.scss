@@ -3,7 +3,6 @@
 @import '~@project/libs/assets/styles/palette';
 
 .container {
-  /* border: solid 2px green; */
   grid-area: header;
     
   display: grid;
@@ -46,6 +45,8 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 28px;
       justify-content: space-between;
+
+      border: solid 2px red;
     }
   }
 
@@ -55,5 +56,71 @@
 
   .header_mobile__note {
     grid-area: noteMobile;
+  }
+}
+
+.login_buttons_container {
+  grid-area: buttons;
+  
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: 'wallet profile';
+  justify-content: flex-end;
+
+  @include mobile_sm {
+    
+  }
+
+  .button {
+    margin-right: 20px;
+    width: 88px;
+
+    @include mobile_sm {
+      height: 27.41px;
+      margin-right: 0;
+    }
+  }
+
+  .buttonSignIn {
+    width: 81px;
+
+    @include mobile_sm {
+      margin-right: 8px;
+    }
+  }
+}
+
+.user_logged_in_container {
+  grid-area: headerContent;
+
+  display: grid;
+  grid-template-areas: 'profile info note';
+  grid-template-columns: auto 240px 24px;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+
+  @include mobile_sm {
+    grid-template-areas: 'info wallet profile';
+    grid-template-columns: 90px 74px 32px;
+    justify-content: space-between;
+  }
+
+  .head_user_contet__note {
+    grid-area: note;
+
+    @include mobile_sm {
+      display: none;
+    }
+  }
+
+  .wallet_button {
+    display: none;
+    padding: 0;
+    width: 66px;
+  
+    @include mobile_sm {
+      display: block;
+    }  
   }
 }

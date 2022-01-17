@@ -11,6 +11,8 @@
   height: 86px;
   width: 100%;
 
+  border: solid 2px red;
+
   @include mobile_sm {
     width: calc(100vw - 80px);
   }
