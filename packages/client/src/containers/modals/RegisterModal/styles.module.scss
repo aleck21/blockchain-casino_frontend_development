@@ -2,7 +2,7 @@
 @import "~@project/libs/assets/styles/palette.scss";
 @import "~@project/libs/assets/styles/fonts.scss";
 
-.singIn__container {
+.register__container {
 
   @include mobile_sm {
     background-image: url('~@project/libs/assets/images/bunnyGameLogoSmall.svg');
@@ -14,7 +14,7 @@
     align-content: center;
   }
 
-  .singIn__top {
+  .register__top {
     padding: 32px 20px 24px 20px;
     border-bottom: .5px solid $middle;
     background-image: url('~@project/libs/assets/images/singInBackground.png');
@@ -26,7 +26,7 @@
       background: none;
     }
     
-    .singIn__image {
+    .register__image {
       display: grid;
       justify-content: center;
 
@@ -35,13 +35,13 @@
       }
     }
 
-    h3.singIn__title {
+    h3.register__title {
       color: $white;
       font-weight: bold;
       text-align: center;
       margin-top: 12px;
 
-      .singIn__title__blue {
+      .register__title__blue {
         color: $blue;
       }
 
@@ -51,16 +51,16 @@
       }
     }
 
-    .singIn__inputMail__box {
+    .register__inputMail__box {
       margin-top: 24px;
       margin-bottom: 17px;
     }
 
-    .singIn__acceptPassword__box {
+    .register__acceptPassword__box {
       margin-top: 17px;
     }
 
-    input.singIn__input {
+    input.register__input {
       height: 44px;
       width: 370px;
       border-radius: 15px;
@@ -70,16 +70,17 @@
       }
     }
 
-    .singIn__input__label {
+    .register__input__label {
       font-size: 14px;
     }
   }
 
-  .singIn__bottom {
+  .register__bottom {
     padding: 24px 20px;
 
-    .singIn__button {
+    .register__button {
       height: 44px;
+      width: 100%;
     }
 
     p {
@@ -88,19 +89,6 @@
       color: $middle;
       text-align: center;
       margin: 32px 0 16px;
-    }
-
-    .singIn__iconsBox {
-      display: grid;
-      grid-template-columns: repeat(3, 32px);
-      column-gap: 16px;
-      justify-content: center;
-    }
-
-    .singIn__iconsBox > div {
-      &:hover {
-        cursor: pointer;
-      }
     }
   }
 }

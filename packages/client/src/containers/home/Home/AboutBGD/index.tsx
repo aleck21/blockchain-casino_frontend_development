@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { InsertFormatedText } from 'utils/insertFormatedText';
 import { Text } from '@project/libs/components';
 import styles from './styles.module.scss';
 
-export const AboutBGD: React.FC = () => {
+export const AboutBGD: React.FC = memo(() => {
   const { t } = useTranslation('main');
 
   return (
@@ -97,4 +97,4 @@ export const AboutBGD: React.FC = () => {
       </div>
     </div>
   );
-};
+});

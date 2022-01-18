@@ -10,7 +10,7 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
-import { Authorisation } from 'containers/home/Home/Authorisation';
+import { SignInModal, RegisterModal } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
 import { AboutBGD } from 'containers/home/Home/AboutBGD';
 import styles from './styles.module.scss';
@@ -23,13 +23,15 @@ const modals: Record<string, ReactNode> = {
   transactions: <Transactions />,
   notifications: <Notification />,
   roulette: <Roulette />,
-  authorisation: <Authorisation />,
-  registration: <Authorisation isRegister />,
   aboutBgd: <AboutBGD />,
+  signInModal: <SignInModal />,
+  registerModal: <RegisterModal />,
 };
 
 export const ModalWindow: React.FC = () => {
   const { isModalOpen, content, closeModal } = useContext(ModalContext);
+
+  const isFullWidth = content === 'signInModal' || content === 'registerModal';
 
   return (
     <div
@@ -39,8 +41,7 @@ export const ModalWindow: React.FC = () => {
     >
       <Paper
         className={cx(
-          styles.modal__paper,
-          content === 'authorisation' ? styles.w100 : styles.w100m40,
+          styles.modal__paper, styles.w100m40, { [styles.w100]: isFullWidth },
         )}
       >
         {modals[content]}
