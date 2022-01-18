@@ -24,26 +24,24 @@ export const GameCard: React.FC<GameCardProps> = memo(({
   const { t } = useTranslation('main');
 
   return (
-    <section className={cx(styles.gameCard__paper)}>
-      <div className={cx(styles.gameCard__container)}>
-        <Text type="h3">
-          {title}
-        </Text>
-        <div className={cx(styles.gameCard__imageBox)}>
-          <Image url={image} />
-        </div>
-        <div className={cx(styles.gameCard__textBox)}>
-          <Text type="p">
-            {text}
-          </Text>
-        </div>
-        <Button
-          onClick={onClick}
-          className={cx(styles.gameCard__button)}
-        >
-          {t('Play Now')}
-        </Button>
+    <section className={cx(styles.gameCard__container)}>
+      <Text type="h3">
+        {title}
+      </Text>
+      <div className={cx(styles.gameCard__imageBox)}>
+        <Image url={image} />
       </div>
+      <div className={cx(styles.gameCard__textBox)}>
+        <Text type="p">
+          {text}
+        </Text>
+      </div>
+      <Button
+        onClick={onClick}
+        className={cx(styles.gameCard__button)}
+      >
+        {t('Play Now')}
+      </Button>
     </section>
   );
 });
