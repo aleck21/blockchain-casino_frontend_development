@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import {
   CloseIcon,
   EyeCrossedIcon,
@@ -43,7 +43,9 @@ export const TextInputWithIcon: React.FC<InputProps> = ({
     }, [onChangeValue],
   );
 
-  const inputType = isPassword ? 'password' : 'text';
+  const inputType = useMemo(() => (
+    isPassword && !isPasswordVisible ? 'password' : 'text'
+  ), [isPassword, isPasswordVisible]);
 
   const onClearClick = useCallback(() => {
     if (onChangeValue !== undefined) {
