@@ -12,7 +12,6 @@ import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
 import { SignInModal, RegisterModal } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
-import { AboutBGD } from 'containers/home/Home/AboutBGD';
 import styles from './styles.module.scss';
 
 const modals: Record<string, ReactNode> = {
@@ -25,7 +24,6 @@ const modals: Record<string, ReactNode> = {
   roulette: <Roulette />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
-  aboutBgd: <AboutBGD />,
 };
 
 export const ModalWindow: React.FC = () => {
