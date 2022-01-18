@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Image, Text, Paper } from '@project/libs/components';
+import { Image, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { GoldBunny } from '@project/libs/assets/images';
 import { ProgressBar } from 'components/ProgressBar';
@@ -19,7 +19,7 @@ export const Membership: React.FC = () => {
       <Text type="h3">
         {t('Membership level progress')}
       </Text>
-      <Paper className={cx(styles.membership__paper)}>
+      <section className={cx(styles.membership__paper)}>
         <div className={cx(styles.membership__type)}>
           <Image url={GoldBunny} />
           <Text type="p">
@@ -30,7 +30,7 @@ export const Membership: React.FC = () => {
           quanity={progressDemo.quanity}
           ofValue={progressDemo.of}
         />
-      </Paper>
+      </section>
     </div>
   );
 };

@@ -18,8 +18,16 @@
   grid-template-rows: 70px 50px;
   justify-content: space-between;
   max-width: 536px;
+  grid-area: bgdDashboard;
+  @include paper;
+  width: 100%;
+  height: 161px;
+  margin-top: 30px;
+  align-self: flex-end;
 
   @include mobile_sm {
+    max-width: calc(100vw - 40px);
+    height: auto;
     grid-template-areas: 'title' 'locked' 'percentage';
     grid-template-columns: 100%;
     grid-template-rows: repeat(3, auto);

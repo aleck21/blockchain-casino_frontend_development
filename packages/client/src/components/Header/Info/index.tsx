@@ -3,7 +3,6 @@ import cx from 'classnames';
 import {
   Button,
   Image,
-  Paper,
   Text,
 } from '@project/libs/components';
 import { ArrowToDown, QuestionIcon } from '@project/libs/assets/images';
@@ -60,9 +59,7 @@ export const Info: React.FC = () => {
         {currencyFormat(contentDemo.currencyCount)}
       </div>
       {isShowBalance && (
-        <Paper
-          className={cx(styles.balance__paper)}
-        >
+        <section className={cx(styles.balance__paper)}>
           <Text type="h4">
             {t('Show the balance in this currency')}
           </Text>
@@ -96,7 +93,7 @@ export const Info: React.FC = () => {
               </div>
             </div>
           ))}
-        </Paper>
+        </section>
       )}
     </section>
   );

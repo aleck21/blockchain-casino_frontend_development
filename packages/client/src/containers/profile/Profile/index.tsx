@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Table } from 'containers/profile/Profile/Table';
-import { Image, Text, Paper } from '@project/libs/components';
+import { Image, Text } from '@project/libs/components';
 import styles from './styles.module.scss';
 import { avatarDemo, Main } from './Main';
 import { Membership } from './Membership';
@@ -31,9 +31,7 @@ export const Profile: React.FC = () => {
           url={avatarDemo}
           className={cx(styles.avatar__mobile)}
         />
-        <Paper className={cx(styles.profile__panel)}>
-          <Main />
-        </Paper>
+        <Main />
       </div>
       <div className={cx(styles.profile__rightBlock)}>
         <Membership />

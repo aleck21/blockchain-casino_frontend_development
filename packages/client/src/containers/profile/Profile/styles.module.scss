@@ -11,6 +11,10 @@
     width: calc(100vw - 40px);
   }
 
+  .profile__panel {
+    @include paper;
+  }
+
   .profile__head {
     text-align: left;
     color: $white;
