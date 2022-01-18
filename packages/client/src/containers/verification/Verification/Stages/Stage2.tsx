@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { ButtonWithContent as Button } from '@project/libs/components/inputs/ButtonWithContent';
+import { Button } from '@project/libs/components';
 import { StageProps } from './Stage1';
 import styles from '../styles.module.scss';
 
@@ -51,9 +51,11 @@ export const Stage2: React.FC<StageProps> = ({
       </p>
       <footer className={cx(styles.verification__footer)}>
         <Button
-          text={t('Validate')}
           onClick={goNextStage}
-        />
+          className={cx(styles.validate__button)}
+        >
+          {t('Validate')}
+        </Button>
       </footer>
     </div>
   );

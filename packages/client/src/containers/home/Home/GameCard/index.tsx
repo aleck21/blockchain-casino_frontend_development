@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cx from 'classnames';
 import {
-  ButtonWithContent,
+  Button,
   Image,
   Text,
 } from '@project/libs/components';
@@ -37,11 +37,12 @@ export const GameCard: React.FC<GameCardProps> = memo(({
             {text}
           </Text>
         </div>
-        <ButtonWithContent
-          text={t('Play Now')}
+        <Button
           onClick={onClick}
           className={cx(styles.gameCard__button)}
-        />
+        >
+          {t('Play Now')}
+        </Button>
       </div>
     </section>
   );

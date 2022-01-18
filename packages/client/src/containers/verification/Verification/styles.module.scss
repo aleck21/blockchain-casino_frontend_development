@@ -1,10 +1,11 @@
 @import "@project/libs/assets/styles/mixins.scss";
 @import "@project/libs/assets/styles/fonts.scss";
 @import "@project/libs/assets/styles/palette.scss";
-
+  
 .verification__paper {
-  @include paper;
   display: grid;
+  background-color: $dark;
+  border-radius: 30px;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -120,6 +121,7 @@
     border-top: .5px solid $middle;
     margin-top: 22px;
     padding-top: 20px;
+    width: 520px;
 
     .stage1__buttons {
       display: grid;
@@ -153,11 +155,24 @@
         height: 44px;
         display: grid;
         justify-self: flex-end;
+        background-image: none;
+        background-color: $blue;
 
         @include mobile_sm {
           width: 100%;
         }
       }
+    }
+
+    .result__button {
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+      width: max-content;
+      @include base_text;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     .bytes__box {
@@ -226,83 +241,87 @@
       }
     }
   }
-}
+  .stageX__container {
+    .stageX__doubleInput {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      padding-top: 20px;
+      padding-bottom: 30px;
 
-.stageX__container {
-  .stageX__doubleInput {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-
-    @include mobile_sm {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
-      row-gap: 20px;
+      @include mobile_sm {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 20px;
+      }
     }
-  }
 
-  h4 {
-    @include base_text;
-    color: $white;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    padding-bottom: 20px;
+    h4 {
+      @include base_text;
+      color: $white;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      padding-bottom: 20px;
 
-    @include mobile_sm {
+      @include mobile_sm {
+        text-align: left;
+      }
+    }
+
+    p.stageX__label {
+      font-size: 14px;
+      font-weight: 400;
+      color: $white;
+      padding: 0;
+    }
+
+    input.h44 {
+      height: 44px;
+      font-size: 16px;
+      color: $white;
+      padding: 0 20px;
+
+      @include mobile_sm {
+        background-color: $dark;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $middle;
+      }
+      &::-moz-placeholder {
+        color: $middle;
+      }
+    }
+
+    p {
+      color: $middle;
+    }
+
+    button {
+      height: 44px;
+      width: 181px;
+      margin: 30px auto 0 auto;
+    }
+
+    .validate__button {
+      background-color: $blue;
+      background-image: none;
+    }
+
+    .left {
       text-align: left;
     }
   }
 
-  p.stageX__label {
-    font-size: 14px;
-    font-weight: 400;
-    color: $white;
-    padding: 0;
-  }
 
-  input.h44 {
-    height: 44px;
-    font-size: 16px;
-    color: $white;
-    padding: 0 20px;
+  .result__table__container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y:hidden;
+    scrollbar-color: $middle $dark2;
+    scrollbar-width: 4px;
 
-    @include mobile_sm {
-      background-color: $dark;
-    }
-
-    &::-webkit-input-placeholder {
-      color: $middle;
-    }
-    &::-moz-placeholder {
-      color: $middle;
-    }
-  }
-
-  p {
-    color: $middle;
-  }
-
-  button {
-    height: 44px;
-    width: 181px;
-    margin: 30px auto 0 auto;
-  }
-
-  .left {
-    text-align: left;
-  }
-}
-
-.result__table__container {
-  width: 100%;
-  overflow-x: auto;
-  overflow-y:hidden;
-  scrollbar-color: $middle $dark2;
-  scrollbar-width: 4px;
-  
   &::-webkit-scrollbar-track {
     background-color: $dark2;
   }
@@ -331,4 +350,6 @@
     text-align: left;
     padding: 10px 25px 10px 0;
   }
+}
+
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import {
   Button,
@@ -8,7 +8,6 @@ import {
 import { ArrowToDown, QuestionIcon } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { CurrencyColorIcons } from 'constants/currencies';
-import { ModalContext } from 'context';
 import styles from './styles.module.scss';
 import { balance } from './contentDemo';
 
@@ -19,7 +18,6 @@ const contentDemo = {
 
 export const Info: React.FC = () => {
   const [isShowBalance, setIsShowBalance] = useState(false);
-  const { openModal, setContentModal } = useContext(ModalContext);
   const { t } = useTranslation('main');
 
   const currencyFormat = (currency: number) => {
@@ -38,12 +36,6 @@ export const Info: React.FC = () => {
 
   const onBalaceClick = () => {
     setIsShowBalance(!isShowBalance);
-  };
-
-  const onQuestionClick = () => {
-    setIsShowBalance(false);
-    setContentModal('aboutBgd');
-    openModal();
   };
 
   return (
@@ -82,7 +74,7 @@ export const Info: React.FC = () => {
                   ? (
                     <Button
                       className={cx(styles.question__button)}
-                      onClick={onQuestionClick}
+                      onClick={undefined}
                     >
                       <Image
                         url={QuestionIcon}

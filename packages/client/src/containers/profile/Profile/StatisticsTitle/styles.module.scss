@@ -24,6 +24,9 @@
   .transaction__button {
     width: 142px;
     justify-self: end;
+    background-image: none;
+    background-color: $blue;
+    height: 44px;
 
     @include mobile_sm {
       display: none;
