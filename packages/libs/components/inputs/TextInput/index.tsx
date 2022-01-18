@@ -14,8 +14,9 @@ type InputProps = {
   name?: string;
   isPassword?: boolean;
   label?: string;
-  className?: string;
+  classNameInput?: string;
   classNameLabel?: string;
+  classNameContainer?: string;
   disabled?: boolean;
   isWithClear?: boolean;
   onChangeValue?: (text: string) => void;
@@ -27,8 +28,9 @@ export const TextInput: React.FC<InputProps> = ({
   name,
   isPassword,
   label,
-  className,
+  classNameInput,
   classNameLabel,
+  classNameContainer,
   disabled = false,
   isWithClear,
   onChangeValue,
@@ -58,7 +60,7 @@ export const TextInput: React.FC<InputProps> = ({
   }, [isPasswordVisible]);
 
   return (
-    <div className={cx(styles.input__container)}>
+    <div className={cx(styles.input__container, classNameContainer)}>
       {label && (
         <p className={cx(styles.input__label, classNameLabel)}>
           {label}
@@ -69,7 +71,7 @@ export const TextInput: React.FC<InputProps> = ({
           name={name}
           value={value}
           type={inputType}
-          className={cx(styles.input__field, className)}
+          className={cx(styles.input__field, classNameInput)}
           disabled={disabled}
           defaultValue={defaultValue}
           onChange={handleChange}

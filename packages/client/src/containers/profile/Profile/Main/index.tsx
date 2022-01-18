@@ -32,12 +32,14 @@ export const Main: React.FC = () => {
           value={name}
           onChangeValue={setName}
           label={t('Username')}
+          classNameInput={styles.input}
         />
       </div>
       <TextInput
         value={email}
         onChangeValue={setEmail}
         label={t('Email')}
+        classNameInput={styles.input}
       />
       <div className={cx(styles.panel__main__toggles)}>
         <SwitchPanel />

@@ -16,6 +16,7 @@
     grid-template-areas: 'input icon';
     background-color: $black;
     border-radius: 15px;
+    overflow: hidden;
 
     input.input__field {
       grid-area: input;
@@ -24,7 +25,7 @@
       background-color: $black;
       padding: 11px 0 11px 20px;
       color: $white;
-      @include base_text;
+      // @include base_text;
       font-size: 16px;
     }
 

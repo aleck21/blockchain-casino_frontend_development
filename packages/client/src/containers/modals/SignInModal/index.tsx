@@ -43,7 +43,7 @@ export const SignInModal = memo(() => {
             value={email}
             onChangeValue={setEmail}
             label={t('Your email address')}
-            className={cx(styles.singIn__input)}
+            classNameInput={cx(styles.singIn__input)}
             defaultValue="janedoe@mail.com"
             isWithClear
             name="email"
@@ -53,7 +53,7 @@ export const SignInModal = memo(() => {
           value={password}
           onChangeValue={setPassword}
           label={t('Password')}
-          className={cx(styles.singIn__input)}
+          classNameInput={cx(styles.singIn__input)}
           isPassword
           name="password"
         />

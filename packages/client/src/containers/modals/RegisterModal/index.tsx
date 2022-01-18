@@ -46,7 +46,7 @@ export const RegisterModal = memo(() => {
             value={email}
             onChangeValue={setEmail}
             label={t('Your email address')}
-            className={cx(styles.register__input)}
+            classNameInput={cx(styles.register__input)}
             defaultValue="janedoe@mail.com"
             isWithClear
             name="email"
@@ -56,7 +56,7 @@ export const RegisterModal = memo(() => {
           value={password}
           onChangeValue={setPassword}
           label={t('Password')}
-          className={cx(styles.register__input)}
+          classNameInput={cx(styles.register__input)}
           isPassword
           name="password"
         />
@@ -64,7 +64,7 @@ export const RegisterModal = memo(() => {
           value={passwordConfirm}
           onChangeValue={setPasswordConfirm}
           label={t('Accept password')}
-          className={cx(styles.register__input)}
+          classNameInput={cx(styles.register__input)}
           classNameLabel={cx(styles.register__acceptPassword__box)}
           isPassword
           name="password"
