@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import {
@@ -15,6 +15,10 @@ import { ButtonIconsBox } from '../ButtonIconsBox';
 
 export const RegisterModal = memo(() => {
   const { t } = useTranslation('main');
+
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [email, setEmail] = useState('');
 
   const onGoogleClick = useCallback(() => {}, []);
 
@@ -39,26 +43,30 @@ export const RegisterModal = memo(() => {
         </Text>
         <div className={cx(styles.register__inputMail__box)}>
           <TextInputWithIcon
+            value={email}
+            onChangeValue={setEmail}
             label={t('Your email address')}
             className={cx(styles.register__input)}
             defaultValue="janedoe@mail.com"
-            typeIcon="clear"
+            isWithClear
             name="email"
           />
         </div>
         <TextInputWithIcon
+          value={password}
+          onChangeValue={setPassword}
           label={t('Password')}
           className={cx(styles.register__input)}
-          password
-          typeIcon="password"
+          isPassword
           name="password"
         />
         <TextInputWithIcon
+          value={passwordConfirm}
+          onChangeValue={setPasswordConfirm}
           label={t('Accept password')}
           className={cx(styles.register__input)}
           classNameLabel={cx(styles.register__acceptPassword__box)}
-          password
-          typeIcon="password"
+          isPassword
           name="password"
         />
       </div>
