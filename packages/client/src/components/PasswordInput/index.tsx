@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Image, Text } from '@project/libs/components';
 import cx from 'classnames';
-import { HidPasswordIcon } from '@project/libs/assets/images';
+import { EyeCrossedIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
 type InputProps = {
@@ -53,7 +53,7 @@ export const PasswordInput: React.FC<InputProps> = ({
           className={cx(styles.input__showButton, classNameButton)}
           onClick={() => setShow(!show)}
         >
-          <Image url={HidPasswordIcon} />
+          <Image url={EyeCrossedIcon} />
         </button>
       </div>
     </div>
