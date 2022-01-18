@@ -3,7 +3,6 @@ import cx from 'classnames';
 import {
   ButtonWithContent,
   Image,
-  Paper,
   Text,
 } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
@@ -25,7 +24,7 @@ export const GameCard: React.FC<GameCardProps> = memo(({
   const { t } = useTranslation('main');
 
   return (
-    <Paper className={cx(styles.gameCard__paper)}>
+    <section className={cx(styles.gameCard__paper)}>
       <div className={cx(styles.gameCard__container)}>
         <Text type="h3">
           {title}
@@ -44,6 +43,6 @@ export const GameCard: React.FC<GameCardProps> = memo(({
           className={cx(styles.gameCard__button)}
         />
       </div>
-    </Paper>
+    </section>
   );
 });

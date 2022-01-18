@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext } from 'react';
 import cx from 'classnames';
-import { Paper, ButtonIcon } from '@project/libs/components';
+import { ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import {
   Promocode,
@@ -37,7 +37,7 @@ export const ModalWindow: React.FC = () => {
         isModalOpen ? styles.open : styles.close)}
       style={{ top: `${window.pageYOffset}px` }}
     >
-      <Paper
+      <section
         className={cx(
           styles.modal__paper, styles.w100m40, { [styles.w100]: isFullWidth },
         )}
@@ -50,7 +50,7 @@ export const ModalWindow: React.FC = () => {
           imageURL={CloseIcon}
           alt="x"
         />
-      </Paper>
+      </section>
     </div>
   );
 };

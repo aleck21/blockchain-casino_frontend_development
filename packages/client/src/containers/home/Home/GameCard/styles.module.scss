@@ -3,6 +3,7 @@
 @import "~@project/libs/assets/styles/fonts.scss";
 
 .gameCard__paper {
+  @include paper;
   padding: 30px;
   padding-bottom: 22px;
 }
