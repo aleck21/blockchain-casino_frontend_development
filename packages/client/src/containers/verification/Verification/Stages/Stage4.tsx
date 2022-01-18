@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Image, ButtonWithContent as Button } from '@project/libs/components';
+import { Image, Button } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
 import { croppingText } from 'utils/croppingText';
 import { result, bytes, hash } from './contentDemo';
@@ -139,9 +139,11 @@ export const Stage4: React.FC = () => {
           )}
 
         <Button
-          text={t('Validate')}
-          onClick={onValidate}
-        />
+          onClick={() => onValidate}
+          className={cx(styles.validate__button)}
+        >
+          {t('Validate')}
+        </Button>
       </footer>
     </div>
   );

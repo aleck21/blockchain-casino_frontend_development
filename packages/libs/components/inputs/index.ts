@@ -5,7 +5,6 @@ export * from './FontIcon';
 export * from './Toggle';
 export * from './WrapSelect';
 export * from './WrapDatePicker';
-export * from './ButtonWithContent';
 export * from './DoubleInput';
 export * from './SelectWithContent';
 export * from './TextInputWithIcon';

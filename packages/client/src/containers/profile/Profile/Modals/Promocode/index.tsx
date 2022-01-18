@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, ButtonWithContent as Button } from '@project/libs/components';
+import { Text, Image, Button } from '@project/libs/components';
 import { TextInputClient } from 'components/TextInput';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
@@ -47,10 +47,11 @@ export const Promocode: React.FC = () => {
           {t('Classic dice is a game, where a user can choose a number (let it be X) between 0 and M, where M is max dice mean (in BC.Game it’s 100), and make a bet that the next generated random number will be greater or less than X. Using X and the user\'s prediction, the system will calculate the user\'s win chance (P) and victory')}
         </Text>
         <Button
-          text={t('Use promo code')}
           onClick={() => {}}
           className={cx(styles.promocode__submitButton)}
-        />
+        >
+          {t('Use promo code')}
+        </Button>
       </form>
     </div>
   );

@@ -12,9 +12,9 @@ export const Deposit: React.FC = () => {
   const { t } = useTranslation('main');
 
   return (
-    <div className="deposit__container">
+    <div className={cx(styles.deposit__container)}>
       <WrapSelect list={select} />
-      <section className="table__container">
+      <section className={cx(styles.table__container)}>
         <div
           className={cx(styles.table__row__head)}
         >

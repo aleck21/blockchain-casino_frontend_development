@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { ButtonWithContent as Button } from '@project/libs/components';
+import { Button } from '@project/libs/components';
 import { croppingText } from 'utils/croppingText';
 import { ChooseCurrency } from '../../ChooseCurrency';
 import styles from './styles.module.scss';
@@ -35,12 +35,12 @@ export const ContentWithdraw: React.FC = () => {
         </div>
         <div className={cx(styles.form_element__box)}>
           <Button
-            disabled={false}
             onClick={() => {}}
-            text={t('Withdraw funds')}
             type="submit"
             className={cx(styles.withdraw__button)}
-          />
+          >
+            {t('Withdraw funds')}
+          </Button>
         </div>
       </form>
     </div>

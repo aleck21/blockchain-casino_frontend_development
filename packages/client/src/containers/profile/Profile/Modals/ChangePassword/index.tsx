@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { PasswordInput } from 'components/PasswordInput';
-import { Text, ButtonWithContent as Button } from '@project/libs/components';
+import { Text, Button } from '@project/libs/components';
 import styles from './styles.module.scss';
 
 export const ChangePassword: React.FC = () => {
@@ -35,10 +35,11 @@ export const ChangePassword: React.FC = () => {
         </div>
         <div className={cx(styles.changePass__submit__box)}>
           <Button
-            text={t('Change Password')}
             onClick={() => {}}
             className={cx(styles.submit__button)}
-          />
+          >
+            {t('Change Password')}
+          </Button>
         </div>
       </form>
     </section>

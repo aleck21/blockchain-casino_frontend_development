@@ -153,11 +153,24 @@
           height: 44px;
           display: grid;
           justify-self: flex-end;
+          background-image: none;
+          background-color: $blue;
 
           @include mobile_sm {
             width: 100%;
           }
         }
+      }
+
+      .result__button {
+        background: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: max-content;
+        @include base_text;
+        font-size: 18px;
+        font-weight: 500;
       }
 
       .bytes__box {
@@ -289,6 +302,11 @@
       height: 44px;
       width: 181px;
       margin: 30px auto 0 auto;
+    }
+
+    .validate__button {
+      background-color: $blue;
+      background-image: none;
     }
 
     .left {

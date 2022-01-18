@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { AvatarDefault, ChangePasswordIcon, LogOutIcon } from '@project/libs/assets/images';
-import { Image, ButtonWithContent as Button } from '@project/libs/components';
+import { Image, Button } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import { SwitchPanel } from './SwitchPanel';
 import styles from './styles.module.scss';
@@ -42,17 +42,20 @@ export const Main: React.FC = () => {
       </div>
       <div className={cx(styles.panel__main__buttons)}>
         <Button
-          text={t('Change password')}
-          icon={ChangePasswordIcon}
           onClick={changePassword}
           className={cx(styles.button)}
-        />
+        >
+          <Image url={ChangePasswordIcon} />
+          &nbsp;
+          {t('Change password')}
+        </Button>
         <Button
-          text={t('Log Out')}
-          icon={LogOutIcon}
           onClick={() => {}}
           className={cx(styles.button)}
-        />
+        >
+          <Image url={LogOutIcon} />
+          {t('Log Out')}
+        </Button>
       </div>
     </div>
   );
