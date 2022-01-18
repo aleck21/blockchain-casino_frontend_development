@@ -43,39 +43,39 @@ export const Header: FC = () => {
         <Logo />
         <Menu />
         {!isUser && (
-        <section className={cx(styles.login_buttons_container)}>
-          <Button
-            onClick={onSignInClick}
-            className={cx(styles.button, styles.buttonSignIn)}
-          >
-            {t('Sign-in')}
-          </Button>
-          <Button
-            className={styles.button}
-            theme={ButtonTheme.outline}
-            onClick={onRegisterClick}
-          >
-            {t('Register')}
-          </Button>
-        </section>
+          <section className={cx(styles.login_buttons_container)}>
+            <Button
+              onClick={onSignInClick}
+              className={cx(styles.button, styles.buttonSignIn)}
+            >
+              {t('Sign-in')}
+            </Button>
+            <Button
+              className={cx(styles.button, styles.buttonRegister)}
+              theme={ButtonTheme.outline}
+              onClick={onRegisterClick}
+            >
+              {t('Register')}
+            </Button>
+          </section>
         )}
         {isUser && (
-        <section className={cx(styles.user_logged_in_container)}>
-          <Info />
-          <Button
-            className={cx(styles.wallet_button)}
-            onClick={onWalletClick}
-          >
-            {t('Wallet')}
-          </Button>
-          <Profile />
-          <div className={cx(styles.head_user_contet__note)}>
-            <Note />
-          </div>
-        </section>
+          <section className={cx(styles.user_logged_in_container)}>
+            <Info />
+            <Button
+              className={cx(styles.wallet_button)}
+              onClick={onWalletClick}
+            >
+              {t('Wallet')}
+            </Button>
+            <Profile />
+            <div className={cx(styles.head_user_content__note)}>
+              <Note />
+            </div>
+          </section>
         )}
       </section>
-      <section className={cx(styles.header_modile__notifications)}>
+      <section className={cx(styles.header_mobile__notifications)}>
         <Roulette />
         <div className={cx(styles.header_mobile__note)}>
           <Note />
