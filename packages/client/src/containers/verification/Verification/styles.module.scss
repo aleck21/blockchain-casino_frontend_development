@@ -323,34 +323,33 @@
     scrollbar-color: $middle $dark2;
     scrollbar-width: 4px;
 
-  &::-webkit-scrollbar-track {
-    background-color: $dark2;
-  }
+    &::-webkit-scrollbar-track {
+      background-color: $dark2;
+    }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: $middle;
-    border-radius: 10px;
-  }
+    &::-webkit-scrollbar-thumb {
+      background-color: $middle;
+      border-radius: 10px;
+    }
 
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
 
-  th {
-    @include base_text;
-    color: $middle;
-    font-size: 14px;
-    text-align: left;
-  }
+    th {
+      @include base_text;
+      color: $middle;
+      font-size: 14px;
+      text-align: left;
+    }
 
-  td {
-    @include base_text;
-    color: $white;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: left;
-    padding: 10px 25px 10px 0;
+    td {
+      @include base_text;
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: left;
+      padding: 10px 25px 10px 0;
+    }
   }
-}
-
 }
