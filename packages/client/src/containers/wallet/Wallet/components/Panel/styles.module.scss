@@ -3,10 +3,17 @@
 
 .panel__container {
   width: 100%;
-  height: 100%;
   display: grid;
   grid-template-rows: 36px 1fr;
   grid-template-areas: 'tabs' 'content';
+  @include paper;
+  height: auto;
+
+  @include mobile_sm {
+    max-width: calc(100vw - 40px);
+    padding: 20px;
+    height: auto;
+  }
   
   .tabs_in_panel {
     display: block;

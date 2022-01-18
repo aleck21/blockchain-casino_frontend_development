@@ -5,6 +5,7 @@
   margin-top: 18px;
   display: grid;
   row-gap: 30px;
+  @include paper;
 
   .panel__main__personal {
     display: grid;
