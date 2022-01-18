@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
-import { TextInput } from 'components/TextInput';
+import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { AvatarDefault, ChangePasswordIcon, LogOutIcon } from '@project/libs/assets/images';
 import { Image, ButtonWithContent as Button } from '@project/libs/components';
@@ -26,13 +26,13 @@ export const Main: React.FC = () => {
           url={avatarDemo}
           className={cx(styles.personal__avatar)}
         />
-        <TextInput
+        <TextInputClient
           label={t('Username')}
           name="username"
           defaultValue="JaneDoe"
         />
       </div>
-      <TextInput
+      <TextInputClient
         label={t('Email')}
         name="email"
         defaultValue="janedoe@mail.com"

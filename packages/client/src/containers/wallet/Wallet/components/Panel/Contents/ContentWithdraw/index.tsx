@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { TextInput } from 'components/TextInput';
+import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { ButtonWithContent as Button } from '@project/libs/components';
 import { croppingText } from 'utils/croppingText';
@@ -18,14 +18,14 @@ export const ContentWithdraw: React.FC = () => {
       <ChooseCurrency />
       <form>
         <div className={cx(styles.form_element__box)}>
-          <TextInput
+          <TextInputClient
             name="withdraw"
             label={t('How much funds do you want to withdraw?')}
             defaultValue="1000"
           />
         </div>
         <div className={cx(styles.form_element__box)}>
-          <TextInput
+          <TextInputClient
             name="walletAddress"
             label={t('To withdraw funds enter your wallet address in BSC')}
             defaultValue={

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Image, ButtonWithContent as Button } from '@project/libs/components';
-import { TextInput } from 'components/TextInput';
+import { TextInputClient } from 'components/TextInput';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { CloseIcon } from '@project/libs/assets/images';
@@ -22,7 +22,7 @@ export const Promocode: React.FC = () => {
         </Text>
       </div>
       <form>
-        <TextInput
+        <TextInputClient
           label={t('Your promo code')}
           className={cx(styles.promocode__input)}
           defaultValue={codeDemo}
