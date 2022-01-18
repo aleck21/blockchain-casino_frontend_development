@@ -1,23 +1,23 @@
 @import "../../../assets/styles/mixins";
 @import "../../../assets/styles/palette";
 
-.inputWI__container {
+.input__container {
 
-  .inputWI__label {
+  .input__label {
     @include base_text;
     color: $middle;
     font-size: 14px;
     padding-bottom: 10px;
   }
 
-  .inputWI__box {
+  .input__box {
     display: grid;
     grid-template-columns: 1fr 44px;
     grid-template-areas: 'input icon';
     background-color: $black;
     border-radius: 15px;
 
-    input.inputWI__field {
+    input.input__field {
       grid-area: input;
       border: 0;
       outline: 0;
@@ -28,7 +28,7 @@
       font-size: 16px;
     }
 
-    .inputWI__icon {
+    .input__icon {
       grid-area: icon;
       display: grid;
       align-items: center;

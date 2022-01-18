@@ -58,18 +58,18 @@ export const TextInput: React.FC<InputProps> = ({
   }, [isPasswordVisible]);
 
   return (
-    <div className={cx(styles.inputWI__container)}>
+    <div className={cx(styles.input__container)}>
       {label && (
-        <p className={cx(styles.inputWI__label, classNameLabel)}>
+        <p className={cx(styles.input__label, classNameLabel)}>
           {label}
         </p>
       )}
-      <div className={cx(styles.inputWI__box)}>
+      <div className={cx(styles.input__box)}>
         <input
           name={name}
           value={value}
           type={inputType}
-          className={cx(styles.inputWI__field, className)}
+          className={cx(styles.input__field, className)}
           disabled={disabled}
           defaultValue={defaultValue}
           onChange={handleChange}
@@ -77,14 +77,14 @@ export const TextInput: React.FC<InputProps> = ({
         {isWithClear && (
         <ButtonIcon
           imageURL={CloseIcon}
-          className={cx(styles.inputWI__icon)}
+          className={cx(styles.input__icon)}
           onClick={onClearClick}
         />
         )}
         {isPassword && (
         <ButtonIcon
           imageURL={isPasswordVisible ? EyeCrossedIcon : EyeIcon}
-          className={cx(styles.inputWI__icon)}
+          className={cx(styles.input__icon)}
           onClick={onPasswordToggleClick}
         />
         )}
