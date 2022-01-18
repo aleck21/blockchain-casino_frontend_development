@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { HeadPage } from 'components/HeadPage';
 import { WalletTabsProvider } from 'context/walletTabs';
-import { Paper } from '@project/libs/components/common';
+import { Paper, Text } from '@project/libs/components/common';
 import styles from './styles.module.scss';
 import { TableGrid } from './components/TableGrid';
 import { BalanceItem } from './components/BalaceItem';
@@ -20,9 +19,9 @@ const Wallet: FC = () => {
     <WalletTabsProvider>
       <div className={cx(styles.wallet__container)}>
         <div className={cx(styles.wallet__panel)}>
-          <HeadPage>
+          <Text type="h2">
             {t('Wallet')}
-          </HeadPage>
+          </Text>
           <Paper className={cx(styles.wallet__panel__paper)}>
             <Panel />
           </Paper>
