@@ -11,7 +11,7 @@ import { ButtonIcon } from '../ButtonIcon';
 type InputProps = {
   value: string;
   defaultValue?: string;
-  name: string;
+  name?: string;
   isPassword?: boolean;
   label?: string;
   className?: string;

@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import cx from 'classnames';
-import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { AvatarDefault, ChangePasswordIcon, LogOutIcon } from '@project/libs/assets/images';
-import { Image, Button } from '@project/libs/components';
+import { Image, Button, TextInput } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import { SwitchPanel } from './SwitchPanel';
 import styles from './styles.module.scss';
@@ -13,6 +12,9 @@ export const avatarDemo = AvatarDefault;
 export const Main: React.FC = () => {
   const { t } = useTranslation('main');
   const { openModal, setContentModal } = useContext(ModalContext);
+
+  const [name, setName] = useState('JaneDoe');
+  const [email, setEmail] = useState('janedoe@mail.com');
 
   const changePassword = () => {
     setContentModal('changePassword');
@@ -26,16 +28,16 @@ export const Main: React.FC = () => {
           url={avatarDemo}
           className={cx(styles.personal__avatar)}
         />
-        <TextInputClient
+        <TextInput
+          value={name}
+          onChangeValue={setName}
           label={t('Username')}
-          name="username"
-          defaultValue="JaneDoe"
         />
       </div>
-      <TextInputClient
+      <TextInput
+        value={email}
+        onChangeValue={setEmail}
         label={t('Email')}
-        name="email"
-        defaultValue="janedoe@mail.com"
       />
       <div className={cx(styles.panel__main__toggles)}>
         <SwitchPanel />
