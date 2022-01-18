@@ -46,7 +46,7 @@
       padding-bottom: 20px;
       padding-top: 50px;
       display: grid;
-      justify-content: center;
+      justify-items: center;
 
       .small__title {
         @include base_text;
@@ -80,12 +80,13 @@
         margin-top: 34px;
       }
 
-      .disabled {
-        background-color: $dark;
-      }
-
-      .active {
+      button {
         background-color: $blue;
+        background-image: none;
+
+        &:disabled {
+          background-color: $dark;
+        }
       }
     }
   }

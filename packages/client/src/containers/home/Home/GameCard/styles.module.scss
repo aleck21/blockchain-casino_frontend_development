@@ -2,15 +2,14 @@
 @import "~@project/libs/assets/styles/palette.scss";
 @import "~@project/libs/assets/styles/fonts.scss";
 
-.gameCard__paper {
+.gameCard__container {
+  @include paper;
   padding: 30px;
   padding-bottom: 22px;
-}
-
-.gameCard__container {
   width: 100%;
   background-image: url('~@project/libs/assets/images/gameCardBackground.svg');
   background-repeat: no-repeat;
+  background-position: top 30px left 20px;
 
   @include mobile_sm {
     background-size: contain;
@@ -51,6 +50,7 @@
     width: 118px;
     height: 42px;
     background-color: $dark;
+    background-image: none;
     border-radius: 10px;
     border: .5px solid $middle;
     font-size: 14px;

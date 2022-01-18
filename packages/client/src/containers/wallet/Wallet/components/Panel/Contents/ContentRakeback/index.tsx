@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Image, Text, ButtonWithContent as Button } from '@project/libs/components';
+import { Image, Text, Button } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { CurrencyColorIcons } from 'constants/currencies';
 import { contentDemo } from './contentDemo';
@@ -51,11 +51,10 @@ export const ContentRakeback: React.FC = () => {
           <div className={cx(styles.button)}>
             <Button
               className={cx(styles.button_return)}
-              type="button"
-              disabled={false}
               onClick={() => {}}
-              text={t('Return')}
-            />
+            >
+              {t('Return')}
+            </Button>
           </div>
         </div>
       ))}

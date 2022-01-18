@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { DatePicker, Space } from 'antd';
 import './styles.scss';
 import 'antd/dist/antd.css';
-import { ButtonWithContent as Button } from '../ButtonWithContent';
+import { Image } from '../../common/Image';
+import { Button } from '../Button';
 import { CalendarIcon } from '../../../assets/images';
 
 type PickerProps = {
@@ -42,14 +43,17 @@ export const WrapDatePicker: React.FC<PickerProps> = ({
         ? null
         : (
           <Button
-            // eslint-disable-next-line prefer-template
-            text={dates[0] === '' ? 'Select Date' : dateToString(dates[0]) + ' … ' + dateToString(dates[1])}
-            icon={CalendarIcon}
             onClick={showPicker}
             className={dates[0] === ''
               ? classNameButton
               : `${classNameButton} button__show__dates`}
-          />
+          >
+            <Image url={CalendarIcon} />
+            {' '}
+            {dates[0] === ''
+              ? 'Select Date'
+              : `${dateToString(dates[0])} … ${dateToString(dates[1])}`}
+          </Button>
         )}
       {open
         ? (

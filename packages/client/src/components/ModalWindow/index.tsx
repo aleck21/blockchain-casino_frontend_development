@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext } from 'react';
 import cx from 'classnames';
-import { Paper, ButtonIcon } from '@project/libs/components';
+import { ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import {
   Promocode,
@@ -10,9 +10,8 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
-import { SignInModal, RegisterModal } from 'containers/modals';
+import { SignInModal, RegisterModal, AboutBGD } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
-import { AboutBGD } from 'containers/home/Home/AboutBGD';
 import styles from './styles.module.scss';
 
 const modals: Record<string, ReactNode> = {
@@ -39,7 +38,7 @@ export const ModalWindow: React.FC = () => {
         isModalOpen ? styles.open : styles.close)}
       style={{ top: `${window.pageYOffset}px` }}
     >
-      <Paper
+      <section
         className={cx(
           styles.modal__paper, styles.w100m40, { [styles.w100]: isFullWidth },
         )}
@@ -52,7 +51,7 @@ export const ModalWindow: React.FC = () => {
           imageURL={CloseIcon}
           alt="x"
         />
-      </Paper>
+      </section>
     </div>
   );
 };

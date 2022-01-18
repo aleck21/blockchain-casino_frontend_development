@@ -74,6 +74,7 @@
 }
 
 .balance__paper {
+  @include paper;
   position: absolute;
   top: 84px;
   right: 135px;

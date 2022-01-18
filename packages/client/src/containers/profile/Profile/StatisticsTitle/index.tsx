@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Text, ButtonWithContent as Button } from '@project/libs/components';
+import { Text, Button } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import styles from './styles.module.scss';
 
@@ -36,10 +36,11 @@ export const StatisticsTitle: React.FC = () => {
         </Text>
       </div>
       <Button
-        text={t('Transactions')}
         onClick={showTransactions}
         className={cx(styles.transaction__button)}
-      />
+      >
+        {t('Transactions')}
+      </Button>
     </div>
   );
 };

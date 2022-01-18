@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { SelectWithResult } from 'components/SelectWithResult';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Text, ButtonWithContent as Button, DoubleInput } from '@project/libs/components';
+import { Text, Button, DoubleInput } from '@project/libs/components';
 import { Arrows } from './arrows';
 import { list, list2 } from './contentDemo';
 import styles from './styles.module.scss';
@@ -35,11 +35,11 @@ export const ContentExchange: React.FC = () => {
       </div>
       <div className={cx(styles.exchange__button__box)}>
         <Button
-          text={t('Swap')}
           type="button"
-          disabled={false}
           onClick={() => {}}
-        />
+        >
+          {t('Swap')}
+        </Button>
       </div>
       <div className={cx(styles.exchange__free__box)}>
         <Text type="p">

@@ -5,6 +5,7 @@
   margin-top: 18px;
   display: grid;
   row-gap: 30px;
+  @include paper;
 
   .panel__main__personal {
     display: grid;
@@ -37,7 +38,9 @@
   
     .button {
       background-color: $black;
+      background-image: none;
       width: 100%;
+      height: 44px;
     }
   }
 

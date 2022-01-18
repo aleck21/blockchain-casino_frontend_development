@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Text, ButtonWithContent as Button } from '@project/libs/components';
+import { Text, Button, Image } from '@project/libs/components';
 import { CheckIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
@@ -60,12 +60,14 @@ export const CollectRewards: React.FC = () => {
             {contentDemo.reward1.summ}
           </Text>
           <Button
-            text={contentDemo.reward1.buttonText}
-            icon={contentDemo.reward1.buttonIcon}
             disabled
             onClick={() => {}}
             className={cx(styles.button__narrow, styles.disabled)}
-          />
+          >
+            <Image url={contentDemo.reward1.buttonIcon} />
+            &nbsp;
+            {contentDemo.reward1.buttonText}
+          </Button>
         </article>
         <article className={cx(styles.collectRewards__tile, styles.blue)}>
           <Text
@@ -81,12 +83,12 @@ export const CollectRewards: React.FC = () => {
             {contentDemo.reward2.summ}
           </Text>
           <Button
-            text={contentDemo.reward2.buttonText}
-            icon={contentDemo.reward2.buttonIcon}
-            disabled={false}
             onClick={() => {}}
             className={cx(styles.button__narrow, styles.active)}
-          />
+          >
+            {contentDemo.reward2.buttonText}
+            {contentDemo.reward2.buttonIcon}
+          </Button>
         </article>
         <article className={cx(styles.collectRewards__tile, styles.gold)}>
           <Text
@@ -102,12 +104,12 @@ export const CollectRewards: React.FC = () => {
             {contentDemo.reward3.summ}
           </Text>
           <Button
-            text={contentDemo.reward3.buttonText}
-            icon={contentDemo.reward3.buttonIcon}
-            disabled={false}
             onClick={() => {}}
             className={cx(styles.button__narrow, styles.active)}
-          />
+          >
+            {contentDemo.reward3.buttonText}
+            {contentDemo.reward3.buttonIcon}
+          </Button>
         </article>
         <article className={cx(styles.collectRewards__tile, styles.gray)}>
           <Text
@@ -123,12 +125,13 @@ export const CollectRewards: React.FC = () => {
             {contentDemo.reward4.summ}
           </Text>
           <Button
-            text={contentDemo.reward4.buttonText}
-            icon={contentDemo.reward4.buttonIcon}
             disabled
             onClick={() => {}}
             className={cx(styles.button__wide, styles.disabled)}
-          />
+          >
+            {contentDemo.reward4.buttonText}
+            {contentDemo.reward4.buttonIcon}
+          </Button>
         </article>
       </div>
     </section>

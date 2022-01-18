@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import {
-  ButtonWithContent as Button,
+  Button,
   Image,
   Text,
   TextInputWithIcon,
@@ -56,10 +56,11 @@ export const SignInModal = memo(() => {
       </div>
       <div className={cx(styles.singIn__bottom)}>
         <Button
-          text={t('Sing in')}
           className={cx(styles.singIn__button)}
           onClick={() => {}}
-        />
+        >
+          {t('Sing in')}
+        </Button>
         <Text type="p">
           {t('Register with')}
         </Text>

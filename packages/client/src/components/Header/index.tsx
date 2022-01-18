@@ -15,7 +15,7 @@ import styles from './styles.module.scss';
 
 export const Header: FC = () => {
   // const { isUser } = useUser();
-  const isUser = false;
+  const isUser = true;
 
   const { t } = useTranslation('main');
 
