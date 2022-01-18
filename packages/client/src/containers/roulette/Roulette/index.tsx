@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import cx from 'classnames';
-import { ButtonWithContent as Button, Image, Text } from '@project/libs/components';
+import { Button, Image, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { RouletteDemo } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
@@ -50,10 +50,11 @@ export const Roulette: React.FC = React.memo(() => {
             )
             : (
               <Button
-                text={t('Spin!')}
                 onClick={onSpinClick}
                 className={cx(styles.spin__button)}
-              />
+              >
+                {t('Spin!')}
+              </Button>
             )}
         </div>
         <div className={cx(styles.roulette__info)}>
