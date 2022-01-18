@@ -1,57 +1,59 @@
-import React, { useState } from 'react';
-import { IconCopy, CloseIcon, HidPasswordIcon } from '@project/libs/assets/images';
+import React, { useCallback, useState } from 'react';
+import {
+  CloseIcon,
+  EyeCrossedIcon,
+  EyeIcon,
+} from '@project/libs/assets/images';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+import { ButtonIcon } from '../ButtonIcon';
 
 type InputProps = {
-  name: string;
+  value: string;
   defaultValue?: string;
-  typeIcon?: 'clear' | 'password' | 'copy';
-  password?: boolean;
+  name: string;
+  isPassword?: boolean;
   label?: string;
   className?: string;
   classNameLabel?: string;
   disabled?: boolean;
+  isWithClear?: boolean;
+  onChangeValue?: (text: string) => void;
 };
 
 export const TextInputWithIcon: React.FC<InputProps> = ({
+  value,
+  defaultValue,
   name,
-  defaultValue = '',
-  typeIcon = 'clear',
-  password = false,
+  isPassword,
   label,
   className,
   classNameLabel,
   disabled = false,
+  isWithClear,
+  onChangeValue,
 }) => {
-  const [value, setValue] = useState(defaultValue);
-  const [isPassword, setIsPassword] = useState(password);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const onChangeInput = (e: any) => {
-    setValue(e.target.value);
-  };
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (onChangeValue !== undefined) {
+        onChangeValue(e.target.value);
+      }
+    }, [onChangeValue],
+  );
 
-  const onIconClick = () => {
-    switch (typeIcon) {
-      case 'clear':
-        setValue('');
-        break;
-      case 'copy':
-        navigator.clipboard.writeText(value).then(() => {}).catch(() => {});
-        break;
-      case 'password':
-        setIsPassword(!isPassword);
-        break;
-      default:
-        break;
+  const inputType = isPassword ? 'password' : 'text';
+
+  const onClearClick = useCallback(() => {
+    if (onChangeValue !== undefined) {
+      onChangeValue('');
     }
-  };
+  }, [onChangeValue]);
 
-  const icons: Record<string, string> = {
-    copy: IconCopy,
-    password: HidPasswordIcon,
-    clear: CloseIcon,
-  };
+  const onPasswordToggleClick = useCallback(() => {
+    setIsPasswordVisible(!isPasswordVisible);
+  }, [isPasswordVisible]);
 
   return (
     <div className={cx(styles.inputWI__container)}>
@@ -63,24 +65,27 @@ export const TextInputWithIcon: React.FC<InputProps> = ({
       <div className={cx(styles.inputWI__box)}>
         <input
           name={name}
-          onChange={onChangeInput}
           value={value}
-          type={isPassword ? 'password' : 'text'}
+          type={inputType}
           className={cx(styles.inputWI__field, className)}
           disabled={disabled}
+          defaultValue={defaultValue}
+          onChange={handleChange}
         />
-        <div
+        {isWithClear && (
+        <ButtonIcon
+          imageURL={CloseIcon}
           className={cx(styles.inputWI__icon)}
-          onClick={onIconClick}
-          onKeyPress={undefined}
-          role="button"
-          tabIndex={0}
-        >
-          <img
-            src={icons[typeIcon]}
-            alt={typeIcon}
-          />
-        </div>
+          onClick={onClearClick}
+        />
+        )}
+        {isPassword && (
+        <ButtonIcon
+          imageURL={isPasswordVisible ? EyeCrossedIcon : EyeIcon}
+          className={cx(styles.inputWI__icon)}
+          onClick={onPasswordToggleClick}
+        />
+        )}
       </div>
     </div>
   );
