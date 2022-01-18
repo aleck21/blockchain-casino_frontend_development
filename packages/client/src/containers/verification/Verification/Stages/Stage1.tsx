@@ -2,12 +2,12 @@
 import React from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
-import { WrapSelect, ButtonWithContent as Button } from '@project/libs/components';
+import { WrapSelect, Button } from '@project/libs/components';
 import styles from '../styles.module.scss';
 import '../select.scss';
 
 export type StageProps = {
-  goNextStage: Function;
+  goNextStage: () => void;
 };
 
 export const Stage1: React.FC<StageProps> = ({
@@ -39,10 +39,11 @@ export const Stage1: React.FC<StageProps> = ({
             </div>
           </div>
           <Button
-            text={t('Validate')}
             className={cx(styles.validate__button)}
             onClick={goNextStage}
-          />
+          >
+            {t('Validate')}
+          </Button>
         </div>
       </footer>
     </>

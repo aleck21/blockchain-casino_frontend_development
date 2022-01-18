@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { TextInput } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Image } from '@project/libs/components';
+import { Image, Button } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
 import { result, bytes } from './contentDemo';
 import { StageProps } from './Stage1';
@@ -64,14 +64,12 @@ export const Stage3: React.FC<StageProps> = ({
         <h4
           className={cx(styles.left)}
         >
-          <div
-            onClick={() => goNextStage()}
-            onKeyPress={() => {}}
-            tabIndex={0}
-            role="button"
+          <Button
+            onClick={goNextStage}
+            className={cx(styles.result__button)}
           >
             Results
-          </div>
+          </Button>
         </h4>
         <div className={cx(styles.result__table__container)}>
           <table>

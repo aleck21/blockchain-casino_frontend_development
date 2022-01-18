@@ -17,7 +17,17 @@
     padding-right: 0;
   }
 
+  button {
+    height: 44px;
+  }
+
+  .left__button {
+    background-image: none;
+    background-color: $blue;
+  }
+
   .right__button {
+    background-image: none;
     background-color: transparent;
     border: .5px solid $middle;
   }
