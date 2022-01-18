@@ -29,9 +29,7 @@ export const Profile: React.FC = () => {
           url={avatarDemo}
           className={cx(styles.avatar__mobile)}
         />
-        <div className={cx(styles.profile__panel)}>
-          <Main />
-        </div>
+        <Main />
       </div>
       <div className={cx(styles.profile__rightBlock)}>
         <Membership />

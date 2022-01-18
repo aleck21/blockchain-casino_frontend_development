@@ -8,9 +8,10 @@
   grid-template-areas: 'walletPanel balance'
     'walletPanel bgdDashboard';
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 161px;
+  grid-template-rows: auto auto;
   grid-column-gap: 50px;
   max-width: 1160px;
+  align-items: stretch;
 
   @include mobile_sm {
     grid-template-areas: 'walletPanel' 'bgdDashboard' 'tabsMobile';
@@ -21,18 +22,6 @@
   
   .wallet__panel {
     grid-area: walletPanel;
-
-    .wallet__panel__paper {
-      @include paper;
-      width: 100%;
-      height: auto;
-
-      @include mobile_sm {
-        max-width: calc(100vw - 40px);
-        padding: 20px;
-        height: auto;
-      }
-    }
   }
 
   .wallet__balance {

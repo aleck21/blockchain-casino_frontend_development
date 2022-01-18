@@ -22,9 +22,7 @@ const Wallet: FC = () => {
           <HeadPage>
             {t('Wallet')}
           </HeadPage>
-          <section className={cx(styles.wallet__panel__paper)}>
-            <Panel />
-          </section>
+          <Panel />
         </div>
         <div className={cx(styles.wallet__balance)}>
           <TableGrid title={t('Balance')}>
@@ -36,9 +34,7 @@ const Wallet: FC = () => {
             ))}
           </TableGrid>
         </div>
-        <section className={cx(styles.bgd_dashboard__container)}>
-          <BGDDashboard />
-        </section>
+        <BGDDashboard />
         <TabsMobile />
       </div>
     </WalletTabsProvider>
