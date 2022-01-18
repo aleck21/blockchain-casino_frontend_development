@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { TextInput } from 'components/TextInput';
+import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Image, Button } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
@@ -26,21 +26,21 @@ export const Stage4: React.FC = () => {
       <h4>
         Input
       </h4>
-      <TextInput
+      <TextInputClient
         label={t('Game hash')}
         placeholder={t('Game hash')}
         className={cx(styles.h44)}
         classNameLabel={cx(styles.stageX__label)}
       />
       <div className={cx(styles.stageX__doubleInput)}>
-        <TextInput
+        <TextInputClient
           label={t('Salt')}
           placeholder={t('Salt')}
           className={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
           defaultValue="Salt"
         />
-        <TextInput
+        <TextInputClient
           label={t('Amount of games')}
           placeholder={t('Amount of games')}
           className={cx(styles.h44)}

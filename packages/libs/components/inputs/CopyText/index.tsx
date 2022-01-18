@@ -2,14 +2,14 @@ import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { FontIcon, FontIconName } from '../FontIcon';
 import styles from './styles.module.scss';
-import { TextInput, TextInputProps } from '../TextInput';
+import { TextInputTemplate, TextInputTemplateProps } from '../TextInputTemplate';
 
-type Props = TextInputProps & {
+type Props = TextInputTemplateProps & {
   onCopy?: () => void;
 };
 
 export const CopyText: React.FC<Props> = ({ onCopy, ...props }) => (
-  <TextInput
+  <TextInputTemplate
     {...props}
     right={(
       <CopyToClipboard

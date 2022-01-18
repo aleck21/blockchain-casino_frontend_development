@@ -8,14 +8,14 @@ import React, {
 import { Manager, Popper, Reference } from 'react-popper';
 import classNames from 'classnames';
 import { debounce } from 'throttle-debounce';
-import { TextInput, TextInputProps } from '../TextInput';
+import { TextInputTemplate, TextInputTemplateProps } from '../TextInputTemplate';
 import styles from './styles.module.scss';
 import { useFocusEvent } from '../../../hooks/useFocusEvent';
 import { usePopperModifiers } from '../../../hooks/ui/usePopperModifiers';
 
 export interface Option<T extends string = string> { value: T, label: string }
 
-export type AutocompleteProps = Omit<TextInputProps, 'value' | 'onChange'> & {
+export type AutocompleteProps = Omit<TextInputTemplateProps, 'value' | 'onChange'> & {
   variants: Option[];
   value?: Option;
   customRenderer?: (
@@ -68,7 +68,7 @@ const Autocomplete: FC<AutocompleteProps> = ({
             ref={ref}
             className={styles.wrapper}
           >
-            <TextInput
+            <TextInputTemplate
               {...props}
               onFocus={onFocus}
               onBlur={onBlur}

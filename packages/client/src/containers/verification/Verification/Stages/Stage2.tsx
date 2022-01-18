@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { TextInput } from 'components/TextInput';
+import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Button } from '@project/libs/components';
 import { StageProps } from './Stage1';
@@ -16,20 +16,20 @@ export const Stage2: React.FC<StageProps> = ({
       <h4>
         Input
       </h4>
-      <TextInput
+      <TextInputClient
         label={t('Enter server seed hash')}
         placeholder={t('Server Seed (hash)')}
         className={cx(styles.h44)}
         classNameLabel={cx(styles.stageX__label)}
       />
       <div className={cx(styles.stageX__doubleInput)}>
-        <TextInput
+        <TextInputClient
           label={t('Enter client seed')}
           placeholder={t('Client seed')}
           className={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
         />
-        <TextInput
+        <TextInputClient
           label={t('Enter nonce')}
           placeholder={t('Nonce')}
           className={cx(styles.h44)}

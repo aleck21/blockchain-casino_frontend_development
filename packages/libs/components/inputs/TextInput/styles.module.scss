@@ -1,53 +1,48 @@
 @import "../../../assets/styles/mixins";
+@import "../../../assets/styles/palette";
 
-.input {
-  height: 100%;
-  flex: 1;
-  padding: 0 12px;
-  border: none;
-  background: transparent;
-  min-width: 0;
-  width: calc(100%);
+.input__container {
 
-  &:focus {
-    outline: none;
-  }
-}
-
-.icon {
-  @include flexbox(center, center);
-  padding: 0 12px;
-  height: 24px;
-
-  &:first-child {
-    border-left: none;
-    margin-right: 4px;
-  }
-
-  &:last-child {
-    border-right: none;
-    margin-left: 4px;
-  }
-
-  &.text {
+  .input__label {
+    @include base_text;
+    color: $middle;
     font-size: 14px;
-    line-height: 18px;
-    white-space: nowrap;
-    border: none;
+    padding-bottom: 10px;
+  }
 
-    &:first-child {
-      padding-right: 0;
+  .input__box {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    grid-template-areas: 'input icon';
+    background-color: $black;
+    border-radius: 15px;
+    overflow: hidden;
+
+    input.input__field {
+      grid-area: input;
+      border: 0;
+      outline: 0;
+      background-color: $black;
+      padding: 11px 0 11px 20px;
+      color: $white;
+      // @include base_text;
+      font-size: 16px;
     }
 
-    &:last-child {
-      padding-left: 0;
+    .input__icon {
+      grid-area: icon;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
-}
-
-.reveal {
-  color: inherit;
-}
-
-.error {
 }

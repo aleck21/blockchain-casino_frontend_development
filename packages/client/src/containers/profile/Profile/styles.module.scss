@@ -16,6 +16,9 @@
   }
 
   .profile__head {
+    text-align: left;
+    color: $white;
+    
     @include mobile_sm {
       margin-bottom: 0;
     }

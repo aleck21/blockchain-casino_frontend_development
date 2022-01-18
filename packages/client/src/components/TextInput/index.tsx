@@ -17,7 +17,7 @@ type InputProps = {
   placeholder?: string;
 };
 
-export const TextInput: React.FC<InputProps> = ({
+export const TextInputClient: React.FC<InputProps> = ({
   label,
   className,
   classNameButton,

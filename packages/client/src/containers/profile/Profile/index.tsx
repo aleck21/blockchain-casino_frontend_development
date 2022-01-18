@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import { HeadPage } from 'components/HeadPage';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Table } from 'containers/profile/Profile/Table';
 import { Image, Text } from '@project/libs/components';
@@ -22,9 +21,12 @@ export const Profile: React.FC = () => {
   return (
     <section className={cx(styles.profile__container)}>
       <div className={cx(styles.profile__leftBlock)}>
-        <HeadPage className={cx(styles.profile__head)}>
+        <Text
+          type="h2"
+          className={cx(styles.profile__head)}
+        >
           {t('Profile')}
-        </HeadPage>
+        </Text>
         <Image
           url={avatarDemo}
           className={cx(styles.avatar__mobile)}

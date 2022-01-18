@@ -3,7 +3,7 @@ import React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { keys } from 'ramda';
-import { TextInput } from './index';
+import { TextInputTemplate } from './index';
 import { FontIcon, FontIconName } from '../FontIcon';
 
 const elements = {
@@ -25,7 +25,7 @@ storiesOf('Basic', module).add('TextInput', () => {
 
   return (
     <div style={{ width: 300 }}>
-      <TextInput
+      <TextInputTemplate
         value={value}
         onChange={onChange}
         left={elements[left]}
