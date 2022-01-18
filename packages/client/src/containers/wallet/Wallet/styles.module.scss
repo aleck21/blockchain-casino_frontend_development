@@ -23,6 +23,7 @@
     grid-area: walletPanel;
 
     .wallet__panel__paper {
+      @include paper;
       width: 100%;
       height: auto;
 
@@ -42,11 +43,9 @@
     }
   }
 
-  .wallet__bgd_dashboard {
-    grid-area: bgdDashboard;
-  }
-
   .bgd_dashboard__container {
+    grid-area: bgdDashboard;
+    @include paper;
     width: 100%;
     height: 161px;
     margin-top: 30px;
