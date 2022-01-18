@@ -1,8 +1,8 @@
 import React, { ChangeEventHandler, FC } from 'react';
 import { isNil } from 'ramda';
-import { TextInput, TextInputProps } from '../TextInput';
+import { TextInputTemplate, TextInputTemplateProps } from '../TextInputTemplate';
 
-interface IProps extends TextInputProps {
+interface IProps extends TextInputTemplateProps {
   amount?: number;
   onChangeAmount: ChangeEventHandler<HTMLInputElement>;
 }
@@ -12,7 +12,7 @@ const AmountInput: FC<IProps> = ({
   onChangeAmount,
   ...props
 }) => (
-  <TextInput
+  <TextInputTemplate
     type="number"
     onChange={onChangeAmount}
     min={0}

@@ -1,5 +1,5 @@
 export * from './Select';
-export * from './TextInput';
+export * from './TextInputTemplate';
 export * from './Button';
 export * from './FontIcon';
 export * from './Toggle';

@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { FontIcon, FontIconName } from '../FontIcon';
 import { TextInputWrap } from '../TextInputWrap';
 
-export interface TextInputProps extends HTMLProps<HTMLInputElement> {
+export interface TextInputTemplateProps extends HTMLProps<HTMLInputElement> {
   left?: JSX.Element | string;
   right?: JSX.Element | string;
   error?: boolean;
@@ -25,7 +25,7 @@ const IconRenderer: FC<{ error?: boolean }> = ({ children, error }) =>
     </div>
   ) : null);
 
-const TextInput: FC<TextInputProps> = ({
+const TextInputTemplate: FC<TextInputTemplateProps> = ({
   type = 'text',
   left,
   right,
@@ -70,4 +70,4 @@ const TextInput: FC<TextInputProps> = ({
   );
 };
 
-export { TextInput };
+export { TextInputTemplate };
