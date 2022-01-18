@@ -7,5 +7,5 @@ export * from './WrapSelect';
 export * from './WrapDatePicker';
 export * from './DoubleInput';
 export * from './SelectWithContent';
-export * from './TextInputWithIcon';
+export * from './TextInput';
 export * from './ButtonIcon';

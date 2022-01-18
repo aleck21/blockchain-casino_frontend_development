@@ -21,7 +21,7 @@ type InputProps = {
   onChangeValue?: (text: string) => void;
 };
 
-export const TextInputWithIcon: React.FC<InputProps> = ({
+export const TextInput: React.FC<InputProps> = ({
   value,
   defaultValue,
   name,

@@ -5,7 +5,7 @@ import {
   Button,
   Image,
   Text,
-  TextInputWithIcon,
+  TextInput,
 } from '@project/libs/components';
 import {
   SingInImage,
@@ -39,7 +39,7 @@ export const SignInModal = memo(() => {
           <span className={cx(styles.singIn__title__blue)}>Game</span>
         </Text>
         <div className={cx(styles.singIn__inputMail__box)}>
-          <TextInputWithIcon
+          <TextInput
             value={email}
             onChangeValue={setEmail}
             label={t('Your email address')}
@@ -49,7 +49,7 @@ export const SignInModal = memo(() => {
             name="email"
           />
         </div>
-        <TextInputWithIcon
+        <TextInput
           value={password}
           onChangeValue={setPassword}
           label={t('Password')}
