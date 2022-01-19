@@ -20,6 +20,8 @@ type InputProps = {
   disabled?: boolean;
   isWithClear?: boolean;
   onChangeValue?: (text: string) => void;
+  placeholder?: string;
+  isTextOnly?: boolean;
 };
 
 export const TextInput: React.FC<InputProps> = ({
@@ -34,6 +36,8 @@ export const TextInput: React.FC<InputProps> = ({
   disabled = false,
   isWithClear,
   onChangeValue,
+  placeholder = '',
+  isTextOnly = false,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -66,7 +70,11 @@ export const TextInput: React.FC<InputProps> = ({
           {label}
         </p>
       )}
-      <div className={cx(styles.input__box)}>
+      <div className={cx(
+        styles.input__box,
+        isTextOnly ? styles.input__textOnly : styles.input__withIcon,
+      )}
+      >
         <input
           name={name}
           value={value}
@@ -75,6 +83,7 @@ export const TextInput: React.FC<InputProps> = ({
           disabled={disabled}
           defaultValue={defaultValue}
           onChange={handleChange}
+          placeholder={placeholder}
         />
         {isWithClear && (
         <ButtonIcon

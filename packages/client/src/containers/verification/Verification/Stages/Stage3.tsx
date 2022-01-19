@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Image, Button } from '@project/libs/components';
+import { Image, Button, TextInput } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
 import { result, bytes } from './contentDemo';
 import { StageProps } from './Stage1';
@@ -12,49 +11,68 @@ export const Stage3: React.FC<StageProps> = ({
   goNextStage,
 }) => {
   const { t } = useTranslation('main');
-
+  const [serverSeedHash, setServerSeedHash] = useState('');
+  const [clientSeed, setClientSeed] = useState('');
+  const [nonce, setNonce] = useState('');
   const [short, setShort] = useState(true);
+  const [finalHash, setFinalHash] = useState('');
+  const [outputSserverSeed, setOutputServerSeed] = useState('');
 
   return (
     <div className={cx(styles.stageX__container)}>
       <h4>
         Input
       </h4>
-      <TextInputClient
+      <TextInput
         label={t('Enter server seed hash')}
         placeholder={t('Server Seed (hash)')}
-        className={cx(styles.h44)}
+        classNameInput={cx(styles.h44)}
         classNameLabel={cx(styles.stageX__label)}
+        value={serverSeedHash}
+        onChangeValue={setServerSeedHash}
+        isTextOnly
       />
       <div className={cx(styles.stageX__doubleInput)}>
-        <TextInputClient
+        <TextInput
           label={t('Enter client seed')}
           placeholder={t('Client seed')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
+          value={clientSeed}
+          onChangeValue={setClientSeed}
+          isTextOnly
         />
-        <TextInputClient
+        <TextInput
           label={t('Enter nonce')}
           placeholder={t('Nonce')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
+          value={nonce}
+          onChangeValue={setNonce}
+          isTextOnly
         />
       </div>
       <h4>
         Output
       </h4>
       <div className={cx(styles.stageX__doubleInput)}>
-        <TextInputClient
+        <TextInput
           label={t('Server seed hash')}
           placeholder={t('Server Seed (hash)')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
+          value={outputSserverSeed}
+          onChangeValue={setOutputServerSeed}
+          isTextOnly
         />
-        <TextInputClient
+        <TextInput
           label={t('Final hash')}
           placeholder={t('Final hash')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
+          value={finalHash}
+          onChangeValue={setFinalHash}
+          isTextOnly
         />
       </div>
       <footer
