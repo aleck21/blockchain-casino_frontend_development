@@ -1,15 +1,17 @@
-import React from 'react';
-import { Text, Image, Button } from '@project/libs/components';
-import { TextInputClient } from 'components/TextInput';
+import React, { useState } from 'react';
+import {
+  Text,
+  Button,
+  TextInput,
+} from '@project/libs/components';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
 export const Promocode: React.FC = () => {
-  const { t } = useTranslation('main');
-
   const codeDemo = 'q10358vn1983tvn';
+  const [promocode, setPromocode] = useState(codeDemo);
+  const { t } = useTranslation('main');
 
   return (
     <div className={cx(styles.promocode__container)}>
@@ -22,23 +24,20 @@ export const Promocode: React.FC = () => {
         </Text>
       </div>
       <form>
-        <TextInputClient
+        <TextInput
           label={t('Your promo code')}
-          className={cx(styles.promocode__input)}
-          defaultValue={codeDemo}
-          reset
-          resetContent={
-            <Image url={CloseIcon} />
-          }
-          classNameButton={cx(styles.promocode__input__resetButton)}
+          classNameInput={cx(styles.promocode__input)}
           classNameContainer={cx(styles.promocode__input__container)}
-          classNameLabel={cx(styles.promocode__input__label)}
+          value={promocode}
+          onChangeValue={setPromocode}
+          isWithClear
         />
         <Text
           type="h4"
           className={cx(styles.promocode__subTitle)}
         >
-          {t('You will receive:')}
+          {t('You will receive')}
+          :
         </Text>
         <Text
           type="p"
