@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Button, TextInput } from '@project/libs/components';
-import { croppingText } from 'utils/croppingText';
-import { useMobile } from 'hooks';
 import { ChooseCurrency } from '../../ChooseCurrency';
 import styles from './styles.module.scss';
 
@@ -11,7 +9,6 @@ const addressDemo = 'c2m19375cn2978r5nvn2975rvneu20dj2c9c48n25m2u5p';
 
 export const ContentWithdraw: React.FC = () => {
   const { t } = useTranslation('main');
-  const isMobile = useMobile();
   const [windraw, setWindraw] = useState('1000');
   const [walletAddress, setWalletAddress] = useState(addressDemo);
 
@@ -34,9 +31,7 @@ export const ContentWithdraw: React.FC = () => {
             name="walletAddress"
             isTextOnly
             classNameInput={cx(styles.form_element__input)}
-            value={isMobile
-              ? croppingText(walletAddress, 24)
-              : croppingText(walletAddress, 34)}
+            value={walletAddress}
             onChangeValue={setWalletAddress}
             label={t('To withdraw funds enter your wallet address in BSC')}
           />
