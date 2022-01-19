@@ -16,8 +16,16 @@
     @include paper;
     background-color: $dark2;
     border-radius: 15px;
-    padding: 0;
-    padding-top: 30px;
+    padding: 20px;
+    margin-top: 30px;
+    
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      text-align: left;
+      line-height: 140%;
+      font-family: $helvetica;
+    }
 
     h6 {
       @include base_text;
@@ -25,5 +33,15 @@
       font-size: 12px;
       font-weight: 500;
     }
+
+    .activate__activeBounus__lasts {
+      font-size: 12px;
+      text-align: right;
+      color: $middle;
+    }
   }
+}
+
+.dots {
+  
 }

@@ -69,3 +69,5 @@ export { default as ClasicDice } from './classicDice.png';
 export { default as Crash } from './crash.png';
 export { default as QuestionIcon } from './questionIcon.svg';
 export { default as AboutBgdBackground } from './aboutBgdBackground.svg';
+export { default as BackArrowIcon } from './backArrowIcon.svg';
+export { default as NextArrowIcon } from './nextArrowIcon.svg';
