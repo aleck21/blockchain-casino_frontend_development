@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import { Text } from '@project/libs/components';
 import { Toggle } from 'components/Toggle';
@@ -11,7 +11,7 @@ type SwitchItemProps = {
   value: string;
 };
 
-const SwitchItem: React.FC<SwitchItemProps> = ({
+const SwitchItem = memo<SwitchItemProps>(({
   text,
   name,
   value,
@@ -25,9 +25,9 @@ const SwitchItem: React.FC<SwitchItemProps> = ({
       value={value}
     />
   </div>
-);
+));
 
-export const SwitchPanel: React.FC = () => {
+export const SwitchPanel = memo(() => {
   const { t } = useTranslation('main');
 
   const contentDemo = [
@@ -57,4 +57,4 @@ export const SwitchPanel: React.FC = () => {
       ))}
     </section>
   );
-};
+});
