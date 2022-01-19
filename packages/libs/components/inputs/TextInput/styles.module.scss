@@ -1,5 +1,6 @@
 @import "../../../assets/styles/mixins";
 @import "../../../assets/styles/palette";
+@import "../../../assets/styles/fonts";
 
 .input__container {
 
@@ -10,23 +11,30 @@
     padding-bottom: 10px;
   }
 
-  .input__box {
+  .input__withIcon {
     display: grid;
     grid-template-columns: 1fr 44px;
     grid-template-areas: 'input icon';
+  }
+
+  .input__textOnly {
+    grid-template-columns: 1fr;
+  }
+
+  .input__box {
     background-color: $black;
     border-radius: 15px;
     overflow: hidden;
 
-    input.input__field {
+    input {
       grid-area: input;
       border: 0;
       outline: 0;
       background-color: $black;
       padding: 11px 0 11px 20px;
       color: $white;
-      // @include base_text;
       font-size: 16px;
+      font-family: $helvetica;
     }
 
     .input__icon {

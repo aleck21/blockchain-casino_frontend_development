@@ -9,6 +9,18 @@
   .form_element__box {
     padding: 15px 0;
 
+    input.form_element__input {
+      height: 86px;
+      font-size: 24px;
+      font-weight: 500;
+      width: 100%;
+      padding-right: 20px;
+
+      @include mobile_sm {
+        font-size: 18px;
+      }
+    }
+
     button {
       background-color: $blue;
       background-image: none;

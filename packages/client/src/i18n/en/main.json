@@ -53,7 +53,6 @@
   "Activate new promocode": "Activate new promocode",
   "Promo code": "Promo code",
   "Your promo code": "Your promo code",
-  "You will receive:": "You will receive:",
   "Classic-dice-is-a-game": "Classic dice is a game, where a user can choose a number (let it be X) between 0 and M, where M is max dice mean (in BC.Game it’s 100), and make a bet that the next generated random number will be greater or less than X. Using X and the user's prediction, the system will calculate the user's win chance (P) and victory",
   "Use promo code": "Use promo code",
   "Reset": "Reset",
@@ -94,5 +93,6 @@
   "Can-BGD-be-exchanged": "Can BGD be exchanged to any other currency?",
   "Sure-The-most-exciting": "Sure! The most exciting thing is that the value of 1 BGD is bound to the price of 1 USDT, and you can <1>BGSwap</1> BGD into other currencies at any time.",
   "What-is-special-about": "What is special about BGD?",
+  "You-can-get-BGD-verification": "You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet. You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet.You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the vailable balance of BCD through the BCSwap function in the wallet. You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the BCSwap function in the wallet.",
   "You-can-enjoy-up-to": "You can enjoy up to <1>{{enjoy}}</1> annualized rate of return when you store your BGD in <3>Vault Pro</3>. So enjoy collecting BGD!"
 }
