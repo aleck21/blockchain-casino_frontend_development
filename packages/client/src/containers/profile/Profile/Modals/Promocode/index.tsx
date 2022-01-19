@@ -25,6 +25,7 @@ export const Promocode: React.FC = () => {
       </div>
       <form>
         <TextInput
+          name="promocode"
           label={t('Your promo code')}
           classNameInput={cx(styles.promocode__input)}
           classNameContainer={cx(styles.promocode__input__container)}

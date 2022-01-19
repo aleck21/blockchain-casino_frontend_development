@@ -24,6 +24,7 @@ export const Stage3: React.FC<StageProps> = ({
         Input
       </h4>
       <TextInput
+        name="serverSeed"
         label={t('Enter server seed hash')}
         placeholder={t('Server Seed (hash)')}
         classNameInput={cx(styles.h44)}
@@ -34,6 +35,7 @@ export const Stage3: React.FC<StageProps> = ({
       />
       <div className={cx(styles.stageX__doubleInput)}>
         <TextInput
+          name="clientSeed"
           label={t('Enter client seed')}
           placeholder={t('Client seed')}
           classNameInput={cx(styles.h44)}
@@ -43,6 +45,7 @@ export const Stage3: React.FC<StageProps> = ({
           isTextOnly
         />
         <TextInput
+          name="nonce"
           label={t('Enter nonce')}
           placeholder={t('Nonce')}
           classNameInput={cx(styles.h44)}
@@ -57,6 +60,7 @@ export const Stage3: React.FC<StageProps> = ({
       </h4>
       <div className={cx(styles.stageX__doubleInput)}>
         <TextInput
+          name="outpetServerSeed"
           label={t('Server seed hash')}
           placeholder={t('Server Seed (hash)')}
           classNameInput={cx(styles.h44)}
@@ -66,6 +70,7 @@ export const Stage3: React.FC<StageProps> = ({
           isTextOnly
         />
         <TextInput
+          name="finalHash"
           label={t('Final hash')}
           placeholder={t('Final hash')}
           classNameInput={cx(styles.h44)}

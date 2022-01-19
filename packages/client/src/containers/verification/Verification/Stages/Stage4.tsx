@@ -28,6 +28,7 @@ export const Stage4: React.FC = () => {
         Input
       </h4>
       <TextInput
+        name="gameHash"
         label={t('Game hash')}
         placeholder={t('Game hash')}
         classNameInput={cx(styles.h44)}
@@ -38,6 +39,7 @@ export const Stage4: React.FC = () => {
       />
       <div className={cx(styles.stageX__doubleInput)}>
         <TextInput
+          name="salt"
           label={t('Salt')}
           placeholder={t('Salt')}
           classNameInput={cx(styles.h44)}
@@ -47,6 +49,7 @@ export const Stage4: React.FC = () => {
           isTextOnly
         />
         <TextInput
+          name="amount"
           label={t('Amount of games')}
           placeholder={t('Amount of games')}
           classNameInput={cx(styles.h44)}

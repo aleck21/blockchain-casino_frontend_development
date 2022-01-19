@@ -10,22 +10,16 @@ const depositDemo = 'c2m19375...0dj2c9c48n25m2u5p';
 export const Deposit: React.FC = () => {
   const { t } = useTranslation('main');
 
-  const [value, setValue] = useState(depositDemo);
   const [copy, setCopy] = useState(false);
 
-  const changeValue = (e: any) => {
-    setValue(e.target.value);
-  };
-
   const onCopy = () => {
-    navigator.clipboard.writeText(value)
+    navigator.clipboard.writeText(depositDemo)
       .then(() => {
         setCopy(true);
         setTimeout(() => { setCopy(false); }, 1000);
       })
-      .catch((error) => {
+      .catch(() => {
         setCopy(false);
-        console.log(`Error copying to clipboard: ${error}`);
       });
   };
 
@@ -38,12 +32,11 @@ export const Deposit: React.FC = () => {
         >
           {t('To deposit funds send them to the wallet')}
         </Text>
-        <input
-          type="text"
+        <div
           className={cx(styles.deposit__textMode__input)}
-          onChange={changeValue}
-          value={value}
-        />
+        >
+          {depositDemo}
+        </div>
         <div
           className={cx(styles.deposit__textMode__input__icon)}
           onClick={onCopy}

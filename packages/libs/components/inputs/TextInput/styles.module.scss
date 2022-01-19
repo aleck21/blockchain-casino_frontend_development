@@ -1,5 +1,6 @@
 @import "../../../assets/styles/mixins";
 @import "../../../assets/styles/palette";
+@import "../../../assets/styles/fonts";
 
 .input__container {
 
@@ -25,7 +26,7 @@
     border-radius: 15px;
     overflow: hidden;
 
-    input.input__field {
+    input {
       grid-area: input;
       border: 0;
       outline: 0;
@@ -33,6 +34,7 @@
       padding: 11px 0 11px 20px;
       color: $white;
       font-size: 16px;
+      font-family: $helvetica;
     }
 
     .input__icon {
