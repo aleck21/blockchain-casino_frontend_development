@@ -14,6 +14,7 @@ import {
   SignInModal,
   RegisterModal,
   ActivateNewBonus,
+  AboutBGD,
 } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
@@ -26,6 +27,7 @@ const modals: Record<string, ReactNode> = {
   transactions: <Transactions />,
   notifications: <Notification />,
   roulette: <Roulette />,
+  aboutBgd: <AboutBGD />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
   activatingNewBonus: <ActivateNewBonus />,
