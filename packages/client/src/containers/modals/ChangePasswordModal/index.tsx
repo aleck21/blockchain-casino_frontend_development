@@ -4,7 +4,7 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import { Text, Button, TextInput } from '@project/libs/components';
 import styles from './styles.module.scss';
 
-export const ChangePassword: React.FC = () => {
+export const ChangePasswordModal: React.FC = () => {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [acceptPassword, setAcceptPassword] = useState('');
