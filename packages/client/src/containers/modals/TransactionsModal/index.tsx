@@ -6,7 +6,7 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import { Deposit } from './Deposit';
 import { Bill } from './Bill';
 
-export const Transactions: React.FC = () => {
+export const TransactionsModal: React.FC = () => {
   const { TabPane } = Tabs;
   const { t } = useTranslation('main');
 

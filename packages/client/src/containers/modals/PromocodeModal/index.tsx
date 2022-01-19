@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import styles from './styles.module.scss';
 
-export const Promocode: React.FC = () => {
+export const PromocodeModal: React.FC = () => {
   const codeDemo = 'q10358vn1983tvn';
   const [promocode, setPromocode] = useState(codeDemo);
   const { t } = useTranslation('main');

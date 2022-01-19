@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import { StatisticsTab } from './StatisticsTab';
 import { BetsTab } from './BetsTab';
 
-export const Statistics: React.FC = () => {
+export const StatisticsModal: React.FC = () => {
   const { t } = useTranslation('main');
   const [tab, setTab] = useState('statistics');
 

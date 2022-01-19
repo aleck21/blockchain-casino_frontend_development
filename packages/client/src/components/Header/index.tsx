@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext } from 'react';
+import React, { memo, useCallback, useContext } from 'react';
 import cx from 'classnames';
 // import { useUser } from 'hooks';
 import { Button } from '@project/libs/components/inputs';
@@ -13,7 +13,7 @@ import { Info } from './Info';
 import { Profile } from './Profile';
 import styles from './styles.module.scss';
 
-export const Header: FC = () => {
+export const Header = memo(() => {
   // const { isUser } = useUser();
   const isUser = true;
 
@@ -83,4 +83,4 @@ export const Header: FC = () => {
       </section>
     </header>
   );
-};
+});

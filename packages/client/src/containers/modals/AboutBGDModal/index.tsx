@@ -7,7 +7,7 @@ import { links } from 'constants/link';
 import { enjoy } from 'constants/enjoyBGD';
 import styles from './styles.module.scss';
 
-export const AboutBGD = memo(() => {
+export const AboutBGDModal = memo(() => {
   const { t } = useTranslation('main');
 
   return (

@@ -3,26 +3,27 @@ import cx from 'classnames';
 import { ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import {
-  Promocode,
-  ChangePassword,
-  CollectRewards,
-  Statistics,
-} from 'containers/profile/Profile/Modals';
-import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
-import { Notification, Roulette } from 'containers';
-import { SignInModal, RegisterModal, AboutBGD } from 'containers/modals';
+  PromocodeModal,
+  ChangePasswordModal,
+  CollectRewardsModal,
+  StatisticsModal,
+  TransactionsModal,
+  Notification,
+  Roulette,
+} from 'containers';
+import { SignInModal, RegisterModal, AboutBGDModal } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
 const modals: Record<string, ReactNode> = {
-  promocode: <Promocode />,
-  changePassword: <ChangePassword />,
-  collectRewards: <CollectRewards />,
-  statistics: <Statistics />,
-  transactions: <Transactions />,
+  promocode: <PromocodeModal />,
+  changePassword: <ChangePasswordModal />,
+  collectRewards: <CollectRewardsModal />,
+  statistics: <StatisticsModal />,
+  transactions: <TransactionsModal />,
   notifications: <Notification />,
   roulette: <Roulette />,
-  aboutBgd: <AboutBGD />,
+  aboutBgd: <AboutBGDModal />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
 };

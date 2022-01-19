@@ -3,6 +3,7 @@ import {
   createElement,
   forwardRef,
   CSSProperties,
+  memo,
 } from 'react';
 import classNames from 'classnames/bind';
 import styles from './styles.module.scss';
@@ -17,13 +18,13 @@ type TextProps = {
   style?: CSSProperties;
 };
 
-const Text = forwardRef(({
+const Text = memo<TextProps>(forwardRef(({
   className = '',
   type = 'span',
   children,
   dangerouslySetInnerHTML,
   style,
-}: TextProps,
+},
 ref) => {
   const additionalStyle = cx({ [type]: true }, className);
   return createElement(type, {
@@ -32,6 +33,6 @@ ref) => {
     dangerouslySetInnerHTML,
     ref,
   }, children);
-});
+}));
 
 export { Text };

@@ -1,0 +1,26 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+
+
+.switch__container {
+
+  .switch__item__container {
+    display: grid;
+    grid-template-columns: auto 58px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: .5px solid $middle;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    p {
+      @include base_text;
+      font-size: 18px;
+      font-weight: normal;
+      color: $white;
+      text-align: left;
+    }
+  }
+
+}
