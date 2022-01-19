@@ -7,8 +7,8 @@ import {
   ChangePassword,
   CollectRewards,
   Statistics,
-} from 'containers/profile/Profile/Modals';
-import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
+} from 'containers/profile/modals1';
+import { Transactions } from 'containers/profile/modals1/Transactions';
 import { Notification, Roulette } from 'containers';
 import { SignInModal, RegisterModal } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';

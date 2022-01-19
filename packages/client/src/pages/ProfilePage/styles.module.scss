@@ -1,0 +1,37 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.profile__container {
+
+  border: solid 2px green;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: calc(100vw - 40px);
+  }
+
+  .profile__rightBlock {
+    padding-left: 50px;
+
+    @include mobile_sm {
+      padding-left: 0;
+    }
+  }
+}
+
+.f18 {
+  font-size: 18px;
+}
+
+.f__gray {
+  color: $middle;
+}
+
+.text__box {
+  margin-top: 30px;
+  line-height: 1;
+  font-size: 14px;
+}
