@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import cx from 'classnames';
 import {
   Button,
@@ -36,15 +36,15 @@ export const Info: React.FC = () => {
     );
   };
 
-  const onBalaceClick = () => {
+  const onBalaceClick = useCallback(() => {
     setIsShowBalance(!isShowBalance);
-  };
+  }, [isShowBalance]);
 
-  const onQuestionClick = () => {
+  const onQuestionClick = useCallback(() => {
     setIsShowBalance(false);
     setContentModal('aboutBgd');
     openModal();
-  };
+  }, []);
 
   return (
     <section className={cx(styles.container)}>

@@ -3,16 +3,12 @@ import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Trans } from 'react-i18next';
 import { Text } from '@project/libs/components';
+import { links } from 'constants/link';
+import { enjoy } from 'constants/enjoyBGD';
 import styles from './styles.module.scss';
 
-export const AboutBGD: React.FC = memo(() => {
+export const AboutBGD = memo(() => {
   const { t } = useTranslation('main');
-
-  const links = {
-    bcSwap: 'https://bcs',
-    bgSwap: 'https://bgs',
-    vaultPro: 'https://vault',
-  };
 
   return (
     <div className={cx(styles.aboutBGD__container)}>
@@ -102,13 +98,15 @@ export const AboutBGD: React.FC = memo(() => {
           {t('What-is-special-about')}
         </Text>
         <Text type="p">
-          {t('You-can-enjoy-up-to')}
-          <span className={cx(styles.white__text)}>
-            &nbsp;10%&nbsp;
-          </span>
           <Trans
-            i18nKey={t('You-can-enjoy-up-to2')}
+            i18nKey={t('You-can-enjoy-up-to')}
           >
+            You can enjoy up to
+            {' '}
+            <span className={cx(styles.white__text)}>
+              {{ enjoy }}
+            </span>
+            {' '}
             annualized rate of return when you store your BGD in
             {' '}
             <a href={links.vaultPro}>Vault Pro</a>
