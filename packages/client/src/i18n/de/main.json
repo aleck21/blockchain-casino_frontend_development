@@ -80,5 +80,19 @@
   "spins": "spins",
   "Register with": "Register with",
   "Your email address": "Your email address",
-  "Show the balance in this currency": "Show the balance in this currency"
+  "Show the balance in this currency": "Show the balance in this currency",
+  "What is BGD": "What is BGD?",
+  "BGD-BG-Dollar-is-a-special": "BGD (BG Dollar) is a special currency launched by BC.Game. You can play games, tip, coindrop & rain with BCD.",
+  "How to get BGD?": "How to get BGD?",
+  "You-can-get-BGD": "You can get BGD through deposit bonus and other activities. You can also directly exchange other currencies into the available balance of BCD through the <1>BCSwap</1> function in the wallet.",
+  "How to unlock BGD?": "How to unlock BGD?",
+  "The-BGD-obtained-through": "The BGD obtained through bonus needs to be unlocked proportionally through Wager.",
+  "Unlock amount": "Unlock amount",
+  "wager amount": "wager amount",
+  "house edge": "house edge",
+  "Different-games-have": "Different games have different wager rates.",
+  "Can-BGD-be-exchanged": "Can BGD be exchanged to any other currency?",
+  "Sure-The-most-exciting": "Sure! The most exciting thing is that the value of 1 BGD is bound to the price of 1 USDT, and you can <1>BGSwap</1> BGD into other currencies at any time.",
+  "What-is-special-about": "What is special about BGD?",
+  "You-can-enjoy-up-to": "You can enjoy up to <1>{{enjoy}}</1> annualized rate of return when you store your BGD in <3>Vault Pro</3>. So enjoy collecting BGD!"
 }

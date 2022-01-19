@@ -10,7 +10,7 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
-import { SignInModal, RegisterModal } from 'containers/modals';
+import { SignInModal, RegisterModal, AboutBGD } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
@@ -22,6 +22,7 @@ const modals: Record<string, ReactNode> = {
   transactions: <Transactions />,
   notifications: <Notification />,
   roulette: <Roulette />,
+  aboutBgd: <AboutBGD />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
 };
