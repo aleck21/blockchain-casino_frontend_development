@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Image, Button } from '@project/libs/components';
+import { Image, Button, TextInput } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
 import { croppingText } from 'utils/croppingText';
 import { result, bytes, hash } from './contentDemo';
@@ -12,8 +11,10 @@ export const Stage4: React.FC = () => {
   const { t } = useTranslation('main');
 
   const [short, setShort] = useState(true);
-
+  const [gameHash, setGameHash] = useState('');
   const [isHash, setIsHash] = useState(false);
+  const [salt, setSalt] = useState('Salt');
+  const [amount, setAmount] = useState('1');
 
   const onValidate = () => {
     setIsHash(true);
@@ -26,26 +27,36 @@ export const Stage4: React.FC = () => {
       <h4>
         Input
       </h4>
-      <TextInputClient
+      <TextInput
+        name="gameHash"
         label={t('Game hash')}
         placeholder={t('Game hash')}
-        className={cx(styles.h44)}
+        classNameInput={cx(styles.h44)}
         classNameLabel={cx(styles.stageX__label)}
+        value={gameHash}
+        onChangeValue={setGameHash}
+        isTextOnly
       />
       <div className={cx(styles.stageX__doubleInput)}>
-        <TextInputClient
+        <TextInput
+          name="salt"
           label={t('Salt')}
           placeholder={t('Salt')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
-          defaultValue="Salt"
+          value={salt}
+          onChangeValue={setSalt}
+          isTextOnly
         />
-        <TextInputClient
+        <TextInput
+          name="amount"
           label={t('Amount of games')}
           placeholder={t('Amount of games')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
-          defaultValue="1"
+          value={amount}
+          onChangeValue={setAmount}
+          isTextOnly
         />
       </div>
       <footer
@@ -139,7 +150,7 @@ export const Stage4: React.FC = () => {
           )}
 
         <Button
-          onClick={() => onValidate}
+          onClick={onValidate}
           className={cx(styles.validate__button)}
         >
           {t('Validate')}

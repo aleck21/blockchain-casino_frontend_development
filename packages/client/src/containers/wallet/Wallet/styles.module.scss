@@ -22,6 +22,10 @@
   
   .wallet__panel {
     grid-area: walletPanel;
+
+    h2 {
+      color: $white;
+    }
   }
 
   .wallet__balance {

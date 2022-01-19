@@ -275,6 +275,7 @@
       font-weight: 400;
       color: $white;
       padding: 0;
+      padding-bottom: 6px;
     }
 
     input.h44 {
@@ -282,16 +283,25 @@
       font-size: 16px;
       color: $white;
       padding: 0 20px;
+      font-weight: 500;
+      font-family: $helvetica;
 
       @include mobile_sm {
         background-color: $dark;
       }
 
+      &::placeholder {
+        color: $middle;
+        font-weight: 500;
+      }
+
       &::-webkit-input-placeholder {
         color: $middle;
+        font-weight: 500;
       }
       &::-moz-placeholder {
         color: $middle;
+        font-weight: 500;
       }
     }
 
