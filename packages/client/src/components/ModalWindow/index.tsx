@@ -10,7 +10,11 @@ import {
 } from 'containers/profile/Profile/Modals';
 import { Transactions } from 'containers/profile/Profile/Modals/Transactions';
 import { Notification, Roulette } from 'containers';
-import { SignInModal, RegisterModal } from 'containers/modals';
+import {
+  SignInModal,
+  RegisterModal,
+  ActivateNewBonus,
+} from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
@@ -24,6 +28,7 @@ const modals: Record<string, ReactNode> = {
   roulette: <Roulette />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
+  activatingNewBonus: <ActivateNewBonus />,
 };
 
 export const ModalWindow: React.FC = () => {
