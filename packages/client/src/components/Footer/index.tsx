@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import cx from 'classnames';
 import { ModalContext } from 'context/modalOpen';
 import { About } from './About';
@@ -9,7 +9,7 @@ import { Rate } from './Rate';
 import styles from './styles.module.scss';
 import { Copyright } from './Copyright';
 
-export const Footer: FC = () => {
+export const Footer = memo(() => {
   const { isModalOpen } = useContext(ModalContext);
 
   return (
@@ -33,4 +33,4 @@ export const Footer: FC = () => {
       </div>
     </footer>
   );
-};
+});

@@ -1,4 +1,9 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, {
+  memo,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import {
   CloseIcon,
   EyeCrossedIcon,
@@ -8,7 +13,7 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 import { ButtonIcon } from '../ButtonIcon';
 
-type InputProps = {
+type TextInputProps = {
   value: string;
   defaultValue?: string;
   name?: string;
@@ -22,7 +27,7 @@ type InputProps = {
   onChangeValue?: (text: string) => void;
 };
 
-export const TextInput: React.FC<InputProps> = ({
+export const TextInput = memo<TextInputProps>(({
   value,
   defaultValue,
   name,
@@ -93,4 +98,4 @@ export const TextInput: React.FC<InputProps> = ({
       </div>
     </div>
   );
-};
+});

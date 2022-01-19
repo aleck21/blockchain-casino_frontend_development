@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, memo } from 'react';
 import cx from 'classnames';
 import { useHoverEvent } from '@project/libs/hooks/useHoverEvent';
 import Loader from '../Loader';
@@ -9,7 +9,7 @@ import {
 } from './types';
 import styles from './styles.module.scss';
 
-const Button = forwardRef(({
+const Button = memo(forwardRef(({
   theme = ButtonTheme.primary,
   isFullWidth,
   onClick,
@@ -45,6 +45,6 @@ ref: ButtonRef) => {
       )}
     </button>
   );
-});
+}));
 
 export { Button };
