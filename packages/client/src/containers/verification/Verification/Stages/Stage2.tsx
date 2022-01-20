@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Button, TextInput } from '@project/libs/components';
 import { StageProps } from './Stage1';
-import styles from '../styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Stage2: React.FC<StageProps> = ({
   goNextStage,
