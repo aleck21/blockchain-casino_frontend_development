@@ -1,8 +1,8 @@
 import React, {
-  FC,
   useCallback,
   useContext,
   useMemo,
+  memo,
 } from 'react';
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
@@ -28,11 +28,11 @@ type NavigationButtonProps = {
   isModal?: boolean;
 };
 
-export const NavigationButton: FC<NavigationButtonProps> = ({
+export const NavigationButton = memo(({
   name,
   isUser,
   isModal = false,
-}) => {
+}: NavigationButtonProps) => {
   const { t } = useTranslation('main');
   const isMobile = useMobile();
 
@@ -126,4 +126,4 @@ export const NavigationButton: FC<NavigationButtonProps> = ({
       />
     </NavLink>
   );
-};
+});
