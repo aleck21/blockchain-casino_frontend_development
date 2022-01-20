@@ -1,4 +1,4 @@
-import React, { memo, useContext } from 'react';
+import React, { memo, useCallback, useContext } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import { Button, Image, Text } from '@project/libs/components';
@@ -10,10 +10,10 @@ export const Active = memo(() => {
   const { setContentModal, openModal } = useContext(ModalContext);
   const { t } = useTranslation('main');
 
-  const onBonusClick = () => {
+  const onBonusClick = useCallback(() => {
     setContentModal('activatingNewBonus');
     openModal();
-  };
+  }, []);
 
   return (
     <div className={cx(styles.active__container)}>

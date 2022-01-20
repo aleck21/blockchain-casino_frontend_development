@@ -1,65 +1,42 @@
-import React, { CSSProperties, memo } from 'react';
+import React, { useMemo, memo } from 'react';
 import intervalToDuration from 'date-fns/intervalToDuration';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Carousel } from 'antd';
 import { Trans } from 'react-i18next';
-import { Button, Image, Text } from '@project/libs/components';
-import { quanityDeposit, sizeBonus } from 'constants/bonus';
+import {
+  Button,
+  ButtonIcon,
+  Text,
+} from '@project/libs/components';
 import { BackArrowIcon, NextArrowIcon } from '@project/libs/assets/images';
-import { bonuses } from './contentDemo';
+import { bonuses, quanityDeposit, sizeBonus } from './contentDemo';
 import styles from './styles.module.scss';
 import './stylesCarousel.scss';
 
 const demoLastsTime = new Date().getTime() - 1000 * 60 * 60 * 10 + 1000 * 60 * 25 + 1000 * 15;
 
-type Arrow = {
-  className?: string;
-  style?: CSSProperties;
-  onClick?: () => void;
-};
-
-const BackArrow: React.FC<Arrow> = ({
-  className,
-  style,
-  onClick,
-}) => (
-  <Button
-    onClick={onClick}
-    className={className}
-    style={style}
-  >
-    <Image url={BackArrowIcon} />
-  </Button>
-);
-
-const NextArrow: React.FC<Arrow> = ({
-  className,
-  style,
-  onClick,
-}) => (
-  <Button
-    onClick={onClick}
-    className={className}
-    style={style}
-  >
-    <Image url={NextArrowIcon} />
-  </Button>
-);
-
 export const ActivateNewBonusModal = memo(() => {
   const { t } = useTranslation('main');
-  // const slider = useRef(null);
+
+  const BackArrow = useMemo(() => (
+    <ButtonIcon
+      imageURL={BackArrowIcon}
+      className="slik-prev"
+    />
+  ), []);
+
+  const NextArrow = useMemo(() => (
+    <ButtonIcon
+      imageURL={NextArrowIcon}
+      className="slik-next"
+    />
+  ), []);
 
   const lastsTime = intervalToDuration({
     start: (demoLastsTime),
     end: new Date(),
   });
-
-  const settings = {
-    prevArrow: <BackArrow />,
-    nextArrow: <NextArrow />,
-  };
 
   return (
     <div className={cx(styles.activate__container)}>
@@ -102,7 +79,8 @@ export const ActivateNewBonusModal = memo(() => {
 
         <Carousel
           arrows
-          {...settings}
+          prevArrow={BackArrow}
+          nextArrow={NextArrow}
         >
           {bonuses.map((bonus) => (
             <div

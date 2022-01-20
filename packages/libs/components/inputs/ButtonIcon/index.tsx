@@ -6,7 +6,7 @@ type ButtonIconProps = {
   imageURL: string;
   className?: string;
   classNameImage?: string;
-  onClick: () => void;
+  onClick?: () => void;
   styleImage?: CSSProperties;
   alt?: string;
 };
