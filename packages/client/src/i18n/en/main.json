@@ -96,5 +96,8 @@
   "What-is-special-about": "What is special about BGD?",
   "Activating new bonus": "Activating new bonus",
   "active-bonus": "<0>{{sizeBonus}}</0><1> BGD</1> bonus for the next {{quanityDeposit}} USD deposit",
-  "You-can-enjoy-up-to": "You can enjoy up to <1>{{enjoy}}</1> annualized rate of return when you store your BGD in <3>Vault Pro</3>. So enjoy collecting BGD!"
+  "You-can-enjoy-up-to": "You can enjoy up to <1>{{enjoy}}</1> annualized rate of return when you store your BGD in <3>Vault Pro</3>. So enjoy collecting BGD!",
+  "Lasts in": "Lasts in",
+  "Are you sure that you want to use the code?": "Are you sure that you want to use the code?",
+  "It-will-work-during": "It will work during next 24h. If you have active code, it will be cancelled"
 }

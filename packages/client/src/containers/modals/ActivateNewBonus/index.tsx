@@ -7,8 +7,9 @@ import { Trans } from 'react-i18next';
 import { Button, Image, Text } from '@project/libs/components';
 import { quanityDeposit, sizeBonus } from 'constants/bonus';
 import { BackArrowIcon, NextArrowIcon } from '@project/libs/assets/images';
-import styles from './styles.module.scss';
 import { bonuses } from './contentDemo';
+import styles from './styles.module.scss';
+import './stylesCarousel.scss';
 
 const demoLastsTime = new Date().getTime() - 1000 * 60 * 60 * 10 + 1000 * 60 * 25 + 1000 * 15;
 
@@ -97,47 +98,60 @@ export const ActivateNewBonus = memo(() => {
           s
         </Text>
       </section>
-      <Carousel
-        arrows
-        {...settings}
-      >
-        {bonuses.map((bonus) => (
-          <div
-            className={cx(styles.activate__bonus__box)}
-            key={bonus.id}
+      <section className="activate__carousel__container">
+
+        <Carousel
+          arrows
+          {...settings}
+        >
+          {bonuses.map((bonus) => (
+            <div
+              className="activate__bonus__box"
+              key={bonus.id}
+            >
+              <Text type="h6">
+                {bonus.isNew ? t('New Code') : t('Code')}
+              </Text>
+              <Text type="p">
+                <Trans i18nKey="active-bonus">
+                  <b>
+                    {{ sizeBonus: sizeBonus[bonus.type] }}
+                  </b>
+                  <b> BGD</b>
+                  {' '}
+                  bonus for the next
+                  {' '}
+                  {{ quanityDeposit: quanityDeposit[bonus.type] }}
+                  {' '}
+                  USD deposit
+                </Trans>
+              </Text>
+            </div>
+          ))}
+        </Carousel>
+      </section>
+      <section className={cx(styles.activate__form)}>
+        <Text type="h5">
+          {t('Are you sure that you want to use the code?')}
+        </Text>
+        <Text type="p">
+          {t('It-will-work-during')}
+        </Text>
+        <div className={cx(styles.activate__buttons__box)}>
+          <Button
+            className={cx(styles.cancel)}
+            onClick={undefined}
           >
-            <Text type="h6">
-              {bonus.isNew ? t('New Code') : t('Code')}
-            </Text>
-            <Text type="p">
-              <Trans i18nKey="active-bonus">
-                <b>
-                  {{ sizeBonus: sizeBonus[bonus.type] }}
-                </b>
-                <b> BGD</b>
-                {' '}
-                bonus for the next
-                {' '}
-                {{ quanityDeposit: quanityDeposit[bonus.type] }}
-                {' '}
-                USD deposit
-              </Trans>
-            </Text>
-          </div>
-        ))}
-      </Carousel>
-      {/*
-      <ButtonIcon
-        onClick={() => slider.current.prev()}
-        imageURL={BackArrowIcon}
-        className={cx(styles.activate__backButton)}
-      />
-      <ButtonIcon
-        onClick={() => slider.current.next()}
-        imageURL={NextArrowIcon}
-        className={cx(styles.activate__nextButton)}
-      />
-      */}
+            {t('Cancel')}
+          </Button>
+          <Button
+            className={cx(styles.use)}
+            onClick={undefined}
+          >
+            {t('Use')}
+          </Button>
+        </div>
+      </section>
     </div>
   );
 });

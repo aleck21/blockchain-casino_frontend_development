@@ -22,7 +22,7 @@
     z-index: 1;
 
     .active__container__otherBkg__image {
-      max-width: 100%; //516px; 
+      max-width: 100%; 
 
       @include mobile_sm {
         display: none;
@@ -40,6 +40,11 @@
     background-image: url('~@project/libs/assets/images/activeBonusBackground.svg');
     display: block;
 
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+      background-image: none;
+    }
+
     .active__title {
       @include base_text;
       font-size: 12px;
@@ -54,6 +59,11 @@
       font-size: 16px;
       color: $white;
       font-weight: bold;
+
+      @include mobile_sm {
+        width: calc(100vw - 140px);
+        white-space: normal;
+      }
     }
   }
 }
