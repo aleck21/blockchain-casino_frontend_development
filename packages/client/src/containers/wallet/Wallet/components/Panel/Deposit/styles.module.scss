@@ -25,7 +25,7 @@
   .deposit__textMode {
     position: relative;
     
-    input.deposit__textMode__input[type=text] {
+    .deposit__textMode__input {
       border: 0;
       outline: 0;
       background-color: $black;

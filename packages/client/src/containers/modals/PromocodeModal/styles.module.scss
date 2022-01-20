@@ -31,15 +31,7 @@
     }
   }
 
-  .promocode__input__label {
-    padding: 0 20px;
-  }
-
   .promocode__input__container {
-    display: grid;
-    grid-template-columns: 1fr 44px;
-    align-items: center;
-    column-gap: 0;
     padding: 0 20px;
 
     input.promocode__input {

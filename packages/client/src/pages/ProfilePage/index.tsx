@@ -1,8 +1,20 @@
-import React, { FC } from 'react';
-import { Profile } from 'containers/profile';
+import React from 'react';
+import cx from 'classnames';
+import {
+  Profile,
+  Membership,
+  Statistics,
+} from 'containers';
+import styles from './styles.module.scss';
 
-const ProfilePage: FC = () => (
-  <Profile />
+export const ProfilePage = () => (
+  <section className={cx(styles.profile__container)}>
+    <div className={cx(styles.profile__leftBlock)}>
+      <Profile />
+    </div>
+    <div className={cx(styles.profile__rightBlock)}>
+      <Membership />
+      <Statistics />
+    </div>
+  </section>
 );
-
-export { ProfilePage };

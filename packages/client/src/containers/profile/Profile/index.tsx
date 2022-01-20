@@ -1,56 +1,92 @@
-import React from 'react';
+import React, {
+  memo,
+  useCallback,
+  useContext,
+  useState,
+} from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Table } from 'containers/profile/Profile/Table';
-import { Image, Text } from '@project/libs/components';
+import {
+  Button,
+  Image,
+  Text,
+  TextInput,
+} from '@project/libs/components';
+import { ModalContext } from 'context';
+import {
+  AvatarDefault,
+  ChangePasswordIcon,
+  LogOutIcon,
+} from '@project/libs/assets/images';
 import styles from './styles.module.scss';
-import { avatarDemo, Main } from './Main';
-import { Membership } from './Membership';
-import { dataTable } from './contentDemo';
-import { StatisticsTitle } from './StatisticsTitle';
-import { ButtonBlock } from './ButtonsBlock';
+import { SwitchPanel } from './SwitchPanel';
 
-export const Profile: React.FC = () => {
+export const Profile = memo(() => {
   const { t } = useTranslation('main');
+  const { openModal, setContentModal } = useContext(ModalContext);
 
-  const contentDemo = {
-    bgt: 500000,
-    percentage: 11,
-  };
+  const [name, setName] = useState('JaneDoe');
+  const [email, setEmail] = useState('janedoe@mail.com');
+
+  const onChangePasswordClick = useCallback(() => {
+    setContentModal('changePassword');
+    openModal();
+  }, [openModal, setContentModal]);
+
+  const avatar = AvatarDefault;
 
   return (
-    <section className={cx(styles.profile__container)}>
-      <div className={cx(styles.profile__leftBlock)}>
-        <Text
-          type="h2"
-          className={cx(styles.profile__head)}
-        >
-          {t('Profile')}
-        </Text>
-        <Image
-          url={avatarDemo}
-          className={cx(styles.avatar__mobile)}
+    <>
+      <Text
+        type="h2"
+        className={cx(styles.profile__head)}
+      >
+        {t('Profile')}
+      </Text>
+      <Image
+        url={avatar}
+        className={cx(styles.avatar__mobile)}
+      />
+      <div className={cx(styles.panel__main__container)}>
+        <div className={cx(styles.panel__main__personal)}>
+          <Image
+            url={avatar}
+            className={cx(styles.personal__avatar)}
+          />
+          <TextInput
+            value={name}
+            onChangeValue={setName}
+            label={t('Username')}
+            classNameInput={styles.input}
+          />
+        </div>
+        <TextInput
+          value={email}
+          onChangeValue={setEmail}
+          label={t('Email')}
+          classNameInput={styles.input}
         />
-        <Main />
+        <div className={cx(styles.panel__main__toggles)}>
+          <SwitchPanel />
+        </div>
+        <div className={cx(styles.panel__main__buttons)}>
+          <Button
+            onClick={onChangePasswordClick}
+            className={cx(styles.button)}
+          >
+            <Image url={ChangePasswordIcon} />
+          &nbsp;
+            {t('Change password')}
+          </Button>
+          <Button
+            onClick={() => {}}
+            className={cx(styles.button)}
+          >
+            <Image url={LogOutIcon} />
+            {t('Log Out')}
+          </Button>
+        </div>
       </div>
-      <div className={cx(styles.profile__rightBlock)}>
-        <Membership />
-        <Text
-          type="p"
-          className={cx(styles.text__box)}
-        >
-          {contentDemo.bgt.toLocaleString()}
-          {' '}
-          BGT and
-          {contentDemo.percentage}
-          % rakeback
-        </Text>
-        <ButtonBlock />
-        <StatisticsTitle />
-        <Table
-          data={dataTable}
-        />
-      </div>
-    </section>
+    </>
   );
-};
+});

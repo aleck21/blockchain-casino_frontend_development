@@ -42,3 +42,41 @@
     }
   }
 }
+
+.text__box {
+  margin-top: 30px;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.buttons__container {
+  width: 100%;
+  padding: 20px 20px 46px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  column-gap: 20px;
+
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  button {
+    height: 44px;
+  }
+
+  .left__button {
+    background-image: none;
+    background-color: $blue;
+  }
+
+  .right__button {
+    background-image: none;
+    background-color: transparent;
+    border: .5px solid $middle;
+  }
+}

@@ -10,8 +10,8 @@ import {
 import {
   SingInImage,
 } from '@project/libs/assets/images';
+import { ButtonIconsBox } from 'components';
 import styles from './styles.module.scss';
-import { ButtonIconsBox } from '../ButtonIconsBox';
 
 export const SignInModal = memo(() => {
   const { t } = useTranslation('main');

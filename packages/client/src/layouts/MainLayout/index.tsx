@@ -1,8 +1,14 @@
-import React, { CSSProperties, ReactNode, useContext } from 'react';
+import React, {
+  CSSProperties,
+  ReactNode,
+  useContext,
+} from 'react';
 import 'antd/dist/antd.css';
 import cx from 'classnames';
 import {
-  Header, Sidebar, Footer,
+  Header,
+  Sidebar,
+  Footer,
 } from 'components';
 import { ModalContext } from 'context/modalOpen';
 import { ModalWindow } from 'components/ModalWindow';

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
-import { TextInputClient } from 'components/TextInput';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Button } from '@project/libs/components';
+import { Button, TextInput } from '@project/libs/components';
 import { StageProps } from './Stage1';
 import styles from '../styles.module.scss';
 
 export const Stage2: React.FC<StageProps> = ({
   goNextStage,
 }) => {
+  const [serverSeedHash, setServerSeedHash] = useState('');
+  const [clientSeed, setClientSeed] = useState('');
+  const [nonce, setNonce] = useState('');
   const { t } = useTranslation('main');
 
   return (
@@ -16,38 +18,40 @@ export const Stage2: React.FC<StageProps> = ({
       <h4>
         Input
       </h4>
-      <TextInputClient
+      <TextInput
+        name="serverSeed"
         label={t('Enter server seed hash')}
         placeholder={t('Server Seed (hash)')}
-        className={cx(styles.h44)}
+        classNameInput={cx(styles.h44)}
         classNameLabel={cx(styles.stageX__label)}
+        value={serverSeedHash}
+        onChangeValue={setServerSeedHash}
+        isTextOnly
       />
       <div className={cx(styles.stageX__doubleInput)}>
-        <TextInputClient
+        <TextInput
+          name="clientSeed"
           label={t('Enter client seed')}
           placeholder={t('Client seed')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
+          value={clientSeed}
+          onChangeValue={setClientSeed}
+          isTextOnly
         />
-        <TextInputClient
+        <TextInput
+          name="nonce"
           label={t('Enter nonce')}
           placeholder={t('Nonce')}
-          className={cx(styles.h44)}
+          classNameInput={cx(styles.h44)}
           classNameLabel={cx(styles.stageX__label)}
+          value={nonce}
+          onChangeValue={setNonce}
+          isTextOnly
         />
       </div>
       <p>
-        You can get BGD through deposit bonus and other activities.
-        You can also directly exchange other currencies into the available
-        balance of BCD through the BCSwap function in the wallet. You can get
-        BGD through deposit bonus and other activities. You can also directly
-        exchange other currencies into the available balance of BCD through the
-        BCSwap function in the wallet.You can get BGD through deposit bonus and
-        other activities. You can also directly exchange other currencies into
-        the available balance of BCD through the BCSwap function in the wallet.
-        You can get BGD through deposit bonus and other activities. You can
-        also directly exchange other currencies into the available balance of
-        BCD through the BCSwap function in the wallet.
+        {t('You-can-get-BGD-verification')}
       </p>
       <footer className={cx(styles.verification__footer)}>
         <Button

@@ -5,7 +5,7 @@ import { Text, Button, Image } from '@project/libs/components';
 import { CheckIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
-export const CollectRewards: React.FC = () => {
+export const CollectRewardsModal: React.FC = () => {
   const { t } = useTranslation('main');
 
   const contentDemo = {

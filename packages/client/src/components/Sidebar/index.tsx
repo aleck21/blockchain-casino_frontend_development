@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import cx from 'classnames';
 import { Image } from '@project/libs/components';
 import { BunnyGameLogoBig, BunnyGameLogoSmall } from '@project/libs/assets/images';
@@ -8,7 +8,7 @@ import { Footer } from './Footer';
 import styles from './styles.module.scss';
 // import { useUser } from 'hooks';
 
-export const Sidebar: FC = () => {
+export const Sidebar = memo(() => {
 // const { isUser } = useUser();
   const { isMenuOpen } = useContext(MenuContext);
   return (
@@ -33,4 +33,4 @@ export const Sidebar: FC = () => {
       </footer>
     </aside>
   );
-};
+});

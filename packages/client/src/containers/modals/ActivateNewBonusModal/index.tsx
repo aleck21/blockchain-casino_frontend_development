@@ -47,7 +47,7 @@ const NextArrow: React.FC<Arrow> = ({
   </Button>
 );
 
-export const ActivateNewBonus = memo(() => {
+export const ActivateNewBonusModal = memo(() => {
   const { t } = useTranslation('main');
   // const slider = useRef(null);
 
