@@ -1,17 +1,24 @@
 import React, { memo, useContext } from 'react';
 import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
-import { BunnyGameLogoBig, BunnyGameLogoSmall } from '@project/libs/assets/images';
+import {
+  BunnyGameLogoBig,
+  BunnyGameLogoSmall,
+  IconHome,
+  IconNotification,
+  IconProfile,
+  IconRoulette,
+  IconVerification,
+  IconWallet,
+} from '@project/libs/assets/images';
+import { RouteLink, Modals } from '@project/client/src/constants';
 import { MenuContext } from 'context';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Footer } from './Footer';
 import styles from './styles.module.scss';
 import { NavigationButton } from './NavigationButton';
-// import { useUser } from 'hooks';
 
 export const Sidebar = memo(() => {
-// const { isUser } = useUser();
-  const isUser = true;
   const { t } = useTranslation('main');
   const { isMenuOpen } = useContext(MenuContext);
 
@@ -36,33 +43,38 @@ export const Sidebar = memo(() => {
       <nav className={styles.sidebar__main}>
         <section className={cx(styles.nav_top__container)}>
           <NavigationButton
-            name="home"
-            isUser={isUser}
+            routerLink={RouteLink.home}
+            icon={IconHome}
+            text={t('Home')}
+            isNotAuthNeeded
           />
           <NavigationButton
-            name="wallet"
-            isUser={isUser}
+            routerLink={RouteLink.wallet}
+            icon={IconWallet}
+            text={t('Wallet')}
           />
           <NavigationButton
-            name="profile"
-            isUser={isUser}
+            routerLink={RouteLink.profile}
+            icon={IconProfile}
+            text={t('Profile')}
           />
           <NavigationButton
-            name="notifications"
-            isUser={isUser}
-            isModal
+            name={Modals.notifications}
+            icon={IconNotification}
+            text={t('Notifications')}
           />
         </section>
-        {isUser && <div className={cx(styles.separator)} />}
         <section className={cx(styles.nav_bottom__container)}>
           <NavigationButton
-            name="roulette"
-            isUser={isUser}
-            isModal
+            name={Modals.roulette}
+            icon={IconRoulette}
+            text={t('Roulette')}
           />
           <NavigationButton
-            name="verification"
-            isUser={isUser}
+            routerLink={RouteLink.verification}
+            icon={IconVerification}
+            text={t('Verification')}
+            isNotAuthNeeded
           />
         </section>
       </nav>

@@ -7,79 +7,42 @@ import React, {
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
-import {
-  ArrowWhite,
-  IconHome,
-  IconNotification,
-  IconProfile,
-  IconRoulette,
-  IconVerification,
-  IconWallet,
-} from '@project/libs/assets/images';
-import { useTranslation } from '@project/libs/utils/i18n';
+import { ArrowWhite } from '@project/libs/assets/images';
 import { useMobile } from 'hooks';
+// import { useUser } from 'hooks';
+import { LocationDescriptor } from 'history';
 import { WidgetContext, ModalContext, MenuContext } from 'context';
-import { RouteLink } from '@project/client/src/constants';
 import styles from './styles.module.scss';
 
 type NavigationButtonProps = {
-  name: string;
-  isUser: boolean;
-  isModal?: boolean;
+  name?: string;
+  routerLink?: LocationDescriptor;
+  icon: string;
+  text: string;
+  isNotAuthNeeded?: boolean;
 };
 
 export const NavigationButton = memo(({
-  name,
-  isUser,
-  isModal = false,
+  name = '',
+  routerLink = '',
+  icon,
+  text,
+  isNotAuthNeeded = false,
 }: NavigationButtonProps) => {
-  const { t } = useTranslation('main');
+  // const { isUser } = useUser();
+  const isUser = true;
   const isMobile = useMobile();
 
   const { closeWidget } = useContext(WidgetContext);
   const { openModal, setContentModal, closeModal } = useContext(ModalContext);
   const { closeMenu } = useContext(MenuContext);
 
-  const routerLinks: Record<string, string> = {
-    home: RouteLink.home,
-    wallet: RouteLink.wallet,
-    profile: RouteLink.profile,
-    verification: RouteLink.verification,
-  };
-
-  const menuItemsIsNotUser: Record<string, boolean> = {
-    home: true,
-    wallet: false,
-    profile: false,
-    notifications: false,
-    roulette: false,
-    verification: true,
-  };
-
-  const namesLinks: Record<string, string> = {
-    home: t('Home'),
-    wallet: t('Wallet'),
-    profile: t('Profile'),
-    notifications: t('Notifications'),
-    roulette: t('Roulette'),
-    verification: t('Verification'),
-  };
-
-  const onClickIsModal = useCallback((contentModal: string) => {
-    setContentModal(contentModal);
+  const onClickIsModal = useCallback(() => {
+    setContentModal(name);
     openModal();
     closeMenu();
     if (isMobile) closeWidget();
-  }, [closeMenu, closeWidget, isMobile, openModal, setContentModal]);
-
-  const menuIcons: Record<string, string> = {
-    home: IconHome,
-    wallet: IconWallet,
-    profile: IconProfile,
-    notifications: IconNotification,
-    roulette: IconRoulette,
-    verification: IconVerification,
-  };
+  }, [closeMenu, closeWidget, isMobile, name, openModal, setContentModal]);
 
   const closeModalAndMenu = useCallback(() => {
     closeModal();
@@ -93,18 +56,18 @@ export const NavigationButton = memo(({
     onClick: closeModalAndMenu,
   }), [closeModalAndMenu]);
 
-  if (!isUser && !menuItemsIsNotUser[name]) return (<div className={cx(styles.no_visible)} />);
-  if (isModal) {
+  if (!isNotAuthNeeded && !isUser) return (<div className={cx(styles.no_visible)} />);
+  if (name) {
     return (
       <section
         className={cx(styles.nav__item)}
-        onClick={() => onClickIsModal(name)}
+        onClick={onClickIsModal}
         onKeyPress={undefined}
         role="menuitem"
         tabIndex={0}
       >
-        <Image url={menuIcons[name]} />
-        <Text type="p">{namesLinks[name]}</Text>
+        <Image url={icon} />
+        <Text type="p">{text}</Text>
         <Image
           url={ArrowWhite}
           className={cx(styles.arrow)}
@@ -115,11 +78,11 @@ export const NavigationButton = memo(({
 
   return (
     <NavLink
-      to={routerLinks[name]}
+      to={routerLink}
       {...navLinkCommonProps}
     >
-      <Image url={menuIcons[name]} />
-      <Text type="p">{namesLinks[name]}</Text>
+      <Image url={icon} />
+      <Text type="p">{text}</Text>
       <Image
         url={ArrowWhite}
         className={cx(styles.arrow)}

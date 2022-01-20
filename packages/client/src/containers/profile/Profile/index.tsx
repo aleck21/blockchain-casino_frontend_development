@@ -18,6 +18,7 @@ import {
   ChangePasswordIcon,
   LogOutIcon,
 } from '@project/libs/assets/images';
+import { Modals } from 'constants/modals';
 import styles from './styles.module.scss';
 import { SwitchPanel } from './SwitchPanel';
 
@@ -29,7 +30,7 @@ export const Profile = memo(() => {
   const [email, setEmail] = useState('janedoe@mail.com');
 
   const onChangePasswordClick = useCallback(() => {
-    setContentModal('changePassword');
+    setContentModal(Modals.changePassword);
     openModal();
   }, [openModal, setContentModal]);
 
