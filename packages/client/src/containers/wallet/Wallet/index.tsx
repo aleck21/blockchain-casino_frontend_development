@@ -17,26 +17,24 @@ const Wallet: FC = () => {
 
   return (
     <WalletTabsProvider>
-      <div className={cx(styles.wallet__container)}>
-        <div className={cx(styles.wallet__panel)}>
-          <Text type="h2">
-            {t('Wallet')}
-          </Text>
-          <Panel />
-        </div>
-        <div className={cx(styles.wallet__balance)}>
-          <TableGrid title={t('Balance')}>
-            {items.map((item) => (
-              <BalanceItem
-                key={item.id}
-                {...item}
-              />
-            ))}
-          </TableGrid>
-        </div>
-        <BGDDashboard />
-        <TabsMobile />
+      <div className={cx(styles.wallet__panel)}>
+        <Text type="h2">
+          {t('Wallet')}
+        </Text>
+        <Panel />
       </div>
+      <div className={cx(styles.wallet__balance)}>
+        <TableGrid title={t('Balance')}>
+          {items.map((item) => (
+            <BalanceItem
+              key={item.id}
+              {...item}
+            />
+          ))}
+        </TableGrid>
+      </div>
+      <BGDDashboard />
+      <TabsMobile />
     </WalletTabsProvider>
   );
 };
