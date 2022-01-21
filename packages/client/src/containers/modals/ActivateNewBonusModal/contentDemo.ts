@@ -1,6 +1,6 @@
 type Bonuses = {
   id: string;
-  type: 'b100' | 'b1000';
+  type: string;
   isNew: boolean;
 }[];
 
@@ -22,12 +22,12 @@ export const bonuses: Bonuses = [
   },
 ];
 
-export const sizeBonus = {
+export const sizeBonus: Record<string, string> = {
   b100: '+100%',
   b1000: '+150%',
 };
 
-export const quanityDeposit = {
+export const quanityDeposit: Record<string, string> = {
   b100: '100−200',
   b1000: '1000−2000',
 };
