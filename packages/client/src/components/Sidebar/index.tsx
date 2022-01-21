@@ -15,8 +15,8 @@ import { RouteLink, ModalName } from '@project/client/src/constants';
 import { MenuContext } from 'context';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Footer } from './Footer';
-import styles from './styles.module.scss';
 import { NavigationButton } from './NavigationButton';
+import styles from './styles.module.scss';
 
 export const Sidebar = memo(() => {
   const { t } = useTranslation('main');

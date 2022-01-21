@@ -30,7 +30,7 @@ export const NavigationButton = memo(({
   isNotAuthNeeded = false,
 }: NavigationButtonProps) => {
   // const { isUser } = useUser();
-  const isUser = false;
+  const isUser = true;
   const isMobile = useMobile();
 
   const { closeWidget } = useContext(WidgetContext);
