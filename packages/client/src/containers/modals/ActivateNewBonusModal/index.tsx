@@ -7,9 +7,9 @@ import {
   Button,
   Text,
 } from '@project/libs/components';
-import { quanityDeposit, sizeBonus } from './contentDemo';
 import styles from './styles.module.scss';
 import { Carousel } from './Carousel';
+import { bonuses } from './contentDemo';
 
 const demoLastsTime = new Date().getTime() - 1000 * 60 * 60 * 10 + 1000 * 60 * 25 + 1000 * 15;
 
@@ -33,13 +33,13 @@ export const ActivateNewBonusModal = memo(() => {
         <Text type="p">
           <Trans i18nKey="active-bonus">
             <b>
-              {{ sizeBonus: sizeBonus.b1000 }}
+              {{ sizeBonus: '+150%' }}
             </b>
             <b> BGD</b>
             {' '}
             bonus for the next
             {' '}
-            {{ quanityDeposit: quanityDeposit.b1000 }}
+            {{ quanityDeposit: '1000−2000' }}
             {' '}
             USD deposit
           </Trans>
@@ -58,7 +58,7 @@ export const ActivateNewBonusModal = memo(() => {
           s
         </Text>
       </section>
-      <Carousel />
+      <Carousel bonuses={bonuses} />
       <section className={cx(styles.activate__form)}>
         <Text type="h5">
           {t('Are you sure that you want to use the code?')}

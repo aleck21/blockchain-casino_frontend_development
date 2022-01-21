@@ -1,13 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Carousel as CarouselAntd } from 'antd';
 import { Trans } from 'react-i18next';
 import { BackArrowIcon, NextArrowIcon } from '@project/libs/assets/images';
 import { ButtonIcon, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { bonuses, quanityDeposit, sizeBonus } from '../contentDemo';
+import { Bonuses } from '../contentDemo';
 import './styles.scss';
 
-export const Carousel: React.FC = () => {
+type CarouselProps = {
+  bonuses: Bonuses;
+};
+
+export const Carousel = memo(({
+  bonuses,
+}: CarouselProps) => {
   const { t } = useTranslation('main');
 
   const backArrow = useMemo(() => (
@@ -42,13 +48,13 @@ export const Carousel: React.FC = () => {
             <Text type="p">
               <Trans i18nKey="active-bonus">
                 <b>
-                  {{ sizeBonus: sizeBonus[bonus.type] }}
+                  {{ sizeBonus: bonus.sizeBonus }}
                 </b>
                 <b> BGD</b>
                 {' '}
                 bonus for the next
                 {' '}
-                {{ quanityDeposit: quanityDeposit[bonus.type] }}
+                {{ quanityDeposit: bonus.deposit }}
                 {' '}
                 USD deposit
               </Trans>
@@ -58,4 +64,4 @@ export const Carousel: React.FC = () => {
       </CarouselAntd>
     </section>
   );
-};
+});
