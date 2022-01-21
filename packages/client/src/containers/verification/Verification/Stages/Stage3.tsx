@@ -5,7 +5,7 @@ import { Image, Button, TextInput } from '@project/libs/components';
 import { ArrowBlue } from '@project/libs/assets/images';
 import { result, bytes } from './contentDemo';
 import { StageProps } from './Stage1';
-import styles from '../styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Stage3: React.FC<StageProps> = ({
   goNextStage,

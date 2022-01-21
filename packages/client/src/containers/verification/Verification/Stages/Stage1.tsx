@@ -3,8 +3,8 @@ import React from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import { WrapSelect, Button } from '@project/libs/components';
-import styles from '../styles.module.scss';
-import '../select.scss';
+import styles from './styles.module.scss';
+import './select.scss';
 
 export type StageProps = {
   goNextStage: () => void;
