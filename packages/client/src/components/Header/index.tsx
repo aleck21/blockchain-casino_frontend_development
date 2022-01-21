@@ -38,7 +38,7 @@ export const Header = memo(() => {
   }, [openModal, setContentModal]);
 
   return (
-    <header className={cx(styles.container)}>
+    <header className={cx(styles.header__container)}>
       <section className={cx(styles.header_mobile__content)}>
         <Logo />
         <Menu />
