@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import {
   ExchangeIconTabs,
@@ -6,36 +6,31 @@ import {
   RakebackIcon,
   WithdrawIcon,
 } from '@project/libs/assets/images';
-import { WalletTabsContext } from 'context/walletTabs';
 import styles from './styles.module.scss';
 import { TabItemMobile } from './TabItemMobile';
 
 export const TabsMobile: React.FC = () => {
-  const { tabs } = useContext(WalletTabsContext);
+  console.log('tabs mobile');
 
   return (
     <div className={cx(styles.tabs__container__mobile)}>
       <TabItemMobile
-        isActive={tabs.deposit}
-        tab="deposit"
+        isActive={false}
         title="Deposit"
         icon={DepositIcon}
       />
       <TabItemMobile
-        isActive={tabs.withdraw}
-        tab="withdraw"
+        isActive={false}
         title="Withdraw"
         icon={WithdrawIcon}
       />
       <TabItemMobile
-        isActive={tabs.exchange}
-        tab="exchange"
+        isActive={false}
         title="Exchange"
         icon={ExchangeIconTabs}
       />
       <TabItemMobile
-        isActive={tabs.rakeback}
-        tab="rakeback"
+        isActive={false}
         title="Rakeback"
         icon={RakebackIcon}
       />
