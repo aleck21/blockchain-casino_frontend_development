@@ -22,7 +22,7 @@ const tabsContents = [
   <ExchangeTab />,
 ];
 
-export const Panel: React.FC = () => {
+export const Tabs: React.FC = () => {
   const [chosenTabIndex, setChosenTabIndex] = useState(0);
 
   return (
