@@ -7,7 +7,7 @@ import { Arrows } from './arrows';
 import { list, list2 } from './contentDemo';
 import styles from './styles.module.scss';
 
-export const ContentExchange: React.FC = () => {
+export const ExchangeTab: React.FC = () => {
   const { t } = useTranslation('main');
 
   return (

@@ -5,7 +5,7 @@ import { LinkBonus } from '../../LinkBonus';
 import { Free } from '../../Free';
 import { Deposit } from '../../Deposit';
 
-export const ContentDeposit: React.FC = () => {
+export const DepositTab: React.FC = () => {
   const freeDemo = {
     currencyCount: 1000,
     currencyType: 'BNB',

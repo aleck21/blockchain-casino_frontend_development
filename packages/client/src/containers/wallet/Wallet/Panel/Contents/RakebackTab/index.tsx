@@ -6,7 +6,7 @@ import { CurrencyColorIcons } from 'constants/currencies';
 import { contentDemo } from './contentDemo';
 import styles from './styles.module.scss';
 
-export const ContentRakeback: React.FC = () => {
+export const RakebackTab: React.FC = () => {
   const { t } = useTranslation('main');
   const l = contentDemo.length;
 

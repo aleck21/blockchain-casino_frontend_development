@@ -3,10 +3,10 @@ import cx from 'classnames';
 import { WalletTabsContext } from 'context/walletTabs';
 import styles from './styles.module.scss';
 import { Tabs } from './Tabs';
-import { ContentDeposit } from './Contents/ContentDeposit';
-import { ContentWithdraw } from './Contents/ContentWithdraw';
-import { ContentRakeback } from './Contents/ContentRakeback';
-import { ContentExchange } from './Contents/ContentExchange';
+import { DepositTab } from './Contents/DepositTab';
+import { WithdrawTab } from './Contents/WithdrawTab';
+import { RakebackTab } from './Contents/RakebackTab';
+import { ExchangeTab } from './Contents/ExchangeTab';
 
 export const Panel: React.FC = () => {
   const { tabs } = useContext(WalletTabsContext);
@@ -16,10 +16,10 @@ export const Panel: React.FC = () => {
       <div className={cx(styles.tabs_in_panel)}>
         <Tabs />
       </div>
-      {tabs.deposit && <ContentDeposit />}
-      {tabs.withdraw && <ContentWithdraw />}
-      {tabs.rakeback && <ContentRakeback />}
-      {tabs.exchange && <ContentExchange />}
+      {tabs.deposit && <DepositTab />}
+      {tabs.withdraw && <WithdrawTab />}
+      {tabs.rakeback && <RakebackTab />}
+      {tabs.exchange && <ExchangeTab />}
     </section>
   );
 };
