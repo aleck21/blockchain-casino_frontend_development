@@ -55,11 +55,10 @@
   
     .nav_top__container {
       display: grid;
-      grid-template-rows: repeat(4, 49px);
+      grid-template-rows: repeat(auto, 49px);
       row-gap: 18px;
       margin-top: 60px;
       margin-bottom: 24px;
-      border-bottom: .5px solid $middle;
       padding-bottom: 24px;
 
       @include mobile_sm {
@@ -71,7 +70,7 @@
       display: grid;
       grid-template-rows: repeat(2, 49px);
       row-gap: 18px;
-      margin-top: 20px;
+      padding-top: 30px;
     }
   
     .separator {
@@ -84,6 +83,8 @@
 
   .sidebar__footer {
     grid-area: footer;
+    position: fixed;
+    bottom: 0;
   }
 
 }

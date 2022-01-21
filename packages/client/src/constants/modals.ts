@@ -1,4 +1,4 @@
-export enum Modals {
+export enum ModalName {
   promocode = 'promocode',
   changePassword = 'changePassword',
   collectRewards = 'collectRewards',

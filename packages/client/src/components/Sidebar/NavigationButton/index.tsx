@@ -9,40 +9,41 @@ import cx from 'classnames';
 import { Image, Text } from '@project/libs/components';
 import { ArrowWhite } from '@project/libs/assets/images';
 import { useMobile } from 'hooks';
+import { RouteLink, ModalName } from '@project/client/src/constants';
 // import { useUser } from 'hooks';
-import { LocationDescriptor } from 'history';
 import { WidgetContext, ModalContext, MenuContext } from 'context';
 import styles from './styles.module.scss';
 
 type NavigationButtonProps = {
-  name?: string;
-  routerLink?: LocationDescriptor;
+  modalName?: ModalName;
+  routerLink?: RouteLink;
   icon: string;
-  text: string;
+  title: string;
   isNotAuthNeeded?: boolean;
 };
 
 export const NavigationButton = memo(({
-  name = '',
-  routerLink = '',
+  modalName,
+  routerLink,
   icon,
-  text,
+  title,
   isNotAuthNeeded = false,
 }: NavigationButtonProps) => {
   // const { isUser } = useUser();
-  const isUser = true;
+  const isUser = false;
   const isMobile = useMobile();
 
   const { closeWidget } = useContext(WidgetContext);
   const { openModal, setContentModal, closeModal } = useContext(ModalContext);
   const { closeMenu } = useContext(MenuContext);
 
-  const onClickIsModal = useCallback(() => {
-    setContentModal(name);
+  const onModalOpenClick = useCallback(() => {
+    if (!modalName) return;
+    setContentModal(modalName);
     openModal();
     closeMenu();
     if (isMobile) closeWidget();
-  }, [closeMenu, closeWidget, isMobile, name, openModal, setContentModal]);
+  }, [closeMenu, closeWidget, isMobile, modalName, openModal, setContentModal]);
 
   const closeModalAndMenu = useCallback(() => {
     closeModal();
@@ -56,18 +57,18 @@ export const NavigationButton = memo(({
     onClick: closeModalAndMenu,
   }), [closeModalAndMenu]);
 
-  if (!isNotAuthNeeded && !isUser) return (<div className={cx(styles.no_visible)} />);
-  if (name) {
+  if (!isNotAuthNeeded && !isUser) return null;
+  if (modalName && routerLink === undefined) {
     return (
       <section
         className={cx(styles.nav__item)}
-        onClick={onClickIsModal}
+        onClick={onModalOpenClick}
         onKeyPress={undefined}
         role="menuitem"
         tabIndex={0}
       >
         <Image url={icon} />
-        <Text type="p">{text}</Text>
+        <Text type="p">{title}</Text>
         <Image
           url={ArrowWhite}
           className={cx(styles.arrow)}
@@ -75,18 +76,21 @@ export const NavigationButton = memo(({
       </section>
     );
   }
-
   return (
-    <NavLink
-      to={routerLink}
-      {...navLinkCommonProps}
-    >
-      <Image url={icon} />
-      <Text type="p">{text}</Text>
-      <Image
-        url={ArrowWhite}
-        className={cx(styles.arrow)}
-      />
-    </NavLink>
+    routerLink
+      ? (
+        <NavLink
+          to={routerLink}
+          {...navLinkCommonProps}
+        >
+          <Image url={icon} />
+          <Text type="p">{title}</Text>
+          <Image
+            url={ArrowWhite}
+            className={cx(styles.arrow)}
+          />
+        </NavLink>
+      )
+      : null
   );
 });

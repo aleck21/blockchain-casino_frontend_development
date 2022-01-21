@@ -9,7 +9,7 @@ import { ArrowToDown, QuestionIcon } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { CurrencyColorIcons } from 'constants/currencies';
 import { ModalContext } from 'context';
-import { Modals } from 'constants/modals';
+import { ModalName } from 'constants/modals';
 import styles from './styles.module.scss';
 import { balance } from './contentDemo';
 
@@ -43,7 +43,7 @@ export const Info: React.FC = () => {
 
   const onQuestionClick = useCallback(() => {
     setIsShowBalance(false);
-    setContentModal(Modals.aboutBgd);
+    setContentModal(ModalName.aboutBgd);
     openModal();
   }, []);
 

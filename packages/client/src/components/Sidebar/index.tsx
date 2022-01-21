@@ -11,7 +11,7 @@ import {
   IconVerification,
   IconWallet,
 } from '@project/libs/assets/images';
-import { RouteLink, Modals } from '@project/client/src/constants';
+import { RouteLink, ModalName } from '@project/client/src/constants';
 import { MenuContext } from 'context';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Footer } from './Footer';
@@ -45,35 +45,36 @@ export const Sidebar = memo(() => {
           <NavigationButton
             routerLink={RouteLink.home}
             icon={IconHome}
-            text={t('Home')}
+            title={t('Home')}
             isNotAuthNeeded
           />
           <NavigationButton
             routerLink={RouteLink.wallet}
             icon={IconWallet}
-            text={t('Wallet')}
+            title={t('Wallet')}
           />
           <NavigationButton
             routerLink={RouteLink.profile}
             icon={IconProfile}
-            text={t('Profile')}
+            title={t('Profile')}
           />
           <NavigationButton
-            name={Modals.notifications}
+            modalName={ModalName.notifications}
             icon={IconNotification}
-            text={t('Notifications')}
+            title={t('Notifications')}
           />
         </section>
+        <div className={cx(styles.separator)} />
         <section className={cx(styles.nav_bottom__container)}>
           <NavigationButton
-            name={Modals.roulette}
+            modalName={ModalName.roulette}
             icon={IconRoulette}
-            text={t('Roulette')}
+            title={t('Roulette')}
           />
           <NavigationButton
             routerLink={RouteLink.verification}
             icon={IconVerification}
-            text={t('Verification')}
+            title={t('Verification')}
             isNotAuthNeeded
           />
         </section>

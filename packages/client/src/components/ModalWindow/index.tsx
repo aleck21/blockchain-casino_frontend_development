@@ -2,7 +2,7 @@ import React, { ReactNode, useContext } from 'react';
 import cx from 'classnames';
 import { ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
-import { Modals } from 'constants/modals';
+import { ModalName } from 'constants/modals';
 import {
   PromocodeModal,
   ChangePasswordModal,
@@ -34,7 +34,7 @@ const modals: Record<string, ReactNode> = {
 export const ModalWindow: React.FC = () => {
   const { isModalOpen, content, closeModal } = useContext(ModalContext);
 
-  const isFullWidth = content === Modals.signInModal || content === Modals.registerModal;
+  const isFullWidth = content === ModalName.signInModal || content === ModalName.registerModal;
 
   return (
     <div
