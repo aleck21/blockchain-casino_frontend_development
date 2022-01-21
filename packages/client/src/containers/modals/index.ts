@@ -1,5 +1,6 @@
 export * from './SignInModal';
 export * from './RegisterModal';
+export * from './ActivateNewBonusModal';
 export * from './AboutBGDModal';
 export * from './ChangePasswordModal';
 export * from './CollectRewardsModal';

@@ -4,12 +4,11 @@
 
 .sidebar__container {
   grid-area: sidebar;
-
   display: grid;
   grid-template-areas: 'logo' 'main' 'footer';
   grid-template-rows: 108px auto 64px;
-
   background-color: $dark;
+  align-items: flex-start;
 
   @include desktop_sm {
     display: none;
@@ -27,13 +26,10 @@
 
   .sidebar__logo {
     grid-area: logo;
+    margin: 30px 30px 0px;
 
     @include mobile_sm {
       display: none;
-    }
-
-    .sidebar__logo__image {
-      margin: 30px 30px 0px;
     }
   }
 
@@ -43,21 +39,52 @@
 
     @include mobile_sm {
       display: block;
+      margin: 19px 0 0 20px;
     }
+  }
 
-    .sidebar__logo__image {
-      @include mobile_sm {
-        margin: 19px 0 0 20px;
-      }
-    }
+  .sidebar__welcomBlock {
+    display: none;
   }
 
   .sidebar__main {
     grid-area: main;
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 10px;
+  
+    .nav_top__container {
+      display: grid;
+      grid-template-rows: repeat(auto, 49px);
+      row-gap: 18px;
+      margin-top: 60px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+
+      @include mobile_sm {
+        grid-template-rows: auto;
+      }
+    }
+  
+    .nav_bottom__container {
+      display: grid;
+      grid-template-rows: repeat(2, 49px);
+      row-gap: 18px;
+      padding-top: 30px;
+    }
+  
+    .separator {
+      width: calc(100% - 40px);
+      margin: 0 10px;
+      height: .5px;
+      background-color: $middle;
+    }
   }
 
   .sidebar__footer {
     grid-area: footer;
+    position: fixed;
+    bottom: 0;
   }
 
 }
@@ -79,6 +106,37 @@
   left: 0;
   right: 0;
   transition: 850ms;  
+  display: grid;
+  grid-template-areas: 'logo' 'welcom' 'main' 'footer';
+  grid-template-rows: 108px 136px 1fr 64px;
+
+  .sidebar__welcomBlock {
+    grid-area: welcom;
+    display: block;
+    
+    @include mobile_sm {
+      width: calc(100vw - 40px);
+      margin-left: 20px;
+      padding: 22px 30px 24px;
+      border-radius: 15px;
+      background-image:
+        linear-gradient(340deg, #138EFF 4.5%, rgba(30, 32, 36, 0) 100%);
+    }
+
+    h2 {
+      font-size: 18px;
+      color: $white;
+      text-align: left;
+    }
+
+    p {
+      @include base_text;
+      font-size: 12px;
+      font-weight: normal;
+      color: $white;
+      text-align: left;
+    }
+  }
 }
 
 

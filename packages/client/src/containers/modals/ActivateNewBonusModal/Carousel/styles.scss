@@ -1,0 +1,79 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.activate__carousel__container {
+  width: 370px;
+  height: 128px;
+  border-radius: 15px;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .6);
+  background-image: 
+    url('~@project/libs/assets/images/activateBonusModalBackground.svg'),
+    linear-gradient(to bottom, $blue 0%, $blue1 100%);
+  background-position: bottom right -30%, center center;
+  background-size: 80%, 100%;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  position: relative;
+
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
+  .activate__bonus__box {
+    padding: 20px;
+
+    h6 {
+      @include base_text;
+      color: $white;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    p {
+      @include base_text;
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
+      max-width: 232px;
+    }
+  }
+  
+  .ant-carousel .slick-dots-bottom  {
+    bottom: -43px;
+  }
+
+  .ant-carousel .slick-prev {
+    top: 96px;
+    left: 310px;
+    z-index: 2;
+
+    @include mobile_sm {
+      left: calc(100vw - 140px);
+    }
+  }
+
+  .ant-carousel .slick-next {
+    right: 12px;
+    top: 96px;
+  }
+
+  .ant-carousel .slick-dots li button {
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .ant-carousel .slick-dots li.slick-active {
+    width: 20px;
+
+    button {
+      background-color: #939AA1;
+    }
+  }
+
+  .ant-carousel .slick-dots li {
+    width: 10px;
+  }
+}

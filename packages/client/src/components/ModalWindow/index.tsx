@@ -2,7 +2,12 @@ import React, { ReactNode, useContext } from 'react';
 import cx from 'classnames';
 import { ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
+import { ModalName } from 'constants/modals';
 import {
+  SignInModal,
+  RegisterModal,
+  AboutBGDModal,
+  ActivateNewBonusModal,
   PromocodeModal,
   ChangePasswordModal,
   CollectRewardsModal,
@@ -11,7 +16,6 @@ import {
   Notification,
   Roulette,
 } from 'containers';
-import { SignInModal, RegisterModal, AboutBGDModal } from 'containers/modals';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
@@ -26,12 +30,13 @@ const modals: Record<string, ReactNode> = {
   aboutBgd: <AboutBGDModal />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
+  activatingNewBonus: <ActivateNewBonusModal />,
 };
 
 export const ModalWindow: React.FC = () => {
   const { isModalOpen, content, closeModal } = useContext(ModalContext);
 
-  const isFullWidth = content === 'signInModal' || content === 'registerModal';
+  const isFullWidth = content === ModalName.signInModal || content === ModalName.registerModal;
 
   return (
     <div
