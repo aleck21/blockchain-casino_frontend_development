@@ -58,7 +58,7 @@ export const NavigationButton = memo(({
   }), [closeModalAndMenu]);
 
   if (!isNotAuthNeeded && !isUser) return null;
-  if (modalName && routerLink === undefined) {
+  if (modalName !== undefined) {
     return (
       <section
         className={cx(styles.nav__item)}
@@ -76,21 +76,19 @@ export const NavigationButton = memo(({
       </section>
     );
   }
-  return (
-    routerLink
-      ? (
-        <NavLink
-          to={routerLink}
-          {...navLinkCommonProps}
-        >
-          <Image url={icon} />
-          <Text type="p">{title}</Text>
-          <Image
-            url={ArrowWhite}
-            className={cx(styles.arrow)}
-          />
-        </NavLink>
-      )
-      : null
-  );
+  if (routerLink !== undefined) {
+    return (
+      <NavLink
+        to={routerLink}
+        {...navLinkCommonProps}
+      >
+        <Image url={icon} />
+        <Text type="p">{title}</Text>
+        <Image
+          url={ArrowWhite}
+          className={cx(styles.arrow)}
+        />
+      </NavLink>
+    );
+  } return null;
 });
