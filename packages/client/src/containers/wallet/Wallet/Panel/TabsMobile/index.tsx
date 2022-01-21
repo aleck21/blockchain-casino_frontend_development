@@ -14,7 +14,7 @@ export const TabsMobile: React.FC = () => {
   const { tabs } = useContext(WalletTabsContext);
 
   return (
-    <nav className={cx(styles.tabs__container__mobile)}>
+    <div className={cx(styles.tabs__container__mobile)}>
       <TabItemMobile
         isActive={tabs.deposit}
         tab="deposit"
@@ -39,6 +39,6 @@ export const TabsMobile: React.FC = () => {
         title="Rakeback"
         icon={RakebackIcon}
       />
-    </nav>
+    </div>
   );
 };

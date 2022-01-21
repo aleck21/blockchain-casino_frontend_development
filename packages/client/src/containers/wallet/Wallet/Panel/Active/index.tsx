@@ -13,7 +13,7 @@ export const Active = memo(() => {
   const onBonusClick = useCallback(() => {
     setContentModal('activatingNewBonus');
     openModal();
-  }, []);
+  }, [openModal, setContentModal]);
 
   return (
     <div className={cx(styles.active__container)}>

@@ -14,7 +14,7 @@ export const TabsHeader = memo<TabsHeaderProps>(({
   onTabChange,
   tabTitles,
 }) => (
-  <nav className={cx(styles.tabs__container)}>
+  <div className={cx(styles.tabs__container)}>
     {tabTitles.map((tabTitle, index) => (
       <TabNameItem
         key={tabTitle}
@@ -24,5 +24,5 @@ export const TabsHeader = memo<TabsHeaderProps>(({
         onTabChange={onTabChange}
       />
     ))}
-  </nav>
+  </div>
 ));

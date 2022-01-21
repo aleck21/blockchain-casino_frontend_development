@@ -17,15 +17,6 @@
     height: auto;
   }
   
-  .tabs_in_panel {
-    display: block;
-    @include mobile_sm {
-      position: absolute;
-      bottom: 0px;
-
-    }
-  }
-
   @include mobile_sm {
     grid-template-rows: auto;
   }

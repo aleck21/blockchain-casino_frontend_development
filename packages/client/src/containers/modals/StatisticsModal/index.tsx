@@ -20,7 +20,7 @@ export const StatisticsModal: React.FC = () => {
   return (
     <section className={cx(styles.statistics__container)}>
       <div className={cx(styles.statistics__head)}>
-        <nav className={cx(styles.statistics__tabs)}>
+        <div className={cx(styles.statistics__tabs)}>
           <div
             className={cx(styles.item__tab,
               tab === 'statistics' ? styles.active : styles.enactive)}
@@ -41,7 +41,7 @@ export const StatisticsModal: React.FC = () => {
           >
             {t('Bets')}
           </div>
-        </nav>
+        </div>
       </div>
       <article className={cx(styles.statistics__content__box)}>
         {tab === 'statistics' && <StatisticsTab />}
