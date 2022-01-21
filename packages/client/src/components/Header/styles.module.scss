@@ -2,7 +2,7 @@
 @import '~@project/libs/assets/styles/variables';
 @import '~@project/libs/assets/styles/palette';
 
-.container {
+.header__container {
   grid-area: header;
   display: grid;
   grid-template-areas: 'headerContent';
@@ -24,6 +24,11 @@
     padding-top: 17px;
     padding-left: 20px;
     padding-right: 24px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: $dark;
+    height: 98px;
 
     .header_mobile__content {
       grid-area: headerTop;
@@ -42,7 +47,7 @@
       grid-template-areas: 'roulette noteMobile';
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 28px;
-      justify-content: space-between;      
+      justify-content: space-between;
       
       .header_mobile__note {
         grid-area: noteMobile;
