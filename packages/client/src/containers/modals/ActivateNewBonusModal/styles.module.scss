@@ -1,0 +1,87 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.activate__container {
+  padding: 20px;
+  padding-bottom: 25px;
+  width: 410px;
+
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
+  h3 {
+    color: $white;
+    font-size: 28.6px;
+  }
+
+  .activate__activeBonus__box {
+    @include paper;
+    background-color: $dark2;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      text-align: left;
+      line-height: 140%;
+      font-family: $helvetica;
+    }
+
+    h6 {
+      @include base_text;
+      color: $green2;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .activate__activeBounus__lasts {
+      font-size: 12px;
+      text-align: right;
+      color: $middle;
+    }
+  }
+
+  .activate__form {
+
+    h5 {
+      @include base_text;
+      color: $white;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    p {
+      @include base_text;
+      color: $white;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .activate__buttons__box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
+      margin-top: 20px;
+
+      button {
+        width: 100%;
+        background-image: none;
+        height: 42px;
+  
+        &.cancel {
+          background-color: transparent;
+          border: 1px solid $middle;
+        }
+  
+        &.use {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}

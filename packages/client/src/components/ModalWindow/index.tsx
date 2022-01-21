@@ -4,6 +4,10 @@ import { ButtonIcon } from '@project/libs/components';
 import { ModalContext } from 'context/modalOpen';
 import { ModalName } from 'constants/modals';
 import {
+  SignInModal,
+  RegisterModal,
+  AboutBGDModal,
+  ActivateNewBonusModal,
   PromocodeModal,
   ChangePasswordModal,
   CollectRewardsModal,
@@ -11,9 +15,6 @@ import {
   TransactionsModal,
   Notification,
   Roulette,
-  SignInModal,
-  RegisterModal,
-  AboutBGDModal,
 } from 'containers';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
@@ -29,6 +30,7 @@ const modals: Record<string, ReactNode> = {
   aboutBgd: <AboutBGDModal />,
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
+  activatingNewBonus: <ActivateNewBonusModal />,
 };
 
 export const ModalWindow: React.FC = () => {

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { memo, useCallback, useContext } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
-import { Image, Text } from '@project/libs/components';
+import { Button, Image, Text } from '@project/libs/components';
 import { ActiveBonusBkgDesktop } from '@project/libs/assets/images';
+import { ModalContext } from 'context';
 import styles from './styles.module.scss';
 
-export const Active: React.FC = () => {
+export const Active = memo(() => {
+  const { setContentModal, openModal } = useContext(ModalContext);
   const { t } = useTranslation('main');
+
+  const onBonusClick = useCallback(() => {
+    setContentModal('activatingNewBonus');
+    openModal();
+  }, []);
 
   return (
     <div className={cx(styles.active__container)}>
@@ -16,7 +23,10 @@ export const Active: React.FC = () => {
           className={cx(styles.active__container__otherBkg__image)}
         />
       </div>
-      <div className={cx(styles.active__container__content)}>
+      <Button
+        className={cx(styles.active__container__content)}
+        onClick={onBonusClick}
+      >
         <Text
           type="h6"
           className={cx(styles.active__title)}
@@ -29,7 +39,7 @@ export const Active: React.FC = () => {
         >
           {t('+100% BGD bonus for the next 100-200 USD deposit')}
         </Text>
-      </div>
+      </Button>
     </div>
   );
-};
+});
