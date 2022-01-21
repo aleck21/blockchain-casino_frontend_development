@@ -13,10 +13,12 @@
     display: grid;
     grid-template-areas: 'roulette info';
     grid-template-columns: 557px 341px;
-    background-image: url('~@project/libs/assets/images/rouletteBackground.png');
-    background-size: 90%;
-    background-position: top -88px left -20px;
-    background-repeat: no-repeat;
+    background-image:
+      url('~@project/libs/assets/images/rouletteBkgStars.svg'),
+      url('~@project/libs/assets/images/rouletteBackground.png');
+    background-size: 46%, 90%;
+    background-position: top 47px left 87px, top -88px left -20px;
+    background-repeat: no-repeat, no-repeat;
 
     @include mobile_sm {
       grid-template-columns: 100%;
@@ -29,21 +31,6 @@
 
   .roulette__game {
     grid-area: roulette;
-
-    img {
-      height: 449px;
-      width: 487px;
-      margin-top: 30px;
-      margin-left: 47px;
-    }
-
-    @include mobile_sm {
-      img {
-        width: calc(100vw - 80px);
-        height: auto;
-        margin-left: 20px;
-      }
-    }
 
     .spin__button {
       height: 44px;
@@ -159,6 +146,7 @@
         top: 0;
         left: 0px;
         padding-top: 10px;
+        transition: .5s left;
 
         .user__box {
           text-align: center;

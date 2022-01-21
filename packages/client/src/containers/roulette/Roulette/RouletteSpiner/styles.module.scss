@@ -1,0 +1,153 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.roulette__container {
+  position: relative;
+  padding-top: 30px;
+  padding-left: 20px;
+
+  img.roulette__arrow {
+    position: absolute;
+    top: 194px;
+    right: 29px;
+    width: 250px;
+    height: auto;
+    transform: rotate(-1.5deg);
+  }
+
+  img.roulette__center {
+    position: absolute;
+    top: 230px;
+    left: 215px;
+    height: 104px;
+    width: 104px;
+
+    @include mobile_sm {
+      transform: scale(.7);
+    }
+  }
+
+  .roulette__table {
+    background-image: url('~@project/libs/assets/images/rouletteTable.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 499px;
+    height: 499px;
+    transition: .5s transform;
+    transform-origin: center center;
+    padding: 30px;
+    position: relative;
+
+    @include mobile_sm {
+      transform: scale(.7);
+    }
+
+    .roulette__segment {
+      width: 203px;
+      height: 125px;
+      position: absolute;
+      transform-origin: 205px 54px;
+      top: 196px;
+      left: 45px;
+      display: grid;
+      align-content: center;
+
+      @include mobile_sm {
+      }
+
+      .content {
+        transform: rotate(180deg);
+        transform-origin: center center;
+        display: grid;
+        grid-template-columns: 32px auto;
+        column-gap: 8px;
+        width: 136px;
+        align-items: end;
+
+        img {
+          height: 32px;
+          width: 32px;
+          margin: 0;
+
+          @include mobile_sm {
+            width: 19px;
+            height: 19px;
+          }
+        }
+
+        p {
+          @include base_text;
+          font-size: 24px;
+          font-weight: 500;
+          color: $white;
+
+          @include mobile_sm {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .segment__1 {
+      transform: rotate(0deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentBlue.svg');
+    }
+  
+    .segment__2 {
+      transform: rotate(36deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentGreen.svg');
+    }
+  
+    .segment__3 {
+      transform: rotate(72deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentBurgundy.svg');
+    }
+  
+    .segment__4 {
+      transform: rotate(108deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentPink.svg');
+    }
+  
+    .segment__5 {
+      transform: rotate(144deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentCyan.svg');
+    }
+  
+    .segment__6 {
+      transform: rotate(180deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentBlue.svg');
+    }
+  
+    .segment__7 {
+      transform: rotate(216deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentGreen.svg');
+    }
+  
+    .segment__8 {
+      transform: rotate(252deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentBurgundy.svg');
+    }
+  
+    .segment__9 {
+      transform: rotate(288deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentPink.svg');
+    }
+  
+    .segment__10 {
+      transform: rotate(324deg);
+      background-image:
+        url('~@project/libs/assets/images/rouletteSegmentCyan.svg');
+    }
+  }
+  
+}

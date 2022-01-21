@@ -1,20 +1,26 @@
 import React, { useCallback, useState } from 'react';
 import cx from 'classnames';
-import { Button, Image, Text } from '@project/libs/components';
+import { Button, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { RouletteDemo } from '@project/libs/assets/images';
+// import { RouletteDemo } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
-import { spinsQuantity, users } from './contentDemo';
+import { spinsQuantity, users, rouletteData } from './contentDemo';
 import { Timer } from './Timer';
 import { GameMonitor } from './GameMonitor';
+import { RouletteSpiner } from './RouletteSpiner';
 
 export const Roulette: React.FC = React.memo(() => {
   const { t } = useTranslation('main');
   const [isSpining, setIsSpining] = useState(false);
+  const [spin, setSpin] = useState(0);
+  const [usersIndex, setUsersIndex] = useState(0);
 
   const onSpinClick = useCallback(() => {
+    const random = Math.floor(Math.random() * 10);
+    setSpin(spin + random);
+    setUsersIndex(random);
     setIsSpining(!isSpining);
-  }, [isSpining]);
+  }, [isSpining, spin]);
 
   return (
     <section className={cx(styles.roulette__container)}>
@@ -26,7 +32,13 @@ export const Roulette: React.FC = React.memo(() => {
       </Text>
       <div className={cx(styles.roulette__content__box)}>
         <div className={cx(styles.roulette__game)}>
+          <RouletteSpiner
+            spin={spin}
+            data={rouletteData}
+          />
+          {/*
           <Image url={RouletteDemo} />
+          */}
           <Text type="p">
             {isSpining
               ? t('Next free spin in')
@@ -81,7 +93,7 @@ export const Roulette: React.FC = React.memo(() => {
           <div className={cx(styles.roulette__info__gameMonitor)}>
             <GameMonitor
               userItems={users}
-              index={3}
+              index={usersIndex}
             />
           </div>
         </div>

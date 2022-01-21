@@ -62,3 +62,56 @@ export const users = [
     currencyCount: 5,
   },
 ];
+
+export const rouletteData = [
+  {
+    id: 'segment01',
+    quantity: '3.00000',
+    currency: 'BTC',
+  },
+  {
+    id: 'segment02',
+    quantity: '1.00000',
+    currency: 'BNB',
+  },
+  {
+    id: 'segment03',
+    quantity: '2.00000',
+    currency: 'BTC',
+  },
+  {
+    id: 'segment04',
+    quantity: '1.00000',
+    currency: 'ETH',
+  },
+  {
+    id: 'segment05',
+    quantity: '1.00000',
+    currency: 'XRP',
+  },
+  {
+    id: 'segment06',
+    quantity: '2.00000',
+    currency: 'SHIB',
+  },
+  {
+    id: 'segment07',
+    quantity: '1.00000',
+    currency: 'USDT',
+  },
+  {
+    id: 'segment08',
+    quantity: '2.00000',
+    currency: 'ETH',
+  },
+  {
+    id: 'segment09',
+    quantity: '1.00000',
+    currency: 'LTC',
+  },
+  {
+    id: 'segment10',
+    quantity: '3.00000',
+    currency: 'SHIB',
+  },
+];
