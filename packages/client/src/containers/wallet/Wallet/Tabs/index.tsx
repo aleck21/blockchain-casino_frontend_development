@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 import { TabsHeader } from './TabsHeader';
-import { DepositTab } from './Contents/DepositTab';
-import { WithdrawTab } from './Contents/WithdrawTab';
-import { RakebackTab } from './Contents/RakebackTab';
-import { ExchangeTab } from './Contents/ExchangeTab';
+import { DepositTab } from './DepositTab';
+import { WithdrawTab } from './WithdrawTab';
+import { RakebackTab } from './RakebackTab';
+import { ExchangeTab } from './ExchangeTab';
 import { TabsContents } from './TabsContents';
 
 const tabTitles = [

@@ -1,9 +1,9 @@
 import React from 'react';
-import { ChooseCurrency } from '../../ChooseCurrency';
-import { Active } from '../../Active';
-import { LinkBonus } from '../../LinkBonus';
-import { Free } from '../../Free';
-import { Deposit } from '../../Deposit';
+import { ChooseCurrency } from '../ChooseCurrency';
+import { Active } from './Active';
+import { LinkBonus } from './LinkBonus';
+import { Free } from './Free';
+import { Deposit } from './Deposit';
 
 export const DepositTab: React.FC = () => {
   const freeDemo = {
