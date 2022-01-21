@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Text } from '@project/libs/components';
 import styles from './styles.module.scss';
-import { content } from '../../../contentDemo';
+import { content } from '../../contentDemo';
 
 export const LockedBlock: React.FC = () => {
   const { t } = useTranslation('main');
