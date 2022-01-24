@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import cx from 'classnames';
 import {
-  RouletteArrow,
+  RouletteArrowImage,
   RouletteCentralCircle,
 } from '@project/libs/assets/images';
 import { Image, Text } from '@project/libs/components';
@@ -44,7 +44,7 @@ export const RouletteSpinner = memo(({
       ))}
     </div>
     <Image
-      url={RouletteArrow}
+      url={RouletteArrowImage}
       className={cx(styles.roulette__arrow)}
     />
     <Image

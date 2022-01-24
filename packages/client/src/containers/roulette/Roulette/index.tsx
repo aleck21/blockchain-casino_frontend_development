@@ -1,16 +1,21 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, memo } from 'react';
 import cx from 'classnames';
 import { Button, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import styles from './styles.module.scss';
-import { spinsQuantity, users, rouletteData } from './contentDemo';
+import {
+  spinsQuantity,
+  users,
+  rouletteData,
+} from './contentDemo';
 import { Timer } from './Timer';
-import { GameMonitor } from './GameMonitor';
 import { RouletteSpinner } from './RouletteSpinner';
+import { GameMonitor } from './GameMonitor';
 
-export const Roulette: React.FC = React.memo(() => {
+export const Roulette = memo(() => {
   const { t } = useTranslation('main');
-  const [isSpining, setIsSpining] = useState(false);
+  const [isSpin, setIsSpin] = useState(false);
+  const [countSpin, setCountSpin] = useState(spinsQuantity);
   const [spin, setSpin] = useState(0);
   const [usersIndex, setUsersIndex] = useState(0);
 
@@ -18,8 +23,11 @@ export const Roulette: React.FC = React.memo(() => {
     const random = Math.floor(Math.random() * 10);
     setSpin(spin + random);
     setUsersIndex(random);
-    setIsSpining(!isSpining);
-  }, [isSpining, spin]);
+    setCountSpin(countSpin - 1);
+    if (countSpin === 1) {
+      setIsSpin(true);
+    }
+  }, [spin, countSpin]);
 
   return (
     <section className={cx(styles.roulette__container)}>
@@ -36,37 +44,43 @@ export const Roulette: React.FC = React.memo(() => {
             data={rouletteData}
           />
           <div className={cx(styles.roulette__spining_box)}>
-            <Text
-              type="p"
-              className={cx(styles.spining)}
-            >
-              {isSpining
-                ? t('Next free spin in')
-                : (
-                  <>
-                    {t('You have')}
-                    &ensp;
-                    <strong>{spinsQuantity}</strong>
-                    &ensp;
-                    {t('spins')}
-                  </>
-                )}
-            </Text>
-            {isSpining
+            {isSpin
               ? (
-                <Timer
-                  hours={12}
-                  minutes={54}
-                  seconds={32}
-                />
+                <>
+                  <Text
+                    type="p"
+                    className={cx(styles.spining)}
+                  >
+                    {t('Next free spin in')}
+                  </Text>
+                  <Timer
+                    hours={12}
+                    minutes={54}
+                    seconds={32}
+                  />
+                </>
               )
               : (
-                <Button
-                  onClick={onSpinClick}
-                  className={cx(styles.spin__button)}
-                >
-                  {t('Spin!')}
-                </Button>
+                <>
+                  <Text
+                    type="p"
+                    className={cx(styles.spining)}
+                  >
+                    <>
+                      {t('You have')}
+                      &ensp;
+                      <strong>{countSpin}</strong>
+                      &ensp;
+                      {t('spins')}
+                    </>
+                  </Text>
+                  <Button
+                    onClick={onSpinClick}
+                    className={cx(styles.spin__button)}
+                  >
+                    {t('Spin!')}
+                  </Button>
+                </>
               )}
           </div>
         </div>
