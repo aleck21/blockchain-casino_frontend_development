@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import { Text } from '@project/libs/components';
@@ -6,7 +6,7 @@ import { SelectWithResult } from 'components/SelectWithResult';
 import { SelectItem } from 'components/SelectWithResult/SelectItem';
 import styles from './styles.module.scss';
 
-export const ChooseCurrency: React.FC = () => {
+export const ChooseCurrency = memo(() => {
   const { t } = useTranslation('main');
 
   const dataDemo = [
@@ -54,4 +54,4 @@ export const ChooseCurrency: React.FC = () => {
       <SelectWithResult list={list} />
     </>
   );
-};
+});

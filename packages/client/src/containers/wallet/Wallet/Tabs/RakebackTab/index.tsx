@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import { Image, Text, Button } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
@@ -6,7 +6,7 @@ import { CurrencyColorIcons } from 'constants/currencies';
 import { contentDemo } from './contentDemo';
 import styles from './styles.module.scss';
 
-export const RakebackTab: React.FC = () => {
+export const RakebackTab = memo(() => {
   const { t } = useTranslation('main');
   const l = contentDemo.length;
 
@@ -60,4 +60,4 @@ export const RakebackTab: React.FC = () => {
       ))}
     </div>
   );
-};
+});

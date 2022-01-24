@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ChooseCurrency } from '../ChooseCurrency';
 import { Active } from './Active';
 import { LinkBonus } from './LinkBonus';
 import { Free } from './Free';
 import { Deposit } from './Deposit';
 
-export const DepositTab: React.FC = () => {
+export const DepositTab = memo(() => {
   const freeDemo = {
     currencyCount: 1000,
     currencyType: 'BNB',
@@ -20,4 +20,4 @@ export const DepositTab: React.FC = () => {
       <Free {...freeDemo} />
     </section>
   );
-};
+});

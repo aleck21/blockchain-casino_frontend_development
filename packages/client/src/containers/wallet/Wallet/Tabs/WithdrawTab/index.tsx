@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Button, TextInput } from '@project/libs/components';
@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 
 const addressDemo = 'c2m19375cn2978r5nvn2975rvneu20dj2c9c48n25m2u5p';
 
-export const WithdrawTab: React.FC = () => {
+export const WithdrawTab = memo(() => {
   const { t } = useTranslation('main');
   const [windraw, setWindraw] = useState('1000');
   const [walletAddress, setWalletAddress] = useState(addressDemo);
@@ -48,4 +48,4 @@ export const WithdrawTab: React.FC = () => {
       </form>
     </div>
   );
-};
+});

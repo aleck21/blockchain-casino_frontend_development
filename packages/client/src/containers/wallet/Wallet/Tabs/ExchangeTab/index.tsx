@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cx from 'classnames';
 import { SelectWithResult } from 'components/SelectWithResult';
 import { useTranslation } from '@project/libs/utils/i18n';
@@ -7,7 +7,7 @@ import { Arrows } from './arrows';
 import { list, list2 } from './contentDemo';
 import styles from './styles.module.scss';
 
-export const ExchangeTab: React.FC = () => {
+export const ExchangeTab = memo(() => {
   const { t } = useTranslation('main');
 
   return (
@@ -48,4 +48,4 @@ export const ExchangeTab: React.FC = () => {
       </div>
     </div>
   );
-};
+});
