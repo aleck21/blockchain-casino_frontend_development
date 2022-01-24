@@ -24,13 +24,16 @@
       grid-template-columns: 100%;
       grid-template-rows: auto auto;
       grid-template-areas: 'roulette' 'info';
-      background-size: 140vw; // 150%;
+      background-size: 100%, 140vw; // 150%;
       background-position: top -48px left -16px;
     }
   }
 
   .roulette__game {
     grid-area: roulette;
+    width: 499px;
+    height: 499px;
+    border: 1px solid green;
 
     .spin__button {
       height: 44px;
@@ -91,7 +94,18 @@
     }
 
     @include mobile_sm {
-      margin: 10px auto 41px auto;
+      // margin: 10px auto 41px auto;
+      width: calc(100vw - 80px);
+      height: calc(100vw - 80px);
+      margin-left: 20px;
+      display: grid;
+      grid-template-areas: 'game' 'spining';
+      grid-template-rows: calc(100vw - 40px) auto;
+      row-gap: 47px;
+    }
+
+    .roulette__spining_box {
+      grid-area: spining;
     }
   }
 

@@ -39,35 +39,37 @@ export const Roulette: React.FC = React.memo(() => {
           {/*
           <Image url={RouletteDemo} />
           */}
-          <Text type="p">
+          <div className={cx(styles.roulette__spining_box)}>
+            <Text type="p">
+              {isSpining
+                ? t('Next free spin in')
+                : (
+                  <>
+                    {t('You have')}
+                    &ensp;
+                    <strong>{spinsQuantity}</strong>
+                    &ensp;
+                    {t('spins')}
+                  </>
+                )}
+            </Text>
             {isSpining
-              ? t('Next free spin in')
+              ? (
+                <Timer
+                  hours={12}
+                  minutes={54}
+                  seconds={32}
+                />
+              )
               : (
-                <>
-                  {t('You have')}
-                  &ensp;
-                  <strong>{spinsQuantity}</strong>
-                  &ensp;
-                  {t('spins')}
-                </>
+                <Button
+                  onClick={onSpinClick}
+                  className={cx(styles.spin__button)}
+                >
+                  {t('Spin!')}
+                </Button>
               )}
-          </Text>
-          {isSpining
-            ? (
-              <Timer
-                hours={12}
-                minutes={54}
-                seconds={32}
-              />
-            )
-            : (
-              <Button
-                onClick={onSpinClick}
-                className={cx(styles.spin__button)}
-              >
-                {t('Spin!')}
-              </Button>
-            )}
+          </div>
         </div>
         <div className={cx(styles.roulette__info)}>
           <div className={cx(styles.roulette__info__textBlock)}>

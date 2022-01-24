@@ -6,14 +6,39 @@
   position: relative;
   padding-top: 30px;
   padding-left: 20px;
+  border: 1px solid red;
+  grid-area: game;
+    
+  @media (max-width: 421px) {
+    transform: scale(0.68);
+    position: absolute;
+    left: -90px;
+    top: -50px;
+  }
+
+  @media (max-width: 391px) {
+    transform: scale(0.62);
+  }
+  
+  @media (max-width: 361px) {
+    transform: scale(0.56);
+  }
+  
+  @media (max-width: 321px) {
+    transform: scale(0.48);
+  }
 
   img.roulette__arrow {
     position: absolute;
     top: 194px;
-    right: 29px;
+    right: -35px;
     width: 250px;
     height: auto;
     transform: rotate(-1.5deg);
+
+    @include mobile_sm {
+      right: -8px;
+    }
   }
 
   img.roulette__center {
@@ -24,7 +49,6 @@
     width: 104px;
 
     @include mobile_sm {
-      transform: scale(.7);
     }
   }
 
@@ -40,7 +64,6 @@
     position: relative;
 
     @include mobile_sm {
-      transform: scale(.7);
     }
 
     .roulette__segment {
@@ -69,11 +92,6 @@
           height: 32px;
           width: 32px;
           margin: 0;
-
-          @include mobile_sm {
-            width: 19px;
-            height: 19px;
-          }
         }
 
         p {
@@ -81,10 +99,6 @@
           font-size: 24px;
           font-weight: 500;
           color: $white;
-
-          @include mobile_sm {
-            font-size: 14px;
-          }
         }
       }
     }
