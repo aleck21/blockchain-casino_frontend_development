@@ -15,8 +15,8 @@ import { RouteLink, ModalName } from '@project/client/src/constants';
 import { MenuContext } from 'context';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Footer } from './Footer';
-import styles from './styles.module.scss';
 import { NavigationButton } from './NavigationButton';
+import styles from './styles.module.scss';
 
 export const Sidebar = memo(() => {
   const { t } = useTranslation('main');
@@ -40,7 +40,7 @@ export const Sidebar = memo(() => {
           {t('Classic-dice-is-a-game-SIDEBAR')}
         </Text>
       </section>
-      <nav className={styles.sidebar__main}>
+      <div className={styles.sidebar__main}>
         <section className={cx(styles.nav_top__container)}>
           <NavigationButton
             routerLink={RouteLink.home}
@@ -78,7 +78,7 @@ export const Sidebar = memo(() => {
             isNotAuthNeeded
           />
         </section>
-      </nav>
+      </div>
       <footer className={styles.sidebar__footer}>
         <Footer />
       </footer>

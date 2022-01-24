@@ -61,7 +61,7 @@ export const BetsTab: React.FC = () => {
           />
         </section>
         <section className={cx(styles.header__tabs)}>
-          <nav className={cx(styles.header__tabs__box)}>
+          <div className={cx(styles.header__tabs__box)}>
             <div
               className={cx(styles.tabs__item, styles.tab__left,
                 tabs.all ? styles.active : styles.enactive)}
@@ -92,7 +92,7 @@ export const BetsTab: React.FC = () => {
             >
               Dice
             </div>
-          </nav>
+          </div>
         </section>
         <section className={cx(styles.header__selectCurrency)}>
           <SelectWithContent
