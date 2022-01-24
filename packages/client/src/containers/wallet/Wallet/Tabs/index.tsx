@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
-import { TabsHeader } from './TabsHeader';
+import {
+  ExchangeIconTabs,
+  DepositIcon,
+  RakebackIcon,
+  WithdrawIcon,
+} from '@project/libs/assets/images';
+import { TabsLabels } from './TabsLabels';
 import { DepositTab } from './DepositTab';
 import { WithdrawTab } from './WithdrawTab';
 import { RakebackTab } from './RakebackTab';
 import { ExchangeTab } from './ExchangeTab';
 import { TabsContents } from './TabsContents';
+import styles from './styles.module.scss';
 
-const tabTitles = [
-  'Deposit',
-  'Withdraw',
-  'Rakeback',
-  'Exchange',
+const tabsLabels = [
+  {
+    title: 'Deposit',
+    icon: DepositIcon,
+  },
+  {
+    title: 'Withdraw',
+    icon: WithdrawIcon,
+  },
+  {
+    title: 'Rakeback',
+    icon: RakebackIcon,
+  },
+  {
+    title: 'Exchange',
+    icon: ExchangeIconTabs,
+  },
 ];
 
 const tabsContents = [
@@ -27,8 +45,8 @@ export const Tabs: React.FC = () => {
 
   return (
     <section className={cx(styles.panel__container)}>
-      <TabsHeader
-        tabTitles={tabTitles}
+      <TabsLabels
+        tabLabels={tabsLabels}
         chosenTabIndex={chosenTabIndex}
         onTabChange={setChosenTabIndex}
       />

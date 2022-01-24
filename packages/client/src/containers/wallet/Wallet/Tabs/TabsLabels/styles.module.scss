@@ -1,7 +1,7 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/palette.scss";
 
-.tabs__container {
+.tabs_desktop__container {
   grid-area: tabs;
   width: 100%;
   height: 35px;
@@ -20,6 +20,8 @@
   display: none;
 
   @include mobile_sm {
+    position: absolute;
+    bottom: 0;
     display: grid;
     grid-area: tabsMobile;
     width: calc(100vw - 80px);
