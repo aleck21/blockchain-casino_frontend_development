@@ -8,7 +8,7 @@ import { Image, Text } from '@project/libs/components';
 import { CurrencyColorIcons } from '@project/client/src/constants/currencies';
 import styles from './styles.module.scss';
 
-type RouletteProps = {
+type RouletteSpinnerProps = {
   spin: number;
   data: {
     id: string;
@@ -17,10 +17,10 @@ type RouletteProps = {
   }[];
 };
 
-export const RouletteSpiner = memo(({
+export const RouletteSpinner = memo(({
   spin,
   data,
-}: RouletteProps) => (
+}: RouletteSpinnerProps) => (
   <div className={cx(styles.roulette__container)}>
     <div
       className={cx(styles.roulette__table)}
@@ -29,7 +29,6 @@ export const RouletteSpiner = memo(({
       {data.map((item, k) => (
         <div
           key={item.id}
-          // url={segment}
           className={cx(
             styles.roulette__segment,
             styles[`segment__${k + 1}`],

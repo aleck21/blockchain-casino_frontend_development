@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import { spinsQuantity, users, rouletteData } from './contentDemo';
 import { Timer } from './Timer';
 import { GameMonitor } from './GameMonitor';
-import { RouletteSpiner } from './RouletteSpiner';
+import { RouletteSpinner } from './RouletteSpinner';
 
 export const Roulette: React.FC = React.memo(() => {
   const { t } = useTranslation('main');
@@ -31,7 +31,7 @@ export const Roulette: React.FC = React.memo(() => {
       </Text>
       <div className={cx(styles.roulette__content__box)}>
         <div className={cx(styles.roulette__left_box)}>
-          <RouletteSpiner
+          <RouletteSpinner
             spin={spin}
             data={rouletteData}
           />
