@@ -29,83 +29,73 @@
     }
   }
 
-  .roulette__game {
+  .roulette__left_box {
     grid-area: roulette;
-    width: 499px;
-    height: 499px;
-    border: 1px solid green;
+    display: grid;
+    grid-template-areas: 'game' 'spining';
+  }
+
+  .roulette__spining_box {
+    grid-area: spining;
+    margin-bottom: 41px;
 
     .spin__button {
       height: 44px;
       width: 280px;
-      margin: 10px auto 41px auto;
+      margin: 10px auto 0 auto;
       background-color: $blue;
       background-image: none;
     }
-
+  
     p {
       font-size: 16px;
       color: $middle;
       margin-top: 20px;
-
+  
       strong {
         color: $white;
         font-weight: 500;
       }
     }
+  }
 
-    .timer__container {
+
+  .timer__container {
+    display: grid;
+    grid-template-columns: 40px 20px 40px 20px 40px;
+    grid-template-rows: 44px;
+    margin: 0 auto;
+    width: 160px;
+    
+    .points {
+      margin: 15px 8px;
       display: grid;
-      grid-template-columns: 40px 20px 40px 20px 40px;
-      grid-template-rows: 44px;
-      margin: 0 auto;
-      width: 160px;
-      
-      .points {
-        margin: 15px 8px;
-        display: grid;
-        grid-template-columns: 4px;
-        grid-template-rows: 4px 4px;
-        row-gap: 6px;
+      grid-template-columns: 4px;
+      grid-template-rows: 4px 4px;
+      row-gap: 6px;
 
-        .point {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: $middle;
-        }
-      }
-
-      .timer__windowTime {
-        background-color: $black;
-        border-radius: 10px;
-        width: 40px;
-        height: 44px;
-        font-family: $montserrat;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 22px;
-        color: $white;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .point {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $middle;
       }
     }
 
-    @include mobile_sm {
-      // margin: 10px auto 41px auto;
-      width: calc(100vw - 80px);
-      height: calc(100vw - 80px);
-      margin-left: 20px;
-      display: grid;
-      grid-template-areas: 'game' 'spining';
-      grid-template-rows: calc(100vw - 40px) auto;
-      row-gap: 47px;
-    }
-
-    .roulette__spining_box {
-      grid-area: spining;
+    .timer__windowTime {
+      background-color: $black;
+      border-radius: 10px;
+      width: 40px;
+      height: 44px;
+      font-family: $montserrat;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: $white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -169,11 +159,9 @@
           justify-content: center;
           column-gap: 4px;
           width: 140px;
-          // margin-left: -140px;
 
           &:nth-child(even) {
             margin-top: 22px;
-            // margin-left: 0px;
           }
 
           p {

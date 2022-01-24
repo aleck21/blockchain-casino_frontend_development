@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react';
 import cx from 'classnames';
 import { Button, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
-// import { RouletteDemo } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 import { spinsQuantity, users, rouletteData } from './contentDemo';
 import { Timer } from './Timer';
@@ -31,16 +30,16 @@ export const Roulette: React.FC = React.memo(() => {
         {t('Roulette')}
       </Text>
       <div className={cx(styles.roulette__content__box)}>
-        <div className={cx(styles.roulette__game)}>
+        <div className={cx(styles.roulette__left_box)}>
           <RouletteSpiner
             spin={spin}
             data={rouletteData}
           />
-          {/*
-          <Image url={RouletteDemo} />
-          */}
           <div className={cx(styles.roulette__spining_box)}>
-            <Text type="p">
+            <Text
+              type="p"
+              className={cx(styles.spining)}
+            >
               {isSpining
                 ? t('Next free spin in')
                 : (

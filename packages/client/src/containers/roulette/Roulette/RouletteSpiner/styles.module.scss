@@ -6,38 +6,33 @@
   position: relative;
   padding-top: 30px;
   padding-left: 20px;
-  border: 1px solid red;
+  width: max-content;
+  height: 499px;
   grid-area: game;
+
+  @include mobile_sm {
+    height: auto;
+    overflow: hidden;
+  }
     
-  @media (max-width: 421px) {
-    transform: scale(0.68);
-    position: absolute;
-    left: -90px;
-    top: -50px;
-  }
-
-  @media (max-width: 391px) {
-    transform: scale(0.62);
-  }
-  
-  @media (max-width: 361px) {
-    transform: scale(0.56);
-  }
-  
-  @media (max-width: 321px) {
-    transform: scale(0.48);
-  }
-
   img.roulette__arrow {
     position: absolute;
-    top: 194px;
-    right: -35px;
+    top: 193px;
+    right: -11px;
     width: 250px;
     height: auto;
-    transform: rotate(-1.5deg);
+    transform: rotate(-.7deg);
 
     @include mobile_sm {
-      right: -8px;
+      right: calc(-10 * ((100vw - 80px) / 499));
+      top: calc(208 * ((100vw - 80px) / 499));
+      width: calc(250 * ((100vw - 80px) / 499));
+      transform: rotate(-1deg);
+    }
+
+    @media (max-width: 380px) {
+      top: calc(218 * ((100vw - 80px) / 499));
+      right: calc(-12 * ((100vw - 80px) / 499));
     }
   }
 
@@ -49,6 +44,15 @@
     width: 104px;
 
     @include mobile_sm {
+      height: calc(104 * ((100vw - 80px) / 499));
+      width: calc(104 * ((100vw - 80px) / 499));
+      top: calc(240 * ((100vw - 80px) / 499));
+      left: calc(225 * ((100vw - 80px) / 499));
+    }
+
+    @media (max-width: 380px) {
+      top: calc(246 * ((100vw - 80px) / 499));
+      left: calc(235 * ((100vw - 80px) / 499));
     }
   }
 
@@ -64,6 +68,10 @@
     position: relative;
 
     @include mobile_sm {
+      padding: 0;
+      width: calc(499 * ((100vw - 80px) / 499));
+      height: calc(499 * ((100vw - 80px) / 499));
+      background-size: 89%;
     }
 
     .roulette__segment {
@@ -71,12 +79,18 @@
       height: 125px;
       position: absolute;
       transform-origin: 205px 54px;
-      top: 196px;
-      left: 45px;
+      top: 195px;
+      left: 44px;
       display: grid;
       align-content: center;
 
       @include mobile_sm {
+        width: calc(203 * ((100vw - 80px) / 499));
+        height: calc(125 * ((100vw - 80px) / 499));
+        transform-origin: calc(205 * ((100vw - 80px) / 499)) calc(54 * ((100vw - 80px) / 499));
+        background-size: 100%;
+        top: calc(196 * ((100vw - 80px) / 499));
+        left: calc(45 * ((100vw - 80px) / 499));
       }
 
       .content {
@@ -87,11 +101,25 @@
         column-gap: 8px;
         width: 136px;
         align-items: end;
+        padding-top: 8px;
+
+        @include mobile_sm {
+          width: calc(140 * ((100vw - 80px) / 499));
+          grid-template-columns: 22px auto;
+          transform: rotate(182deg);
+          padding-top: 6px;
+          column-gap: 0px;
+        }
 
         img {
           height: 32px;
           width: 32px;
           margin: 0;
+
+          @include mobile_sm {
+            height: calc(32 * ((100vw - 80px) / 499));
+            width: calc(32 * ((100vw - 80px) / 499));
+          }
         }
 
         p {
@@ -99,6 +127,10 @@
           font-size: 24px;
           font-weight: 500;
           color: $white;
+
+          @include mobile_sm {
+            font-size: calc(24 * ((100vw - 80px) / 499));
+          }
         }
       }
     }
