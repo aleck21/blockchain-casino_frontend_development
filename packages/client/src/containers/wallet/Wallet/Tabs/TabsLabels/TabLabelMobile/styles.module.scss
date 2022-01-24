@@ -11,11 +11,15 @@
   text-align: center;
   margin-top: 43px;
 
+  @include mobile_sm {
+    margin: 0;
+    padding: 10px;
+  }
+
   img {
     width: 24px;
     height: 24px;
   }
-
  
   .item__title {
     @include base_text;
@@ -36,7 +40,7 @@
 }
 
 .item_inactive {
-  background-color: transparent;
+  background-color: $dark;
 }
 
 

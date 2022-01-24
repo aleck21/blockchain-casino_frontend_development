@@ -14,8 +14,8 @@
   align-items: stretch;
 
   @include mobile_sm {
-    grid-template-areas: 'walletPanel' 'bgdDashboard' 'tabsMobile';
-    grid-template-rows: auto auto 112px;
+    grid-template-areas: 'walletPanel' 'bgdDashboard';
+    grid-template-rows: auto auto;
     grid-template-columns: 100%;
     height: auto;
   } 
