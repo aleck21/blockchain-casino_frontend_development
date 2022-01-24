@@ -9,8 +9,6 @@
   @include paper;
   height: auto;
 
-  border: solid 2px red;
-
   @include mobile_sm {
     max-width: calc(100vw - 40px);
     padding: 20px;
