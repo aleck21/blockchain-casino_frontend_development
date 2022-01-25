@@ -72,3 +72,5 @@ export { default as AboutBgdBackground } from './aboutBgdBackground.svg';
 export { default as BackArrowIcon } from './backArrowIcon.svg';
 export { default as NextArrowIcon } from './nextArrowIcon.svg';
 export { default as ActivateBonusModalBackground } from './activateBonusModalBackground.svg';
+export { default as DiceDemo } from './diceDemo.png';
+export { default as DiceDemoBackground } from './diceDemoBkg.png';

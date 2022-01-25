@@ -1,0 +1,56 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.dice__container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+
+  h1 {
+    font-family: $montserrat;
+    font-size: 40px;
+    font-weight: bold;
+    color: $white;
+    text-align: left;
+    text-transform: none;
+  }
+
+  button.bankroll {
+    height: 44px;
+    width: 167px;
+    display: block;
+    background-color: $blue;
+    background-image: none;
+    
+    p {
+      text-align: center;
+      font-family: $montserrat;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 110%;
+    }
+
+    .button__content {
+      display: grid;
+      grid-template-columns: 16px auto;
+      column-gap: 6px;
+      align-items: center;
+
+      img {
+        height: 16px;
+        width: 16px;
+      }
+
+    }
+  }
+
+  .dice__paper {
+    @include paper;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1fr 265px;
+    grid-template-areas: 'game roll';
+    column-gap: 20px;
+  }
+}

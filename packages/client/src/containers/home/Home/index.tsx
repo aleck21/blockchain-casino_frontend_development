@@ -16,13 +16,13 @@ const Home: FC = () => {
         title="Classic Dice"
         image={ClasicDice}
         text={t('Classic-dice-is-a-game')}
-        onClick={() => {}}
+        link="/classicDice"
       />
       <GameCard
         title="Crash"
         image={Crash}
         text={t('Classic-dice-is-a-game')}
-        onClick={() => {}}
+        link="/"
       />
     </div>
   );

@@ -6,6 +6,7 @@ import {
   WalletPage,
   ProfilePage,
   VerificationPage,
+  ClassicDicePage,
 } from 'pages';
 import { MainLayout } from 'layouts/MainLayout';
 import { RouteLink } from '../../constants/routes';
@@ -33,6 +34,11 @@ const MainRouter: FC = () => (
           path={RouteLink.verification}
           exact
           component={VerificationPage}
+        />
+        <Route
+          path={RouteLink.classicDice}
+          exact
+          component={ClassicDicePage}
         />
       </Switch>
     </Router>

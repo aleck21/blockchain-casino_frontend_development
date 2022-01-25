@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import {
   Button,
@@ -12,14 +13,14 @@ type GameCardProps = {
   title: string;
   image: string;
   text: string;
-  onClick: () => void;
+  link: string;
 };
 
 export const GameCard: React.FC<GameCardProps> = memo(({
   title,
   image,
   text,
-  onClick,
+  link,
 }) => {
   const { t } = useTranslation('main');
 
@@ -36,12 +37,13 @@ export const GameCard: React.FC<GameCardProps> = memo(({
           {text}
         </Text>
       </div>
-      <Button
-        onClick={onClick}
-        className={cx(styles.gameCard__button)}
-      >
-        {t('Play Now')}
-      </Button>
+      <Link to={link}>
+        <Button
+          className={cx(styles.gameCard__button)}
+        >
+          {t('Play Now')}
+        </Button>
+      </Link>
     </section>
   );
 });
