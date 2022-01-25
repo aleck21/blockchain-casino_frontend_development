@@ -45,6 +45,10 @@
       margin: 10px auto 0 auto;
       background-color: $blue;
       background-image: none;
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
     }
   
     p {
@@ -58,7 +62,6 @@
       }
     }
   }
-
 
   .timer__container {
     display: grid;
