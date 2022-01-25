@@ -42,20 +42,6 @@ export const RouletteSpinner = memo(({
             currency={item.currency}
             className={cx(styles[`segment__${k + 1}`])}
           />
-          // <div
-          //  key={item.id}
-          //  className={cx(
-          //    styles.roulette__segment,
-          //    styles[`segment__${k + 1}`],
-          //  )}
-          // >
-          //  <div className={cx(styles.content)}>
-          //    <Image url={CurrencyColorIcons[item.currency]} />
-          //    <Text type="p">
-          //      {item.quantity}
-          //    </Text>
-          //  </div>
-          // </div>
         ))}
       </div>
       <Image
