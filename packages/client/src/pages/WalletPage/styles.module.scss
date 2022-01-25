@@ -1,0 +1,23 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+
+.wallet_page__container {
+  color: $white;
+  display: grid;
+  grid-template-areas: 'walletPanel balance'
+    'walletPanel bgdDashboard';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 50px;
+  max-width: 1160px;
+  align-items: stretch;
+
+  @include mobile_sm {
+    grid-template-areas: 'walletPanel' 'bgdDashboard';
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+    height: auto;
+  } 
+  
+}

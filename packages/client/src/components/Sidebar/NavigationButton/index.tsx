@@ -42,7 +42,9 @@ export const NavigationButton = memo(({
     setContentModal(modalName);
     openModal();
     closeMenu();
-    if (isMobile) closeWidget();
+    if (isMobile) {
+      closeWidget();
+    }
   }, [closeMenu, closeWidget, isMobile, modalName, openModal, setContentModal]);
 
   const closeModalAndMenu = useCallback(() => {
@@ -57,7 +59,21 @@ export const NavigationButton = memo(({
     onClick: closeModalAndMenu,
   }), [closeModalAndMenu]);
 
-  if (!isNotAuthNeeded && !isUser) return null;
+  const buttonContent = useMemo(() => (
+    <>
+      <Image url={icon} />
+      <Text type="p">{title}</Text>
+      <Image
+        url={ArrowWhite}
+        className={cx(styles.arrow)}
+      />
+
+    </>
+  ), [icon, title]);
+
+  if (!isNotAuthNeeded && !isUser) {
+    return null;
+  }
   if (modalName !== undefined) {
     return (
       <section
@@ -67,12 +83,7 @@ export const NavigationButton = memo(({
         role="menuitem"
         tabIndex={0}
       >
-        <Image url={icon} />
-        <Text type="p">{title}</Text>
-        <Image
-          url={ArrowWhite}
-          className={cx(styles.arrow)}
-        />
+        {buttonContent}
       </section>
     );
   }
@@ -82,13 +93,9 @@ export const NavigationButton = memo(({
         to={routerLink}
         {...navLinkCommonProps}
       >
-        <Image url={icon} />
-        <Text type="p">{title}</Text>
-        <Image
-          url={ArrowWhite}
-          className={cx(styles.arrow)}
-        />
+        {buttonContent}
       </NavLink>
     );
-  } return null;
+  }
+  return null;
 });
