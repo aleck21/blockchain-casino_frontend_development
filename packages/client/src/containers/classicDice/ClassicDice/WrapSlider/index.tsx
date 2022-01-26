@@ -4,21 +4,17 @@ import './styles.scss';
 
 type WrapSliderProps = {
   position: number;
+  onChange: (value: number) => void;
 };
 
 const WrapSlider = memo(({
   position,
-}: WrapSliderProps) => {
-  const onChangeSlider = () => {
-
-  };
-
-  return (
-    <Slider
-      onChange={onChangeSlider}
-      value={position}
-    />
-  );
-});
+  onChange,
+}: WrapSliderProps) => (
+  <Slider
+    onChange={onChange}
+    value={position}
+  />
+));
 
 export { WrapSlider };

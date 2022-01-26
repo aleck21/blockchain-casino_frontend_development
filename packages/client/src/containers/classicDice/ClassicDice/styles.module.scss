@@ -3,45 +3,51 @@
 @import "~@project/libs/assets/styles/fonts.scss";
 
 .dice__container {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
+  .dice__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 35px;
 
-  h1 {
-    font-family: $montserrat;
-    font-size: 40px;
-    font-weight: bold;
-    color: $white;
-    text-align: left;
-    text-transform: none;
-  }
-
-  button.bankroll {
-    height: 44px;
-    width: 167px;
-    display: block;
-    background-color: $blue;
-    background-image: none;
-    
-    p {
-      text-align: center;
+    h1 {
       font-family: $montserrat;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 110%;
+      font-size: 40px;
+      font-weight: bold;
+      color: $white;
+      text-align: left;
+      text-transform: none;
     }
-
-    .button__content {
-      display: grid;
-      grid-template-columns: 16px auto;
-      column-gap: 6px;
-      align-items: center;
-
-      img {
-        height: 16px;
-        width: 16px;
+  
+    button.bankroll {
+      height: 44px;
+      width: 167px;
+      display: block;
+      background-color: $blue;
+      background-image: none;
+      position: absolute;
+      right: 0;
+      
+      p {
+        text-align: center;
+        font-family: $montserrat;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 110%;
       }
-
+  
+      .button__content {
+        display: grid;
+        grid-template-columns: 16px auto;
+        column-gap: 6px;
+        align-items: center;
+  
+        img {
+          height: 16px;
+          width: 16px;
+        }
+  
+      }
     }
   }
 
