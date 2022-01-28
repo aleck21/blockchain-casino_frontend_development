@@ -5,3 +5,4 @@ export * from './verification';
 export * from './notification';
 export * from './roulette';
 export * from './modals';
+export * from './classicDice';

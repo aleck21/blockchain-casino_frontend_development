@@ -1,0 +1,111 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.gameBlock__container {
+  grid-area: game;
+
+  .gameCanvas__box {
+    position: relative;
+  }
+
+  .separator {
+    width: 100%;
+    height: .5px;
+    background-color: $middle;
+    margin: 30px 0;
+  }
+
+  p {
+    @include base_text;
+    color: $middle;
+    font-size: 14px;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+
+  .gameBlock__payout__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    margin-bottom: 20px;
+
+    .gameBlock__input {
+      height: 64px;
+      font-size: 18px;
+    }
+
+    .gameBclock__rollOver__box {
+      display: grid;
+      grid-template-columns: 1fr 64px;
+      column-gap: 10px;
+      align-items: flex-end;
+      
+      .gameBlock__rollField {
+        .gameBlock__rollOver {
+          height: 64px;
+          display: grid;
+          align-items: center;
+          width: 100%;
+          padding: 20px;
+          @include base_text;
+          font-size: 18px;
+          font-weight: 500;
+          color: $white;
+          background-color: $black;
+          border-radius: 15px;
+        }
+      }
+
+      button.gameBlock__rollButton {
+        height: 64px;
+        width: 64px;
+        border-radius: 15px;
+        background-color: $black;
+
+        .rollButton__image {
+          width: 24px;
+          height: 24px;
+          transform: rotate(90deg) scale(1, -1);
+        }
+      }
+
+    }
+  }
+
+  .gameBlock__winChance {
+    display: grid;
+    padding: 10px;
+    width: 100%;
+    height: 64px;
+    background-color: $black;
+    border-radius: 15px;
+    grid-template-columns: 1fr repeat(4, auto);
+    column-gap: 8px;
+    align-items: center;
+    align-content: center;
+
+    p {
+      @include base_text;
+      font-size: 18px;
+      font-weight: 500;
+      color: $white;
+      padding: 0;
+      padding-left: 10px;
+    }
+
+    .winChance__button {
+      background-color: $dark;
+      padding: 14px 12px 10px 12px;
+      text-align: center;
+      color: $white;
+      @include base_text;
+      font-size: 18px;
+      font-weight: 500;
+      background-image: none;
+      height: 46px;
+      width: max-content;
+      line-height: 100%;
+    }
+  }
+}
