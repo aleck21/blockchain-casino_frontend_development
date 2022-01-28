@@ -3,6 +3,7 @@ export enum RouteLink {
   wallet = '/wallet',
   profile = '/profile',
   verification = '/verification',
+  classicDice = '/classicDice',
 }
 
 export enum RouteName {
@@ -10,4 +11,5 @@ export enum RouteName {
   wallet = 'wallet',
   profile = 'profile',
   verification = 'verification',
+  classicDice = 'classicDice',
 }

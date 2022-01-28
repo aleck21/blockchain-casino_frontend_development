@@ -81,3 +81,5 @@ export { default as RouletteSegmentGreen } from './rouletteSegmentGreen.svg';
 export { default as RouletteSegmentBurgundy } from './rouletteSegmentBurgundy.svg';
 export { default as RouletteSegmentPink } from './rouletteSegmentPink.svg';
 export { default as RouletteBkgStars } from './rouletteBkgStars.svg';
+export { default as DiceDemo } from './diceDemo.png';
+export { default as DiceDemoBackground } from './diceDemoBkg.png';

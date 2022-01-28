@@ -1,0 +1,45 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.lastBankroll__container {
+  
+  h3 {
+    font-size: 30px;
+    color: $white;
+    font-weight: 500;
+    text-align: left;
+    
+    b {
+      font-weight: bold;
+    }
+  }
+
+  .lastBankroll__box {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .bankroll__active {
+    background-color: $blue;
+    height: 19px;
+    border-radius: 10px;
+    @include base_text;
+    font-size: 14px;
+    text-align: center;
+    color: $white;
+    padding-top: 2px;
+  }
+
+  .bankroll__inactive {
+    height: 19px;
+    border-radius: 10px;
+    border: 1px solid $middle;
+    @include base_text;
+    font-size: 14px;
+    text-align: center;
+    color: $middle;
+  }
+}
