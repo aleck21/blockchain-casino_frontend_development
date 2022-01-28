@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import cx from 'classnames';
 import { payoutDefault, win, winChanceMinMax } from 'containers/classicDice/ClassicDice/contentDemo';
 import {
@@ -20,37 +20,37 @@ const GameBlock = memo(() => {
   const [winChance, setWinChance] = useState(50);
   const [payout, setPayout] = useState(payoutDefault);
 
-  const onChangeRoll = (value: number) => {
+  const onChangeRoll = useCallback((value: number) => {
     setRoll(value);
-  };
+  }, []);
 
-  const onMinWinClick = () => {
+  const onMinWinClick = useCallback(() => {
     setWinChance(winChanceMinMax.min);
-  };
+  }, []);
 
-  const onMaxWinClick = () => {
+  const onMaxWinClick = useCallback(() => {
     setWinChance(winChanceMinMax.max);
-  };
+  }, []);
 
-  const onWinStepPlus = () => {
+  const onWinStepPlus = useCallback(() => {
     if (winChance + 5 > winChanceMinMax.max) {
       setWinChance(winChanceMinMax.max);
       return;
     }
     setWinChance(winChance + 5);
-  };
+  }, [winChance]);
 
-  const onWinStepMinus = () => {
+  const onWinStepMinus = useCallback(() => {
     if (winChance - 5 < winChanceMinMax.min) {
       setWinChance(winChanceMinMax.min);
       return;
     }
     setWinChance(winChance - 5);
-  };
+  }, [winChance]);
 
-  const onChangePayout = (text: any) => {
+  const onChangePayout = useCallback((text: string) => {
     setPayout(text);
-  };
+  }, []);
 
   return (
     <div className={cx(styles.gameBlock__container)}>
