@@ -5,6 +5,7 @@ import {
   RouletteCentralCircle,
 } from '@project/libs/assets/images';
 import { Image } from '@project/libs/components';
+import { Colors } from 'constants/colors';
 import styles from './styles.module.scss';
 import { RouletteSegment } from '../RouletteSegment';
 
@@ -22,11 +23,11 @@ export const RouletteSpinner = memo(({
   data,
 }: RouletteSpinnerProps) => {
   const colors = [
-    '#52ACFF', // cyan
-    '#006DD2', // blue
-    '#00D287', // green
-    '#B62A4C', // burgundy
-    '#FF6287', // pink
+    Colors.cyan,
+    Colors.blue,
+    Colors.green,
+    Colors.burgundy,
+    Colors.pink,
   ];
 
   return (
