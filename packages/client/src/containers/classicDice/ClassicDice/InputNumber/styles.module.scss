@@ -1,0 +1,63 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.input__container {
+  width: 100%;
+  height: 44px;
+  border-radius: 15px;
+  background-color: $dark;
+  display: grid;
+  grid-template-columns: 20px 1fr 24px 44px 44px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  input {
+    background-color: $dark;
+    border: 0;
+    outline: 0;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $helvetica;
+    padding: 0;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  button.number__button {
+    background-image: none;
+    border: 0;
+    color: $middle;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $helvetica;
+    padding: 0;
+  }
+
+  .input__arrowButtons {
+    display: grid;
+    grid-template-rows: 22px 22px;
+    grid-template-columns: 1fr;
+    justify-content: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .arrowDown {
+      transform: rotate(.5turn);
+    }
+  }
+}
+
+.noButtons {
+  grid-template-columns: 20px 1fr 44px;
+}

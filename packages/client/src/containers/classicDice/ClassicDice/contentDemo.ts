@@ -265,3 +265,19 @@ export const myBets = [
     },
   },
 ];
+
+export const autoTabDatas = {
+  onWin: '33',
+  onLose: '33',
+  betSize: {
+    size: '35 000',
+    currency: 'BTC',
+    quantity: '1',
+  },
+  stopOnWin: {
+    size: '350 000',
+    currency: 'BTC',
+    quantity: '10',
+  },
+  stopOnLose: '350 000',
+};

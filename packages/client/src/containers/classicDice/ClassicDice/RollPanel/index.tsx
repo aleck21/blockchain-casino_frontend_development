@@ -3,6 +3,7 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import { Tabs } from 'antd';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+import { AutoTab } from './Tabs/AutoTab';
 
 const RollPanel = memo(() => {
   const { t } = useTranslation('main');
@@ -24,7 +25,7 @@ const RollPanel = memo(() => {
           tab={t('Auto')}
           key="2"
         >
-          Auto
+          <AutoTab />
         </TabPane>
       </Tabs>
     </div>
