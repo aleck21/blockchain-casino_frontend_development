@@ -7,6 +7,43 @@
 
   .gameCanvas__box {
     position: relative;
+    padding-top: 42px;
+    background-image: url('~@project/libs/assets/images/diceDemoBkg.png');
+    background-repeat: no-repeat;
+    background-position: top 70px right 20%;
+    background-size: 136px;
+    height: 170px;
+    
+    .gameCanvas__win {
+      width: 52px;
+      height: 36px;
+      border-radius: 15px;
+      background-color: $blue;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      @include base_text;
+      font-size: 16px;
+      font-weight: 500;
+      color: $white;
+      box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .6);
+      padding-top: 2px;
+      position: absolute;
+      top: 42px;
+      right: 25%;
+    }
+
+    .gameCanvas__dice {
+      position: absolute;
+      top: 80px;
+      right: 23%;
+
+      img {
+        width: 62px;
+        height: 62px;
+        margin: 10px 0;
+      }
+    }
   }
 
   .separator {
@@ -106,6 +143,51 @@
       height: 46px;
       width: max-content;
       line-height: 100%;
+    }
+  }
+
+  .gameBlock__footer {
+    display: grid;
+    grid-template-columns: 170px 80px;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-content: center;
+
+    .buttons__box {
+      display: grid;
+      grid-template-columns: repeat(5, 18px);
+      column-gap: 20px;
+      align-items: center;
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    p {
+      @include base_text;
+      font-size: 10px;
+      color: $middle;
+      padding-bottom: 0;
+      display: grid;
+      align-self: center;
+    }
+  }
+
+  .gameCanvas__slider__percentage {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+
+    p {
+      @include base_text;
+      color: $middle;
+      font-size: 12px;
+      font-weight: normal;
+      padding: 0;
     }
   }
 }

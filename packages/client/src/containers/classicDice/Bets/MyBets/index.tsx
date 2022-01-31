@@ -47,7 +47,10 @@ const MyBets = memo(({
       <div className={cx(styles.bets__table__container)}>
         <div className={cx(styles.bets__table__box)}>
           {bets.map((row) => (
-            <div className={cx(styles.bets__table__row)}>
+            <div
+              className={cx(styles.bets__table__row)}
+              key={row.id}
+            >
               <Text type="p">
                 {row.id}
               </Text>

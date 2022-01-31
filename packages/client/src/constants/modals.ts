@@ -9,4 +9,5 @@ export enum ModalName {
   aboutBgd = 'aboutBgd',
   signInModal = 'signInModal',
   registerModal = 'registerModal',
+  classicDiceBankroll = 'classicDiceBankroll',
 }

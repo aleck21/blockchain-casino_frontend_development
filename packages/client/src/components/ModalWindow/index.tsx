@@ -15,6 +15,7 @@ import {
   TransactionsModal,
   Notification,
   Roulette,
+  ClassicDiceBankroll,
 } from 'containers';
 import { CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
@@ -31,6 +32,7 @@ const modals: Record<string, ReactNode> = {
   signInModal: <SignInModal />,
   registerModal: <RegisterModal />,
   activatingNewBonus: <ActivateNewBonusModal />,
+  classicDiceBankroll: <ClassicDiceBankroll />,
 };
 
 export const ModalWindow: React.FC = () => {

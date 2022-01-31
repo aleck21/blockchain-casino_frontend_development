@@ -82,3 +82,5 @@ export { default as KeyboardIconBW } from './keyboardIconBW.svg';
 export { default as ReloadIconBW } from './reloadIconBW.svg';
 export { default as GraphicIconColor } from './graphicIconColor.svg';
 export { default as ArrowUp } from './arrowUp.svg';
+export { default as ArrowGt } from './arrowGt.svg';
+export { default as InfoIconBlue } from './infoIconBlue.svg';

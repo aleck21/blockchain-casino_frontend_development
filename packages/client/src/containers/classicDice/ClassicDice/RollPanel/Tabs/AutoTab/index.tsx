@@ -1,6 +1,6 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Text } from '@project/libs/components';
+import { Button, Text } from '@project/libs/components';
 import { InputWithModal } from 'containers/classicDice/ClassicDice/InputWithModal';
 import { InputNumber } from 'containers/classicDice/ClassicDice/InputNumber';
 import { autoTabDatas } from 'containers/classicDice/ClassicDice/contentDemo';
@@ -12,6 +12,8 @@ const AutoTab = memo(() => {
   const [loseValue, setLoseValue] = useState(autoTabDatas.onLose);
   const [betSize, setBetSize] = useState(autoTabDatas.betSize.quantity);
   const [stopOnWin, setStopOnWin] = useState(autoTabDatas.stopOnWin.quantity);
+  const [stopOnLose, setStopOnLose] = useState(autoTabDatas.stopOnLose.quantity);
+  const [numberOfBets, setNumberOfBets] = useState(autoTabDatas.number);
 
   const onWinChange = (e: string) => {
     if (Number(e) > 100) {
@@ -37,60 +39,106 @@ const AutoTab = memo(() => {
     setLoseValue('');
   };
 
-  const onBetSizeChange = (e: string) => {
+  const onBetSizeChange = useCallback((e: string) => {
     setBetSize(e);
-  };
+  }, []);
 
-  const onStopOnWinChange = (e: string) => {
+  const onStopOnWinChange = useCallback((e: string) => {
     setStopOnWin(e);
-  };
+  }, []);
+
+  const onStopOnLoseChange = useCallback((e: string) => {
+    setStopOnLose(e);
+  }, []);
+
+  const onNumberReload = () => {};
+
+  const onNumberChange = useCallback((e: string) => {
+    setNumberOfBets(e);
+  }, []);
+
+  const onStartAutoBetClick = () => {};
 
   return (
     <section className={styles.autoTab__container}>
-      <article className={styles.autoTab__titleWithData}>
+      <div className={styles.autoTab__content__box}>
+        <article className={styles.autoTab__titleWithData}>
+          <Text type="h4">
+            {t('Bet size')}
+          </Text>
+          <Text type="p">
+            {autoTabDatas.betSize.size}
+            {' '}
+            USD
+          </Text>
+        </article>
+        <InputNumber
+          currency={autoTabDatas.betSize.currency}
+          value={betSize}
+          onChange={onBetSizeChange}
+          isButtons
+        />
         <Text type="h4">
-          {t('Bet size')}
+          {t('Number of bets')}
         </Text>
-        <Text type="p">
-          {autoTabDatas.betSize.size}
-          {' '}
-          USD
-        </Text>
-      </article>
-      <InputNumber
-        currency={autoTabDatas.betSize.currency}
-        value={betSize}
-        onChange={onBetSizeChange}
-        isButtons
-      />
-      <article className={styles.autoTab__titleWithData}>
-        <Text type="h4">
-          {t('Stop on Win')}
-        </Text>
-        <Text type="p">
-          {autoTabDatas.stopOnWin.size}
-          {' '}
-          USD
-        </Text>
-      </article>
-      <InputNumber
-        currency={autoTabDatas.stopOnWin.currency}
-        value={stopOnWin}
-        onChange={onStopOnWinChange}
-        isButtons={false}
-      />
-      <InputWithModal
-        title={t('On win')}
-        value={winValue}
-        onChange={onWinChange}
-        onReset={onWinReset}
-      />
-      <InputWithModal
-        title={t('On lose')}
-        value={loseValue}
-        onChange={onLoseChange}
-        onReset={onLoseReset}
-      />
+        <InputNumber
+          value={numberOfBets}
+          onChange={onNumberChange}
+          isReload
+          isButtons={false}
+          onReload={onNumberReload}
+        />
+        <article className={styles.autoTab__titleWithData}>
+          <Text type="h4">
+            {t('Stop on Win')}
+          </Text>
+          <Text type="p">
+            {autoTabDatas.stopOnWin.size}
+            {' '}
+            USD
+          </Text>
+        </article>
+        <InputNumber
+          currency={autoTabDatas.stopOnWin.currency}
+          value={stopOnWin}
+          onChange={onStopOnWinChange}
+          isButtons={false}
+        />
+        <InputWithModal
+          title={t('On win')}
+          value={winValue}
+          onChange={onWinChange}
+          onReset={onWinReset}
+        />
+        <article className={styles.autoTab__titleWithData}>
+          <Text type="h4">
+            {t('Stop on lose')}
+          </Text>
+          <Text type="p">
+            {autoTabDatas.stopOnLose.size}
+            {' '}
+            USD
+          </Text>
+        </article>
+        <InputNumber
+          currency={autoTabDatas.stopOnLose.currency}
+          value={stopOnLose}
+          onChange={onStopOnLoseChange}
+          isButtons={false}
+        />
+        <InputWithModal
+          title={t('On lose')}
+          value={loseValue}
+          onChange={onLoseChange}
+          onReset={onLoseReset}
+        />
+      </div>
+      <Button
+        className={styles.autoTab__startButton}
+        onClick={onStartAutoBetClick}
+      >
+        {t('Start auto bet')}
+      </Button>
     </section>
   );
 });

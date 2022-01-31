@@ -11,7 +11,7 @@
   grid-template-columns: 20px 1fr 24px 44px 44px;
   align-items: center;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 12px;
 
   img {
     width: 20px;
@@ -60,4 +60,18 @@
 
 .noButtons {
   grid-template-columns: 20px 1fr 44px;
+}
+
+.reload__container {
+  grid-template-columns: 1fr 24px 44px 44px;
+}
+
+img.reload {
+  transform: rotate(1turn);
+  transition: .5s transform;
+}
+
+img.noReload {
+  transform: none;
+  transition: .5s transform;
 }

@@ -1,19 +1,15 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/palette.scss";
-@import "~@project/libs/assets/styles/fonts.scss";
 
 .autoTab__container {
   width: 100%;
   padding: 0 20px;
-
-  .autoTab__titleWithData {
-    width: 100%;
+  
+  .autoTab__content__box {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+    grid-template-rows: auto;
+    row-gap: 10px;
+    
     h4 {
       @include base_text;
       font-size: 12px;
@@ -21,13 +17,30 @@
       color: $middle;
       font-weight: normal;
     }
-
-    p {
-      @include base_text;
-      font-size: 12px;
-      text-align: right;
-      color: $white;
-      font-weight: normal;
+    
+    .autoTab__titleWithData {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      
+      p {
+        @include base_text;
+        font-size: 12px;
+        text-align: right;
+        color: $white;
+        font-weight: normal;
+      }
     }
+  }
+
+  .autoTab__startButton {
+    background-image: none;
+    background-color: $blue;
+    margin-bottom: 20px;
+    height: 44px;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
   }
 }
