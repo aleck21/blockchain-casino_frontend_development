@@ -1,4 +1,4 @@
-export function croppingText(text: string, maxLength: number) {
+export function croppingText(text: string, maxLength: number): string {
   if (text.length < maxLength) return text;
 
   const sizeCropping = (maxLength / 2) - 1;

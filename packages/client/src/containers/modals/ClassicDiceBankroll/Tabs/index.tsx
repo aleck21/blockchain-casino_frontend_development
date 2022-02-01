@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { Tabs as AntTabs } from 'antd';
 import { useTranslation } from '@project/libs/utils/i18n';
+import { WithdrawTab } from './WithdrawTab';
 import './styles.scss';
 
 const Tabs = memo(() => {
@@ -22,7 +23,7 @@ const Tabs = memo(() => {
           key={2}
           tab={t('Withdraw')}
         >
-          Withdraw
+          <WithdrawTab />
         </TabPane>
       </AntTabs>
     </div>

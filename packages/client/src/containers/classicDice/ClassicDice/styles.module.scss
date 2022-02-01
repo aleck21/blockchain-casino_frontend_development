@@ -4,31 +4,7 @@
 
 .dice__container {
   height: 100%;
-
-  .dice__breadcrumbs {
-    color: $white;
-    font-size: 14px;
-    font-family: $helvetica;
-    margin-bottom: 15px;
-
-    a {
-      color: $white;
-
-      &:hover {
-        color: $white;
-      }
-    }
-
-    span {
-      color: $middle;
-    }
-
-    img {
-      width: 16px;
-      height: 16px;
-      margin-bottom: 4px;
-    }
-  }
+  grid-area: gameBlock;
 
   .dice__header {
     display: grid;

@@ -3,7 +3,42 @@
 @import "~@project/libs/assets/styles/fonts.scss";
 
 .bankroll__container {
+  display: grid;
+  grid-template-columns: 516px 322px;
+  grid-template-areas: 'bankroll_head bankroll_header' 'bankroll_tabs bankroll_top' 'bankroll_footer .';
+  column-gap: 20px;
+  width: 898px;
+  padding: 20px;
+  
   h2 {
-    
+    grid-area: bankroll_head;
+    font-size: 28.62px;
   }
+
+  .bancroll__top10__box {
+    grid-area: bankroll_top;
+  }
+
+  .bankroll__footer {
+    grid-area: bankroll_footer;
+
+    button {
+      background-image: none;
+      display: grid;
+      grid-template-columns: 18px auto;
+      column-gap: 4px;
+      align-items: center;
+      padding: 0;
+
+      p {
+        @include base_text;
+        font-size: 14px;
+        color: $blue;
+        line-height: 100%;
+        padding: 0;
+        padding-top: 4px;
+      }
+    }
+  }
+
 }

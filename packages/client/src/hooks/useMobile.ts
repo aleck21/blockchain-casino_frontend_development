@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { mobilePhoneWidth } from '../constants/mobileSizes';
 
-export const useMobile = () => {
+export const useMobile = (): boolean => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
