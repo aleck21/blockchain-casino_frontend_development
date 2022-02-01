@@ -1,0 +1,119 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.withdraw__container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 30px;
+
+  .inBank__box {
+    display: grid;
+    grid-template-columns: max-content 1fr ;
+
+    p {
+      @include base_text;
+      font-size: 24px;
+      font-weight: 700;
+      color: $white; 
+
+      span {
+        color: $blue;
+      }
+    }
+
+    p.title {
+      @include base_text;
+      font-size: 14px;
+      color: $middle;
+    }
+
+    .inBank__right {
+      padding-left: 20px;
+      height: 46px;
+      display: grid;
+      grid-template-columns: max-content max-content;
+      column-gap: 14px;
+      align-items: center;
+    }
+
+    .inBank__left {
+      padding-right: 20px;
+      height: 46px;
+      border-right: .5px solid $middle;
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 14px;
+      align-items: center;
+    }
+  }
+
+  .select__container {
+    width: 100%;
+    
+    .select__box {
+      height: 86px;
+      margin-top: 10px;
+      border-radius: 15px;
+      background-color: $black;
+      display: grid;
+      grid-template-columns: 226px 290px;
+      align-items: center;
+
+      input {
+        height: 54px;
+        border-right: .5px solid $middle;
+      }
+
+      .withdraw_select__wrap_container {
+        position: absolute;
+        left: 220px;
+      }
+
+      .withdraw_select__item {
+        display: grid;
+        grid-template-columns: 32px max-content;
+        column-gap: 16px;
+        width: 240px;
+      }
+    }
+  }
+
+  .button__box {
+    width: 260px;
+
+    p {
+      text-align: center;
+    }
+
+    button {
+      background-image: none;
+      background-color: $blue;
+      width: 260px;
+      height: 64px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+p.title {
+  @include base_text;
+  font-size: 14px;
+  color: $middle;
+
+  span {
+    color: $white;
+  }
+}
+
+p.select__text {
+  @include base_text;
+  font-size: 18px;
+  font-weight: 500;
+
+  span {
+    color: $middle;
+  }
+}

@@ -104,5 +104,7 @@
   "Classic-dice-is-a-game-SIDEBAR": "Classic dice is a game, where a user can choose a number (let it be X) between 0 and M",
   "Roll over": "Roll over",
   "Payout": "Payout",
-  "Win chanve": "Win chanve"
+  "Win chanve": "Win chanve",
+  "You-will-control": "You will control <1>2%</1> of bank",
+  "You-will-control-0%": "You will control <1>0%</1> of bank"
 }

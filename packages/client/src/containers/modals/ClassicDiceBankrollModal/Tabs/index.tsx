@@ -3,6 +3,7 @@ import { Tabs as AntTabs } from 'antd';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { WithdrawTab } from './WithdrawTab';
 import './styles.scss';
+import { DepositTab } from './DepositTab';
 
 const Tabs = memo(() => {
   const { TabPane } = AntTabs;
@@ -17,7 +18,7 @@ const Tabs = memo(() => {
           key="1"
           tab={t('Deposit')}
         >
-          Deposit
+          <DepositTab />
         </TabPane>
         <TabPane
           key={2}

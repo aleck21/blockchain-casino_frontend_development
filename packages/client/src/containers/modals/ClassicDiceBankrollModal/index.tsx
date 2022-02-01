@@ -3,8 +3,8 @@ import { AvatarDefault, InfoIconBlue } from '@project/libs/assets/images';
 import { Button, Image, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Tabs } from './Tabs';
+import { top10 } from './contentDemo';
 import styles from './styles.module.scss';
-import { withdraw } from './contentDemo';
 
 const ClassicDiceBankroll = memo(() => {
   const { t } = useTranslation('main');
@@ -31,7 +31,7 @@ const ClassicDiceBankroll = memo(() => {
             </tr>
           </thead>
           <tbody>
-            {withdraw.top10.map((row) => (
+            {top10.map((row) => (
               <tr key={row.id}>
                 <td>
                   <Image url={AvatarDefault} />

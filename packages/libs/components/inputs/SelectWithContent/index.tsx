@@ -12,6 +12,7 @@ type SelectProps = {
   classItem?: string;
   classContainer?: string;
   classWrapContainer?: string;
+  classItemsBlock?: string,
   stylesItems?: CSSProperties;
   stylesItem?: CSSProperties;
   stylesArrowBox?: CSSProperties;
@@ -29,6 +30,7 @@ export const SelectWithContent: React.FC<SelectProps> = ({
   classHidden,
   classContainer,
   classWrapContainer,
+  classItemsBlock,
 }) => {
   const [rolled, setRolled] = useState(false);
   const [select, setSelect] = useState(0);
@@ -67,7 +69,7 @@ export const SelectWithContent: React.FC<SelectProps> = ({
         </div>
       </div>
       <div
-        className={cx(styles.select__itemsBlock,
+        className={cx(styles.select__itemsBlock, classItemsBlock,
           rolled ? styles.items__show : styles.items__hidden,
           !rolled ? classHidden : null)}
         style={{ ...stylesItems }}

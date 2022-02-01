@@ -7,4 +7,4 @@ export * from './CollectRewardsModal';
 export * from './PromocodeModal';
 export * from './StatisticsModal';
 export * from './TransactionsModal';
-export * from './ClassicDiceBankroll';
+export * from './ClassicDiceBankrollModal';

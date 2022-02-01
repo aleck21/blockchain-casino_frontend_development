@@ -2,7 +2,7 @@
 @import "~@project/libs/assets/styles/mixins.scss";
 @import "~@project/libs/assets/styles/fonts.scss";
 
-.withdraw__container {
+.deposit__container {
   width: 100%;
   display: grid;
   grid-template-rows: repeat(3, auto);
@@ -66,16 +66,47 @@
         border-right: .5px solid $middle;
       }
 
-      .withdraw_select__wrap_container {
+      .deposit_select__wrap_container {
         position: absolute;
         left: 220px;
       }
 
-      .withdraw_select__item {
+      .deposit_select__item {
         display: grid;
         grid-template-columns: 32px max-content;
         column-gap: 16px;
         width: 240px;
+      }
+    }
+  }
+
+  .choose__wrap__container {
+    position: static;
+  }
+
+  .choose__container {
+    display: grid;
+    grid-template-columns: 226px 260px;
+    column-gap: 30px;
+
+    .choose__select {
+      height: 64px;
+      position: relative;
+      top: 0;
+      margin-top: 10px;
+    }
+
+    .choose__itemsBlock {
+      position: absolute;
+      top: auto;
+      left: 20px;
+      width: 226px;
+      row-gap: 4px;
+
+      .choose__select__item {
+        width: 226px;
+        padding-top: 4px;
+        padding-bottom: 4px;
       }
     }
   }
@@ -102,6 +133,10 @@ p.title {
   @include base_text;
   font-size: 14px;
   color: $middle;
+
+  span {
+    color: $white;
+  }
 }
 
 p.select__text {
@@ -111,5 +146,19 @@ p.select__text {
 
   span {
     color: $middle;
+  }
+}
+
+.dialog__modal__container {
+  position: absolute;
+  left: 170px;
+  @include paper;
+  box-shadow: 0 0 200px 200px rgba(17, 17, 21, .6);
+  padding-bottom: 36px;
+
+  .dialog__close__button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 }

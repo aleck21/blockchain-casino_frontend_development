@@ -7,17 +7,41 @@ import {
   TextInput,
 } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
+import { Trans } from 'react-i18next';
 import { CurrencyColorIcons, CurrenciesName } from 'constants/currencies';
 import { withdraw } from '../../contentDemo';
+import { DialogModal } from '../../DialogModal';
 import styles from './styles.module.scss';
 
 const WithdrawTab = memo(() => {
   const { t } = useTranslation('main');
-  const [amount, setAmount] = useState(withdraw.amountStart);
+  const [amount, setAmount] = useState(
+    Number(withdraw.amountStart).toLocaleString('ru-RU', { useGrouping: true }),
+  );
+  const [, setDialogValue] = useState(false);
+  const [isFundsDialogOpen, setIsFundsDialogOpen] = useState(false);
 
   const onChangeAmount = useCallback((text: string) => {
     setAmount(text);
   }, []);
+
+  const onConfirmClick = useCallback(() => {
+    setIsFundsDialogOpen(true);
+  }, []);
+
+  const onDialogClose = useCallback(() => {
+    setIsFundsDialogOpen(false);
+  }, []);
+
+  const onNoClick = () => {
+    setDialogValue(false);
+    setIsFundsDialogOpen(false);
+  };
+
+  const onYesClick = () => {
+    setDialogValue(true);
+    setIsFundsDialogOpen(false);
+  };
 
   return (
     <section className={styles.withdraw__container}>
@@ -96,12 +120,27 @@ const WithdrawTab = memo(() => {
           type="p"
           className={styles.title}
         >
-          {t('You will control 0% of bank')}
+          <Trans
+            i18nKey={t('You-will-control-0%')}
+          >
+            You will control
+            {' '}
+            <span>0%</span>
+            {' '}
+            of bank
+          </Trans>
         </Text>
-        <Button onClick={undefined}>
+        <Button onClick={onConfirmClick}>
           {t('Deposit Funds')}
         </Button>
       </article>
+      {isFundsDialogOpen && (
+        <DialogModal
+          setNoValue={onNoClick}
+          setYesValue={onYesClick}
+          onDialogClose={onDialogClose}
+        />
+      )}
     </section>
   );
 });
