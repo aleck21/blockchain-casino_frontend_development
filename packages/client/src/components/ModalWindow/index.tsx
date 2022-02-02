@@ -51,7 +51,6 @@ export const ModalWindow: React.FC = () => {
           styles.modal__paper, styles.w100m40, { [styles.w100]: isFullWidth },
         )}
       >
-        {modals[content]}
         <ButtonIcon
           className={cx(styles.close__button__box)}
           styleImage={{ width: 24, height: 24 }}
@@ -59,6 +58,7 @@ export const ModalWindow: React.FC = () => {
           imageURL={CloseIcon}
           alt="x"
         />
+        {modals[content]}
       </section>
     </div>
   );

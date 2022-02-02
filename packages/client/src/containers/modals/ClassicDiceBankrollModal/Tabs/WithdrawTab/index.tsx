@@ -8,6 +8,7 @@ import {
 } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Trans } from 'react-i18next';
+import { PopUp } from 'components';
 import { CurrencyColorIcons, CurrenciesName } from 'constants/currencies';
 import { withdraw } from '../../contentDemo';
 import { DialogModal } from '../../DialogModal';
@@ -135,11 +136,15 @@ const WithdrawTab = memo(() => {
         </Button>
       </article>
       {isFundsDialogOpen && (
-        <DialogModal
-          setNoValue={onNoClick}
-          setYesValue={onYesClick}
-          onDialogClose={onDialogClose}
-        />
+        <PopUp
+          onClose={onDialogClose}
+        >
+          <DialogModal
+            setNoValue={onNoClick}
+            setYesValue={onYesClick}
+          />
+        </PopUp>
+
       )}
     </section>
   );
