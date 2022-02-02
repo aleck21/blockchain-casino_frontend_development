@@ -31,11 +31,15 @@ const BankrollInfoModal = memo(({
           You can get BGD through deposit bonus and other activities. You can
           also directly exchange other currencies into the available balance of
           BCD through the
+          {' '}
           <a href="https://xx.xx">BCSwap</a>
+          {' '}
           function in the wallet. You can get BGD through deposit bonus and
           other activities. You can also directly exchange other currencies into
           the available balance of BCD through the
+          {' '}
           <a href="https://xx.xx">BCSwap</a>
+          {' '}
           function in the wallet.
         </Trans>
       </Text>
