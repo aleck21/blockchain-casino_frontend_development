@@ -12,8 +12,12 @@ const PopUp = memo(({
   onClose,
   children,
 }: PopUpProps) => (
-  <div className={styles.popup__dropscreen}>
-    <section className={styles.popup__container}>
+  <div
+    className={styles.popup__dropscreen}
+  >
+    <section
+      className={styles.popup__container}
+    >
       <ButtonIcon
         imageURL={CloseIcon}
         onClick={onClose}

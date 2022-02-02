@@ -1,0 +1,82 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.hotkeys__container {
+  width: 390px;
+
+  h2 {
+    @include base_text;
+    font-size: 28.62px;
+    color: $white;
+    font-weight: bold;
+  }
+
+  .choise__container {
+    border-radius: 15px;
+    background-color: $black;
+    width: 100%;
+    height: 54px;
+    padding: 9px 20px;
+    display: grid;
+    grid-template-columns: 243px 107px;
+    align-items: center;
+
+    p {
+      width: 100%;
+      @include base_text;
+      font-size: 16px;
+      font-weight: 500;
+      color: $middle;
+      border-right: 1px solid $middle;
+    }
+
+    .choise__keycode {
+      @include base_text;
+      font-size: 16px;
+      font-weight: 500;
+      color: $white;
+      padding-left: 20px;
+    }
+
+  }
+
+  .checkbox__container {
+    padding: 4px;
+    display: grid;
+    grid-template-columns: 18px max-content;
+    column-gap: 5px;
+    background-color: rgba(19, 142, 255, .2);
+    border-radius: 2px;
+    width: max-content;
+    margin: 30px auto 0;
+    align-items: center;
+
+    p {
+      color: $white;
+      font-family: 'SF Pro Display', $helvetica, sans;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 18px;
+    }
+
+    .choise__checkbox {
+      width: 18px;
+      height: 18px;
+      background-color: transparent;
+      border-radius: 2px;
+      border: 1px solid $middle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      .checkbox__marker {
+        width: 11px;
+        height: 10px;
+        background-color: $blue;
+      }
+    }
+  }
+}

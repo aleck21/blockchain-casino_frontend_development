@@ -27,7 +27,12 @@ import { PopUp } from 'components';
 import { LastBankroll } from '../LastBankrolls';
 import { WrapSlider } from '../WrapSlider';
 import styles from './styles.module.scss';
-import { SeedSettings, Help, BetDetails } from '../Modals';
+import {
+  SeedSettings,
+  Help,
+  BetDetails,
+  HotKeys,
+} from '../Modals';
 
 const GameBlock = memo(() => {
   const { t } = useTranslation('main');
@@ -37,6 +42,7 @@ const GameBlock = memo(() => {
   const [isSeedSettings, setIsSeedSettings] = useState(false);
   const [isHelp, setIsHelp] = useState(false);
   const [isBetDetails, setIsBetDetails] = useState(false);
+  const [isHotKeys, setIsHotkeys] = useState(false);
 
   const onChangeRoll = useCallback((value: number) => {
     setRoll(value);
@@ -92,6 +98,14 @@ const GameBlock = memo(() => {
 
   const onBetDetailsOpen = useCallback(() => {
     setIsBetDetails(true);
+  }, []);
+
+  const onHotKeysClose = useCallback(() => {
+    setIsHotkeys(false);
+  }, []);
+
+  const onHotKeysOpen = useCallback(() => {
+    setIsHotkeys(true);
   }, []);
 
   return (
@@ -197,7 +211,7 @@ const GameBlock = memo(() => {
             />
             <ButtonIcon
               imageURL={KeyboardIconBW}
-              onClick={undefined}
+              onClick={onHotKeysOpen}
             />
           </div>
           <Text type="p">
@@ -229,6 +243,13 @@ const GameBlock = memo(() => {
           onClose={onBetDetailsClose}
         >
           <BetDetails />
+        </PopUp>
+      )}
+      {isHotKeys && (
+        <PopUp
+          onClose={onHotKeysClose}
+        >
+          <HotKeys />
         </PopUp>
       )}
     </>
