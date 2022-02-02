@@ -27,7 +27,7 @@ import { PopUp } from 'components';
 import { LastBankroll } from '../LastBankrolls';
 import { WrapSlider } from '../WrapSlider';
 import styles from './styles.module.scss';
-import { SeedSettings } from '../Modals';
+import { SeedSettings, Help } from '../Modals';
 
 const GameBlock = memo(() => {
   const { t } = useTranslation('main');
@@ -35,6 +35,7 @@ const GameBlock = memo(() => {
   const [winChance, setWinChance] = useState(50);
   const [payout, setPayout] = useState(payoutDefault);
   const [isSeedSettings, setIsSeedSettings] = useState(false);
+  const [isHelp, setIsHelp] = useState(false);
 
   const onChangeRoll = useCallback((value: number) => {
     setRoll(value);
@@ -74,6 +75,14 @@ const GameBlock = memo(() => {
 
   const onSeedSettingsClose = useCallback(() => {
     setIsSeedSettings(false);
+  }, []);
+
+  const onHelpClose = useCallback(() => {
+    setIsHelp(false);
+  }, []);
+
+  const onHelpOpen = useCallback(() => {
+    setIsHelp(true);
   }, []);
 
   return (
@@ -175,7 +184,7 @@ const GameBlock = memo(() => {
             />
             <ButtonIcon
               imageURL={InfoIconBW}
-              onClick={undefined}
+              onClick={onHelpOpen}
             />
             <ButtonIcon
               imageURL={KeyboardIconBW}
@@ -195,6 +204,15 @@ const GameBlock = memo(() => {
           onClose={onSeedSettingsClose}
         >
           <SeedSettings />
+        </PopUp>
+      )}
+      {isHelp && (
+        <PopUp
+          onClose={onHelpClose}
+        >
+          <Help
+            onBack={onHelpClose}
+          />
         </PopUp>
       )}
     </>
