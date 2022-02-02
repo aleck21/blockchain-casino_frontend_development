@@ -28,7 +28,7 @@ const DepositTab = memo(() => {
     setAmount(text);
   }, []);
 
-  const onConfirmClick = useCallback(() => {
+  const onDialogOpen = useCallback(() => {
     setIsDialogOpen(true);
   }, []);
 
@@ -150,7 +150,7 @@ const DepositTab = memo(() => {
                 of bank
               </Trans>
             </Text>
-            <Button onClick={onConfirmClick}>
+            <Button onClick={onDialogOpen}>
               {t('Deposit Funds')}
             </Button>
           </article>
