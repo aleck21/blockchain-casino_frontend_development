@@ -1,11 +1,12 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { Text, ButtonIcon } from '@project/libs/components';
 import { GraphicIconColor, CloseIcon } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 import { ModalGraphic } from '../ModalGraphic';
 
 type InputWithModalProps = {
-  // graphicDatas: string[];
+  wonDatas: number[][];
+  wageredDatas: number[][];
   title: string;
   onChange: (e: string) => void;
   value: string | number;
@@ -13,7 +14,8 @@ type InputWithModalProps = {
 };
 
 const InputWithModal = memo(({
-  // graphicDatas,
+  wonDatas,
+  wageredDatas,
   title,
   onChange,
   onReset,
@@ -21,17 +23,17 @@ const InputWithModal = memo(({
 }: InputWithModalProps) => {
   const [isShowGraphic, setIsShowGraphic] = useState(false);
 
-  const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeValue = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
-  };
+  }, [onChange]);
 
-  const onShowGraphicClick = () => {
+  const onShowGraphicClick = useCallback(() => {
     setIsShowGraphic(true);
-  };
+  }, []);
 
-  const onCloseGraphicClick = () => {
+  const onCloseGraphicClick = useCallback(() => {
     setIsShowGraphic(false);
-  };
+  }, []);
 
   return (
     <>
@@ -68,6 +70,8 @@ const InputWithModal = memo(({
           funds={1000}
           currency="btc"
           onClose={onCloseGraphicClick}
+          datasWon={wonDatas}
+          datasWagered={wageredDatas}
         />
       )}
     </>

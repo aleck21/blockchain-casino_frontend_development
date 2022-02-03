@@ -5,6 +5,7 @@ import { InputWithModal } from 'containers/classicDice/ClassicDice/InputWithModa
 import { InputNumber } from 'containers/classicDice/ClassicDice/InputNumber';
 import { autoTabDatas } from 'containers/classicDice/ClassicDice/contentDemo';
 import styles from './styles.module.scss';
+import { wageredDatas, wonDatas } from './contentDemo';
 
 const AutoTab = memo(() => {
   const { t } = useTranslation('main');
@@ -109,6 +110,8 @@ const AutoTab = memo(() => {
           value={winValue}
           onChange={onWinChange}
           onReset={onWinReset}
+          wonDatas={wonDatas}
+          wageredDatas={wageredDatas}
         />
         <article className={styles.autoTab__titleWithData}>
           <Text type="h4">
@@ -131,6 +134,8 @@ const AutoTab = memo(() => {
           value={loseValue}
           onChange={onLoseChange}
           onReset={onLoseReset}
+          wonDatas={wonDatas}
+          wageredDatas={wageredDatas}
         />
       </div>
       <Button

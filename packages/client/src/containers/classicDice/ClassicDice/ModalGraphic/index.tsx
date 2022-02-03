@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, { memo } from 'react';
-import { ButtonIcon, Image, Text } from '@project/libs/components';
-import { CloseIcon, GraphicIconColor } from '@project/libs/assets/images';
+import { ButtonIcon, Text } from '@project/libs/components';
+import { CloseIcon } from '@project/libs/assets/images';
 import { useTranslation } from '@project/libs/utils/i18n';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+import { Canvas } from './canvas';
 
 type ModalGraphicProps = {
-  // datasWon: string[] | number[];
-  // datasWagered: string[] | number[];
+  datasWon: number[][];
+  datasWagered: number[][];
   wagered: string | number;
   won: string | number;
   rackeback: string | number;
@@ -17,8 +19,8 @@ type ModalGraphicProps = {
 };
 
 const ModalGraphic = memo(({
-  // datasWon,
-  // datasWagered,
+  datasWon,
+  datasWagered,
   wagered,
   won,
   rackeback,
@@ -96,10 +98,19 @@ const ModalGraphic = memo(({
           </Text>
         </article>
       </div>
-      <Image
-        url={GraphicIconColor}
-        className={styles.modal__canvas}
-      />
+      <section className={styles.modal__canvas__container}>
+        <div className={styles.modal__canvas__scale}>
+          <p>50k</p>
+          <p>40k</p>
+          <p>30k</p>
+          <p>20k</p>
+          <p>10k</p>
+        </div>
+        <Canvas
+          datas1={datasWagered}
+          datas2={datasWon}
+        />
+      </section>
       <div className={styles.modal__footer}>
         <Text type="p">
           {t('Won 110')}
