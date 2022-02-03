@@ -2,17 +2,8 @@
 @import "~@project/libs/assets/styles/palette.scss";
 @import "~@project/libs/assets/styles/fonts.scss";
 
-.rollPanel__container {
-  grid-area: roll;
-  @include paper;
-  background-color: $black;
-  padding: 0;
-  height: 100%;
-  position: relative;
-
-  @include mobile_sm {
-    width: calc(100vw - 40px);
-  }
+.bets__contaiiner {
+  grid-area: betsInfo;
 
   .ant-tabs-ink-bar {
     height: 4px;

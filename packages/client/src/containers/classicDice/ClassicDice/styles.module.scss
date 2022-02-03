@@ -13,6 +13,10 @@
     position: relative;
     margin-bottom: 35px;
 
+    @include mobile_sm {
+      display: none;
+    }
+
     h1 {
       font-family: $montserrat;
       font-size: 40px;
@@ -61,5 +65,16 @@
     grid-template-columns: 1fr 265px;
     grid-template-areas: 'game roll';
     column-gap: 20px;
+
+    @include mobile_sm {
+      grid-template-columns: 100%;
+      grid-template-areas: 'game' 'roll';
+      background: none;
+      padding: {
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+    }
   }
 }

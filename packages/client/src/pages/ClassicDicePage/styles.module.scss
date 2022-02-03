@@ -6,4 +6,9 @@
   grid-template-columns: 1.74fr 1fr;
   grid-template-areas: 'breadcrumbs breadcrumbs' 'gameBlock betsInfo';
   column-gap: 50px;
+
+  @include mobile_sm {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'gameBlock' 'betsInfo';
+  }
 }

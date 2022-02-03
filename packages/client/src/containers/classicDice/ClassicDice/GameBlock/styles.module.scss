@@ -5,6 +5,10 @@
 .gameBlock__container {
   grid-area: game;
 
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
   .gameCanvas__box {
     position: relative;
     padding-top: 42px;
@@ -13,6 +17,10 @@
     background-position: top 70px right 20%;
     background-size: 136px;
     height: 170px;
+
+    @include mobile_sm {
+      background-image: url('~@project/libs/assets/images/diceDemoBkgBlack.png');
+    }
     
     .gameCanvas__win {
       width: 52px;
@@ -51,6 +59,10 @@
     height: .5px;
     background-color: $middle;
     margin: 30px 0;
+
+    @include mobile_sm {
+      display: none;
+    }
   }
 
   p {
@@ -67,9 +79,22 @@
     column-gap: 30px;
     margin-bottom: 20px;
 
+    @include mobile_sm {
+      width: calc(100vw - 60px);
+      grid-template-columns: calc(50vw - 55px) calc(50vw - 55px);
+    }
+
     .gameBlock__input {
       height: 64px;
       font-size: 18px;
+      
+      @include mobile_sm {
+        width: 90px;
+      }
+
+      @media (max-width: 400px) {
+        width: 80px;
+      }
     }
 
     .gameBclock__rollOver__box {
@@ -129,6 +154,11 @@
       color: $white;
       padding: 0;
       padding-left: 10px;
+
+
+      @media (max-width: 400px) {
+        font-size: 14px;
+      }
     }
 
     .winChance__button {
@@ -143,6 +173,15 @@
       height: 46px;
       width: max-content;
       line-height: 100%;
+
+
+      @media (max-width: 400px) {
+        font-size: 14px;
+        padding: {
+          left: 8px;
+          right: 8px;
+        } 
+      }
     }
   }
 
@@ -189,5 +228,13 @@
       font-weight: normal;
       padding: 0;
     }
+  }
+}
+
+.mobile__paper {
+  @include mobile_sm {
+    margin-top: 40px;
+    @include paper;
+    padding: 15px;
   }
 }

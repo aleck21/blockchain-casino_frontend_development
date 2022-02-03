@@ -4,6 +4,10 @@
 .autoTab__container {
   width: 100%;
   padding: 0 20px;
+
+  @include mobile_sm {
+    padding: 0;
+  }
   
   .autoTab__content__box {
     display: grid;
@@ -42,5 +46,9 @@
     position: absolute;
     bottom: 0;
     width: calc(100% - 40px);
+
+    @include mobile_sm {
+      display: none;
+    }
   }
 }

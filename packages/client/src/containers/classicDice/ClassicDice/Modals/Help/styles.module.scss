@@ -5,6 +5,10 @@
 .help__container {
   width: 372px;
 
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
   .back__button {
     background-image: none;
     background-color: $blue;

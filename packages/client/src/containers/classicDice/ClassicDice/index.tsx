@@ -4,10 +4,10 @@ import { Button, Image, Text } from '@project/libs/components';
 import { CurrencyColorIcons } from 'constants/currencies';
 import { ModalName } from 'constants/modals';
 import { ModalContext } from 'context';
-import { bankroll } from './contentDemo';
 import { RollPanel } from './RollPanel';
 import { GameBlock } from './GameBlock';
 import styles from './styles.module.scss';
+import { bankroll } from './contentDemo';
 
 const ClassicDice: React.FC = () => {
   const { t } = useTranslation('main');

@@ -5,6 +5,10 @@
 .hotkeys__container {
   width: 390px;
 
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
   h2 {
     @include base_text;
     font-size: 28.62px;
@@ -21,6 +25,11 @@
     display: grid;
     grid-template-columns: 243px 107px;
     align-items: center;
+
+    @include mobile_sm {
+      grid-template-columns: 
+        calc((100vw - 40px) * .6) calc((100vw - 40px) * .4);
+    }
 
     p {
       width: 100%;

@@ -5,6 +5,10 @@
   padding: 20px;
   padding-top: 0;
 
+  @include mobile_sm {
+    padding: 0;
+  }
+
   .manualTab__contentBox {
     display: grid;
     grid-template-rows: auto 44px auto 44px 1fr;
@@ -49,6 +53,10 @@
           font-weight: 500;
           padding: 0;
           height: 44px;
+
+          @include mobile_sm {
+            width: 100%;
+          }
         }
       }
     }
@@ -77,5 +85,9 @@
     bottom: 0;
     width: calc(100% - 40px);
     margin: 0 auto 20px;
+
+    @include mobile_sm {
+      display: none;
+    }
   }
 }

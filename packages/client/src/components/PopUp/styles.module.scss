@@ -17,10 +17,19 @@
   -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
 
+  @include mobile_sm {
+    overflow: auto;
+    align-items: flex-start;
+  }
+
   .popup__container {
     @include paper;
     padding-bottom: 36px;
     position: relative;
+
+    @include mobile_sm {
+      top: 120px;
+    }
   
     .popup__close__button {
       position: absolute;

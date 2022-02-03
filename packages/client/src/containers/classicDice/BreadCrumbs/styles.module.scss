@@ -9,6 +9,10 @@
   margin-bottom: 15px;
   width: 100%;
 
+  @include mobile_sm {
+    display: none;
+  }
+
   a {
     color: $white;
 

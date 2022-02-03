@@ -132,94 +132,99 @@ const GameBlock = memo(() => {
           <p>100</p>
         </article>
         <div className={styles.separator} />
-        <div className={styles.gameBlock__payout__box}>
-          <TextInput
-            label={t('Payout')}
-            isWithClear
-            value={payout}
-            onChangeValue={onChangePayout}
-            classNameInput={cx(styles.gameBlock__input, styles.gameBlock__payout)}
-          />
-          <div className={styles.gameBclock__rollOver__box}>
-            <div className={styles.gameBlock__rollField}>
-              <Text type="p">
-                {t('Roll over')}
-              </Text>
-              <div className={styles.gameBlock__rollOver}>
-                {roll}
+        <section className={styles.mobile__paper}>
+          <div className={styles.gameBlock__payout__box}>
+            <TextInput
+              label={t('Payout')}
+              isWithClear
+              value={payout}
+              onChangeValue={onChangePayout}
+              classNameInput={cx(
+                styles.gameBlock__input,
+                styles.gameBlock__payout,
+              )}
+            />
+            <div className={styles.gameBclock__rollOver__box}>
+              <div className={styles.gameBlock__rollField}>
+                <Text type="p">
+                  {t('Roll over')}
+                </Text>
+                <div className={styles.gameBlock__rollOver}>
+                  {roll}
+                </div>
               </div>
+              <ButtonIcon
+                imageURL={ExchangeIcon}
+                className={styles.gameBlock__rollButton}
+                classNameImage={styles.rollButton__image}
+              />
             </div>
-            <ButtonIcon
-              imageURL={ExchangeIcon}
-              className={styles.gameBlock__rollButton}
-              classNameImage={styles.rollButton__image}
-            />
-          </div>
-        </div>
-        <Text type="p">
-          {t('Win chance')}
-        </Text>
-        <div className={styles.gameBlock__winChance}>
-          <Text type="p">
-            {winChance.toLocaleString(
-              'en-US', { minimumFractionDigits: 2 },
-            )}
-            %
-          </Text>
-          <Button
-            className={styles.winChance__button}
-            onClick={onMinWinClick}
-          >
-            Min
-          </Button>
-          <Button
-            className={styles.winChance__button}
-            onClick={onWinStepMinus}
-          >
-            -5
-          </Button>
-          <Button
-            className={styles.winChance__button}
-            onClick={onWinStepPlus}
-          >
-            +5
-          </Button>
-          <Button
-            className={styles.winChance__button}
-            onClick={onMaxWinClick}
-          >
-            Max
-          </Button>
-        </div>
-        <section className={styles.gameBlock__footer}>
-          <div className={styles.buttons__box}>
-            <ButtonIcon
-              imageURL={GraphicIconBW}
-              onClick={onBetDetailsOpen}
-            />
-            <ButtonIcon
-              imageURL={FleurIconBW}
-              onClick={onSeedSettingsClick}
-            />
-            <ButtonIcon
-              imageURL={VolumeIconBW}
-              onClick={undefined}
-            />
-            <ButtonIcon
-              imageURL={InfoIconBW}
-              onClick={onHelpOpen}
-            />
-            <ButtonIcon
-              imageURL={KeyboardIconBW}
-              onClick={onHotKeysOpen}
-            />
           </div>
           <Text type="p">
-            {t('House Egde')}
-            {' '}
-            {edge}
-            %
+            {t('Win chance')}
           </Text>
+          <div className={styles.gameBlock__winChance}>
+            <Text type="p">
+              {winChance.toLocaleString(
+                'en-US', { minimumFractionDigits: 2 },
+              )}
+              %
+            </Text>
+            <Button
+              className={styles.winChance__button}
+              onClick={onMinWinClick}
+            >
+              Min
+            </Button>
+            <Button
+              className={styles.winChance__button}
+              onClick={onWinStepMinus}
+            >
+              -5
+            </Button>
+            <Button
+              className={styles.winChance__button}
+              onClick={onWinStepPlus}
+            >
+              +5
+            </Button>
+            <Button
+              className={styles.winChance__button}
+              onClick={onMaxWinClick}
+            >
+              Max
+            </Button>
+          </div>
+          <section className={styles.gameBlock__footer}>
+            <div className={styles.buttons__box}>
+              <ButtonIcon
+                imageURL={GraphicIconBW}
+                onClick={onBetDetailsOpen}
+              />
+              <ButtonIcon
+                imageURL={FleurIconBW}
+                onClick={onSeedSettingsClick}
+              />
+              <ButtonIcon
+                imageURL={VolumeIconBW}
+                onClick={undefined}
+              />
+              <ButtonIcon
+                imageURL={InfoIconBW}
+                onClick={onHelpOpen}
+              />
+              <ButtonIcon
+                imageURL={KeyboardIconBW}
+                onClick={onHotKeysOpen}
+              />
+            </div>
+            <Text type="p">
+              {t('House Egde')}
+              {' '}
+              {edge}
+              %
+            </Text>
+          </section>
         </section>
       </div>
       {isSeedSettings && (

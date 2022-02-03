@@ -31,11 +31,13 @@ const HotKeys = memo(() => {
           Space
         </div>
       </div>
-      <section className={styles.checkbox__container}>
+      <section
+        className={styles.checkbox__container}
+        onClick={checkboxToggle}
+        role="none"
+      >
         <div
           className={styles.choise__checkbox}
-          onClick={checkboxToggle}
-          role="none"
         >
           {hotkeysEnabled && (
             <div className={styles.checkbox__marker} />

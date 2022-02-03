@@ -4,12 +4,20 @@
 
 .bets__container {
   height: 360px;
+
+  @include mobile_sm {
+    margin-top: 23px;
+  }
 }
 
 .bets__header {
   display: grid;
   grid-template-columns: 1fr 104px 49px 104px;
   column-gap: 10px;
+
+  @include mobile_sm {
+    grid-template-columns: 1fr 80px 30px 1fr;
+  }
 
   p {
     @include base_text;
@@ -61,6 +69,10 @@
       display: grid;
       grid-template-columns: 1fr 104px 49px 104px;
       column-gap: 10px;
+
+      @include mobile_sm {
+        grid-template-columns: repeat(4, auto);
+      }
 
       p {
         @include base_text;
