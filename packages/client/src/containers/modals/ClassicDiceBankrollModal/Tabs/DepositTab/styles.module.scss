@@ -12,11 +12,16 @@
     display: grid;
     grid-template-columns: max-content 1fr ;
 
+    @include mobile_sm {
+      grid-template-columns: max-content;
+      grid-template-rows: auto auto;
+    }
+
     p {
       @include base_text;
       font-size: 24px;
       font-weight: 700;
-      color: $white; 
+      color: $white;
 
       span {
         color: $blue;
@@ -36,6 +41,10 @@
       grid-template-columns: max-content max-content;
       column-gap: 14px;
       align-items: center;
+
+      @include mobile_sm {
+        padding-left: 0;
+      }
     }
 
     .inBank__left {
@@ -46,11 +55,20 @@
       grid-template-columns: auto auto;
       column-gap: 14px;
       align-items: center;
+
+      @include mobile_sm {
+        padding-right: 0;
+        border-right: none;
+      }
     }
   }
 
   .select__container {
     width: 100%;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+    }
     
     .select__box {
       height: 86px;
@@ -61,14 +79,38 @@
       grid-template-columns: 226px 290px;
       align-items: center;
 
+      @include mobile_sm {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        padding-top: 90px;
+        background: none;
+        height: auto;
+      }
+
       input {
         height: 54px;
         border-right: .5px solid $middle;
+        
+        @include mobile_sm {
+          border-right: 0;
+          background-color: $black;
+        }
       }
 
       .deposit_select__wrap_container {
         position: absolute;
         left: 220px;
+
+        @include mobile_sm {
+          position: absolute;
+          left: 20px;
+          top: 310px;
+          width: calc(100vw - 80px);
+        }
+
+        @media (max-width: 400px) {
+          top: 340px;
+        }
       }
 
       .deposit_select__item {
@@ -89,11 +131,21 @@
     grid-template-columns: 226px 260px;
     column-gap: 30px;
 
+    @include mobile_sm {
+      grid-template-columns: 100%;
+      column-gap: 0;
+      grid-template-rows: auto auto;
+    }
+
     .choose__select {
-      height: 64px;
       position: relative;
       top: 0;
+      height: 64px;
       margin-top: 10px;
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
     }
 
     .choose__itemsBlock {
@@ -103,16 +155,29 @@
       width: 226px;
       row-gap: 4px;
 
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
+
       .choose__select__item {
         width: 226px;
         padding-top: 4px;
         padding-bottom: 4px;
+
+        @include mobile_sm {
+          width: calc(100vw - 80px);
+        }
       }
     }
   }
 
   .button__box {
     width: 260px;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+      margin-top: 20px;
+    }
 
     p {
       text-align: center;
@@ -125,6 +190,10 @@
       height: 64px;
       margin-top: 10px;
       margin-bottom: 30px;
+
+      @include mobile_sm {
+        width: 100%;
+      }
     }
   }
 }

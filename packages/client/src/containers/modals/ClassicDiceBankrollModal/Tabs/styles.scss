@@ -5,6 +5,10 @@
 .tabs__container {
   grid-area: bankroll_tabs;
 
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
   .ant-tabs-ink-bar {
     height: 4px;
   }

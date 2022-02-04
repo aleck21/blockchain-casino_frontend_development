@@ -27,22 +27,32 @@
   
   .bankroll__footer {
     grid-area: bankroll_footer;
+    display: grid;
+    grid-template-columns: 18px auto;
+    column-gap: 4px;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
 
-    button {
-      background-image: none;
-      display: grid;
-      grid-template-columns: 18px auto;
-      column-gap: 4px;
-      align-items: center;
+    @include mobile_sm {
+      margin-top: 12px;
+      width: calc(100vw - 80px);
+      align-items: flex-start;
+    }
+
+    p {
+      @include base_text;
+      font-size: 14px;
+      color: $blue;
+      line-height: 100%;
       padding: 0;
+      padding-top: 4px;
+      width: 100%;
+      height: auto;
 
-      p {
-        @include base_text;
-        font-size: 14px;
-        color: $blue;
-        line-height: 100%;
-        padding: 0;
-        padding-top: 4px;
+      @include mobile_sm {
+        word-break: break-all;
+        height: 40px;
       }
     }
   }

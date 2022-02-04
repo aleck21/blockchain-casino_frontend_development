@@ -16,7 +16,7 @@ const Home: FC = () => {
         title="Classic Dice"
         image={ClasicDice}
         text={t('Classic-dice-is-a-game')}
-        link="/classicDice"
+        link="/classic-dice"
       />
       <GameCard
         title="Crash"
