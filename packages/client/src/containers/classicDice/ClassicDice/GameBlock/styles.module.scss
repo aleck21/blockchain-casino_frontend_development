@@ -237,4 +237,17 @@
     @include paper;
     padding: 15px;
   }
+
+  .mobile_button__roll {
+    display: none;
+
+    @include mobile_sm {
+      display: block;
+      width: 100%;
+      background-color: $blue;
+      background-image: none;
+      height: 40px;
+      margin-top: 30px;
+    }
+  }
 }

@@ -26,12 +26,12 @@ ref: ButtonRef) => {
       ref={ref}
       type="button"
       className={cx(
+        className,
         styles.button,
         styles[theme],
         {
           [styles.full_width]: isFullWidth,
         },
-        className,
       )}
       onClick={onClick}
       disabled={disabled || isLoading}

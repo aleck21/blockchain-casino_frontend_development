@@ -39,10 +39,22 @@ const GameBlock = memo(() => {
   const [roll, setRoll] = useState(50);
   const [winChance, setWinChance] = useState(50);
   const [payout, setPayout] = useState(payoutDefault);
-  const [isSeedSettings, setIsSeedSettings] = useState(false);
-  const [isHelp, setIsHelp] = useState(false);
-  const [isBetDetails, setIsBetDetails] = useState(false);
-  const [isHotKeys, setIsHotkeys] = useState(false);
+  const [isPopup, setIsPopup] = useState('');
+
+  const popups: Record<string, JSX.Element> = {
+    hotkeys: <HotKeys />,
+    help: <Help onBack={() => {}} />,
+    seedSettings: <SeedSettings />,
+    betDetails: <BetDetails />,
+  };
+
+  const onPopupOpen = useCallback((namePopup: string) => {
+    setIsPopup(namePopup);
+  }, []);
+
+  const onPopupClose = useCallback(() => {
+    setIsPopup('');
+  }, []);
 
   const onChangeRoll = useCallback((value: number) => {
     setRoll(value);
@@ -57,55 +69,15 @@ const GameBlock = memo(() => {
   }, []);
 
   const onWinStepPlus = useCallback(() => {
-    if (winChance + 5 > winChanceMinMax.max) {
-      setWinChance(winChanceMinMax.max);
-      return;
-    }
-    setWinChance(winChance + 5);
+    setWinChance(Math.min(winChance + 5, winChanceMinMax.max));
   }, [winChance]);
 
   const onWinStepMinus = useCallback(() => {
-    if (winChance - 5 < winChanceMinMax.min) {
-      setWinChance(winChanceMinMax.min);
-      return;
-    }
-    setWinChance(winChance - 5);
+    setWinChance(Math.max(winChance - 5, winChanceMinMax.min));
   }, [winChance]);
 
   const onChangePayout = useCallback((text: string) => {
     setPayout(text);
-  }, []);
-
-  const onSeedSettingsClick = useCallback(() => {
-    setIsSeedSettings(true);
-  }, []);
-
-  const onSeedSettingsClose = useCallback(() => {
-    setIsSeedSettings(false);
-  }, []);
-
-  const onHelpClose = useCallback(() => {
-    setIsHelp(false);
-  }, []);
-
-  const onHelpOpen = useCallback(() => {
-    setIsHelp(true);
-  }, []);
-
-  const onBetDetailsClose = useCallback(() => {
-    setIsBetDetails(false);
-  }, []);
-
-  const onBetDetailsOpen = useCallback(() => {
-    setIsBetDetails(true);
-  }, []);
-
-  const onHotKeysClose = useCallback(() => {
-    setIsHotkeys(false);
-  }, []);
-
-  const onHotKeysOpen = useCallback(() => {
-    setIsHotkeys(true);
   }, []);
 
   return (
@@ -199,11 +171,11 @@ const GameBlock = memo(() => {
             <div className={styles.buttons__box}>
               <ButtonIcon
                 imageURL={GraphicIconBW}
-                onClick={onBetDetailsOpen}
+                onClick={() => { onPopupOpen('betDetails'); }}
               />
               <ButtonIcon
                 imageURL={FleurIconBW}
-                onClick={onSeedSettingsClick}
+                onClick={() => { onPopupOpen('seedSettings'); }}
               />
               <ButtonIcon
                 imageURL={VolumeIconBW}
@@ -211,11 +183,11 @@ const GameBlock = memo(() => {
               />
               <ButtonIcon
                 imageURL={InfoIconBW}
-                onClick={onHelpOpen}
+                onClick={() => { onPopupOpen('help'); }}
               />
               <ButtonIcon
                 imageURL={KeyboardIconBW}
-                onClick={onHotKeysOpen}
+                onClick={() => { onPopupOpen('hotkeys'); }}
               />
             </div>
             <Text type="p">
@@ -225,36 +197,19 @@ const GameBlock = memo(() => {
               %
             </Text>
           </section>
+          <Button
+            onClick={undefined}
+            className={styles.mobile_button__roll}
+          >
+            {t('Roll')}
+          </Button>
         </section>
       </div>
-      {isSeedSettings && (
+      {isPopup !== '' && (
         <PopUp
-          onClose={onSeedSettingsClose}
+          onClose={onPopupClose}
         >
-          <SeedSettings />
-        </PopUp>
-      )}
-      {isHelp && (
-        <PopUp
-          onClose={onHelpClose}
-        >
-          <Help
-            onBack={onHelpClose}
-          />
-        </PopUp>
-      )}
-      {isBetDetails && (
-        <PopUp
-          onClose={onBetDetailsClose}
-        >
-          <BetDetails />
-        </PopUp>
-      )}
-      {isHotKeys && (
-        <PopUp
-          onClose={onHotKeysClose}
-        >
-          <HotKeys />
+          {popups[isPopup]}
         </PopUp>
       )}
     </>

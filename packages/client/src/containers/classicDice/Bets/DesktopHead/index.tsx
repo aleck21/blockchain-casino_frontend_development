@@ -19,7 +19,7 @@ const DesktopHead = memo(({
   if (rake !== undefined && rakeback !== undefined) {
     return (
       <header className={styles.betsHeader__container}>
-        <h2>{title}</h2>
+        <Text type="h2">{title}</Text>
         <div className={styles.betsHeader__buttonsBox}>
           <div className={styles.betsHeader__button}>
             {t('Rake')}

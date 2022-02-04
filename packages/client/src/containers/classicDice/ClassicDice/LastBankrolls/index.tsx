@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import cx from 'classnames';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Text } from '@project/libs/components';
+import { BankrollButton } from 'containers/classicDice/BankrollButton';
 import { bankroll, lastBankrolls } from 'containers/classicDice/ClassicDice/contentDemo';
 import styles from './styles.module.scss';
 
@@ -19,6 +20,12 @@ const LastBankroll = memo(() => {
           {bankroll.currency}
         </b>
       </Text>
+      <div className={styles.mobile__bankrollButton}>
+        <BankrollButton
+          currency={bankroll.currency}
+          quantity={bankroll.quantity}
+        />
+      </div>
       <div className={cx(styles.lastBankroll__box)}>
         {lastBankrolls.map((item) => (
           <div

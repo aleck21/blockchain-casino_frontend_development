@@ -5,6 +5,10 @@
 .bankrollInfo__container {
   width: 852px;
 
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
   .back__button {
     margin-bottom: 20px;
   }

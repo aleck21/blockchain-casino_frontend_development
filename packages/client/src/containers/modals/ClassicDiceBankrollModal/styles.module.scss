@@ -10,9 +10,19 @@
   width: 898px;
   padding: 20px;
   
+  @include mobile_sm {
+    grid-template-areas: 'bankroll_head' 'bankroll_tabs' 'bankroll_top' 'bankroll_footer';
+    grid-template-columns: 100%;
+  }
+
   h2 {
     grid-area: bankroll_head;
     font-size: 28.62px;
+
+    @include mobile_sm {
+      font-size: 24px;
+      max-width: calc(100vw - 100px);
+    }
   }
   
   .bankroll__footer {
