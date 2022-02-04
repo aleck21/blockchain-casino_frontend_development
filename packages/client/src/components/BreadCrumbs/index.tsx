@@ -1,12 +1,15 @@
 import React, { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Image } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
+import { pageNames } from 'constants/pageNames';
 import { ArrowGt } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
 
 const BreadCrumbs = memo(() => {
   const { t } = useTranslation('main');
+  const location = useLocation().pathname.split('/');
+  const pageName = pageNames[location[1]];
 
   return (
     <article className={styles.dice__breadcrumbs}>
@@ -17,7 +20,7 @@ const BreadCrumbs = memo(() => {
       <Image url={ArrowGt} />
       &ensp;
       <span>
-        {t('Classic Dice')}
+        {t(pageName)}
       </span>
     </article>
   );

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { ClassicDice, Bets, BreadCrumbs } from 'containers';
+import { ClassicDice, Bets } from 'containers';
+import { BreadCrumbs } from 'components';
 import styles from './styles.module.scss';
 
 const ClassicDicePage: FC = () => (
