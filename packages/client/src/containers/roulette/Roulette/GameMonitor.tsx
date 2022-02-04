@@ -56,6 +56,7 @@ export const GameMonitor = memo(({
           userName={user.userName}
           currencyCount={user.currencyCount}
           currency={user.currency}
+          key={user.id}
         />
       ))}
     </div>
