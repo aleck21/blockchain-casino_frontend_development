@@ -5,7 +5,13 @@ import './styles.scss';
 import { AutoTab } from './Tabs/AutoTab';
 import { ManualTab } from './Tabs/ManualTab';
 
-const RollPanel = memo(() => {
+type RollPanelProps = {
+  onRollClick: () => void;
+};
+
+const RollPanel = memo(({
+  onRollClick,
+}: RollPanelProps) => {
   const { t } = useTranslation('main');
   const { TabPane } = Tabs;
 
@@ -19,7 +25,9 @@ const RollPanel = memo(() => {
           tab={t('Manual')}
           key="1"
         >
-          <ManualTab />
+          <ManualTab
+            onRollClick={onRollClick}
+          />
         </TabPane>
         <TabPane
           tab={t('Auto')}

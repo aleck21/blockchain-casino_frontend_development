@@ -34,7 +34,13 @@ import {
   HotKeys,
 } from '../Modals';
 
-const GameBlock = memo(() => {
+type GameProps = {
+  onRollClick: () => void;
+};
+
+const GameBlock = memo(({
+  onRollClick,
+}: GameProps) => {
   const { t } = useTranslation('main');
   const [roll, setRoll] = useState(50);
   const [winChance, setWinChance] = useState(50);
@@ -198,7 +204,7 @@ const GameBlock = memo(() => {
             </Text>
           </section>
           <Button
-            onClick={undefined}
+            onClick={onRollClick}
             className={styles.mobile_button__roll}
           >
             {t('Roll')}

@@ -11,7 +11,13 @@ import { CurrencyColorIcons } from 'constants/currencies';
 import { manualTabDatas } from 'containers/classicDice/ClassicDice/contentDemo';
 import styles from './styles.module.scss';
 
-const ManualTab = memo(() => {
+type ManualTabProps = {
+  onRollClick: () => void;
+};
+
+const ManualTab = memo(({
+  onRollClick,
+}: ManualTabProps) => {
   const [betSize, setBetSize] = useState(manualTabDatas.betSize.quantity);
   const [winAmount, setWinAmount] = useState(manualTabDatas.winAmount.quantity);
 
@@ -60,6 +66,7 @@ const ManualTab = memo(() => {
       </div>
       <Button
         className={styles.manualTab__button}
+        onClick={onRollClick}
       >
         {t('Roll')}
       </Button>
