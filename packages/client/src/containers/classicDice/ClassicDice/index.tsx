@@ -3,10 +3,10 @@ import { useTranslation } from '@project/libs/utils/i18n';
 import { Text } from '@project/libs/components';
 import { RollPanel } from './RollPanel';
 import { GameBlock } from './GameBlock';
-import { Won } from '../Won';
+import { Won } from './Won';
 import styles from './styles.module.scss';
 import { bankroll } from './contentDemo';
-import { BankrollButton } from '../BankrollButton';
+import { BankrollButton } from './BankrollButton';
 
 const ClassicDice = memo(() => {
   const { t } = useTranslation('main');
@@ -14,6 +14,7 @@ const ClassicDice = memo(() => {
 
   const changeIsWon = useCallback(() => {
     setIsWon(true);
+    setTimeout(() => setIsWon(false), 2000);
   }, []);
 
   return (

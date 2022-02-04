@@ -6,7 +6,7 @@ import { AllBets } from './AllBets';
 import { allBets, myBets } from '../ClassicDice/contentDemo';
 import { MyBets } from './MyBets';
 import { DesktopHead } from './DesktopHead';
-import { History } from '..';
+import { History } from '../ClassicDice/History';
 import './styles.scss';
 
 const Bets = memo(() => {
