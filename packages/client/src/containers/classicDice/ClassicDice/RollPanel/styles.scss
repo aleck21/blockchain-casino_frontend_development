@@ -1,0 +1,63 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.rollPanel__container {
+  grid-area: roll;
+  @include paper;
+  background-color: $black;
+  padding: 0;
+  height: 100%;
+  position: relative;
+
+  @include mobile_sm {
+    width: calc(100vw - 40px);
+  }
+
+  .ant-tabs-ink-bar {
+    height: 4px;
+  }
+
+  .ant-tabs-tab-btn {
+    color: $white;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: $helvetica;
+
+    &:focus, &:hover {
+      color: $white;
+    }
+  }
+
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: $white;
+  }
+
+  .ant-tabs {
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .ant-tabs-top > .ant-tabs-nav::before {
+    border: 0;
+    border-bottom: .5px solid $middle;
+  }
+
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list {
+    justify-content: space-between;
+  }
+
+  .ant-tabs-top > .ant-tabs-nav .ant-tabs-ink-bar {
+    height: 4px;
+    background-color: $blue;
+  }
+
+  .ant-tabs-nav-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+  }
+}

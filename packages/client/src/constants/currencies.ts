@@ -22,3 +22,14 @@ export const CurrencyColorIcons: Record<string, string> = {
   XRP: XrpColorIcon,
   BCH: BitCoinCashColorIcon,
 };
+
+export const CurrenciesName: Record<string, string> = {
+  BTC: 'Bitcoin',
+  BNB: 'Binance Coin',
+  ETH: 'Ethereum',
+  USDT: 'Tether',
+  LTC: 'Litecoin',
+  BCH: 'Bitcoin Cash',
+  XRP: 'XRP',
+  SHIB: 'Shiba Inu',
+};

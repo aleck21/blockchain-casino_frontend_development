@@ -6,21 +6,58 @@ import { CurrencyColorIcons } from 'constants/currencies';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
-type AllBetsProps = {
-  bets: {
-    id: string | number,
-    player: string,
-    bet: {
-      currency: string,
-      quantity: number | string,
-    },
-    multiplier: number | string,
-    profit: {
-      currency: string,
-      quantity: number | string,
-    },
-  }[];
+type Bets = {
+  id: string | number,
+  player: string,
+  bet: {
+    currency: string,
+    quantity: number | string,
+  },
+  multiplier: number | string,
+  profit: {
+    currency: string,
+    quantity: number | string,
+  },
 };
+
+type AllBetsProps = {
+  bets: Bets[];
+};
+
+const Table = memo(({
+  bets,
+}: AllBetsProps) => (
+  <div className={cx(styles.bets__table__box)}>
+    {bets.map((row) => (
+      <div
+        className={cx(styles.bets__table__row)}
+        key={row.id}
+      >
+        <div className={cx(styles.player__box)}>
+          <Image url={AvatarDefault} />
+          <Text type="p">
+            {row.player}
+          </Text>
+        </div>
+        <div className={cx(styles.currency_text__box)}>
+          <Image url={CurrencyColorIcons[row.bet.currency]} />
+          <Text type="p">
+            {row.bet.quantity}
+          </Text>
+        </div>
+        <Text type="p">
+          {row.multiplier}
+        </Text>
+        <div className={cx(styles.currency_text__box)}>
+          <Image url={CurrencyColorIcons[row.profit.currency]} />
+          <Text type="p">
+            {row.profit.quantity}
+          </Text>
+        </div>
+      </div>
+    ))}
+  </div>
+));
 
 const AllBets = memo(({
   bets,
@@ -47,36 +84,9 @@ const AllBets = memo(({
         </Text>
       </div>
       <div className={cx(styles.bets__table__container)}>
-        <div className={cx(styles.bets__table__box)}>
-          {bets.map((row) => (
-            <div
-              className={cx(styles.bets__table__row)}
-              key={row.id}
-            >
-              <div className={cx(styles.player__box)}>
-                <Image url={AvatarDefault} />
-                <Text type="p">
-                  {row.player}
-                </Text>
-              </div>
-              <div className={cx(styles.currency_text__box)}>
-                <Image url={CurrencyColorIcons[row.bet.currency]} />
-                <Text type="p">
-                  {row.bet.quantity}
-                </Text>
-              </div>
-              <Text type="p">
-                {row.multiplier}
-              </Text>
-              <div className={cx(styles.currency_text__box)}>
-                <Image url={CurrencyColorIcons[row.profit.currency]} />
-                <Text type="p">
-                  {row.profit.quantity}
-                </Text>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Table
+          bets={bets}
+        />
         <div className={cx(styles.table__shadow)} />
       </div>
     </section>

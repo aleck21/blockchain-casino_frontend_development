@@ -1,0 +1,61 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.bancroll__top10__box {
+  grid-area: bankroll_top;
+
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 18px;
+    font-family: $helvetica;
+    width: 100%;
+    border-bottom: .5px solid $middle;
+    padding-bottom: 14px;
+    margin-top: 17px;
+
+    @include mobile_sm {
+      // display: none;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th {
+    @include base_text;
+    color: $middle;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 23px;
+  }
+
+  td {
+    border-bottom: .5px solid $middle;
+    font-size: 14px;
+    font-weight: 500;
+    color: $white;
+    padding-top: 15px;
+    padding-bottom: 19px;
+    vertical-align: middle;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      color: $middle;
+    }
+  }
+
+  td.right {
+    text-align: right;
+    width: 75px;
+  }
+}

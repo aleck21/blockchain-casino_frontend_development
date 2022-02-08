@@ -1,0 +1,44 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.bankrollInfo__container {
+  width: 852px;
+
+  @include mobile_sm {
+    width: calc(100vw - 80px);
+  }
+
+  .back__button {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    @include base_text;
+    font-size: 28.62px;
+    color: $white;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  h3 {
+    @include base_text;
+    font-size: 16px;
+    color: $white;
+    text-align: left;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    @include base_text;
+    font-size: 14px;
+    color: $middle;
+    text-align: left;
+  }
+
+  a {
+    color: $blue;
+  }
+}

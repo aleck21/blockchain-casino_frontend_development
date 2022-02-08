@@ -1,15 +1,22 @@
 import React, { memo } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
 import { Tabs } from 'antd';
-import cx from 'classnames';
-import styles from './styles.module.scss';
+import './styles.scss';
+import { AutoTab } from './Tabs/AutoTab';
+import { ManualTab } from './Tabs/ManualTab';
 
-const RollPanel = memo(() => {
+type RollPanelProps = {
+  onRollClick: () => void;
+};
+
+const RollPanel = memo(({
+  onRollClick,
+}: RollPanelProps) => {
   const { t } = useTranslation('main');
   const { TabPane } = Tabs;
 
   return (
-    <div className={cx(styles.rollPanel__container)}>
+    <div className="rollPanel__container">
       <Tabs
         defaultActiveKey="1"
         onChange={undefined}
@@ -18,13 +25,15 @@ const RollPanel = memo(() => {
           tab={t('Manual')}
           key="1"
         >
-          Manual
+          <ManualTab
+            onRollClick={onRollClick}
+          />
         </TabPane>
         <TabPane
           tab={t('Auto')}
           key="2"
         >
-          Auto
+          <AutoTab />
         </TabPane>
       </Tabs>
     </div>

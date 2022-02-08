@@ -1,0 +1,99 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.won__container {
+  animation-name: won;
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+  height: auto;
+  width: 236px;
+  position: fixed;
+  z-index: 100;
+  top: 320px;
+  left: 330px;
+  margin: 0 auto;
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    rgb(19,142,255) 0%, rgba(30,32,36,0) 80%);
+  background-position: top 80px left 50%;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  box-shadow: 0 0 50px 50px rgba(0,0,0,.3);
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.3);
+
+  h1 {
+    font-size: 24px;
+    color: $blue;
+    font-weight: 600;
+  }
+
+  p {
+    @include base_text;
+    color: $white;
+    font-size: 38px;
+    font-weight: 500;
+    text-align: center;
+    margin: {
+      top: 10px;
+      bottom: 10px;
+    }
+  }
+
+  img {
+    width: 236px;
+    height: 157px;
+  }
+
+  @keyframes won {
+    from {
+      top: -236px;
+      opacity: 0.5;
+    }
+    25% {
+      top: 320px;
+      opacity: 1;
+    }
+    50% {
+      top: 300px;
+    }
+    75% {
+      top: 320px;
+    }
+    90% {
+      top: 310px;
+    }
+    to {
+      top: 320px;
+    }
+  }
+
+  @include mobile_sm {
+    left: 60px;
+    top: 240px;
+
+    @keyframes won {
+      from {
+        top: -236px;
+        opacity: 0.5;
+      }
+      25% {
+        top: 240px;
+        opacity: 1;
+      }
+      50% {
+        top: 200px;
+      }
+      75% {
+        top: 240px;
+      }
+      90% {
+        top: 210px;
+      }
+      to {
+        top: 240px;
+      }
+    }
+  }
+}

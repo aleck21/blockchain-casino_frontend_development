@@ -1,0 +1,96 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+
+.manualTab__container {
+  width: 100%;
+  padding: 0 20px;
+
+  @include mobile_sm {
+    padding: 0;
+  }
+
+  .manualTab__contentBox {
+    display: grid;
+    grid-template-rows: auto 44px auto 44px 1fr;
+    row-gap: 10px;
+    height: 100%;
+    
+    h4 {
+      @include base_text;
+      font-size: 12px;
+      text-align: left;
+      color: $middle;
+      font-weight: normal;
+    }
+  
+    .manualTab__inputBlock {
+      display: grid;
+      background-color: $dark;
+      border-radius: 15px;
+      grid-template-columns: 40px 1fr;
+      column-gap: 10px;
+      align-items: center;
+      width: 100%;
+      height: 44px;
+  
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+      }
+  
+      .manualTab__input__container {
+        background: none;
+        border-radius: 15px;
+        padding: 0;
+        width: 100%;
+  
+        input.manualTab__input {
+          outline: none;
+          border: none;
+          background-color: $dark;
+          color: $white;
+          @include base_text;
+          font-size: 16px;
+          font-weight: 500;
+          padding: 0;
+          height: 44px;
+          width: 100%;
+
+          @include mobile_sm {
+            width: 100%;
+          }
+        }
+      }
+    }
+  
+    .manualTab__titleWithData {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      
+      p {
+        @include base_text;
+        font-size: 12px;
+        text-align: right;
+        color: $white;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .manualTab__button {
+    background-image: none;
+    background-color: $blue;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    margin: 0 auto 20px;
+
+    @include mobile_sm {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,233 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.deposit__container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 30px;
+
+  .inBank__box {
+    display: grid;
+    grid-template-columns: max-content 1fr ;
+
+    @include mobile_sm {
+      grid-template-columns: max-content;
+      grid-template-rows: auto auto;
+    }
+
+    p {
+      @include base_text;
+      font-size: 24px;
+      font-weight: 700;
+      color: $white;
+
+      span {
+        color: $blue;
+      }
+    }
+
+    p.title {
+      @include base_text;
+      font-size: 14px;
+      color: $middle;
+    }
+
+    .inBank__right {
+      padding-left: 20px;
+      height: 46px;
+      display: grid;
+      grid-template-columns: max-content max-content;
+      column-gap: 14px;
+      align-items: center;
+
+      @include mobile_sm {
+        padding-left: 0;
+      }
+    }
+
+    .inBank__left {
+      padding-right: 20px;
+      height: 46px;
+      border-right: .5px solid $middle;
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 14px;
+      align-items: center;
+
+      @include mobile_sm {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+
+  .select__container {
+    width: 100%;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+    }
+    
+    .select__box {
+      height: 86px;
+      margin-top: 10px;
+      border-radius: 15px;
+      background-color: $black;
+      display: grid;
+      grid-template-columns: 226px 290px;
+      align-items: center;
+
+      @include mobile_sm {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        padding-top: 90px;
+        background: none;
+        height: auto;
+      }
+
+      input {
+        height: 54px;
+        border-right: .5px solid $middle;
+        
+        @include mobile_sm {
+          border-right: 0;
+          background-color: $black;
+        }
+      }
+
+      .deposit_select__wrap_container {
+        position: absolute;
+        left: 220px;
+
+        @include mobile_sm {
+          position: absolute;
+          left: 20px;
+          top: 310px;
+          width: calc(100vw - 80px);
+        }
+
+        @media (max-width: 400px) {
+          top: 340px;
+        }
+      }
+
+      .deposit_select__item {
+        display: grid;
+        grid-template-columns: 32px max-content;
+        column-gap: 16px;
+        width: 240px;
+      }
+    }
+  }
+
+  .choose__wrap__container {
+    position: static;
+  }
+
+  .choose__container {
+    display: grid;
+    grid-template-columns: 226px 260px;
+    column-gap: 30px;
+
+    @include mobile_sm {
+      grid-template-columns: 100%;
+      column-gap: 0;
+      grid-template-rows: auto auto;
+    }
+
+    .choose__select {
+      position: relative;
+      top: 0;
+      height: 64px;
+      margin-top: 10px;
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
+    }
+
+    .choose__itemsBlock {
+      position: absolute;
+      top: auto;
+      left: 20px;
+      width: 226px;
+      row-gap: 4px;
+
+      @include mobile_sm {
+        width: calc(100vw - 80px);
+      }
+
+      .choose__select__item {
+        width: 226px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        @include mobile_sm {
+          width: calc(100vw - 80px);
+        }
+      }
+    }
+  }
+
+  .button__box {
+    width: 260px;
+
+    @include mobile_sm {
+      width: calc(100vw - 80px);
+      margin-top: 20px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    button {
+      background-image: none;
+      background-color: $blue;
+      width: 260px;
+      height: 64px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+
+      @include mobile_sm {
+        width: 100%;
+      }
+    }
+  }
+}
+
+p.title {
+  @include base_text;
+  font-size: 14px;
+  color: $middle;
+
+  span {
+    color: $white;
+  }
+}
+
+p.select__text {
+  @include base_text;
+  font-size: 18px;
+  font-weight: 500;
+
+  span {
+    color: $middle;
+  }
+}
+
+.dialog__modal__container {
+  position: absolute;
+  left: 170px;
+  @include paper;
+  box-shadow: 0 0 200px 200px rgba(17, 17, 21, .6);
+  padding-bottom: 36px;
+
+  .dialog__close__button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}

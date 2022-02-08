@@ -1,0 +1,60 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.bankroll__container {
+  display: grid;
+  grid-template-columns: 516px 322px;
+  grid-template-areas: 'bankroll_head bankroll_header' 'bankroll_tabs bankroll_top' 'bankroll_footer .';
+  column-gap: 20px;
+  width: 898px;
+  padding: 20px;
+  
+  @include mobile_sm {
+    grid-template-areas: 'bankroll_head' 'bankroll_tabs' 'bankroll_top' 'bankroll_footer';
+    grid-template-columns: 100%;
+  }
+
+  h2 {
+    grid-area: bankroll_head;
+    font-size: 28.62px;
+
+    @include mobile_sm {
+      font-size: 24px;
+      max-width: calc(100vw - 100px);
+    }
+  }
+  
+  .bankroll__footer {
+    grid-area: bankroll_footer;
+    display: grid;
+    grid-template-columns: 18px auto;
+    column-gap: 4px;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+
+    @include mobile_sm {
+      margin-top: 12px;
+      width: calc(100vw - 80px);
+      align-items: flex-start;
+    }
+
+    p {
+      @include base_text;
+      font-size: 14px;
+      color: $blue;
+      line-height: 100%;
+      padding: 0;
+      padding-top: 4px;
+      width: 100%;
+      height: auto;
+
+      @include mobile_sm {
+        word-break: break-all;
+        height: 40px;
+      }
+    }
+  }
+
+}

@@ -3,12 +3,19 @@
 @import "~@project/libs/assets/styles/fonts.scss";
 
 .dice__container {
+  height: 100%;
+  grid-area: gameBlock;
+
   .dice__header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     position: relative;
     margin-bottom: 35px;
+
+    @include mobile_sm {
+      display: none;
+    }
 
     h1 {
       font-family: $montserrat;
@@ -17,37 +24,6 @@
       color: $white;
       text-align: left;
       text-transform: none;
-    }
-  
-    button.bankroll {
-      height: 44px;
-      width: 167px;
-      display: block;
-      background-color: $blue;
-      background-image: none;
-      position: absolute;
-      right: 0;
-      
-      p {
-        text-align: center;
-        font-family: $montserrat;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 110%;
-      }
-  
-      .button__content {
-        display: grid;
-        grid-template-columns: 16px auto;
-        column-gap: 6px;
-        align-items: center;
-  
-        img {
-          height: 16px;
-          width: 16px;
-        }
-  
-      }
     }
   }
 
@@ -58,5 +34,16 @@
     grid-template-columns: 1fr 265px;
     grid-template-areas: 'game roll';
     column-gap: 20px;
+
+    @include mobile_sm {
+      grid-template-columns: 100%;
+      grid-template-areas: 'game' 'roll';
+      background: none;
+      padding: {
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+    }
   }
 }

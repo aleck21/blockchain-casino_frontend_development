@@ -5,10 +5,12 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  position: absolute;
-  z-index: 1000;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  // z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: auto;
   
   @media (max-height: 800px) {
@@ -42,7 +44,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      z-index: 200;
+      z-index: 2;
     }
   }
 }

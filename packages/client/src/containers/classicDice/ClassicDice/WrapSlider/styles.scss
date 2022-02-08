@@ -1,0 +1,63 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/mixins.scss";
+
+.wrap_slider__container {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  padding-top: 20px;
+  
+  .wrap_slider__informer {
+    @include base_text;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    top: 4px;
+  }
+
+  .ant-slider {
+    height: 40px;
+
+    .ant-slider-rail {
+      height: 24px;
+      border-radius: 12px;
+      background-color: $middle;
+      border: .5px solid $middle;
+      background-image: url('~@project/libs/assets/images/sliderLineBkg.svg');
+      background-repeat: repeat-x;
+      background-position: center left 0px;
+      outline: .1px solid rgba(111, 118, 126, .3);
+      outline-offset: 4px;
+    }
+
+    .ant-slider-handle {
+      width: 18px;
+      height: 40px;
+      border-radius: 9px;
+      background-color: $white;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .ant-slider-step {
+      height: 40px;
+      border-radius: 12px;
+    }
+
+    .ant-slider-track {
+      background-image: url('~@project/libs/assets/images/sliderLineBkgWhite.svg'),
+        linear-gradient(to left, $blue 0%, #004584 100%);
+      height: 24px;
+      border-radius: 12px;
+      background-repeat: repeat-x, no-repeat;
+      background-position: center left 0px, center center;
+    }
+  }
+}
+
+body {
+  .ant-tooltip {
+    display: none;
+  }
+}

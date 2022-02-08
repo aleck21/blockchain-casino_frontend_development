@@ -7,7 +7,7 @@ import {
 } from 'containers';
 import styles from './styles.module.scss';
 
-export const ProfilePage = () => (
+export const ProfilePage: React.FC = () => (
   <section className={cx(styles.profile__container)}>
     <div className={cx(styles.profile__leftBlock)}>
       <Profile />

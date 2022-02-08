@@ -45,7 +45,7 @@ export const Info: React.FC = () => {
     setIsShowBalance(false);
     setContentModal(ModalName.aboutBgd);
     openModal();
-  }, []);
+  }, [openModal, setContentModal]);
 
   return (
     <section className={cx(styles.container)}>

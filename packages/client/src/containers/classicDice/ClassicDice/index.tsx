@@ -1,43 +1,44 @@
-import React from 'react';
+import React, { useState, memo, useCallback } from 'react';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { Button, Image, Text } from '@project/libs/components';
-import { CurrencyColorIcons } from 'constants/currencies';
-import cx from 'classnames';
-import styles from './styles.module.scss';
-import { bankroll } from './contentDemo';
+import { Text } from '@project/libs/components';
 import { RollPanel } from './RollPanel';
 import { GameBlock } from './GameBlock';
+import { Won } from './Won';
+import styles from './styles.module.scss';
+import { bankroll } from './contentDemo';
+import { BankrollButton } from './BankrollButton';
 
-const ClassicDice: React.FC = () => {
+const ClassicDice = memo(() => {
   const { t } = useTranslation('main');
+  const [isWon, setIsWon] = useState(false);
+
+  const changeIsWon = useCallback(() => {
+    setIsWon(true);
+    setTimeout(() => setIsWon(false), 2000);
+  }, []);
 
   return (
-    <div className={cx(styles.dice__container)}>
-      <header className={cx(styles.dice__header)}>
-        <Text type="h1">
-          {t('Classic Dice')}
-        </Text>
-        <Button
-          onClick={() => {}}
-          className={cx(styles.bankroll)}
-        >
-          <Text type="p">
-            {t('Bankroll')}
+    <>
+      <div className={styles.dice__container}>
+        <header className={styles.dice__header}>
+          <Text type="h1">
+            {t('Classic Dice')}
           </Text>
-          <div className={cx(styles.button__content)}>
-            <Image url={CurrencyColorIcons[bankroll.currency]} />
-            <Text type="p">
-              {bankroll.quantity}
-            </Text>
-          </div>
-        </Button>
-      </header>
-      <section className={cx(styles.dice__paper)}>
-        <GameBlock />
-        <RollPanel />
-      </section>
-    </div>
+          <BankrollButton
+            currency={bankroll.currency}
+            quantity={bankroll.quantity}
+          />
+        </header>
+        <section className={styles.dice__paper}>
+          <GameBlock onRollClick={changeIsWon} />
+          <RollPanel
+            onRollClick={changeIsWon}
+          />
+        </section>
+      </div>
+      {isWon && <Won />}
+    </>
   );
-};
+});
 
 export { ClassicDice };

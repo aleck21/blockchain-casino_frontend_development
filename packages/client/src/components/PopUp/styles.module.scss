@@ -1,0 +1,40 @@
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.popup__dropscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+
+  @include mobile_sm {
+    overflow: auto;
+    align-items: flex-start;
+  }
+
+  .popup__container {
+    @include paper;
+    padding-bottom: 36px;
+    position: relative;
+
+    @include mobile_sm {
+      top: 120px;
+    }
+  
+    .popup__close__button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+}

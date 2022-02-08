@@ -3,15 +3,31 @@
 @import "~@project/libs/assets/styles/fonts.scss";
 
 .lastBankroll__container {
-  
+  @include mobile_sm {
+    display: grid;
+    grid-template-columns: 126px 1fr;
+  }
+
   h3 {
     font-size: 30px;
     color: $white;
     font-weight: 500;
     text-align: left;
+
+    @include mobile_sm {
+      display: none;
+    }
     
     b {
       font-weight: bold;
+    }
+  }
+
+  .mobile__bankrollButton {
+    display: none;
+
+    @include mobile_sm {
+      display: block;
     }
   }
 
@@ -20,6 +36,14 @@
     grid-template-columns: repeat(10, 30px);
     justify-content: space-between;
     margin-top: 20px;
+
+    @include mobile_sm {
+      overflow-x: hidden;
+      grid-template-columns: repeat(10, 40px);
+      column-gap: 10px;
+      width: 200px;
+      margin-top: 0;
+    }
   }
 
   .bankroll__active {
@@ -31,6 +55,14 @@
     text-align: center;
     color: $white;
     padding-top: 2px;
+
+    @include mobile_sm {
+      height: 40px;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .bankroll__inactive {
@@ -41,5 +73,13 @@
     font-size: 14px;
     text-align: center;
     color: $middle;
+
+    @include mobile_sm {
+      height: 40px;
+      width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
