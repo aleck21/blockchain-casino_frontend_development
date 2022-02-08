@@ -1,0 +1,127 @@
+@import "~@project/libs/assets/styles/mixins.scss";
+@import "~@project/libs/assets/styles/palette.scss";
+@import "~@project/libs/assets/styles/fonts.scss";
+
+.roulette__container {
+  position: relative;
+  padding-top: 30px;
+  padding-left: 20px;
+  width: max-content;
+  grid-area: game;
+
+  @include mobile_sm {
+    overflow-x: hidden;
+    width: calc(100vw - 40px);
+  }
+    
+  img.roulette__arrow {
+    position: absolute;
+    top: 170px;
+    left: 278px;
+    width: 250px;
+    height: auto;
+
+    @include mobile_sm {
+      left: calc(264 * ((100vw - 80px) / 499));
+      top: calc(186 * ((100vw - 80px) / 499));
+      width: calc(250 * ((100vw - 80px) / 499));
+    }
+
+    @media (max-width: 380px) {
+      left: calc(264 * ((100vw - 80px) / 499));
+      top: calc(192 * ((100vw - 80px) / 499));
+    }
+
+    @media (max-width: 321px) {
+      left: calc(278 * ((100vw - 80px) / 499));
+      top: calc(202 * ((100vw - 80px) / 499));
+    }
+  }
+
+  img.roulette__center {
+    position: absolute;
+    top: 195px;
+    left: 215px;
+    height: 104px;
+    width: 104px;
+
+    @include mobile_sm {
+      height: calc(104 * ((100vw - 80px) / 499));
+      width: calc(104 * ((100vw - 80px) / 499));
+      top: calc(210 * ((100vw - 80px) / 499));
+      left: calc(200 * ((100vw - 80px) / 499));
+    }
+
+    @media (max-width: 380px) {
+      top: calc(220 * ((100vw - 80px) / 499));
+      left: calc(208 * ((100vw - 80px) / 499));
+    }
+
+    @media (max-width: 321px) {
+      top: calc(230 * ((100vw - 80px) / 499));
+      left: calc(214 * ((100vw - 80px) / 499));
+    }
+  }
+
+  .roulette__table {
+    background-image:
+      url('~@project/libs/assets/images/rouletteTableImage.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 440px;
+    height: 440px;
+    transition: .5s transform;
+    transform-origin: center center;
+    position: relative;
+    left: 30px;
+    
+    @include mobile_sm {
+      padding: 0;
+      width: calc(440 * (100vw - 80px) / 499);
+      height: calc(440 * (100vw - 80px) / 499);
+      background-size: 100%;
+      left: 3px;
+    }
+
+    .segment__1 {
+      transform: rotate(0deg);
+    }
+  
+    .segment__2 {
+      transform: rotate(36deg);
+    }
+  
+    .segment__3 {
+      transform: rotate(72deg);
+    }
+  
+    .segment__4 {
+      transform: rotate(108deg);
+    }
+  
+    .segment__5 {
+      transform: rotate(144deg);
+    }
+  
+    .segment__6 {
+      transform: rotate(180deg);
+    }
+  
+    .segment__7 {
+      transform: rotate(216deg);
+    }
+  
+    .segment__8 {
+      transform: rotate(252deg);
+    }
+  
+    .segment__9 {
+      transform: rotate(288deg);
+    }
+  
+    .segment__10 {
+      transform: rotate(324deg);
+    }
+  }
+  
+}

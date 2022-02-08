@@ -1,20 +1,33 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, memo } from 'react';
 import cx from 'classnames';
-import { Button, Image, Text } from '@project/libs/components';
+import { Button, Text } from '@project/libs/components';
 import { useTranslation } from '@project/libs/utils/i18n';
-import { RouletteDemo } from '@project/libs/assets/images';
 import styles from './styles.module.scss';
-import { spinsQuantity, users } from './contentDemo';
+import {
+  spinsQuantity,
+  users,
+  rouletteData,
+} from './contentDemo';
 import { Timer } from './Timer';
+import { RouletteSpinner } from './RouletteSpinner';
 import { GameMonitor } from './GameMonitor';
 
-export const Roulette: React.FC = React.memo(() => {
+export const Roulette = memo(() => {
   const { t } = useTranslation('main');
-  const [isSpining, setIsSpining] = useState(false);
+  const [isSpin, setIsSpin] = useState(false);
+  const [countSpin, setCountSpin] = useState(spinsQuantity);
+  const [spin, setSpin] = useState(0);
+  const [usersIndex, setUsersIndex] = useState(0);
 
   const onSpinClick = useCallback(() => {
-    setIsSpining(!isSpining);
-  }, [isSpining]);
+    const random = Math.floor(Math.random() * 10);
+    setSpin(spin + random);
+    setUsersIndex(random);
+    setCountSpin(countSpin - 1);
+    if (countSpin === 1) {
+      setIsSpin(true);
+    }
+  }, [spin, countSpin]);
 
   return (
     <section className={cx(styles.roulette__container)}>
@@ -25,37 +38,51 @@ export const Roulette: React.FC = React.memo(() => {
         {t('Roulette')}
       </Text>
       <div className={cx(styles.roulette__content__box)}>
-        <div className={cx(styles.roulette__game)}>
-          <Image url={RouletteDemo} />
-          <Text type="p">
-            {isSpining
-              ? t('Next free spin in')
+        <div className={cx(styles.roulette__left_box)}>
+          <RouletteSpinner
+            spin={spin}
+            data={rouletteData}
+          />
+          <div className={cx(styles.roulette__spining_box)}>
+            {isSpin
+              ? (
+                <>
+                  <Text
+                    type="p"
+                    className={cx(styles.spining)}
+                  >
+                    {t('Next free spin in')}
+                  </Text>
+                  <Timer
+                    hours={12}
+                    minutes={54}
+                    seconds={32}
+                  />
+                </>
+              )
               : (
                 <>
-                  {t('You have')}
-                  &ensp;
-                  <strong>{spinsQuantity}</strong>
-                  &ensp;
-                  {t('spins')}
+                  <Text
+                    type="p"
+                    className={cx(styles.spining)}
+                  >
+                    <>
+                      {t('You have')}
+                      &ensp;
+                      <strong>{countSpin}</strong>
+                      &ensp;
+                      {t('spins')}
+                    </>
+                  </Text>
+                  <Button
+                    onClick={onSpinClick}
+                    className={cx(styles.spin__button)}
+                  >
+                    {t('Spin!')}
+                  </Button>
                 </>
               )}
-          </Text>
-          {isSpining
-            ? (
-              <Timer
-                hours={12}
-                minutes={54}
-                seconds={32}
-              />
-            )
-            : (
-              <Button
-                onClick={onSpinClick}
-                className={cx(styles.spin__button)}
-              >
-                {t('Spin!')}
-              </Button>
-            )}
+          </div>
         </div>
         <div className={cx(styles.roulette__info)}>
           <div className={cx(styles.roulette__info__textBlock)}>
@@ -81,7 +108,7 @@ export const Roulette: React.FC = React.memo(() => {
           <div className={cx(styles.roulette__info__gameMonitor)}>
             <GameMonitor
               userItems={users}
-              index={3}
+              index={usersIndex}
             />
           </div>
         </div>

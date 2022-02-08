@@ -46,19 +46,20 @@ export const GameMonitor = memo(({
   const left = index * 70;
 
   return (
-    <div
-      style={{ left: -left }}
-      className={cx(styles.users__container)}
-    >
-      {userItems.map((user) => (
-        <UserItem
-          id={user.id}
-          userName={user.userName}
-          currencyCount={user.currencyCount}
-          currency={user.currency}
-          key={user.id}
-        />
-      ))}
+    <div className={cx(styles.roulette__info__gameMonitor)}>
+      <div
+        style={{ left: -left }}
+        className={cx(styles.users__container)}
+      >
+        {userItems.map((user) => (
+          <UserItem
+            id={user.id}
+            userName={user.userName}
+            currencyCount={user.currencyCount}
+            currency={user.currency}
+          />
+        ))}
+      </div>
     </div>
   );
 });
